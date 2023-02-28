@@ -11,7 +11,10 @@ export default function Home() {
 			</Head>
 			<main className=''>
 				<div className=''>
-					<h1>Dogins</h1>
+					<span style={{ fontSize: '60px', fontWeight: 400 }}>
+						WELCOME TO DOQINS & PARTNERS FAMILY OFFICE THE FINANCIAL EXPERTS
+						SINCE 2005
+					</span>
 				</div>
 			</main>
 		</>
