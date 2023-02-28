@@ -1,3 +1,4 @@
+import { Default } from '@layouts/index';
 import Head from 'next/head';
 
 export default function Home() {
@@ -11,10 +12,12 @@ export default function Home() {
 			</Head>
 			<main className=''>
 				<div className=''>
-					<span style={{ fontSize: '60px', fontWeight: 400 }}>
-						WELCOME TO DOQINS & PARTNERS FAMILY OFFICE THE FINANCIAL EXPERTS
-						SINCE 2005
-					</span>
+					<Default>
+						<span style={{ fontSize: '60px', fontWeight: 400 }}>
+							WELCOME TO DOQINS & PARTNERS FAMILY OFFICE THE FINANCIAL EXPERTS
+							SINCE 2005
+						</span>
+					</Default>
 				</div>
 			</main>
 		</>
