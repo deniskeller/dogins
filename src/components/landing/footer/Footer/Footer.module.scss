@@ -1,4 +1,5 @@
 .Container {
+	flex: 0 0 auto;
 	background: $blue;
 	padding: em(50px) em(106px) em(44px) em(83px);
 	@include iftablet {

@@ -1,23 +1,38 @@
-.Li {
-  line-height: 100%;
-  list-style: none;
-  margin-bottom: em(54px);
+.Link {
+	a {
+		font-size: em(22px);
+		font-weight: 400;
+		white-space: nowrap;
+		font-style: normal;
+		color: $white;
+		position: relative;
+		width: max-content;
 
-  &:last-child {
-    margin-bottom: 0;
-  }
+		@include ifdesktop {
+			font-size: em(18px);
+		}
+
+		&::after {
+			content: '';
+			position: absolute;
+			bottom: em(-5px);
+			left: 0;
+			height: em(1px);
+			background-color: $orange;
+		}
+		&:hover {
+			&::after {
+				animation: bottomLine 0.3s linear forwards;
+			}
+		}
+	}
 }
 
-.Link {
-  font-size: em(24px);
-  font-weight: 400;
-  line-height: 100%;
-  white-space: nowrap;
-  font-style: normal;
-  color: $white;
-  text-transform: uppercase;
-  position: relative;
-  &:hover {
-    color: rgba(145, 167, 252, 1);
-  }
+@keyframes bottomLine {
+	0% {
+		width: 0%;
+	}
+	100% {
+		width: 100%;
+	}
 }

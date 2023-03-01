@@ -1,11 +1,15 @@
-import React, { useEffect } from 'react';
-import styles from './Navbar.module.scss';
+import { BaseButton } from '@base/index';
+import { Logo } from '@content/landing/index';
 import useOnClickOutside from '@hooks/useOnClickOutside';
-// import { Logo } from '@content/index';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
+import React, { useEffect } from 'react';
 import NavbarLink from '../NavbarLink/NavbarLink';
+import s from './Navbar.module.scss';
 
-interface Props {}
+interface Props {
+	fixed?: boolean;
+}
 
 interface Links {
 	[key: string]: string;
@@ -17,32 +21,36 @@ const links: Links[] = [
 		title: 'About Us',
 	},
 	{
-		href: '/contact_us',
-		title: 'Contact Us',
+		href: '/compliance',
+		title: 'Compliance',
 	},
 	{
-		href: '/news_room',
-		title: 'News Room',
+		href: '/licensing',
+		title: 'Licensing',
 	},
 	{
-		href: '/portfolio',
-		title: 'Portfolio',
+		href: '/investment',
+		title: 'Investment',
 	},
 	{
-		href: '/coming_soon',
-		title: 'Financial Data',
+		href: '/pricing',
+		title: 'Pricing',
 	},
 	{
-		href: '/app/admin/forms',
-		title: 'Admin',
+		href: 'careers',
+		title: 'Careers',
 	},
 	{
-		href: '/app/user/profile',
-		title: 'User',
+		href: 'news',
+		title: 'News&Insights',
+	},
+	{
+		href: 'contacts',
+		title: 'Contacts',
 	},
 ];
 
-const Navbar: React.FC<Props> = () => {
+const Navbar: React.FC<Props> = ({ fixed }) => {
 	const [visible, setVisible] = React.useState(false);
 	const thisDrawer = React.useRef<HTMLDivElement>(null);
 
@@ -86,19 +94,32 @@ const Navbar: React.FC<Props> = () => {
 	}, [visible]);
 
 	return (
-		<div
-			className={styles.Container}
-			style={{
-				background:
-					router.pathname == `${'/portfolio/[id]'}`
-						? 'rgba(6, 8, 18, 0.7)'
-						: 'none',
-			}}
-		>
-			<div className='animate__animated animate__fadeInDown animate__delay-3s'>
-				<div className={styles.Navbar}>{/* <Logo /> */}</div>
+		<div className={`${s.Container} ${fixed ? s.Fixed : ''}`}>
+			<div className={s.Navbar}>
+				<Logo className={s.Navbar_Logo} />
 
-				<div className={styles.Drawer} ref={thisDrawer}>
+				<ul className={`${s.Navbar_List} ${s.Navbar_Desktop}`}>
+					{links.map((link, index) => {
+						return (
+							<NavbarLink
+								href={link.href}
+								title={link.title}
+								index={index}
+								key={index}
+								className={s.Navbar_List_Item}
+							/>
+						);
+					})}
+				</ul>
+
+				<Link href='/sign_up' className={s.Navbar_SignUp}>
+					Sign Up
+				</Link>
+
+				<BaseButton title='Log in' className={s.Navbar_Login} />
+			</div>
+
+			{/* <div className={s.Drawer} ref={thisDrawer}>
 					<div
 						className={`${styles.Burger} ${
 							visible ? styles.Active : styles.NotActive
@@ -125,8 +146,7 @@ const Navbar: React.FC<Props> = () => {
 							);
 						})}
 					</ul>
-				</div>
-			</div>
+				</div> */}
 		</div>
 	);
 };

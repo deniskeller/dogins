@@ -38,10 +38,10 @@ html {
 }
 
 body {
-	background: $body;
 	width: 100%;
 	display: flex;
 	flex-direction: column;
+	background: $body;
 }
 
 a {

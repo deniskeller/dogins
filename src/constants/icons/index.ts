@@ -1,17 +1,14 @@
 import _ from "lodash";
+import { componentsIcons, ComponentsIcons } from "./components";
 import { othersIcons, OthersIcons } from "./others";
-import { socialIcons, SocialIcons } from "./social";
-import { landingIcons, LandingIcons } from "./components";
 
 export const ALL_ICONS = _.assign(
   {},
-  SocialIcons,
   OthersIcons,
-  LandingIcons,
+  ComponentsIcons,
 );
 export default _.assign(
   {},
-  socialIcons,
   othersIcons,
-  landingIcons,
+  componentsIcons,
 );

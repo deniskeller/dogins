@@ -6,10 +6,11 @@ import styles from './NavbarLink.module.scss';
 interface Props {
 	href: string;
 	title: string;
+	className?: string;
 	index?: number;
 }
 
-const NavbarLink: React.FC<Props> = ({ href, title, index }) => {
+const NavbarLink: React.FC<Props> = ({ href, title, className, index }) => {
 	const router = useRouter();
 
 	return (
@@ -19,7 +20,7 @@ const NavbarLink: React.FC<Props> = ({ href, title, index }) => {
 				router.pathname.split('/')[1] === href.split('/')[1]
 					? styles.Active
 					: ''
-			} ${styles.Link} ${styles.Li}`}
+			} ${styles.Link} ${className}`}
 		>
 			<Link href={href}>{title}</Link>
 		</li>

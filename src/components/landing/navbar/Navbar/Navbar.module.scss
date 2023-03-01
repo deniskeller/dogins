@@ -1,26 +1,103 @@
 .Container {
 	width: 100%;
-	position: absolute;
-	z-index: 1001;
+	padding: 0 em(50px);
+	// top: -$navbar-height;
+	// transition: top 0.3s;
+	position: fixed;
+	z-index: 100000;
+	top: 0;
 
 	.Navbar {
 		width: 100%;
+		max-width: em(1820px);
 		margin: 0 auto;
 		display: flex;
 		flex-direction: row;
 		align-items: center;
-		justify-content: space-between;
-		padding: em(50px) em(83px) 0;
+		padding: em(19px) 0;
 		position: relative;
 
-		@include iftablet {
-			padding: em(50px) em(32px) 0;
+		// @include iftablet {
+		// 	padding: em(50px) em(32px) 0;
+		// }
+
+		// @include ifmobile {
+		// 	padding: em(33px) em(12px) 0;
+		// }
+
+		&_Logo {
+			width: em(207px);
+			height: em(33px);
+			margin-right: em(70px);
 		}
 
-		@include ifmobile {
-			padding: em(33px) em(12px) 0;
+		&_List {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+			margin-right: auto;
+			&_Item {
+				@include ifdesktop {
+					margin-right: em(50px);
+					&:last-child {
+						margin-right: 0;
+					}
+				}
+				@include iftablet {
+					margin-bottom: em(54px);
+					&:last-child {
+						margin-bottom: 0;
+					}
+				}
+			}
+		}
+
+		&_SignUp {
+			font-size: em(22px);
+			font-weight: 400;
+			white-space: nowrap;
+			font-style: normal;
+			color: $white;
+			position: relative;
+			width: max-content;
+			margin-right: em(20px);
+
+			@include ifdesktop {
+				font-size: em(18px);
+				margin-left: em(50px);
+			}
+
+			&::after {
+				content: '';
+				position: absolute;
+				bottom: em(-5px);
+				left: 0;
+				height: em(1px);
+				background-color: $orange;
+			}
+			&:hover {
+				&::after {
+					animation: bottomLine 0.3s linear forwards;
+				}
+			}
+
+			@keyframes bottomLine {
+				0% {
+					width: 0%;
+				}
+				100% {
+					width: 100%;
+				}
+			}
+		}
+
+		&_Login {
+			width: em(106px);
+			height: em(50px);
 		}
 	}
+
 	.Drawer {
 		display: flex;
 		justify-content: center;
@@ -110,6 +187,12 @@
 			padding: em(100px) em(106px) em(30px) em(60px);
 		}
 	}
+}
+
+.Fixed {
+	z-index: 1000;
+	background: $body;
+	box-shadow: 0px 1px 1px rgba(18, 18, 18, 0.3);
 }
 
 @keyframes top {

@@ -18,7 +18,8 @@
     "paths": {
       "@layouts/*": ["layouts/*"],
       "@base/*": ["components/base/*"],
-      "@content/*": ["components/content/*"],
+      "@content/landing/*": ["components/landing/content/*"],
+      "@content/app/*": ["components/app/content/*"],
       "@modals/*": ["components/modals/*"],
       "@pages/*": ["components/pages/*"],
       "@constants/*": ["constants/*"],

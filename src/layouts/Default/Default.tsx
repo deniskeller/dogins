@@ -1,12 +1,7 @@
-import { useRouter } from 'next/router';
-import React, { useEffect, useState } from 'react';
-import styles from './Default.module.scss';
-import Image from 'next/image';
 import { Footer } from 'components/landing/footer';
 import { Navbar } from 'components/landing/navbar';
-
-var Scroll = require('react-scroll');
-var scroll = Scroll.animateScroll;
+import React, { useEffect, useState } from 'react';
+import styles from './Default.module.scss';
 
 interface Props {
 	children: JSX.Element;
@@ -14,79 +9,56 @@ interface Props {
 
 const Default: React.FC<Props> = ({ children }) => {
 	const [isVisible, setIsVisible] = useState(false);
+	// const scrollBlockRef = React.useRef<HTMLDivElement>(null);
 
-	const scrollToTop = () => {
-		scroll.scrollToTop();
-	};
+	// console.log('isVisible: ', isVisible);
 
-	const scrollFunction = () => {
-		if (
-			document.body.scrollTop > 600 ||
-			document.documentElement.scrollTop > 600
-		) {
-			setIsVisible(true);
-		} else {
-			setIsVisible(false);
-		}
-	};
+	// const scrollFunction = () => {
+	// 	const scrollTop = scrollBlockRef.current?.scrollTop;
+
+	// 	if (scrollTop && scrollTop > 100) {
+	// 		setIsVisible(true);
+	// 		console.log('lol');
+	// 	} else {
+	// 		setIsVisible(false);
+	// 		console.log('kek');
+	// 	}
+	// };
+
+	const [scrollTop, setScrollTop] = useState(0);
 
 	useEffect(() => {
-		if (typeof window !== undefined && typeof document !== undefined) {
-			window.onscroll = function () {
-				scrollFunction();
-			};
-		}
-	});
+		const handleScroll = () => {
+			setScrollTop(window.scrollY);
+		};
 
-	const router = useRouter();
-	const [visibleImage, setVisibleImage] = React.useState(true);
-
-	React.useEffect(() => {
-		if (router.pathname == '/' || router.pathname == '/terms_and_conditions') {
-			setVisibleImage(false);
+		if (scrollTop && scrollTop > 180) {
+			setIsVisible(true);
+			console.log('lol');
+		} else {
+			setIsVisible(false);
+			console.log('kek');
 		}
-	}, [router.pathname]);
+
+		window.addEventListener('scroll', handleScroll);
+
+		return () => {
+			window.removeEventListener('scroll', handleScroll);
+		};
+	}, [scrollTop]);
+
 	return (
-		<>
-			<Navbar />
-			<div className={styles.WrapperForSlicky}>
-				<div className={styles.Content}>
-					<div
-						className={styles.Wrapper}
-						style={{
-							display:
-								router.pathname == `${'/portfolio/[id]'}` ? 'block' : 'none',
-						}}
-					></div>
+		<div
+			className={styles.Wrapper}
+			// ref={scrollBlockRef}
+			// onScroll={scrollFunction}
+		>
+			<Navbar fixed={isVisible} />
 
-					{visibleImage ? (
-						<div className={styles.Image}>
-							<div
-								className={styles.Img}
-								style={{
-									zIndex:
-										router.pathname == `${'/portfolio/[id]'}` ? '100' : '-10',
-								}}
-							>
-								<Image
-									src={`${
-										router.pathname == '/portfolio/[id]'
-											? '/images/image/gear_bg2.png'
-											: '/images/image/gear_bg.png'
-									}`}
-									layout='fill'
-									alt={'Image'}
-									priority
-								/>
-							</div>
-						</div>
-					) : null}
+			<div className={styles.Content}>{children}</div>
 
-					{children}
-				</div>
-			</div>
 			<Footer />
-		</>
+		</div>
 	);
 };
 

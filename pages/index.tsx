@@ -1,25 +1,12 @@
 import { Default } from '@layouts/index';
-import Head from 'next/head';
+import { Main } from '@view/landing';
 
-export default function Home() {
+const MainPage = () => {
 	return (
-		<>
-			<Head>
-				<title>Create Next App</title>
-				<meta name='description' content='Dogins' />
-				<meta name='viewport' content='width=device-width, initial-scale=1' />
-				<link rel='icon' href='/favicon.ico' />
-			</Head>
-			<main className=''>
-				<div className=''>
-					<Default>
-						<span style={{ fontSize: '60px', fontWeight: 400 }}>
-							WELCOME TO DOQINS & PARTNERS FAMILY OFFICE THE FINANCIAL EXPERTS
-							SINCE 2005
-						</span>
-					</Default>
-				</div>
-			</main>
-		</>
+		<Default>
+			<Main />
+		</Default>
 	);
-}
+};
+
+export default MainPage;

@@ -1,0 +1,9 @@
+.Logo {
+	width: em(207px);
+	height: em(33px);
+	cursor: pointer;
+	svg {
+		width: inherit;
+		height: 100%;
+	}
+}
