@@ -1,0 +1,35 @@
+.NotFound {
+	background: url('/images/image/404-bg.jpeg');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	min-height: 100vh;
+	@extend %center;
+	flex-direction: column;
+
+	&_Title {
+		margin-bottom: em(30px);
+		h1 {
+			font-weight: 700;
+			font-size: em(100px);
+			line-height: 130%;
+			-webkit-text-stroke: 1px $orange;
+			-webkit-text-fill-color: transparent;
+			// font-family: Arial, sans-serif;
+		}
+	}
+
+	&_Subtitle {
+		margin-bottom: em(50px);
+		p {
+			font-weight: 400;
+			font-size: em(24px);
+			line-height: 130%;
+			color: $white;
+		}
+	}
+
+	&_Button {
+		width: em(209px);
+	}
+}

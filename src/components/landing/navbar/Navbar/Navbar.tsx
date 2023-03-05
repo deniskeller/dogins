@@ -1,8 +1,8 @@
-import { BaseButton } from '@base/index';
+import { BaseButton, BaseIcon } from '@base/index';
+import { ALL_ICONS } from '@constants/icons';
 import { Logo } from '@content/landing/index';
 import useOnClickOutside from '@hooks/useOnClickOutside';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 import React, { useEffect } from 'react';
 import NavbarLink from '../NavbarLink/NavbarLink';
 import s from './Navbar.module.scss';
@@ -59,8 +59,6 @@ const Navbar: React.FC<Props> = ({ fixed }) => {
 	};
 	useOnClickOutside(thisDrawer, clickOutsideHandler);
 
-	const router = useRouter();
-
 	useEffect(() => {
 		//Закрываем меню по нажатию Esc
 		function onKeyDown(event: any) {
@@ -98,7 +96,7 @@ const Navbar: React.FC<Props> = ({ fixed }) => {
 			<div className={s.Navbar}>
 				<Logo className={s.Navbar_Logo} />
 
-				<ul className={`${s.Navbar_List} ${s.Navbar_Desktop}`}>
+				<ul className={`${s.Navbar_List} ${s.Desktop}`}>
 					{links.map((link, index) => {
 						return (
 							<NavbarLink
@@ -112,41 +110,62 @@ const Navbar: React.FC<Props> = ({ fixed }) => {
 					})}
 				</ul>
 
-				<Link href='/sign_up' className={s.Navbar_SignUp}>
+				<Link href='/sign_up' className={`${s.Navbar_SignUp} ${s.Desktop}`}>
 					Sign Up
 				</Link>
 
-				<BaseButton title='Log in' className={s.Navbar_Login} />
+				<BaseButton
+					title='Log in'
+					className={`${s.Navbar_Login} ${s.Desktop}`}
+				/>
 			</div>
 
-			{/* <div className={s.Drawer} ref={thisDrawer}>
-					<div
-						className={`${styles.Burger} ${
-							visible ? styles.Active : styles.NotActive
-						}`}
-						onClick={() => setVisible(!visible)}
-					>
-						<span></span>
-						<span></span>
-						<span></span>
+			<div className={`${s.Drawer} ${s.Mobile}`} ref={thisDrawer}>
+				<div
+					className={`${s.Drawer_Burger} ${
+						visible ? s.Drawer_Burger_Active : s.Drawer_Burger_NotActive
+					}`}
+					onClick={() => setVisible(!visible)}
+				>
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+
+				<ul
+					className={`${s.Drawer_Navbar} ${
+						visible ? s.Drawer_Navbar_Visible : ''
+					}`}
+				>
+					{links.map((link, index) => {
+						return (
+							<NavbarLink
+								href={link.href}
+								title={link.title}
+								index={index}
+								key={index}
+								className={s.Drawer_Navbar_Item}
+							/>
+						);
+					})}
+
+					<BaseIcon
+						icon={ALL_ICONS.LOGO}
+						viewBox='0 0 313 353'
+						className={s.Drawer_Logo}
+					/>
+
+					<div className={s.Drawer_Actions}>
+						<Link href='/log_in' className={s.Drawer_Actions_SignUp}>
+							Log in
+						</Link>
+
+						<Link href='/sign_up' className={s.Drawer_Actions_SignUp}>
+							Sign Up
+						</Link>
 					</div>
-					<ul
-						className={`${styles.NavbarNav} ${
-							visible ? styles.NavbarNav_Visible : ''
-						}`}
-					>
-						{links.map((link, index) => {
-							return (
-								<NavbarLink
-									href={link.href}
-									title={link.title}
-									index={index}
-									key={index}
-								/>
-							);
-						})}
-					</ul>
-				</div> */}
+				</ul>
+			</div>
 		</div>
 	);
 };

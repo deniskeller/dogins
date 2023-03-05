@@ -9,21 +9,6 @@ interface Props {
 
 const Default: React.FC<Props> = ({ children }) => {
 	const [isVisible, setIsVisible] = useState(false);
-	// const scrollBlockRef = React.useRef<HTMLDivElement>(null);
-
-	// console.log('isVisible: ', isVisible);
-
-	// const scrollFunction = () => {
-	// 	const scrollTop = scrollBlockRef.current?.scrollTop;
-
-	// 	if (scrollTop && scrollTop > 100) {
-	// 		setIsVisible(true);
-	// 		console.log('lol');
-	// 	} else {
-	// 		setIsVisible(false);
-	// 		console.log('kek');
-	// 	}
-	// };
 
 	const [scrollTop, setScrollTop] = useState(0);
 
@@ -34,10 +19,8 @@ const Default: React.FC<Props> = ({ children }) => {
 
 		if (scrollTop && scrollTop > 180) {
 			setIsVisible(true);
-			console.log('lol');
 		} else {
 			setIsVisible(false);
-			console.log('kek');
 		}
 
 		window.addEventListener('scroll', handleScroll);
@@ -48,11 +31,7 @@ const Default: React.FC<Props> = ({ children }) => {
 	}, [scrollTop]);
 
 	return (
-		<div
-			className={styles.Wrapper}
-			// ref={scrollBlockRef}
-			// onScroll={scrollFunction}
-		>
+		<div className={styles.Wrapper}>
 			<Navbar fixed={isVisible} />
 
 			<div className={styles.Content}>{children}</div>

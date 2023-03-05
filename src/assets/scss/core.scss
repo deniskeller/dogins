@@ -28,8 +28,12 @@ html {
 }
 
 html {
-	@include iftablet {
+	@include iflaptop {
 		font-size: math.div(16, 1024) * 100vw;
+	}
+
+	@include iftablet {
+		font-size: math.div(16, 768) * 100vw;
 	}
 
 	@include ifmobile {
