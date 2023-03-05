@@ -137,7 +137,7 @@ const Navbar: React.FC<Props> = ({ fixed }) => {
 						visible ? s.Drawer_Navbar_Visible : ''
 					}`}
 				>
-					<div className='' style={{ minHeight: '100%', display: 'grid' }}>
+					<div className={s.Drawer_Wrapper}>
 						<ul className={s.Drawer_Navbar_List}>
 							{links.map((link, index) => {
 								return (

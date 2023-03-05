@@ -146,6 +146,11 @@
 		right: 0;
 		bottom: 0;
 
+		&_Wrapper {
+			display: grid;
+			min-height: 100%;
+		}
+
 		&_Burger {
 			width: em(36px);
 			cursor: pointer;
