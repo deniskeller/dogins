@@ -211,9 +211,8 @@
 		}
 
 		&_Navbar {
-			// display: flex;
-			// flex-direction: column;
-			// display: grid;
+			display: flex;
+			flex-direction: column;
 			position: absolute;
 			top: 0;
 			background: #282828;
@@ -225,16 +224,16 @@
 			overflow: hidden;
 			overflow-y: auto;
 			width: em(358px);
-			padding: em(150px) em(50px) em(42px);
+			padding: em(150px) em(50px) 0;
 			transition: right 0.5s cubic-bezier(0.82, 0.085, 0.395, 0.895);
 			right: -100%;
 
 			@include iftablet {
-				padding: em(150px) em(50px) em(75px);
+				padding: em(150px) em(50px) 0;
 			}
 			@include ifmobile {
 				width: 100vw;
-				padding: em(80px) em(50px) em(79px);
+				padding: em(80px) em(50px) 0;
 				text-align: center;
 			}
 			&_Visible {
@@ -256,12 +255,21 @@
 			}
 
 			&_Actions {
-				margin-top: auto;
 				display: flex;
 				flex-direction: row;
 				justify-content: space-between;
 				border-top: 1px solid rgba(255, 255, 255, 0.2);
 				padding-top: em(30px);
+				margin-top: auto;
+				margin-bottom: em(42px);
+
+				@include iftablet {
+					margin-bottom: em(75px);
+				}
+				@include ifmobile {
+					margin-bottom: em(79px);
+				}
+
 				&_SignUp {
 					font-size: em(22px);
 				}
