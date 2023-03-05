@@ -1,168 +1,292 @@
-.Container {
-	flex: 0 0 auto;
-	background: $blue;
-	padding: em(50px) em(106px) em(44px) em(83px);
-	@include iftablet {
-		padding: em(50px) em(49px) em(37px) em(32px);
+.Wrapper {
+	padding: 0 em(50px);
+	@include iflaptop {
+		padding: 0 em(24px);
 	}
+	@include iftablet {
+		padding: 0 em(20px);
+	}
+
 	@include ifmobile {
-		padding: em(43px) em(12px) em(55px) em(12px);
+		padding: 0;
+	}
+
+	@include ifmobile {
 	}
 }
 
-.Footer {
-	display: flex;
-	flex-direction: row;
+.Container {
+	width: 100%;
+	max-width: em(1820px);
+	margin: 0 auto;
+	border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
 
-	@include ifmobile {
-		flex-direction: column;
+.Footer {
+	display: grid;
+	grid-template-columns: em(207px) 1fr;
+	gap: 0 em(142px);
+	padding: em(53px) 0 em(83px);
+	position: relative;
+
+	@media only screen and (max-width: 1760px) {
+		gap: 0 em(39px);
+		padding: em(30px) 0 em(40px);
 	}
 
-	&_Content {
+	@include iftablet {
+		grid-template-columns: 1fr;
+		gap: em(32px) 0;
+		padding: em(30px) 0 em(40px);
+	}
+
+	@include ifmobile {
+		grid-template-columns: 1fr;
+		gap: em(26px) 0;
+		padding: em(36px) em(10px) em(16px);
+	}
+
+	&_LogoSocial {
 		display: flex;
 		flex-direction: column;
-		margin-bottom: em(65px);
-		@include iftablet {
-			margin-bottom: em(42px);
-		}
 		@include ifmobile {
-			margin-bottom: em(16px);
+			align-items: center;
 		}
 
-		&_Title {
-			font-size: em(16px);
-			font-weight: 700;
-			line-height: 100%;
-			color: $white;
-			margin-bottom: em(28px);
+		&_Logo {
+			@include ifdesktop {
+				width: em(207px);
+				height: em(33px);
+			}
+			width: em(170px);
+			height: em(28px);
+			margin-bottom: em(68px);
+			@include iftablet {
+				margin-bottom: 0;
+			}
+
 			@include ifmobile {
-				font-size: em(14px);
-				margin-bottom: em(25px);
+				margin-bottom: em(32px);
 			}
 		}
 
-		&_Description {
-			display: flex;
-			flex-direction: row;
+		&_Socials {
+			@include iflaptop {
+				margin-top: auto;
+			}
+
+			@include iftablet {
+				position: absolute;
+				left: 0;
+				bottom: em(40px);
+			}
+
 			@include ifmobile {
+				display: flex;
 				flex-direction: column;
+				align-items: center;
 			}
 
-			&_Text {
-				display: grid;
-				grid-template-columns: 1fr 1fr;
-				gap: em(40px);
-				width: 100%;
-				max-width: em(766px);
-				margin-right: em(110px);
-				@media only screen and (max-width: 1440px) {
-					grid-template-columns: 1fr;
-					gap: em(16px);
-				}
-				@include iftablet {
-					margin-right: em(56px);
-					max-width: em(338px);
-				}
+			&_Items {
+				display: flex;
+				flex-direction: row;
+				margin-bottom: em(16px);
 				@include ifmobile {
-					order: 1;
+					margin-bottom: 0;
 				}
-				span {
-					width: 100%;
-					max-width: em(363px);
-					@include iftablet {
+				svg {
+					width: em(23px);
+					height: em(24px);
+					margin-right: em(24px);
+					cursor: pointer;
+					&:last-child {
+						margin-right: 0;
 					}
-
-					p {
-						font-size: em(12px);
-						line-height: 140%;
-						font-weight: 400;
-						color: $white;
-
-						@include iftablet {
-							font-size: em(10px);
-						}
-						@include ifmobile {
-							font-size: em(9.5px);
+					&:hover {
+						path {
+							fill: $orange;
 						}
 					}
 				}
 			}
+
+			&_Copywriting {
+				@include ifmobile {
+					position: absolute;
+					left: em(10px);
+					bottom: em(24px);
+				}
+				p {
+					font-weight: 400;
+					font-size: em(12px);
+					line-height: 130%;
+					color: $white;
+					@include ifmobile {
+						font-size: em(10px);
+						opacity: 0.8;
+					}
+				}
+			}
+		}
+	}
+
+	&_NavbarPartners {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		width: 100%;
+
+		@include iflaptop {
+			flex-wrap: wrap;
+		}
+
+		@include iftablet {
+			flex-wrap: wrap;
+		}
+
+		@include ifmobile {
+			flex-wrap: wrap;
 		}
 
 		&_Navbar {
 			display: grid;
-			grid-template-columns: 1fr 1fr;
-			gap: em(87px);
-			width: em(303px);
-			@include iftablet {
-				gap: em(56px);
-			}
-			@include ifmobile {
-				gap: em(50px);
-				margin-bottom: em(37px);
-			}
-			.Link {
-				ul > li {
-					margin-bottom: em(15px);
-					&:last-child {
-						margin-bottom: 0;
-					}
-					@include iftablet {
-					}
-					@include ifmobile {
-					}
-					a {
-						display: flex;
-						color: $white;
-						font-size: em(14px);
-						line-height: 100%;
-						font-weight: 400;
-						white-space: nowrap;
-						position: relative;
-						width: max-content;
+			grid-template-columns: repeat(5, 1fr);
+			gap: 0 em(100px);
+			max-width: em(1042px);
+			margin-right: em(30px);
+			list-style: none;
 
+			@media only screen and (max-width: 1760px) {
+				gap: 0 em(36px);
+				margin-right: 0;
+				margin-bottom: em(30px);
+			}
+
+			@include iflaptop {
+				max-width: em(698px);
+			}
+
+			@include iftablet {
+				gap: 0 em(45px);
+				margin-bottom: em(42px);
+			}
+
+			@include ifmobile {
+				width: 100%;
+				grid-template-columns: 1fr 1fr;
+				gap: em(18px) em(32px);
+				margin-bottom: em(26px);
+			}
+
+			.Link {
+				@include ifmobile {
+					padding-top: em(18px);
+					border-top: 1px solid rgba(255, 255, 255, 0.2);
+				}
+				&_Title {
+					margin-bottom: em(20px);
+					@include ifmobile {
+						margin-bottom: em(16px);
+					}
+
+					span {
+						font-weight: 500;
+						font-size: em(18px);
+						line-height: 130%;
+						color: $white;
+						white-space: nowrap;
+						@include iflaptop {
+							font-size: em(16px);
+						}
 						@include iftablet {
+							font-size: em(14px);
+						}
+
+						@include ifmobile {
+							font-size: em(14px);
+						}
+					}
+				}
+
+				&_List {
+					li {
+						margin-bottom: em(14px);
+						@include iflaptop {
+							margin-bottom: em(10px);
+						}
+						@include iftablet {
+							margin-bottom: em(10px);
 						}
 						@include ifmobile {
+							margin-bottom: em(12px);
 						}
 
-						&::after {
-							content: '';
-							position: absolute;
-							bottom: em(-5px);
-							left: 0;
-							height: em(2px);
-							background-color: #91a7fc;
+						&:last-child {
+							margin-bottom: 0;
 						}
-						&:hover {
+
+						a {
+							font-weight: 400;
+							font-size: em(14px);
+							line-height: 130%;
+							color: $white;
+							white-space: nowrap;
+							position: relative;
+							width: max-content;
+							@include iflaptop {
+								font-size: em(12px);
+							}
+
+							@include iftablet {
+								font-size: em(12px);
+							}
+
+							@include ifmobile {
+								font-size: em(12px);
+								opacity: 0.8;
+							}
+
 							&::after {
-								animation: bottomLine 0.3s linear forwards;
+								content: '';
+								position: absolute;
+								bottom: em(-5px);
+								left: 0;
+								height: em(1px);
+								background-color: $orange;
+							}
+							&:hover {
+								&::after {
+									animation: bottomLine 0.3s linear forwards;
+								}
 							}
 						}
 					}
 				}
 			}
 		}
-	}
 
-	&_Logo {
-		margin-left: auto;
-		@include ifmobile {
-			margin-left: 0;
-			order: -1;
-			margin-bottom: em(37px);
-		}
-	}
+		&_Partners {
+			width: em(234px);
+			height: em(54px);
+			margin-top: auto;
+			@include iflaptop {
+				width: em(158.56px);
+				height: em(36px);
+				margin-top: 0;
+				margin-left: auto;
+			}
+			@include iftablet {
+				width: em(171.39px);
+				height: em(36px);
+				margin-top: 0;
+				margin-left: auto;
+			}
 
-	&_Copyright {
-		p {
-			font-size: em(12px);
-			font-weight: 400;
-			line-height: 100%;
-			color: $blue;
 			@include ifmobile {
-				line-height: 140%;
-				font-size: em(9.5px);
+				width: em(123.32px);
+				height: em(28px);
+				margin-top: 0;
+				margin-left: auto;
 			}
 		}
 	}
