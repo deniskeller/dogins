@@ -222,7 +222,7 @@
 			min-height: 100vh;
 			height: 100%;
 			overflow: hidden;
-			overflow-y: scroll;
+			overflow-y: auto;
 			width: em(358px);
 			padding: em(150px) em(50px) em(42px);
 			transition: right 0.5s cubic-bezier(0.82, 0.085, 0.395, 0.895);
@@ -240,46 +240,45 @@
 				right: 0;
 			}
 
-			&_Item {
-				margin-bottom: em(30px);
-				&:last-child {
-					margin-bottom: 0;
-				}
+			&_List {
+				&_Item {
+					margin-bottom: em(30px);
 
-				@include iftablet {
-					margin-bottom: em(40px);
-				}
+					@include iftablet {
+						margin-bottom: em(40px);
+					}
 
+					@include ifmobile {
+						margin-bottom: em(24px);
+					}
+				}
+			}
+
+			&_Actions {
+				margin-top: auto;
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				border-top: 1px solid rgba(255, 255, 255, 0.2);
+				padding-top: em(30px);
+				&_SignUp {
+					font-size: em(22px);
+				}
+			}
+
+			&_Logo {
+				position: absolute;
+				z-index: -1;
+				top: em(77px);
+				left: em(92px);
+				opacity: 0.02;
+				width: em(327px);
+				height: em(358px);
 				@include ifmobile {
-					margin-bottom: em(24px);
+					top: em(43px);
+					right: 0;
+					left: auto;
 				}
-			}
-		}
-
-		&_Actions {
-			margin-top: auto;
-			display: flex;
-			flex-direction: row;
-			justify-content: space-between;
-			border-top: 1px solid rgba(255, 255, 255, 0.2);
-			padding-top: em(30px);
-			&_SignUp {
-				font-size: em(22px);
-			}
-		}
-
-		&_Logo {
-			position: absolute;
-			z-index: -1;
-			top: em(77px);
-			left: em(92px);
-			opacity: 0.02;
-			width: em(327px);
-			height: em(358px);
-			@include ifmobile {
-				top: em(43px);
-				right: 0;
-				left: auto;
 			}
 		}
 	}

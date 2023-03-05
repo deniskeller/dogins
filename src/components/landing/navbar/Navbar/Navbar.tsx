@@ -132,39 +132,41 @@ const Navbar: React.FC<Props> = ({ fixed }) => {
 					<span></span>
 				</div>
 
-				<ul
+				<div
 					className={`${s.Drawer_Navbar} ${
 						visible ? s.Drawer_Navbar_Visible : ''
 					}`}
 				>
-					{links.map((link, index) => {
-						return (
-							<NavbarLink
-								href={link.href}
-								title={link.title}
-								index={index}
-								key={index}
-								className={s.Drawer_Navbar_Item}
-							/>
-						);
-					})}
+					<ul className={s.Drawer_Navbar_List}>
+						{links.map((link, index) => {
+							return (
+								<NavbarLink
+									href={link.href}
+									title={link.title}
+									index={index}
+									key={index}
+									className={s.Drawer_Navbar_List_Item}
+								/>
+							);
+						})}
+					</ul>
 
 					<BaseIcon
 						icon={ALL_ICONS.LOGO}
 						viewBox='0 0 313 353'
-						className={s.Drawer_Logo}
+						className={s.Drawer_Navbar_Logo}
 					/>
 
-					<div className={s.Drawer_Actions}>
-						<Link href='/log_in' className={s.Drawer_Actions_SignUp}>
+					<div className={s.Drawer_Navbar_Actions}>
+						<Link href='/log_in' className={s.Drawer_Navbar_Actions_SignUp}>
 							Log in
 						</Link>
 
-						<Link href='/sign_up' className={s.Drawer_Actions_SignUp}>
+						<Link href='/sign_up' className={s.Drawer_Navbar_Actions_SignUp}>
 							Sign Up
 						</Link>
 					</div>
-				</ul>
+				</div>
 			</div>
 		</div>
 	);
