@@ -211,8 +211,9 @@
 		}
 
 		&_Navbar {
-			display: flex;
-			flex-direction: column;
+			// display: flex;
+			// flex-direction: column;
+			display: grid;
 			position: absolute;
 			top: 0;
 			background: #282828;
