@@ -1,10 +1,10 @@
-import React from 'react';
+import { Header } from 'components/landing/pages/Main';
 
 const Main = () => {
 	return (
-		<div style={{ height: '1000px' }}>
-			<h1>Dogins11</h1>
-		</div>
+		<>
+			<Header />
+		</>
 	);
 };
 

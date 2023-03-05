@@ -1,0 +1,29 @@
+.Wrapper {
+	background: url('/images/image/main-header-bg.jpeg');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	min-height: 100vh;
+}
+
+.Container {
+	width: 100%;
+	max-width: em(1620px);
+	margin: 0 auto;
+}
+
+.Header {
+	display: flex;
+	min-height: 100vh;
+	&_Title {
+		align-self: flex-end;
+		margin-top: auto;
+		padding-bottom: em(68px);
+		h1 {
+			font-weight: 400;
+			font-size: em(60px);
+			line-height: 130%;
+			color: $white;
+		}
+	}
+}
