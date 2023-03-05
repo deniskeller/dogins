@@ -137,34 +137,36 @@ const Navbar: React.FC<Props> = ({ fixed }) => {
 						visible ? s.Drawer_Navbar_Visible : ''
 					}`}
 				>
-					<ul className={s.Drawer_Navbar_List}>
-						{links.map((link, index) => {
-							return (
-								<NavbarLink
-									href={link.href}
-									title={link.title}
-									index={index}
-									key={index}
-									className={s.Drawer_Navbar_List_Item}
-								/>
-							);
-						})}
-					</ul>
+					<div className='' style={{ minHeight: '100%', display: 'grid' }}>
+						<ul className={s.Drawer_Navbar_List}>
+							{links.map((link, index) => {
+								return (
+									<NavbarLink
+										href={link.href}
+										title={link.title}
+										index={index}
+										key={index}
+										className={s.Drawer_Navbar_List_Item}
+									/>
+								);
+							})}
+						</ul>
 
-					<BaseIcon
-						icon={ALL_ICONS.LOGO}
-						viewBox='0 0 313 353'
-						className={s.Drawer_Navbar_Logo}
-					/>
+						<BaseIcon
+							icon={ALL_ICONS.LOGO}
+							viewBox='0 0 313 353'
+							className={s.Drawer_Navbar_Logo}
+						/>
 
-					<div className={s.Drawer_Navbar_Actions}>
-						<Link href='/log_in' className={s.Drawer_Navbar_Actions_SignUp}>
-							Log in
-						</Link>
+						<div className={s.Drawer_Navbar_Actions}>
+							<Link href='/log_in' className={s.Drawer_Navbar_Actions_SignUp}>
+								Log in
+							</Link>
 
-						<Link href='/sign_up' className={s.Drawer_Navbar_Actions_SignUp}>
-							Sign Up
-						</Link>
+							<Link href='/sign_up' className={s.Drawer_Navbar_Actions_SignUp}>
+								Sign Up
+							</Link>
+						</div>
 					</div>
 				</div>
 			</div>
