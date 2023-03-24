@@ -46,6 +46,8 @@
 			width: em(207px);
 			height: em(33px);
 			margin-right: em(70px);
+			position: relative;
+			z-index: 1000;
 
 			@include iflaptop {
 				width: em(141px);
