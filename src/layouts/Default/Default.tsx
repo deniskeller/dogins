@@ -17,7 +17,7 @@ const Default: React.FC<Props> = ({ children }) => {
 			setScrollTop(window.scrollY);
 		};
 
-		if (scrollTop && scrollTop > 180) {
+		if (scrollTop && scrollTop > 100) {
 			setIsVisible(true);
 		} else {
 			setIsVisible(false);
