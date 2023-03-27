@@ -1,5 +1,5 @@
 import { Header } from '@content/landing/index';
-import { About } from 'components/landing/pages/Main';
+import { About, Advantages } from 'components/landing/pages/Main';
 
 const Main = () => {
 	return (
@@ -11,6 +11,7 @@ const Main = () => {
 			/>
 
 			<About />
+			<Advantages />
 		</>
 	);
 };

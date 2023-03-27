@@ -1,0 +1,117 @@
+.BaseContainer {
+	@include ifmobile {
+		padding: 0;
+	}
+}
+
+.Advantages {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	border: 0.5px solid rgba(255, 255, 255, 0.2);
+	background: #2d2d2d;
+	@include ifmobile {
+		grid-template-columns: 1fr;
+	}
+
+	&_Item {
+		position: relative;
+		border: 0.5px solid rgba(255, 255, 255, 0.2);
+		min-height: em(180px);
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		padding: em(60px) em(40px) em(40px);
+		@include iflaptop {
+			padding: em(33px) em(23px) em(16px);
+		}
+		@include iftablet {
+			min-height: em(145px);
+			padding: em(21px) em(19px) em(29px);
+		}
+		@include ifmobile {
+			min-height: em(107px);
+			padding: em(20px) em(12px) em(10px);
+			&:nth-child(4) {
+				order: 2;
+			}
+		}
+
+		&_Image {
+			@include ifmobile {
+				min-height: em(192px);
+			}
+		}
+
+		&_Number {
+			margin-bottom: em(39px);
+			@include iflaptop {
+				margin-bottom: em(25px);
+			}
+			@include iftablet {
+				margin-bottom: em(9px);
+			}
+			@include ifmobile {
+				margin-bottom: em(9px);
+			}
+			span {
+				font-weight: 400;
+				font-size: em(60px);
+				line-height: 130%;
+				color: $orange;
+				@include iflaptop {
+					font-size: em(30px);
+				}
+				@include iftablet {
+					font-size: em(20px);
+				}
+				@include ifmobile {
+					font-size: em(20px);
+				}
+			}
+		}
+
+		&_Title {
+			margin-bottom: em(14px);
+			@include iflaptop {
+				margin-bottom: em(9px);
+			}
+			@include iftablet {
+				margin-bottom: em(5px);
+			}
+			@include ifmobile {
+				margin-bottom: em(5px);
+			}
+			span {
+				font-weight: 500;
+				font-size: em(32px);
+				line-height: 130%;
+				color: $white;
+				@include iflaptop {
+					font-size: em(18px);
+				}
+				@include iftablet {
+					font-size: em(16px);
+				}
+				@include ifmobile {
+					font-size: em(14px);
+				}
+			}
+		}
+
+		&_Subtitle {
+			font-weight: 400;
+			font-size: em(19px);
+			line-height: 140%;
+			color: rgba(255, 255, 255, 0.7);
+			@include iflaptop {
+				font-size: em(12px);
+			}
+			@include iftablet {
+				font-size: em(12px);
+			}
+			@include ifmobile {
+				font-size: em(12px);
+			}
+		}
+	}
+}
