@@ -1,0 +1,402 @@
+.About {
+	display: grid;
+	grid-template-columns: em(540px) 1fr;
+	border-left: 1px solid rgba(255, 255, 255, 0.05);
+	border-right: 1px solid rgba(255, 255, 255, 0.05);
+
+	@include iflaptop {
+		grid-template-columns: em(300px) 1fr;
+	}
+	@include iftablet {
+		grid-template-columns: em(193px) 1fr;
+	}
+	@include ifmobile {
+		grid-template-columns: 1fr;
+		border-left: none;
+		border-right: none;
+	}
+
+	&_Logo {
+		position: relative;
+		height: 100%;
+		padding: em(161px) em(10px) em(273px) em(24px);
+		min-height: 100%;
+		border-right: 1px solid rgba(255, 255, 255, 0.05);
+		@include iflaptop {
+			padding: em(100px) em(10px) em(100px) em(36px);
+		}
+		@include iftablet {
+			padding: em(60px) em(10px) em(100px) em(20px);
+		}
+		@include ifmobile {
+			display: none;
+		}
+
+		.Logo {
+			width: em(127px);
+			height: em(139px);
+			opacity: 0.05;
+			position: -webkit-sticky !important;
+			position: sticky !important;
+			top: em(100px);
+		}
+	}
+
+	&_Body {
+		&_About {
+			position: relative;
+			padding: em(161px) em(21px) em(100px) em(24px);
+
+			@include iflaptop {
+				padding: em(100px) em(14px) em(83px) em(10px);
+			}
+			@include iftablet {
+				padding: em(60px) em(10px) em(75px) em(10px);
+			}
+			@include ifmobile {
+				padding: em(40px) 0 em(50px) 0;
+			}
+
+			.Logo {
+				display: none;
+				position: absolute;
+				top: em(40px);
+				right: em(10px);
+				width: em(78px);
+				height: em(84px);
+				opacity: 0.05;
+				@include ifmobile {
+					display: block;
+				}
+			}
+			.Title {
+				max-width: em(830px);
+				margin-bottom: em(60px);
+
+				@include iflaptop {
+					max-width: em(500px);
+					margin-bottom: em(30px);
+				}
+
+				@include iftablet {
+					max-width: em(353px);
+					margin-bottom: em(30px);
+				}
+
+				@include ifmobile {
+					max-width: em(244px);
+					margin-bottom: em(20px);
+				}
+			}
+
+			.Row {
+				margin-bottom: em(20px);
+				@include ifdesktop {
+					margin-bottom: em(30px);
+				}
+				p {
+					font-size: em(22px);
+					@include iflaptop {
+						font-size: em(20px);
+					}
+					@include iftablet {
+						font-size: em(20px);
+					}
+					@include ifmobile {
+						font-size: em(18px);
+					}
+				}
+			}
+
+			.Columns {
+				display: grid;
+				@include iflaptop {
+					gap: 0 em(30px);
+				}
+				@include iftablet {
+					gap: 0 em(20px);
+				}
+				@include ifmobile {
+					grid-template-columns: 1fr;
+					gap: em(16px) 0;
+				}
+			}
+		}
+
+		&_Members {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			flex-wrap: wrap;
+			gap: em(77px) em(10px);
+			padding: em(100px) em(21px) em(273px) em(24px);
+			@include ifdesktop {
+				border-top: 1px solid rgba(255, 255, 255, 0.05);
+			}
+
+			@media only screen and (min-width: 769px) and (max-width: 1475px) {
+				gap: em(77px) em(20px);
+				padding: em(100px) em(21px) em(100px) em(24px);
+			}
+
+			@include iflaptop {
+				padding: 0 em(10px) em(100px) em(10px);
+				gap: em(30px) em(20px);
+			}
+
+			@include iftablet {
+				padding: 0 em(10px) em(100px) em(10px);
+				gap: em(30px) em(20px);
+			}
+			@include ifmobile {
+				padding: 0 0 em(43px) 0;
+				gap: em(30px) em(10px);
+			}
+
+			.Col {
+				width: 100%;
+				&:nth-child(1) {
+					max-width: em(292px);
+					@media only screen and (min-width: 769px) and (max-width: 1475px) {
+						max-width: em(215px);
+					}
+					@include iftablet {
+						max-width: em(192px);
+					}
+					@include ifmobile {
+						width: 100%;
+					}
+				}
+
+				&:nth-child(2) {
+					max-width: em(230px);
+					@media only screen and (min-width: 769px) and (max-width: 1475px) {
+						max-width: em(163px);
+						.Company {
+							.Company_Icon {
+								width: em(65px);
+								height: em(55px);
+							}
+						}
+					}
+					@include iftablet {
+						max-width: em(130px);
+						.Company {
+							.Company_Icon {
+								width: em(54px);
+								height: em(45px);
+							}
+						}
+					}
+					@include ifmobile {
+						max-width: em(130px);
+						.Company {
+							.Company_Icon {
+								width: em(54px);
+								height: em(45px);
+							}
+						}
+					}
+				}
+
+				&:nth-child(3) {
+					max-width: em(190px);
+					@media only screen and (min-width: 769px) and (max-width: 1475px) {
+						max-width: em(159px);
+						.Company {
+							.Company_Icon {
+								width: em(39px);
+								height: em(55px);
+							}
+						}
+					}
+					@include iftablet {
+						max-width: em(140px);
+						.Company {
+							.Company_Icon {
+								width: em(32px);
+								height: em(45px);
+							}
+						}
+					}
+					@include ifmobile {
+						max-width: em(140px);
+						.Company {
+							.Company_Icon {
+								width: em(32px);
+								height: em(45px);
+							}
+						}
+					}
+				}
+
+				&:nth-child(4) {
+					max-width: em(292px);
+					@media only screen and (min-width: 769px) and (max-width: 1475px) {
+						max-width: em(215px);
+						.Company {
+							.Company_Icon {
+								width: em(194px);
+								height: em(55px);
+							}
+						}
+					}
+					@include iftablet {
+						max-width: em(192px);
+						.Company {
+							.Company_Icon {
+								width: em(160px);
+								height: em(45px);
+							}
+						}
+					}
+					@include ifmobile {
+						order: 1;
+						max-width: em(200px);
+						margin: 0 auto;
+						.Company {
+							.Company_Icon {
+								width: em(160px);
+								height: em(45px);
+							}
+						}
+					}
+				}
+
+				&:nth-child(5) {
+					max-width: em(230px);
+					@media only screen and (min-width: 769px) and (max-width: 1475px) {
+						max-width: em(163px);
+						.Company {
+							.Company_Icon {
+								width: em(100px);
+								height: em(55px);
+							}
+						}
+					}
+					@include iftablet {
+						max-width: em(130px);
+						.Company {
+							.Company_Icon {
+								width: em(82px);
+								height: em(45px);
+							}
+						}
+					}
+					@include ifmobile {
+						max-width: em(130px);
+						.Company {
+							.Company_Icon {
+								width: em(82px);
+								height: em(45px);
+							}
+						}
+					}
+				}
+
+				&:nth-child(6) {
+					max-width: em(190px);
+					@media only screen and (min-width: 769px) and (max-width: 1475px) {
+						max-width: em(159px);
+						.Company {
+							.Company_Icon {
+								width: em(104px);
+								height: em(55px);
+							}
+						}
+					}
+					@include iftablet {
+						max-width: em(146px);
+						.Company {
+							.Company_Icon {
+								width: em(85px);
+								height: em(45px);
+							}
+						}
+					}
+					@include ifmobile {
+						max-width: em(146px);
+						.Company {
+							.Company_Icon {
+								width: em(85px);
+								height: em(45px);
+							}
+						}
+					}
+				}
+			}
+
+			.Title {
+				span {
+					margin-bottom: em(4px);
+					h3 {
+						font-weight: 400;
+						font-size: em(22px);
+						line-height: 140%;
+						color: $white;
+						opacity: 0.8;
+						@media only screen and (min-width: 769px) and (max-width: 1475px) {
+							font-size: em(18px);
+						}
+
+						@include iftablet {
+							font-size: em(16px);
+						}
+						@include ifmobile {
+							font-size: em(16px);
+						}
+					}
+				}
+				h1 {
+					font-size: em(40px);
+					line-height: 130%;
+					font-weight: 400;
+					text-transform: uppercase;
+					color: $white;
+					@media only screen and (min-width: 769px) and (max-width: 1475px) {
+						font-size: em(24px);
+					}
+					@include iftablet {
+						font-size: em(20px);
+					}
+					@include ifmobile {
+						font-size: em(20px);
+					}
+				}
+			}
+
+			.Company {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				&_Icon {
+					margin-bottom: em(7px);
+					svg {
+						width: inherit;
+						height: inherit;
+					}
+				}
+
+				&_Label {
+					width: 100%;
+					text-align: center;
+					span {
+						font-weight: 400;
+						font-size: em(14px);
+						line-height: 143%;
+						color: rgba(255, 255, 255, 0.6);
+						@media only screen and (min-width: 769px) and (max-width: 1475px) {
+							font-size: em(12px);
+						}
+						@include iftablet {
+							font-size: em(11px);
+						}
+						@include ifmobile {
+							font-size: em(11px);
+						}
+					}
+				}
+			}
+		}
+	}
+}

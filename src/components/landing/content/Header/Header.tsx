@@ -1,4 +1,4 @@
-import { BaseContainer } from '@base/index';
+import { BaseContainer, BaseTitle } from '@base/index';
 import React from 'react';
 import s from './Header.module.scss';
 
@@ -23,7 +23,7 @@ const Header: React.FC<Props> = ({ image, title }) => {
 				<BaseContainer className={s.Container}>
 					<div className={s.Header}>
 						<div className={s.Header_Title}>
-							<h1>{title || 'Что-то пошло не так!'}</h1>
+							<BaseTitle type='h1'>{title || 'Что-то пошло не так!'}</BaseTitle>
 						</div>
 					</div>
 				</BaseContainer>

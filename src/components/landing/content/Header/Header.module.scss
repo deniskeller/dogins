@@ -59,21 +59,5 @@
 		@include ifmobile {
 			margin-bottom: em(16px);
 		}
-		h1 {
-			font-weight: 400;
-			font-size: em(60px);
-			line-height: 130%;
-			color: $white;
-
-			@include iflaptop {
-				font-size: em(40px);
-			}
-			@include iftablet {
-				font-size: em(28px);
-			}
-			@include ifmobile {
-				font-size: em(20px);
-			}
-		}
 	}
 }

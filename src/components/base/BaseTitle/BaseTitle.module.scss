@@ -1,0 +1,29 @@
+.Title {
+	font-style: normal;
+
+	&_h1 {
+		font-weight: 400;
+		font-size: em(60px);
+		line-height: 130%;
+		color: $white;
+		text-transform: uppercase;
+
+		@include iflaptop {
+			font-size: em(40px);
+		}
+		@include iftablet {
+			font-size: em(28px);
+		}
+		@include ifmobile {
+			font-size: em(20px);
+		}
+	}
+
+	&_h2 {
+		font-size: em(24px);
+		line-height: 133%;
+		@include ifmobile {
+			font-size: em(18px);
+		}
+	}
+}

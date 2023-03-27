@@ -1,0 +1,18 @@
+.Text {
+	font-size: em(18px);
+	font-style: normal;
+	font-weight: 400;
+	line-height: 140%;
+
+	@include iflaptop {
+		font-size: em(16px);
+	}
+
+	@include iftablet {
+		font-size: em(14px);
+	}
+
+	@include ifmobile {
+		font-size: em(14px);
+	}
+}
