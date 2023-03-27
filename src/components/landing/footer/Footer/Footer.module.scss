@@ -5,9 +5,11 @@
 	padding: 0 em(50px);
 	@include iflaptop {
 		padding: 0 em(24px);
+		border-top: 1px solid rgba(255, 255, 255, 0.2);
 	}
 	@include iftablet {
 		padding: 0 em(20px);
+		border-top: 1px solid rgba(255, 255, 255, 0.2);
 	}
 
 	@include ifmobile {
@@ -23,6 +25,13 @@
 	max-width: em(1820px);
 	margin: 0 auto;
 	border-top: 1px solid rgba(255, 255, 255, 0.2);
+
+	@include iflaptop {
+		border-top: none;
+	}
+	@include iftablet {
+		border-top: none;
+	}
 }
 
 .Footer {
