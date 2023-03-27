@@ -3,3 +3,14 @@
 .Wrapper {
 	background: $body;
 }
+
+.marquee {
+	@include ifdesktop {
+		column-gap: em(75px) !important;
+	}
+	column-gap: em(45px) !important;
+	svg {
+		width: inherit;
+		height: inherit;
+	}
+}

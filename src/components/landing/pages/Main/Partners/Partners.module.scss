@@ -1,0 +1,214 @@
+.Partners {
+	display: grid;
+	grid-template-columns: em(370px) 1fr;
+	gap: 0 em(20px);
+	padding: em(170px) 0;
+
+	@include iflaptop {
+		grid-template-columns: em(270px) 1fr;
+		gap: 0 em(120px);
+		padding: em(100px) 0 em(127px);
+	}
+	@include iftablet {
+		grid-template-columns: em(244px) 1fr;
+		gap: 0 em(31px);
+		padding: em(93px) 0 em(70px);
+	}
+	@include ifmobile {
+		grid-template-columns: 1fr;
+		gap: em(16px) 0;
+		padding: em(40px) 0 em(90px);
+	}
+
+	&_Header {
+		display: flex;
+		flex-direction: column;
+		@include ifmobile {
+			max-width: em(244px);
+		}
+		&_Subtitle {
+			margin-bottom: em(4px);
+			span {
+				font-weight: 400;
+				font-size: em(22px);
+				line-height: 140%;
+				color: $white;
+				opacity: 0.8;
+				@include iflaptop {
+					font-size: em(18px);
+				}
+				@include iftablet {
+					font-size: em(16px);
+				}
+				@include ifmobile {
+					font-size: em(12px);
+				}
+			}
+		}
+		&_Title {
+			font-weight: 400;
+			font-size: em(40px);
+			line-height: 130%;
+			text-transform: uppercase;
+			color: $white;
+			@include iflaptop {
+				font-size: em(30px);
+			}
+			@include iftablet {
+				font-size: em(24px);
+			}
+			@include ifmobile {
+				font-size: em(20px);
+			}
+		}
+	}
+
+	&_Body {
+		overflow: hidden;
+		position: relative;
+		display: flex;
+		align-items: end;
+		@include iflaptop {
+			align-items: center;
+		}
+		@include iftablet {
+			align-items: center;
+		}
+		@include ifmobile {
+			align-items: center;
+		}
+
+		.Gradient1,
+		.Gradient2 {
+			position: absolute;
+			z-index: 1000;
+			width: em(241px);
+			height: em(145px);
+			background: linear-gradient(
+				186.09deg,
+				#222222 4.82%,
+				rgba(34, 34, 34, 0) 68.92%
+			);
+			@include iflaptop {
+			}
+			@include iftablet {
+			}
+			@include ifmobile {
+			}
+		}
+
+		.Gradient1 {
+			right: em(-55px);
+			transform: rotate(90deg);
+			@include iflaptop {
+			}
+			@include iftablet {
+			}
+			@include ifmobile {
+			}
+		}
+		.Gradient2 {
+			left: em(-55px);
+			transform: rotate(-90deg);
+			@include iflaptop {
+			}
+			@include iftablet {
+			}
+			@include ifmobile {
+			}
+		}
+
+		.Marquee {
+			overflow: hidden;
+		}
+
+		.nasdaq {
+			@include ifdesktop {
+				width: em(240px);
+				height: em(69px);
+			}
+			width: em(143px);
+			height: em(41px);
+		}
+		.fca {
+			@include ifdesktop {
+				width: em(226px);
+				height: em(74px);
+			}
+			width: em(135px);
+			height: em(44px);
+		}
+
+		.irs {
+			@include ifdesktop {
+				width: em(190px);
+				height: em(67px);
+			}
+			width: em(113px);
+			height: em(40px);
+		}
+
+		.usd {
+			@include ifdesktop {
+				width: em(352px);
+				height: em(87px);
+			}
+			width: em(210px);
+			height: em(52px);
+		}
+
+		.finantsinsoektsioon {
+			@include ifdesktop {
+				width: em(390px);
+				height: em(87px);
+			}
+			width: em(233.29px);
+			height: em(52.08px);
+		}
+
+		.hkma {
+			@include ifdesktop {
+				width: em(461px);
+				height: em(87px);
+			}
+			width: em(276.09px);
+			height: em(52px);
+		}
+
+		.maos {
+			@include ifdesktop {
+				width: em(249px);
+				height: em(82px);
+			}
+			width: em(149px);
+			height: em(49px);
+		}
+
+		.boi {
+			@include ifdesktop {
+				width: em(106px);
+				height: em(85px);
+			}
+			width: em(64px);
+			height: em(50px);
+		}
+
+		.bafin {
+			@include ifdesktop {
+				width: em(296px);
+				height: em(72px);
+			}
+			width: em(177px);
+			height: em(43px);
+		}
+
+		.canada {
+			@include ifdesktop {
+				width: em(212px);
+				height: em(77px);
+			}
+			width: em(126px);
+			height: em(46px);
+		}
+	}
+}

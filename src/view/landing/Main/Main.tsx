@@ -1,5 +1,5 @@
 import { Header } from '@content/landing/index';
-import { About, Advantages } from 'components/landing/pages/Main';
+import { About, Advantages, Partners } from 'components/landing/pages/Main';
 
 const Main = () => {
 	return (
@@ -9,9 +9,9 @@ const Main = () => {
 				title='WELCOME TO DOQINS & PARTNERS FAMILY OFFICE THE FINANCIAL EXPERTS
 								SINCE 2005'
 			/>
-
 			<About />
 			<Advantages />
+			<Partners />
 		</>
 	);
 };
