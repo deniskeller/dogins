@@ -5,6 +5,7 @@ export enum OthersIcons {
 	FACEBOOK = 'FACEBOOK',
 	LINKEDIN = 'LINKEDIN',
 	TWITTER = 'TWITTER',
+	CHEVERON = 'CHEVERON',
 }
 
 export const othersIcons = {
@@ -299,6 +300,18 @@ export const othersIcons = {
 					<rect width='22.6813' height='24' fill='white' />
 				</clipPath>
 			</defs>
+		</>
+	),
+
+	[OthersIcons.CHEVERON]: (
+		<>
+			<path
+				d='M18.75 23.75L10 15L18.75 6.25'
+				stroke='white'
+				strokeWidth='1.5'
+				strokeLinecap='round'
+				strokeLinejoin='round'
+			/>
 		</>
 	),
 };
