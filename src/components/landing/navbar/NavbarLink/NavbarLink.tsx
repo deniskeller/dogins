@@ -23,7 +23,7 @@ const NavbarLink: React.FC<Props> = ({ href, title, className, index }) => {
 			} ${styles.Link} ${className}`}
 		>
 			<Link href={href}>
-				<a href=''>{title}</a>
+				<a>{title}</a>
 			</Link>
 		</li>
 	);

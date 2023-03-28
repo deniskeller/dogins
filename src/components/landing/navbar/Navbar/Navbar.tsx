@@ -110,10 +110,8 @@ const Navbar: React.FC<Props> = ({ fixed }) => {
 					})}
 				</ul>
 
-				<Link href='/sign_up'>
-					<a href='' className={`${s.Navbar_SignUp} ${s.Desktop}`}>
-						Sign Up
-					</a>
+				<Link href='/sign-up'>
+					<a className={`${s.Navbar_SignUp} ${s.Desktop}`}>Sign Up</a>
 				</Link>
 
 				<BaseButton
@@ -161,12 +159,12 @@ const Navbar: React.FC<Props> = ({ fixed }) => {
 						/>
 
 						<div className={s.Drawer_Navbar_Actions}>
-							<Link href='/log_in' className={s.Drawer_Navbar_Actions_SignUp}>
-								Log in
+							<Link href='/log_in'>
+								<a className={s.Drawer_Navbar_Actions_SignUp}>Log in</a>
 							</Link>
 
-							<Link href='/sign_up' className={s.Drawer_Navbar_Actions_SignUp}>
-								Sign Up
+							<Link href='/sign_up'>
+								<a className={s.Drawer_Navbar_Actions_SignUp}>Sign Up</a>
 							</Link>
 						</div>
 					</div>

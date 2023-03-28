@@ -95,7 +95,9 @@ const Footer = () => {
 												{link.list?.map((el, i) => {
 													return (
 														<li key={i} className={s.Link_List_Item}>
-															<Link href={el.href}>{el.name}</Link>
+															<Link href={el.href}>
+																<a>{el.name}</a>
+															</Link>
 														</li>
 													);
 												})}

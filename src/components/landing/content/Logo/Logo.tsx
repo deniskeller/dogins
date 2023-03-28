@@ -12,7 +12,9 @@ const Logo: React.FC<Props> = ({ className }) => {
 	return (
 		<div className={`${s.Logo} ${className}`}>
 			<Link href='/'>
-				<BaseIcon icon={ALL_ICONS.LOGO_TEXT} viewBox='0 0 207 34' />
+				<a>
+					<BaseIcon icon={ALL_ICONS.LOGO_TEXT} viewBox='0 0 207 34' />
+				</a>
 			</Link>
 		</div>
 	);
