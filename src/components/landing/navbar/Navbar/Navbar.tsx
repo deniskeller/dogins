@@ -17,7 +17,7 @@ interface Links {
 
 const links: Links[] = [
 	{
-		href: '/about_us',
+		href: '/about-us',
 		title: 'About Us',
 	},
 	{
@@ -37,15 +37,15 @@ const links: Links[] = [
 		title: 'Pricing',
 	},
 	{
-		href: 'careers',
+		href: '/careers',
 		title: 'Careers',
 	},
 	{
-		href: 'news',
+		href: '/news-and-insights',
 		title: 'News&Insights',
 	},
 	{
-		href: 'contacts',
+		href: '/contacts',
 		title: 'Contacts',
 	},
 ];

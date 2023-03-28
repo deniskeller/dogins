@@ -1,0 +1,354 @@
+.Wrapper {
+	padding-top: em(183px);
+	padding-bottom: em(100px);
+	@include iflaptop {
+		padding-top: em(126px);
+		padding-bottom: em(80px);
+	}
+	@include iftablet {
+		padding-top: em(144px);
+		padding-bottom: em(70px);
+	}
+	@include ifmobile {
+		padding-top: em(110px);
+		padding-bottom: em(50px);
+	}
+}
+
+.BaseContainer {
+	max-width: em(1920px);
+	.Border {
+		width: 100%;
+		height: 1px;
+		background: rgba(255, 255, 255, 0.2);
+		margin-bottom: em(80px);
+		@include iflaptop {
+			margin-bottom: em(40px);
+		}
+		@include iftablet {
+			margin-bottom: em(30px);
+		}
+		@include ifmobile {
+			margin-bottom: em(30px);
+		}
+	}
+}
+
+.Title {
+	margin-bottom: em(30px);
+	@include iflaptop {
+		margin-bottom: em(16px);
+	}
+	@include iftablet {
+		margin-bottom: em(16px);
+	}
+	@include ifmobile {
+		margin-bottom: em(12px);
+	}
+}
+
+.News {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: em(24px) em(24px);
+	margin-bottom: em(50px);
+
+	@include iflaptop {
+		grid-template-columns: 1fr 1fr;
+		gap: em(20px) em(20px);
+	}
+
+	@include iftablet {
+		grid-template-columns: 1fr 1fr;
+		gap: em(20px) em(20px);
+	}
+	@include ifmobile {
+		grid-template-columns: 1fr;
+		gap: em(16px) 0;
+		margin-bottom: em(44px);
+	}
+
+	.NewsItem {
+		display: flex;
+		flex-direction: column;
+		cursor: pointer;
+		&:hover {
+			box-shadow: 0px 3px 25px rgba(180, 150, 53, 0.2);
+			.NewsItem_Body {
+				border-color: $white;
+			}
+		}
+		&_Image {
+			width: 100%;
+			height: em(300px);
+			position: relative;
+			overflow: hidden;
+		}
+
+		&_Body {
+			padding: em(30px) em(20px);
+			border-left: 1px solid rgba(255, 255, 255, 0.2);
+			border-right: 1px solid rgba(255, 255, 255, 0.2);
+			border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+			box-sizing: border-box;
+		}
+
+		.NewsItemTitle {
+			font-size: em(16px);
+			font-style: normal;
+			font-weight: 400;
+			line-height: 100%;
+			color: yellow;
+			margin-bottom: em(10px);
+			text-transform: uppercase;
+			cursor: pointer;
+			-webkit-line-clamp: 1;
+			display: -webkit-box;
+			-webkit-box-orient: vertical;
+			overflow: hidden;
+			@include ifmobile {
+				font-size: em(12px);
+			}
+		}
+
+		.NewsItemDescription {
+			font-size: em(16px);
+			font-weight: 400;
+			line-height: 120%;
+			color: $white;
+			-webkit-line-clamp: 3;
+			display: -webkit-box;
+			-webkit-box-orient: vertical;
+			overflow: hidden;
+			margin-bottom: em(20px);
+			@include ifmobile {
+				font-size: em(12px);
+			}
+		}
+
+		.NewsItemInfo {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+
+			.NewsItemRead,
+			.NewsItemDate {
+				font-size: em(16px);
+				font-weight: 400;
+				line-height: 100%;
+				color: $grey;
+				@include iftablet {
+				}
+				@include ifmobile {
+					font-size: em(12px);
+				}
+			}
+
+			.NewsItemRead {
+				width: em(117px);
+				height: em(38px);
+				background: $black;
+				border-radius: em(7px);
+				@extend %center;
+			}
+		}
+	}
+}
+
+.Button {
+	margin: 0 auto;
+}
+
+//стили для страницы новости
+.SelectedItemImage {
+	width: 40%;
+	height: em(430px);
+	border-radius: em(10px);
+	overflow: hidden;
+	margin-right: em(40px);
+	margin-bottom: em(10px);
+	position: relative;
+	float: left;
+
+	@include iftablet {
+		max-width: em(622px);
+		height: em(330px);
+	}
+	@include ifmobile {
+		width: 100%;
+		height: em(183px);
+		margin-right: 0;
+		float: none;
+		margin-bottom: em(10px);
+	}
+
+	img {
+		width: 100%;
+		height: 100%;
+	}
+}
+
+.SelectedItemDescription {
+	margin-bottom: em(83px);
+	@include iftablet {
+		margin-bottom: em(45px);
+	}
+	@include ifmobile {
+		margin-bottom: em(40px);
+	}
+	.Paragraph {
+		p {
+			margin-bottom: em(30px);
+			@include iftablet {
+				margin-bottom: em(20px);
+			}
+			@include ifmobile {
+			}
+		}
+	}
+}
+
+.SelectedItemSlider {
+	background: $black;
+	min-height: em(200px);
+	@include iftablet {
+	}
+	@include ifmobile {
+	}
+
+	.Slider {
+		width: 100%;
+		max-width: em(1350px);
+		padding: em(80px) 0;
+		margin: 0 auto;
+
+		@include iftablet {
+			max-width: em(838px);
+			padding: em(50px) 0;
+		}
+		@include ifmobile {
+			max-width: em(300px);
+			padding: em(30px) 0;
+		}
+
+		.SliderTitle {
+			font-size: em(16px);
+			font-weight: 400;
+			line-height: 100%;
+			text-transform: uppercase;
+			color: green;
+			margin-bottom: em(44px);
+			-webkit-line-clamp: 1;
+			display: -webkit-box;
+			-webkit-box-orient: vertical;
+			overflow: hidden;
+
+			@include iftablet {
+				font-size: em(14px);
+				margin-bottom: em(22px);
+			}
+			@include ifmobile {
+				font-size: em(11px);
+				margin-bottom: em(20px);
+			}
+		}
+
+		.SliderContent {
+			position: relative;
+
+			.SliderNav {
+				position: absolute;
+				top: calc(50% - em(24px));
+				width: 100%;
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+
+				.Btn {
+					position: relative;
+					width: em(21px);
+					height: em(24px);
+					cursor: pointer;
+					z-index: 1000;
+
+					@include iftablet {
+					}
+					@include ifmobile {
+						width: em(11px);
+						height: em(14px);
+					}
+				}
+
+				.BtnPrev {
+					left: em(-40px);
+					transform: rotate(90deg);
+
+					@include iftablet {
+					}
+					@include ifmobile {
+						left: em(-10px);
+					}
+				}
+
+				.BtnNext {
+					right: em(-40px);
+					transform: rotate(-90deg);
+
+					@include iftablet {
+					}
+					@include ifmobile {
+						right: em(-10px);
+					}
+				}
+			}
+
+			.SlideItem {
+				width: em(355px);
+				height: 100%;
+
+				@include iftablet {
+					width: em(264px);
+				}
+				@include ifmobile {
+					width: em(144px);
+				}
+
+				.SlideItemImage {
+					width: 100%;
+					height: em(247px);
+					border-radius: em(10px);
+					overflow: hidden;
+					margin-bottom: em(20px);
+					position: relative;
+
+					@include iftablet {
+						height: em(170px);
+					}
+					@include ifmobile {
+						height: em(88px);
+						margin-bottom: em(10px);
+					}
+					img {
+						width: 100%;
+						height: 100%;
+					}
+				}
+
+				.SlideItemTitle {
+					font-size: em(16px);
+					font-weight: 400;
+					line-height: 100%;
+					color: yellow;
+					-webkit-line-clamp: 1;
+					display: -webkit-box;
+					-webkit-box-orient: vertical;
+					overflow: hidden;
+					@include ifmobile {
+						font-size: em(12px);
+					}
+				}
+			}
+		}
+	}
+}

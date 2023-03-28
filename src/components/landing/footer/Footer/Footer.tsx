@@ -27,7 +27,7 @@ const Links: Links[] = [
 		title: 'Company',
 		list: [
 			{ name: 'About', href: '/about' },
-			{ name: 'News&Insights', href: '/new' },
+			{ name: 'News&Insights', href: '/news-and-insights' },
 			{ name: 'Careers', href: '/careers' },
 			{ name: 'Eco', href: '/eco' },
 		],
@@ -35,7 +35,7 @@ const Links: Links[] = [
 	{
 		title: 'Resources',
 		list: [
-			{ name: 'Contacts', href: '/Contacts' },
+			{ name: 'Contacts', href: '/contacts' },
 			{ name: 'Personal Data Protection', href: '/personal-data-protection' },
 			{ name: 'Services Agreement', href: '/services-agreement' },
 			{ name: 'Intellectual Property', href: '/intellectual-property' },
