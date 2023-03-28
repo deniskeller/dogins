@@ -2,56 +2,56 @@ export const mock_news = [
 	{
 		id: 1,
 		image: '/images/image/main-header-bg.jpeg',
-		title: 'HEADER HEADER HEADER 1',
-		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam	vitae laoreet odio. Phasellus suscipit tincidunt enim, et volutpat	risus commodo et. Ut cur Lorem ipsum dolor sit amet consectetur	adipisicing elit. Doloribus sapiente quia unde. Nam hic, sed',
-		read: '1',
-		date: 'DD/MM/YYYY',
+		title: 'Lorem ipsum',
+		description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+		read: 'Dmitriy Bunin',
+		date: '09.01.2022',
 	},
 	{
 		id: 2,
 		image: '/images/image/main-header-bg.jpeg',
-		title: 'HEADER HEADER HEADER 2',
+		title: 'Start a blog to reach your creative peak',
 		description:
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam	vitae laoreet odio. Phasellus suscipit tincidunt enim, et volutpat	risus commodo et. Ut cur Lorem ipsum dolor sit amet consectetur	adipisicing elit. Doloribus sapiente quia unde. Nam hic, sed',
-		read: '1',
-		date: 'DD/MM/YYYY',
+		read: 'Dmitriy Bunin',
+		date: '09.01.2022',
 	},
 
 	{
 		id: 3,
 		image: '/images/image/main-header-bg.jpeg',
-		title: 'HEADER HEADER HEADER 3',
+		title: 'Start a blog to reach your creative peak',
 		description:
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam	vitae laoreet odio. Phasellus suscipit tincidunt enim, et volutpat	risus commodo et. Ut cur Lorem ipsum dolor sit amet consectetur	adipisicing elit. Doloribus sapiente quia unde. Nam hic, sed',
-		read: '1',
-		date: 'DD/MM/YYYY',
+		read: 'Dmitriy Bunin',
+		date: '09.01.2022',
 	},
 	{
 		id: 4,
 		image: '/images/image/main-header-bg.jpeg',
-		title: 'HEADER HEADER HEADER 4',
+		title:
+			'Start a blog to reach your creative peak Start a blog to reach your creative peak ',
 		description:
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam	vitae laoreet odio. Phasellus suscipit tincidunt enim, et volutpat	risus commodo et. Ut cur Lorem ipsum dolor sit amet consectetur	adipisicing elit. Doloribus sapiente quia unde. Nam hic, sed',
-		read: '1',
-		date: 'DD/MM/YYYY',
+		read: 'Dmitriy Bunin',
+		date: '09.01.2022',
 	},
 	{
 		id: 5,
 		image: '/images/image/main-header-bg.jpeg',
-		title: 'HEADER HEADER HEADER 5',
+		title: 'Start a blog to reach your creative peak',
 		description:
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam	vitae laoreet odio. Phasellus suscipit tincidunt enim, et volutpat	risus commodo et. Ut cur Lorem ipsum dolor sit amet consectetur	adipisicing elit. Doloribus sapiente quia unde. Nam hic, sed',
-		read: '1',
-		date: 'DD/MM/YYYY',
+		read: 'Dmitriy Bunin',
+		date: '09.01.2022',
 	},
 	{
 		id: 6,
 		image: '/images/image/main-header-bg.jpeg',
-		title: 'HEADER HEADER HEADER 6',
+		title: 'Start a blog to reach your creative peak',
 		description:
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam	vitae laoreet odio. Phasellus suscipit tincidunt enim, et volutpat	risus commodo et. Ut cur Lorem ipsum dolor sit amet consectetur	adipisicing elit. Doloribus sapiente quia unde. Nam hic, sed',
-		read: '1',
-		date: 'DD/MM/YYYY',
+		read: 'Dmitriy Bunin',
+		date: '09.01.2022',
 	},
 ];

@@ -34,21 +34,23 @@ const News = () => {
 										src={item.image || '/images/image/main-header-bg.jpeg'}
 										layout='fill'
 										alt={'News & Insights'}
+										priority
 									/>
 								</div>
 
 								<div className={s.NewsItem_Body}>
-									<div className={s.NewsItem_Title}>{item.title}</div>
+									<div className={s.NewsItem_Title}>
+										<span>{item.title}</span>
+									</div>
 
 									<div className={s.NewsItem_Description}>
-										{item.description}
+										<p>{item.description}</p>
 									</div>
 
 									<div className={s.NewsItem_Info}>
-										<div className={s.NewsItem_Info_Read}>
-											{item.read} min read
-										</div>
 										<div className={s.NewsItem_Info_Date}>{item.date}</div>
+
+										<div className={s.NewsItem_Info_Author}>{item.read}</div>
 									</div>
 								</div>
 							</div>
