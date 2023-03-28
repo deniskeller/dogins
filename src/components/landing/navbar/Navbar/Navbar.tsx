@@ -74,7 +74,7 @@ const Navbar: React.FC<Props> = ({ fixed }) => {
 		if (visible) {
 			document.body.style.overflow = 'hidden';
 			document.body.style.height = '100%';
-			document.body.style.position = 'fixed';
+			// document.body.style.position = 'fixed';
 
 			//добавляем ширину скрола
 			document.body.style.paddingRight = scrollbarWidth + 'px';
@@ -84,7 +84,7 @@ const Navbar: React.FC<Props> = ({ fixed }) => {
 		return () => {
 			document.body.style.overflow = '';
 			document.body.style.height = '';
-			document.body.style.position = 'relative';
+			// document.body.style.position = 'relative';
 			//убираем ширину скрола
 			document.body.style.paddingRight = '0px';
 			document.removeEventListener('keydown', onKeyDown);
@@ -110,8 +110,10 @@ const Navbar: React.FC<Props> = ({ fixed }) => {
 					})}
 				</ul>
 
-				<Link href='/sign_up' className={`${s.Navbar_SignUp} ${s.Desktop}`}>
-					Sign Up
+				<Link href='/sign_up'>
+					<a href='' className={`${s.Navbar_SignUp} ${s.Desktop}`}>
+						Sign Up
+					</a>
 				</Link>
 
 				<BaseButton
