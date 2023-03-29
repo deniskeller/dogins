@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { useRouter } from 'next/router';
 import s from './News.module.scss';
 
-const News = () => {
+const News: React.FC = () => {
 	const router = useRouter();
 	const goToNews = (id: number) => {
 		router.push('/news-and-insights/' + id);

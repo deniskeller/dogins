@@ -1,9 +1,9 @@
 import { BaseButton, BaseContainer } from '@base/index';
 import { useRouter } from 'next/router';
 import React from 'react';
-import s from './NotFound.module.scss';
+import s from './ComingSoon.module.scss';
 
-const NotFound: React.FC = () => {
+const ComingSoon: React.FC = () => {
 	const router = useRouter();
 
 	return (
@@ -36,4 +36,4 @@ const NotFound: React.FC = () => {
 	);
 };
 
-export default NotFound;
+export default ComingSoon;

@@ -1,7 +1,7 @@
 import { Header } from '@content/landing/index';
 import { About, Advantages, Partners } from 'components/landing/pages/Main';
 
-const Main = () => {
+const Main: React.FC = () => {
 	return (
 		<>
 			<Header

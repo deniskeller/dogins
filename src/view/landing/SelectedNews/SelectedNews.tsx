@@ -4,7 +4,7 @@ import { Header } from '@content/landing/index';
 import { useRouter } from 'next/router';
 import s from './SelectedNews.module.scss';
 
-const SelectedNews = () => {
+const SelectedNews: React.FC = () => {
 	const router = useRouter();
 	const { id } = router.query;
 
