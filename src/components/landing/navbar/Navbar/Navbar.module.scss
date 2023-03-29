@@ -133,7 +133,7 @@
 	}
 
 	.Desktop {
-		@media only screen and (max-width: 1720px) {
+		@media only screen and (max-width: 1800px) {
 			display: none;
 		}
 	}
@@ -246,7 +246,7 @@
 			}
 			@include ifmobile {
 				width: 100vw;
-				padding: em(80px) em(50px) em(79px);
+				padding: em(80px) em(50px) em(30px);
 				text-align: center;
 			}
 			&_Visible {
@@ -298,7 +298,7 @@
 	}
 
 	.Mobile {
-		@media only screen and (min-width: 1720px) {
+		@media only screen and (min-width: 1800px) {
 			display: none;
 		}
 	}

@@ -41,6 +41,10 @@ const links: Links[] = [
 		title: 'Careers',
 	},
 	{
+		href: '/eco',
+		title: 'Eco',
+	},
+	{
 		href: '/news-and-insights',
 		title: 'News&Insights',
 	},
