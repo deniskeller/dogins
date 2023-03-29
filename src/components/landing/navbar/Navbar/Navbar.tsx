@@ -21,23 +21,23 @@ const links: Links[] = [
 		title: 'About Us',
 	},
 	{
-		href: '/compliance',
+		href: '/coming-soon',
 		title: 'Compliance',
 	},
 	{
-		href: '/licensing',
+		href: '/coming-soon',
 		title: 'Licensing',
 	},
 	{
-		href: '/investment',
+		href: '/coming-soon',
 		title: 'Investment',
 	},
 	{
-		href: '/pricing',
+		href: '/coming-soon',
 		title: 'Pricing',
 	},
 	{
-		href: '/careers',
+		href: '/coming-soon',
 		title: 'Careers',
 	},
 	{
@@ -45,7 +45,7 @@ const links: Links[] = [
 		title: 'News&Insights',
 	},
 	{
-		href: '/contacts',
+		href: '/coming-soon',
 		title: 'Contacts',
 	},
 ];

@@ -17,12 +17,12 @@ const ComingSoon: React.FC = () => {
 						<div className={s.Borders_Item}></div>
 					</div>
 
-					<div className={s.Subtitle}>
-						<p>We couldn't find the page you were looking for</p>
+					<div className={s.Title}>
+						<h1>Coming soon</h1>
 					</div>
 
-					<div className={s.Title}>
-						<h1>404</h1>
+					<div className={s.Subtitle}>
+						<p>Page you're looking for will be here soon</p>
 					</div>
 
 					<BaseButton

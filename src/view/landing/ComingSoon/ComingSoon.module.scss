@@ -38,37 +38,48 @@
 	}
 
 	.Title {
-		margin-bottom: em(20px);
+		margin-bottom: em(30px);
+		@include iflaptop {
+			margin-bottom: em(16px);
+		}
+		@include iftablet {
+			margin-bottom: em(10px);
+		}
+		@include ifmobile {
+			margin-bottom: em(12px);
+		}
 		h1 {
 			font-weight: 700;
-			font-size: em(170px);
+			font-size: em(100px);
 			line-height: 130%;
 			-webkit-text-stroke: 1px $orange;
 			-webkit-text-fill-color: transparent;
 			font-family: Arial, sans-serif;
 			@include iflaptop {
-				font-size: em(130px);
+				font-size: em(70px);
 			}
 			@include iftablet {
-				font-size: em(100px);
+				font-size: em(50px);
 			}
 			@include ifmobile {
-				font-size: em(70px);
+				font-size: em(40px);
 			}
 		}
 	}
 
 	.Subtitle {
-		max-width: em(550px);
-		margin-bottom: em(5px);
+		margin-bottom: em(50px);
 		text-align: center;
 		@include iflaptop {
+			margin-bottom: em(44px);
 		}
 		@include iftablet {
-			max-width: em(450px);
+			max-width: em(290px);
+			margin-bottom: em(44px);
 		}
 		@include ifmobile {
-			max-width: em(300px);
+			max-width: em(206px);
+			margin-bottom: em(44px);
 		}
 		p {
 			font-weight: 400;
@@ -85,10 +96,6 @@
 				font-size: em(18px);
 			}
 		}
-	}
-
-	.Button {
-		width: em(209px);
 	}
 }
 
