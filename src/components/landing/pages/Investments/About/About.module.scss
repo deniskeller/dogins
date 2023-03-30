@@ -1,0 +1,127 @@
+.About {
+	padding: em(150px) 0 em(126px);
+
+	@include iflaptop {
+		padding: em(70px) 0 em(70px);
+	}
+	@include iftablet {
+		padding: em(60px) 0 em(40px);
+	}
+	@include ifmobile {
+		padding: em(40px) 0 em(30px);
+	}
+
+	&_Header {
+		max-width: em(1260px);
+		margin-bottom: em(40px);
+		margin-left: em(40px);
+		@include iflaptop {
+			margin-bottom: em(30px);
+			margin-left: 0;
+		}
+		@include iftablet {
+			margin-bottom: em(30px);
+			margin-left: 0;
+		}
+		@include ifmobile {
+			margin-bottom: em(20px);
+			margin-left: 0;
+		}
+
+		p {
+			color: $white;
+			font-weight: 400;
+			font-size: em(40px);
+			line-height: 140%;
+			@include iflaptop {
+				font-size: em(30px);
+			}
+			@include iftablet {
+				font-size: em(22px);
+			}
+			@include ifmobile {
+				font-size: em(18px);
+			}
+		}
+	}
+
+	&_Body {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		gap: 0 em(73px);
+		margin-left: 0;
+
+		@include ifdesktop {
+			margin-left: em(40px);
+		}
+
+		@include iflaptop {
+			grid-template-columns: 1fr 1fr 1fr;
+			gap: 0 em(30px);
+		}
+		@include iftablet {
+			grid-template-columns: 1fr 1fr 1fr;
+			gap: 0 em(20px);
+		}
+		@include ifmobile {
+			grid-template-columns: 1fr;
+			gap: em(20px) 0;
+		}
+
+		&_Columns {
+			.Logo {
+				width: em(208px);
+				height: em(87px);
+				margin-bottom: em(16px);
+				@include iflaptop {
+					width: em(136px);
+					height: em(57px);
+					margin-bottom: em(12px);
+				}
+				@include iftablet {
+					width: em(120px);
+					height: em(50px);
+					margin-bottom: em(8px);
+				}
+				@include ifmobile {
+					width: em(170px);
+					height: em(71px);
+					margin-bottom: em(12px);
+				}
+			}
+			.Copywriting {
+				font-weight: 400;
+				line-height: 140%;
+				color: $orange;
+				font-size: em(12px);
+				@include ifdesktop {
+					font-size: em(14px);
+				}
+			}
+
+			p {
+				font-style: normal;
+				font-weight: 400;
+				font-size: em(18px);
+				line-height: 140%;
+				color: rgba(255, 255, 255, 0.7);
+				@include iflaptop {
+					font-size: em(16px);
+				}
+				@include iftablet {
+					font-size: em(16px);
+				}
+				@include ifmobile {
+					font-size: em(14px);
+				}
+			}
+		}
+	}
+}
+
+@include iflaptop {
+}
+@include iftablet {
+}
+@include ifmobile {
+}

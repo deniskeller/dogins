@@ -5,7 +5,9 @@ const Investments: React.FC = () => {
 	return (
 		<>
 			<Header image='investments-header-bg.jpeg' title='Investments' />
-			<About />
+			<div className='Wrapper'>
+				<About />
+			</div>
 		</>
 	);
 };
