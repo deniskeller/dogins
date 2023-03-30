@@ -1,5 +1,5 @@
 import { Header } from '@content/landing/index';
-import { About } from 'components/landing/pages/Investments';
+import { About, CompanyCards } from 'components/landing/pages/Investments';
 
 const Investments: React.FC = () => {
 	return (
@@ -7,6 +7,7 @@ const Investments: React.FC = () => {
 			<Header image='investments-header-bg.jpeg' title='Investments' />
 			<div className='Wrapper'>
 				<About />
+				<CompanyCards />
 			</div>
 		</>
 	);

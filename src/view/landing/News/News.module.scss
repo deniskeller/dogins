@@ -130,7 +130,7 @@
 				margin-bottom: em(12px);
 			}
 			span {
-				font-weight: 500;
+				font-weight: 400;
 				font-size: em(26px);
 				line-height: 140%;
 				color: $white;
@@ -153,7 +153,7 @@
 		.NewsItem_Description {
 			margin-bottom: em(20px);
 			p {
-				font-weight: 400;
+				font-weight: 300;
 				font-size: em(18px);
 				line-height: 140%;
 				color: rgba(255, 255, 255, 0.8);
@@ -182,7 +182,7 @@
 
 			&_Author,
 			&_Date {
-				font-weight: 500;
+				font-weight: 400;
 				font-size: em(14px);
 				line-height: 140%;
 				color: rgba(255, 255, 255, 0.8);

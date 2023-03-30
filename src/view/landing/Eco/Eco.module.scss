@@ -65,7 +65,7 @@
 			}
 			h2 {
 				color: $white;
-				font-weight: 400;
+				font-weight: 300;
 				font-size: em(40px);
 				line-height: 140%;
 				@include iflaptop {
@@ -105,7 +105,7 @@
 				padding: 0 em(6px);
 			}
 			p {
-				font-weight: 400;
+				font-weight: 300;
 				font-size: em(18px);
 				line-height: 140%;
 				color: rgba(255, 255, 255, 0.7);

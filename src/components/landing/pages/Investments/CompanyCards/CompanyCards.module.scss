@@ -1,0 +1,254 @@
+.CompanyCards {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: em(40px) em(40px);
+	padding-bottom: em(210px);
+	@include iflaptop {
+		gap: em(12px) em(12px);
+		padding-bottom: em(100px);
+	}
+	@include iftablet {
+		grid-template-columns: 1fr;
+		gap: em(16px) 0;
+		max-width: em(512px);
+		margin-left: auto;
+		padding-bottom: em(80px);
+	}
+	@include ifmobile {
+		grid-template-columns: 1fr;
+		gap: em(16px) 0;
+		max-width: 100%;
+		margin-left: 0;
+		padding-bottom: em(50px);
+	}
+}
+
+.CompanyCard {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	gap: 0 em(80px);
+	padding: em(40px);
+	background: linear-gradient(
+			0.2deg,
+			rgba(180, 150, 53, 0.1) -36.63%,
+			rgba(180, 150, 53, 0) 34.03%
+		),
+		#2d2d2d;
+	box-shadow: 0px 4px 10px rgba(180, 150, 53, 0.04);
+
+	@media only screen and (max-width: 1550px) {
+		gap: 0 em(40px);
+		padding: em(20px);
+	}
+
+	@include ifmobile {
+		display: grid;
+		grid-template-columns: 1fr;
+		padding-bottom: em(30px);
+	}
+
+	&_Column {
+		display: flex;
+		flex-direction: column;
+
+		.Logo {
+			width: em(306px);
+			height: auto;
+			margin-bottom: em(30px);
+			svg {
+				width: inherit;
+				height: inherit;
+			}
+
+			@media only screen and (max-width: 1550px) {
+				width: em(162px);
+				margin-bottom: em(16px);
+			}
+
+			@include ifmobile {
+				width: em(248px);
+			}
+		}
+
+		.Description {
+			margin-bottom: em(13px);
+			@media only screen and (max-width: 1550px) {
+				margin-bottom: em(10px);
+			}
+
+			span {
+				color: $white;
+				font-weight: 300;
+				font-size: em(18px);
+				line-height: 140%;
+				@media only screen and (max-width: 1550px) {
+					font-size: em(14px);
+				}
+			}
+		}
+
+		.FoundedDate,
+		.FoundedOfCountry {
+			margin-bottom: em(8px);
+			@media only screen and (max-width: 1550px) {
+				margin-bottom: em(6px);
+			}
+			span {
+				font-weight: 300;
+				font-size: em(16px);
+				line-height: 140%;
+				color: rgba(255, 255, 255, 0.6);
+				@media only screen and (max-width: 1550px) {
+					font-size: em(12px);
+				}
+			}
+		}
+		.FoundedOfCountry {
+			margin-bottom: em(30px);
+			@media only screen and (max-width: 1550px) {
+				margin-bottom: em(9px);
+			}
+			@include ifmobile {
+				margin-bottom: em(20px);
+			}
+		}
+
+		.Tags {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			gap: em(10px) em(12px);
+			margin-bottom: em(50px);
+			@media only screen and (max-width: 1550px) {
+				gap: em(4px) em(4px);
+				margin-bottom: em(26px);
+			}
+
+			@include ifmobile {
+				margin-bottom: em(20px);
+			}
+
+			&_Item {
+				padding: em(5px) em(16px);
+				background: $body;
+				&:first-child {
+					background: rgba(180, 150, 53, 0.8);
+				}
+				@media only screen and (max-width: 1550px) {
+					padding: em(5px) em(10px);
+				}
+				span {
+					display: flex;
+					font-weight: 300;
+					font-size: em(12px);
+					line-height: 140%;
+					color: rgba(255, 255, 255, 0.6);
+					@include ifmobile {
+						font-size: em(11px);
+					}
+				}
+			}
+		}
+
+		.ViewDetails {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			cursor: pointer;
+			opacity: 0.7;
+			@media only screen and (max-width: 1550px) {
+				margin-top: auto;
+			}
+			&:hover {
+				opacity: 1;
+			}
+
+			&_Desktop {
+				@include ifmobile {
+					display: none;
+				}
+			}
+
+			&_Mobile {
+				display: none;
+				margin-top: em(44px);
+				@include ifmobile {
+					display: flex;
+				}
+			}
+			span {
+				font-weight: 300;
+				font-size: em(22px);
+				line-height: 140%;
+				color: $orange;
+				white-space: nowrap;
+				@media only screen and (max-width: 1550px) {
+					font-size: em(16px);
+				}
+			}
+
+			&_Icon {
+				width: em(42px);
+				height: em(22px);
+				margin-left: em(16px);
+				@media only screen and (max-width: 1550px) {
+					width: em(27px);
+					height: em(14px);
+					margin-left: em(10px);
+				}
+			}
+		}
+
+		.Parameter {
+			margin-bottom: em(20px);
+			@media only screen and (max-width: 1550px) {
+				margin-bottom: em(10px);
+			}
+			&:last-child {
+				margin-bottom: 0;
+			}
+
+			&_Label {
+				margin-bottom: em(10px);
+				@media only screen and (max-width: 1550px) {
+					margin-bottom: em(4px);
+				}
+				span {
+					font-weight: 300;
+					font-size: em(14px);
+					line-height: 140%;
+					color: rgba(255, 255, 255, 0.6);
+					white-space: nowrap;
+					@media only screen and (max-width: 1550px) {
+						font-size: em(12px);
+					}
+
+					@include iflaptop {
+						white-space: initial;
+					}
+				}
+			}
+			&_Value {
+				color: $white;
+				font-weight: 300;
+				font-size: em(24px);
+				line-height: 140%;
+				white-space: nowrap;
+				@media only screen and (max-width: 1550px) {
+					font-size: em(18px);
+				}
+			}
+		}
+	}
+}
+
+@include iflaptop {
+}
+@include iftablet {
+}
+@include ifmobile {
+}
+
+@media only screen and (max-width: 1550px) {
+}
