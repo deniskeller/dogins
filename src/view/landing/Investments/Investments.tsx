@@ -1,5 +1,9 @@
 import { Header } from '@content/landing/index';
-import { About, CompanyCards } from 'components/landing/pages/Investments';
+import {
+	About,
+	CompanyCards,
+	Feedback,
+} from 'components/landing/pages/Investments';
 
 const Investments: React.FC = () => {
 	return (
@@ -8,6 +12,7 @@ const Investments: React.FC = () => {
 			<div className='Wrapper'>
 				<About />
 				<CompanyCards />
+				<Feedback />
 			</div>
 		</>
 	);

@@ -1,0 +1,71 @@
+.Feedback {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	height: em(452px);
+	position: relative;
+	z-index: 100;
+	margin-bottom: -1px;
+	&_Image {
+		background-image: url('/images/image/feedback-form-bg.jpeg');
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+	&_Body {
+		.Form {
+			max-width: em(740px);
+			margin-left: em(67px);
+
+			&_Title {
+				margin-bottom: em(30px);
+				h3 {
+					font-weight: 300;
+					font-size: em(30px);
+					line-height: 140%;
+					color: $white;
+					a {
+						color: $orange;
+						text-decoration: underline;
+					}
+				}
+			}
+
+			&_Subtitle {
+				margin-bottom: em(50px);
+				p {
+					font-weight: 300;
+					font-size: em(18px);
+					line-height: 140%;
+					color: rgba(255, 255, 255, 0.7);
+					a {
+						color: $orange;
+					}
+				}
+			}
+
+			&_Button {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				cursor: pointer;
+				opacity: 0.7;
+				&:hover {
+					opacity: 1;
+				}
+
+				span {
+					font-weight: 300;
+					font-size: em(22px);
+					line-height: 140%;
+					color: $orange;
+					white-space: nowrap;
+				}
+				&_Icon {
+					width: em(42px);
+					height: em(22px);
+					margin-left: em(20px);
+				}
+			}
+		}
+	}
+}

@@ -1,6 +1,6 @@
 .Wrapper {
 	position: relative;
-	z-index: 100;
+	z-index: 99;
 	background: $body;
 	padding: 0 em(50px);
 	@include iflaptop {
