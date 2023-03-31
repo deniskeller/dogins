@@ -1,6 +1,4 @@
-import { ALL_ICONS } from '@constants/icons';
 import React from 'react';
-import { BaseIcon } from '..';
 import styles from './BaseInputPhone.module.scss';
 
 interface Props {
@@ -77,7 +75,7 @@ const BaseInputPhone: React.FC<Props> = ({
 		<div className={`${styles.BaseInput} ${className}`}>
 			{prefix ? (
 				<>
-					<div className={styles.Prefix}>
+					{/* <div className={styles.Prefix}>
 						{prefix == 'rub' ? (
 							<BaseIcon
 								viewBox='0 0 24 24'
@@ -117,7 +115,7 @@ const BaseInputPhone: React.FC<Props> = ({
 						) : (
 							''
 						)}
-					</div>
+					</div> */}
 				</>
 			) : null}
 
@@ -150,7 +148,7 @@ const BaseInputPhone: React.FC<Props> = ({
 
 			{optional ? <span className={styles.Optional}>Опционально</span> : null}
 
-			{typeIcon === 'eye' ? (
+			{/* {typeIcon === 'eye' ? (
 				<BaseIcon
 					fill='rgba(26, 26, 26, 0.7)'
 					viewBox='64 64 896 896'
@@ -158,9 +156,9 @@ const BaseInputPhone: React.FC<Props> = ({
 					className={`${styles.Icon} ${styles.IconPassword}`}
 					onClick={() => changeType('eye-off')}
 				/>
-			) : null}
+			) : null} */}
 
-			{icon === 'eye-off' && typeIcon === 'eye-off' ? (
+			{/* {icon === 'eye-off' && typeIcon === 'eye-off' ? (
 				<BaseIcon
 					viewBox='64 64 896 896'
 					fill='rgba(26, 26, 26, 0.7)'
@@ -168,7 +166,7 @@ const BaseInputPhone: React.FC<Props> = ({
 					className={`${styles.Icon} ${styles.IconPassword}`}
 					onClick={() => changeType('eye')}
 				/>
-			) : null}
+			) : null} */}
 
 			{error ? <div className={styles.ErrorText}>{error}</div> : ''}
 		</div>

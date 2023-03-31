@@ -68,13 +68,13 @@ const BaseSelect: React.FC<Props> = ({
 					{selectedOption}
 				</p>
 
-				<BaseIcon
+				{/* <BaseIcon
 					icon={ALL_ICONS.SELECT_ARROW}
 					viewBox='0 0 8 5'
 					className={`${styles.IconArrow} ${
 						isOpen ? styles.IconArrowActive : null
 					}`}
-				/>
+				/> */}
 			</div>
 
 			{label ? (

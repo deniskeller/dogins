@@ -31,7 +31,7 @@
 	font-size: em(16px);
 	font-weight: 400;
 	color: #1a1a1a;
-	font-family: $Avenir;
+	font-family: 'Montserrat', sans-serif;
 	width: 100%;
 	height: em(56px);
 	background: none;
@@ -112,7 +112,7 @@
 
 .ErrorText {
 	font-size: em(12px);
-	font-family: $Avenir;
+	font-family: 'Montserrat', sans-serif;
 	line-height: 100%;
 	color: #ef4343;
 	display: block;
@@ -125,7 +125,7 @@
 	pointer-events: none;
 	font-size: em(16px);
 	top: em(20px);
-	font-family: $Avenir;
+	font-family: 'Montserrat', sans-serif;
 	font-weight: 500;
 	line-height: 100%;
 	color: rgba(26, 26, 26, 0.5);
@@ -153,7 +153,7 @@
 	font-weight: 400;
 	font-size: em(16px);
 	line-height: 150%;
-	font-family: $Avenir;
+	font-family: 'Montserrat', sans-serif;
 	color: rgba(26, 26, 26, 0.5);
 }
 
