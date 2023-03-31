@@ -1,0 +1,65 @@
+.Map {
+	padding-bottom: em(114px);
+	&_Title {
+		text-align: center;
+		margin-bottom: em(5px);
+		@include ifdesktop {
+			margin-bottom: em(10px);
+		}
+		h2 {
+			font-weight: 400;
+			font-size: em(40px);
+			line-height: 140%;
+			color: $white;
+			@include iflaptop {
+				font-size: em(22px);
+			}
+			@include iftablet {
+				font-size: em(18px);
+			}
+			@include ifmobile {
+				font-size: em(14px);
+			}
+		}
+	}
+
+	&_Subtitle {
+		text-align: center;
+		p {
+			font-weight: 300;
+			font-size: em(18px);
+			line-height: 140%;
+			color: rgba(255, 255, 255, 0.7);
+			@include iflaptop {
+				font-size: em(16px);
+			}
+			@include iftablet {
+				font-size: em(14px);
+			}
+			@include ifmobile {
+				font-size: em(10px);
+			}
+		}
+	}
+
+	&_Map {
+		height: em(869px);
+		background: grey;
+		@include iflaptop {
+			height: em(635px);
+		}
+		@include iftablet {
+			height: em(512px);
+		}
+		@include ifmobile {
+			height: em(249px);
+		}
+	}
+}
+
+@include iflaptop {
+}
+@include iftablet {
+}
+@include ifmobile {
+}

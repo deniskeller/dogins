@@ -25,7 +25,7 @@ const links: Links[] = [
 		title: 'Compliance',
 	},
 	{
-		href: '/coming-soon',
+		href: '/licensing',
 		title: 'Licensing',
 	},
 	{

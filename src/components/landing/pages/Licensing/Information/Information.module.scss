@@ -1,0 +1,207 @@
+.Information {
+	padding-bottom: em(119px);
+
+	@include iflaptop {
+		padding-bottom: em(90px);
+	}
+	@include iftablet {
+		padding-bottom: em(80px);
+	}
+	@include ifmobile {
+		padding-bottom: em(40px);
+	}
+
+	&_Title {
+		max-width: em(1112px);
+		margin: 0 auto;
+		margin-bottom: em(70px);
+		text-align: center;
+		@include iflaptop {
+			max-width: em(747px);
+			margin-bottom: em(30px);
+		}
+		@include iftablet {
+			max-width: em(561px);
+			margin-bottom: em(20px);
+		}
+		@include ifmobile {
+			max-width: 100%;
+			margin-bottom: em(20px);
+		}
+		h2 {
+			color: $white;
+			font-weight: 300;
+			font-size: em(30px);
+			line-height: 140%;
+
+			@include iflaptop {
+				font-size: em(20px);
+			}
+			@include iftablet {
+				font-size: em(16px);
+			}
+			@include ifmobile {
+				font-size: em(14px);
+			}
+		}
+	}
+
+	.BaseContainer {
+		max-width: em(1776px);
+		@include iflaptop {
+			padding: 0 em(15px);
+		}
+		@include iftablet {
+			padding: 0 em(34px);
+		}
+	}
+
+	&_Body {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		gap: 0 em(49px);
+
+		@include iflaptop {
+			gap: 0 em(12px);
+		}
+		@include iftablet {
+			grid-template-columns: 1fr;
+			gap: em(16px) 0;
+		}
+		@include ifmobile {
+			grid-template-columns: 1fr;
+			gap: em(16px) 0;
+		}
+	}
+
+	.InformationCard {
+		background: #f4f3f3;
+		border: 1px solid rgba(26, 26, 26, 0.4);
+		box-shadow: 20px 18px 6px rgba(0, 0, 0, 0.2);
+		border-radius: em(6px);
+		display: flex;
+		flex-direction: column;
+		padding: em(40px) em(55px);
+		min-height: em(540px);
+
+		@include iflaptop {
+			padding: em(20px) em(16px);
+			min-height: em(427px);
+		}
+		@include iftablet {
+			padding: em(20px) em(16px);
+			min-height: em(181px);
+			position: relative;
+		}
+		@include ifmobile {
+			padding: em(20px) em(16px);
+			min-height: em(435px);
+		}
+
+		&_Icon {
+			width: em(60px);
+			height: em(60px);
+			margin-bottom: em(24px);
+			@include ifdesktop {
+				width: em(82px);
+				height: em(82px);
+			}
+			@include iftablet {
+				position: absolute;
+				top: em(20px);
+				left: em(16px);
+			}
+		}
+
+		&_Name {
+			margin-bottom: em(24px);
+			@include iftablet {
+				position: absolute;
+				top: em(36px);
+				left: em(92px);
+			}
+			span {
+				font-weight: 500;
+				font-size: em(24px);
+				line-height: 120%;
+				color: $black;
+				@include ifdesktop {
+					font-size: em(30px);
+				}
+			}
+		}
+
+		&_Parameters {
+			margin-bottom: em(20px);
+			@include iftablet {
+				width: 100%;
+				max-width: em(387px);
+				margin-left: auto;
+				margin-bottom: 0;
+			}
+
+			&_Row {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				align-items: baseline;
+				margin-bottom: em(12px);
+				@include ifdesktop {
+					margin-bottom: em(20px);
+				}
+				&:first-child {
+					margin-bottom: em(20px);
+					@include ifdesktop {
+						margin-bottom: em(30px);
+					}
+				}
+				&:last-child {
+					margin-bottom: 0;
+				}
+
+				.Label {
+					margin-right: em(10px);
+					@include ifmobile {
+						margin-right: em(24px);
+					}
+					span {
+						font-weight: 400;
+						font-size: em(14px);
+						line-height: 120%;
+						color: $black;
+						@include ifdesktop {
+							font-size: em(16px);
+						}
+					}
+				}
+
+				.Value {
+					font-weight: 500;
+					font-size: em(14px);
+					line-height: 120%;
+					color: $black;
+					white-space: nowrap;
+					@include ifdesktop {
+						font-size: em(16px);
+					}
+				}
+			}
+		}
+
+		&_Button {
+			margin-top: auto;
+			@include iftablet {
+				position: absolute;
+				left: em(16px);
+				bottom: em(20px);
+			}
+		}
+	}
+}
+
+@include iflaptop {
+}
+@include iftablet {
+}
+@include ifmobile {
+}
