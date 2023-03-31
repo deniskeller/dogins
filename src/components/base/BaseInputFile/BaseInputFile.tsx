@@ -1,5 +1,3 @@
-import { BaseIcon } from '@base/index';
-import { ALL_ICONS } from '@constants/icons';
 import React from 'react';
 import { useDropzone } from 'react-dropzone';
 import styles from './BaseInputFile.module.scss';
@@ -87,12 +85,12 @@ const BaseInputFile: React.FC<FileInputProps> = ({
 											{computedName(file.name)}
 										</div>
 
-										<BaseIcon
+										{/* <BaseIcon
 											viewBox='0 0 21 21'
 											icon={ALL_ICONS.DELETE}
 											className={styles.FileInput_UploadFile_Delete}
 											onClick={() => onDeleteFile(file.lastModified)}
-										/>
+										/> */}
 									</div>
 								) : (
 									<div
@@ -107,25 +105,25 @@ const BaseInputFile: React.FC<FileInputProps> = ({
 										<div
 											className={`${styles.FileInput_UploadImage_Delete} ${styles.FileInput_UploadImage_Delete_Desktop}`}
 										>
-											<BaseIcon
+											{/* <BaseIcon
 												viewBox='0 0 20 20'
 												icon={ALL_ICONS.DELETE}
 												className={styles.FileInput_UploadImage_Delete_Icon}
 												onClick={() => onDeleteFile(file.lastModified)}
-											/>
+											/> */}
 										</div>
 
 										<div
 											className={`${styles.FileInput_UploadImage_Delete} ${styles.FileInput_UploadImage_Delete_Mobile}`}
 										>
-											<BaseIcon
+											{/* <BaseIcon
 												icon={ALL_ICONS.CLOSE_POPUP}
 												viewBox='0 0 16 16'
 												className={
 													styles.FileInput_UploadImage_Delete_Mobile_Icon
 												}
 												onClick={() => onDeleteFile(file.lastModified)}
-											/>
+											/> */}
 										</div>
 									</div>
 								)}
@@ -157,7 +155,7 @@ const BaseInputFile: React.FC<FileInputProps> = ({
 										className={`${styles.FileInput_Clear_Content_Header_Title}`}
 										style={{ flexDirection: article ? 'column' : 'row' }}
 									>
-										{type == 'image' ? (
+										{/* {type == 'image' ? (
 											<BaseIcon
 												viewBox='0 0 31 31'
 												icon={ALL_ICONS.IMAGE_UPLOAD}
@@ -177,7 +175,7 @@ const BaseInputFile: React.FC<FileInputProps> = ({
 													article ? styles.MarginBottom : styles.MarginRight
 												}`}
 											/>
-										)}
+										)} */}
 
 										<span>{title}</span>
 									</div>
@@ -196,7 +194,7 @@ const BaseInputFile: React.FC<FileInputProps> = ({
 										className={`${styles.FileInput_Clear_Content_Header_Title}`}
 										style={{ flexDirection: article ? 'column' : 'row' }}
 									>
-										{type == 'image' ? (
+										{/* {type == 'image' ? (
 											<BaseIcon
 												viewBox='0 0 31 31'
 												icon={ALL_ICONS.IMAGE_UPLOAD}
@@ -216,7 +214,7 @@ const BaseInputFile: React.FC<FileInputProps> = ({
 													article ? styles.MarginBottom : styles.MarginRight
 												}`}
 											/>
-										)}
+										)} */}
 
 										<span>Обзор</span>
 									</div>
