@@ -1,11 +1,24 @@
-import { BaseIcon } from '@base/index';
-import { ALL_ICONS } from '@constants/icons';
+import { BaseButton, BaseInput } from '@base/index';
 import React from 'react';
 import s from './Feedback.module.scss';
 
 type Props = {};
 
+interface IValue {
+	name: string;
+	email: string;
+}
+
 const Feedback: React.FC<Props> = () => {
+	const [value, setValue] = React.useState<IValue>({
+		name: '',
+		email: '',
+	});
+
+	const setNewValue = (val: string | number, key: string) => {
+		setValue((prev) => ({ ...prev, [key]: val }));
+	};
+
 	return (
 		<>
 			<div className={s.Feedback}>
@@ -29,17 +42,29 @@ const Feedback: React.FC<Props> = () => {
 							</p>
 						</div>
 
-						<div className={s.Form_Inputs}></div>
+						<div className={s.Form_Inputs}>
+							<BaseInput
+								name='name'
+								label='Name'
+								value={value.name}
+								onChange={(val: string) => setNewValue(val, 'name')}
+								className={s.Input}
+							/>
 
-						<div className={s.Form_Button}>
-							<span>Contact us</span>
-
-							<BaseIcon
-								icon={ALL_ICONS.ARROW}
-								viewBox='0 0 44 24'
-								className={s.Form_Button_Icon}
+							<BaseInput
+								name='email'
+								label='Email'
+								value={value.email}
+								onChange={(val: string) => setNewValue(val, 'email')}
+								className={s.Input}
 							/>
 						</div>
+
+						<BaseButton
+							title='Contact us'
+							type='submit'
+							className={s.Form_Button}
+						/>
 					</div>
 				</div>
 			</div>

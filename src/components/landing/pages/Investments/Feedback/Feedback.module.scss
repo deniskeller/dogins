@@ -1,28 +1,76 @@
 .Feedback {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	height: em(452px);
 	position: relative;
 	z-index: 100;
 	margin-bottom: -1px;
+	padding-right: em(50px);
+	@include iflaptop {
+		grid-template-columns: em(443px) 1fr;
+		padding-right: em(40px);
+	}
+	@include iftablet {
+		padding-right: 0;
+		grid-template-columns: 1fr;
+	}
+	@include ifmobile {
+		grid-template-columns: 1fr;
+		padding-right: 0;
+	}
 	&_Image {
 		background-image: url('/images/image/feedback-form-bg.jpeg');
 		background-size: cover;
 		background-repeat: no-repeat;
 		background-position: center;
+		@include iftablet {
+			height: em(242px);
+			background-position: top;
+		}
+		@include ifmobile {
+			background-position: top;
+			height: em(125px);
+		}
 	}
 	&_Body {
 		.Form {
-			max-width: em(740px);
-			margin-left: em(67px);
+			max-width: em(800px);
+			padding: em(50px) 0 em(50px) em(67px);
+			@include iflaptop {
+				padding: 0 0 em(34px) em(24px);
+			}
+			@include iftablet {
+				max-width: em(517px);
+				padding: em(40px) 0 em(60px) em(40px);
+			}
+			@include ifmobile {
+				padding: em(20px) em(10px) em(50px);
+			}
 
 			&_Title {
 				margin-bottom: em(30px);
+				@include iflaptop {
+					margin-bottom: em(12px);
+				}
+				@include iftablet {
+					margin-bottom: em(12px);
+				}
+				@include ifmobile {
+					margin-bottom: em(16px);
+				}
 				h3 {
 					font-weight: 300;
 					font-size: em(30px);
 					line-height: 140%;
 					color: $white;
+					@include iflaptop {
+						font-size: em(18px);
+					}
+					@include iftablet {
+						font-size: em(18px);
+					}
+					@include ifmobile {
+						font-size: em(16px);
+					}
 					a {
 						color: $orange;
 						text-decoration: underline;
@@ -32,38 +80,48 @@
 
 			&_Subtitle {
 				margin-bottom: em(50px);
+				@include iflaptop {
+					max-width: em(480px);
+					margin-bottom: em(12px);
+				}
+				@include iftablet {
+					margin-bottom: em(12px);
+				}
+				@include ifmobile {
+					margin-bottom: em(20px);
+				}
 				p {
 					font-weight: 300;
-					font-size: em(18px);
+					font-size: em(12px);
 					line-height: 140%;
 					color: rgba(255, 255, 255, 0.7);
+					@include ifdesktop {
+						font-size: em(18px);
+					}
 					a {
 						color: $orange;
 					}
 				}
 			}
 
-			&_Button {
-				display: flex;
-				flex-direction: row;
-				align-items: center;
-				cursor: pointer;
-				opacity: 0.7;
-				&:hover {
-					opacity: 1;
+			&_Inputs {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				gap: 0 em(20px);
+				margin-bottom: em(60px);
+				@include iflaptop {
+					margin-bottom: em(30px);
+					gap: 0 em(16px);
 				}
-
-				span {
-					font-weight: 300;
-					font-size: em(22px);
-					line-height: 140%;
-					color: $orange;
-					white-space: nowrap;
+				@include iftablet {
+					grid-template-columns: 1fr 1fr;
+					margin-bottom: em(30px);
+					gap: 0 em(16px);
 				}
-				&_Icon {
-					width: em(42px);
-					height: em(22px);
-					margin-left: em(20px);
+				@include ifmobile {
+					grid-template-columns: 1fr;
+					margin-bottom: em(44px);
+					gap: em(16px) 0;
 				}
 			}
 		}

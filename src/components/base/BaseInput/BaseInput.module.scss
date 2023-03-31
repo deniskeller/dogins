@@ -1,0 +1,108 @@
+.BaseInput {
+	font-size: inherit;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+}
+
+.Input {
+	$size: 20px;
+	line-height: 140%;
+	font-size: em($size);
+	font-weight: 300;
+	color: $white;
+	font-family: 'Montserrat', sans-serif;
+	width: 100%;
+	height: em(50px, $size);
+	background: none;
+	outline: none;
+	border: none;
+	position: relative;
+	box-shadow: none;
+	background: transparent;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+	transition: 0.5s ease all;
+	-moz-transition: 0.5s ease all;
+	-webkit-transition: 0.5s ease all;
+	box-sizing: border-box;
+	@include placeholder-color(transparent);
+	padding: em(20px, $size) 0 em(3px, $size);
+
+	&:hover {
+		border-color: $white;
+	}
+
+	&:focus {
+		border-color: $white;
+		@include placeholder-color($white);
+		& + .Label {
+			$size: 12px;
+			font-size: em(12px);
+			left: 0;
+			top: 0;
+			color: $white;
+		}
+	}
+
+	& + .NoEmpty {
+		$size: 12px;
+		font-size: em(12px);
+		left: 0;
+		top: 0;
+	}
+
+	&.Error + .Label {
+		color: $red;
+	}
+}
+
+//disabled style
+.Input:disabled,
+.Input:disabled:hover,
+.Input:disabled:focus {
+	cursor: not-allowed;
+	pointer-events: none;
+	background: #f4f4f5;
+	border: 1px solid #e5e7eb !important;
+	color: rgba(26, 26, 26, 0.5);
+}
+
+.Icon {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	right: em(19px);
+	width: em(28px);
+	height: em(28px);
+}
+
+.IconPassword {
+	cursor: pointer;
+}
+
+.Error {
+	border-bottom: 1px solid #ef4343 !important;
+}
+
+.ErrorText {
+	font-size: em(12px);
+	font-family: 'Montserrat', sans-serif;
+	line-height: 100%;
+	color: #ef4343;
+	display: block;
+	margin-top: em(10px);
+	font-weight: 300;
+}
+
+.Label {
+	position: absolute;
+	pointer-events: none;
+	font-size: em(16px);
+	top: em(20px);
+	left: 0;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 400;
+	line-height: 100%;
+	color: rgba(255, 255, 255, 0.7);
+	transition: all 0.3s ease;
+}

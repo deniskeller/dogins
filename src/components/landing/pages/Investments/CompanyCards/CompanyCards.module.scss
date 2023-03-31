@@ -152,16 +152,8 @@
 		}
 
 		.ViewDetails {
-			display: flex;
-			flex-direction: row;
-			align-items: center;
-			cursor: pointer;
-			opacity: 0.7;
 			@media only screen and (max-width: 1550px) {
 				margin-top: auto;
-			}
-			&:hover {
-				opacity: 1;
 			}
 
 			&_Desktop {
@@ -175,27 +167,6 @@
 				margin-top: em(44px);
 				@include ifmobile {
 					display: flex;
-				}
-			}
-			span {
-				font-weight: 300;
-				font-size: em(22px);
-				line-height: 140%;
-				color: $orange;
-				white-space: nowrap;
-				@media only screen and (max-width: 1550px) {
-					font-size: em(16px);
-				}
-			}
-
-			&_Icon {
-				width: em(42px);
-				height: em(22px);
-				margin-left: em(16px);
-				@media only screen and (max-width: 1550px) {
-					width: em(27px);
-					height: em(14px);
-					margin-left: em(10px);
 				}
 			}
 		}
