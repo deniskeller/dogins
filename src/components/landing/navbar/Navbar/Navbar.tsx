@@ -49,7 +49,7 @@ const links: Links[] = [
 		title: 'News&Insights',
 	},
 	{
-		href: '/coming-soon',
+		href: '/contacts',
 		title: 'Contacts',
 	},
 ];

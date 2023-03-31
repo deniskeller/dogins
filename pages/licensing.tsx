@@ -1,7 +1,7 @@
 import { Default } from '@layouts/index';
 import { Licensing } from '@view/landing';
 
-const InvestmentsPage = () => {
+const LicensingPage = () => {
 	return (
 		<Default>
 			<Licensing />
@@ -9,4 +9,4 @@ const InvestmentsPage = () => {
 	);
 };
 
-export default InvestmentsPage;
+export default LicensingPage;
