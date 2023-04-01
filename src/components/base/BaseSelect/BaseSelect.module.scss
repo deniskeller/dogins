@@ -7,42 +7,40 @@
 	cursor: pointer;
 	display: flex;
 	align-items: center;
-	line-height: 100%;
-	font-size: em(16px);
-	font-weight: 400;
 	font-family: 'Montserrat', sans-serif;
 	width: 100%;
-	height: em(56px);
+	height: em(50px);
 	position: relative;
-	border: 1px solid #d1d5db;
-	padding: 0 em(16px);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+	border-radius: 0;
 	transition: 0.5s ease all;
 	-moz-transition: 0.5s ease all;
 	-webkit-transition: 0.5s ease all;
-	background: #fdfdfd;
-	border-radius: em(4px);
+	background: transparent;
+	padding: em(20px) 0 em(3px);
 	&:hover {
-		border: 1px solid #91c3fd;
+		border-color: $white;
 	}
 
 	p {
-		font-weight: normal;
-		line-height: 100%;
+		$size: 20px;
+		line-height: 140%;
+		font-size: em($size);
+		font-weight: 300;
 		overflow: hidden;
 		white-space: nowrap;
 		text-overflow: ellipsis;
-		color: rgba(26, 26, 26, 0.7);
+		color: $white;
 	}
 
 	.NotEmpty {
-		position: absolute;
-		top: em(28px);
-		color: $black;
+		position: relative;
+		color: $white;
 	}
 }
 
 .SelectHeaderFocus {
-	border: 1px solid #61a6fa !important;
+	border-bottom: 1px solid $white;
 }
 
 .SelectList {
@@ -55,11 +53,11 @@
 	overflow: auto;
 	scrollbar-width: none; /* For Firefox */
 	-ms-overflow-style: none; /* For Internet Explorer and Edge */
-	border: 1px solid rgba(26, 26, 26, 0.1);
-	box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.06),
-		0px 4px 6px -1px rgba(0, 0, 0, 0.08);
-	border-radius: 2px;
 	padding: em(8px) 0;
+	background: $body;
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	box-shadow: 0px 2.5px 4px rgba(18, 18, 18, 0.7);
+	border-radius: em(4px);
 }
 
 .SelectList::-webkit-scrollbar {
@@ -75,22 +73,28 @@
 	list-style: none;
 	display: flex;
 	align-items: center;
-	padding: em(10px) em(16px);
+	justify-content: space-between;
+	padding: em(6px) em(20px);
 	&:hover {
-		background: #e1f3fe;
+		background: rgba(255, 255, 255, 0.05);
 	}
 
 	&_Active {
 		cursor: default;
-		background: #e1f3fe;
+		background: transparent;
 	}
 
 	.ListItemTitle {
-		line-height: 150%;
-		font-size: em(16px);
-		font-weight: 400;
+		font-size: em(20px);
+		font-weight: 300;
+		line-height: 140%;
 		font-family: 'Montserrat', sans-serif;
-		color: $black;
+		color: $white;
+	}
+
+	.IconCheck {
+		width: em(30px);
+		height: em(30px);
 	}
 }
 
@@ -99,17 +103,17 @@
 	pointer-events: none;
 	font-size: em(16px);
 	top: em(20px);
-	left: em(17px);
+	left: 0;
 	font-family: 'Montserrat', sans-serif;
-	font-weight: 500;
+	font-weight: 300;
 	line-height: 100%;
-	color: rgba(26, 26, 26, 0.5);
+	color: rgba(255, 255, 255, 0.7);
 	transition: all 0.3s ease;
 
 	&_Focus {
 		font-size: em(12px);
-		top: em(10px);
-		left: em(23px);
+		top: 0;
+		left: 0;
 	}
 }
 
@@ -124,15 +128,15 @@
 	color: #ef4343;
 	display: block;
 	margin-top: em(10px);
-	font-weight: 400;
+	font-weight: 300;
 }
 
 .IconArrow {
-	width: em(12px);
-	height: em(12px);
+	width: em(24px);
+	height: em(24px);
 	position: absolute;
-	top: calc(50% - em(5px));
-	right: em(20px);
+	bottom: emn(10px);
+	right: 0;
 	transition: transform 0.6s ease;
 }
 

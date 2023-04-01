@@ -1,6 +1,8 @@
+import BaseSelect from '@base/BaseSelect/BaseSelect';
 import { BaseButton, BaseContainer, BaseIcon, BaseInput } from '@base/index';
 import { ALL_ICONS } from '@constants/icons';
 import { Header } from '@content/landing/index';
+import { countries } from '@services/index';
 import Link from 'next/link';
 import React from 'react';
 import s from './Contacts.module.scss';
@@ -116,6 +118,13 @@ const Contacts: React.FC = () => {
 									label='Email'
 									value={value.email}
 									onChange={(val: string) => setNewValue(val, 'email')}
+									className={s.Input}
+								/>
+
+								<BaseSelect
+									label='Country'
+									options={countries}
+									onChange={(val: string) => setNewValue(val, 'country')}
 									className={s.Input}
 								/>
 

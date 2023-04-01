@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import useOnClickOutside from '@hooks/useOnClickOutside';
-import styles from './BaseSelect.module.scss';
 import { BaseIcon } from '@base/index';
 import { ALL_ICONS } from '@constants/icons';
+import useOnClickOutside from '@hooks/useOnClickOutside';
+import React, { useState } from 'react';
+import styles from './BaseSelect.module.scss';
 
 interface Props {
 	label?: string;
@@ -68,13 +68,13 @@ const BaseSelect: React.FC<Props> = ({
 					{selectedOption}
 				</p>
 
-				{/* <BaseIcon
-					icon={ALL_ICONS.SELECT_ARROW}
-					viewBox='0 0 8 5'
+				<BaseIcon
+					icon={ALL_ICONS.SELECT_CHEVRON}
+					viewBox='0 0 24 24'
 					className={`${styles.IconArrow} ${
 						isOpen ? styles.IconArrowActive : null
 					}`}
-				/> */}
+				/>
 			</div>
 
 			{label ? (
@@ -102,6 +102,14 @@ const BaseSelect: React.FC<Props> = ({
 							key={option.value}
 						>
 							<span className={styles.ListItemTitle}>{option.label}</span>
+
+							{selectedOption === option.label ? (
+								<BaseIcon
+									icon={ALL_ICONS.CHECK}
+									viewBox='0 0 30 30'
+									className={styles.IconCheck}
+								/>
+							) : null}
 						</li>
 					))}
 				</ul>
