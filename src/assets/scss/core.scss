@@ -72,6 +72,9 @@ textarea {
 textarea::placeholder {
 	line-height: 100%;
 }
+input::placeholder {
+	font-weight: 300 !important;
+}
 
 //remove arrows in all browser
 input[type='number']::-webkit-outer-spin-button,

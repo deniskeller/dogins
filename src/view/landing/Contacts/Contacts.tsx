@@ -7,7 +7,7 @@ import {
 	BaseTextarea,
 } from '@base/index';
 import { ALL_ICONS } from '@constants/icons';
-import { Header } from '@content/landing/index';
+import { Header, MapContacts, PhoneInput } from '@content/landing/index';
 import { countries } from '@services/index';
 import Link from 'next/link';
 import React from 'react';
@@ -18,6 +18,7 @@ interface IValue {
 	email: string;
 	message: string;
 	country: string;
+	phone: string;
 }
 
 const Contacts: React.FC = () => {
@@ -26,6 +27,7 @@ const Contacts: React.FC = () => {
 		email: '',
 		message: '',
 		country: '',
+		phone: '',
 	});
 
 	const setNewValue = (val: string | number, key: string) => {
@@ -36,6 +38,10 @@ const Contacts: React.FC = () => {
 	// 	console.log('country: ', value.country);
 	// }, [value.country]);
 
+	const manhattan = {
+		lat: 40.762138342147594,
+		lng: -73.97841152698312,
+	};
 	return (
 		<>
 			<Header image='contacts-header-bg.jpeg' title='Contact us' />
@@ -72,7 +78,13 @@ const Contacts: React.FC = () => {
 									</div>
 								</div>
 
-								<div className={s.Map}></div>
+								<div className={s.Map}>
+									<MapContacts
+										center={manhattan}
+										marker_title='New York, Manhattan
+										1330 6TH AVE., 23RD FLOOR, NEW YORK, NEW YORK, 10019'
+									/>
+								</div>
 
 								<div className={s.Social}>
 									<Link href='https://www.instagram.com/'>
@@ -133,6 +145,12 @@ const Contacts: React.FC = () => {
 									label='Email'
 									value={value.email}
 									onChange={(val: string) => setNewValue(val, 'email')}
+									className={s.Input}
+								/>
+
+								<PhoneInput
+									value={value.phone}
+									onChange={(val: string) => setNewValue(val, 'phone')}
 									className={s.Input}
 								/>
 

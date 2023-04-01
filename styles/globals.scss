@@ -4,6 +4,7 @@
 	background: $body;
 }
 
+//стили для бегущей строки
 .marquee {
 	@include ifdesktop {
 		column-gap: em(75px) !important;
@@ -13,4 +14,235 @@
 		width: inherit;
 		height: inherit;
 	}
+}
+
+///стили для InputPhone
+.react-tel-input .form-control {
+	$size: 20px;
+	font-size: em($size) !important;
+	font-weight: 300 !important;
+	line-height: 140% !important;
+	border-radius: 0 !important;
+	letter-spacing: inherit !important;
+	-webkit-border-radius: 0 !important;
+	outline: none !important;
+	border: none !important;
+	width: 100% !important;
+	height: em(50px, $size) !important;
+	box-sizing: border-box !important;
+	position: relative !important;
+	color: $white !important;
+	@include placeholder-color(rgba(247, 247, 247, 0.7) !important);
+	padding: em(20px, $size) em(16px, $size) em(6px, $size) em(50px, $size) !important;
+	font-family: 'Montserrat', sans-serif !important;
+	text-transform: uppercase !important;
+	background: transparent !important;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+
+	&:hover {
+		border-color: $white !important;
+	}
+
+	&:focus {
+		border-color: $white !important;
+	}
+}
+
+.react-tel-input {
+	font-family: 'Montserrat', sans-serif !important;
+	font-weight: 500 !important;
+	font-size: em(16px) !important;
+	line-height: 100% !important;
+	color: $white !important;
+	z-index: 10000 !important;
+}
+
+.react-tel-input .country-list {
+	width: 100% !important;
+	margin: 0 !important;
+	min-height: em(244px) !important;
+	background: $body !important;
+	border: 1px solid #474a5a !important;
+	box-shadow: 0px 2.5px 4px rgba(18, 18, 18, 0.7) !important;
+	border-radius: 2px !important;
+	top: em(60px) !important;
+
+	&::-webkit-scrollbar {
+		width: em(3px) !important;
+	}
+	&::-webkit-scrollbar-thumb {
+		background: rgba(255, 255, 255, 0.3) !important;
+		border-radius: 100px !important;
+	}
+}
+
+.react-tel-input .country-list .search {
+	background: #222226 !important;
+}
+
+.react-tel-input .flag-dropdown {
+	background: none !important;
+	border: none !important;
+	border-radius: 0 !important;
+}
+
+.react-tel-input .flag-dropdown.open {
+	width: 100% !important;
+}
+.react-tel-input .flag-dropdown.open .selected-flag {
+	background: none !important;
+}
+
+.react-tel-input .selected-flag {
+	padding: 0 !important;
+}
+.react-tel-input .selected-flag:hover,
+.react-tel-input .selected-flag:focus {
+	background: none !important;
+}
+
+.react-tel-input .country-list .country:hover {
+	background: #2d2d2d !important;
+}
+
+.react-tel-input .country-list .country .dial-code {
+	font-family: 'Montserrat', sans-serif !important;
+	font-weight: 400 !important;
+	font-size: em(16px) !important;
+	line-height: 150% !important;
+	color: $white !important;
+	z-index: 10000 !important;
+}
+
+.react-tel-input .country-list .country.highlight {
+	background: none !important;
+	background-image: url('/images/icon/check.png') !important;
+	background-position: 98% 40% !important;
+	background-size: auto !important;
+	background-repeat: no-repeat !important;
+	.country-name {
+		color: $white !important;
+	}
+	.dial-code {
+		color: $white !important;
+	}
+}
+
+.react-tel-input .country-list .country {
+	display: flex !important;
+	align-items: center !important;
+	padding: em(6px) em(16px) !important;
+}
+
+.react-tel-input .country-list .country-name {
+	font-size: em(16px) !important;
+	font-weight: 400;
+	line-height: 150%;
+	font-family: 'Montserrat', sans-serif !important;
+	order: 1;
+	margin-left: em(10px) !important;
+}
+
+.react-tel-input .country-list .search-emoji {
+	background-image: url('/images/icon/search-icon.png') !important;
+	background-position: center !important;
+	background-size: cover !important;
+	background-repeat: no-repeat !important;
+	width: 18px !important;
+	height: 18px !important;
+	display: inline-flex !important;
+	font-size: 0 !important;
+}
+
+.react-tel-input .country-list .search {
+	display: flex;
+	align-items: center;
+	padding: em(12px) em(18px) !important;
+	z-index: 1000000;
+	background: #2d2d2d !important;
+	border-radius: 2px !important;
+	border-left: em(8px) solid $body;
+	border-top: em(8px) solid $body;
+	border-right: em(24px) solid $body;
+}
+
+.react-tel-input .country-list .search-box {
+	width: 100% !important;
+	border: none !important;
+	border-radius: 0 !important;
+	margin-left: em(9px) !important;
+	padding: em(3px) 0 em(5px) !important;
+	outline: none !important;
+	font-weight: 300 !important;
+	font-size: em(16px) !important;
+	line-height: 150%;
+	background: none !important;
+	color: $white !important;
+	@include placeholder-color($white !important);
+}
+
+.react-tel-input .country-list .flag {
+	margin-right: em(12px) !important;
+}
+
+input[type='search']::-webkit-search-decoration,
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-results-button,
+input[type='search']::-webkit-search-results-decoration {
+	-webkit-appearance: none !important;
+	height: em(15px);
+	width: em(15px);
+	// background: url('/images/icon/search-remove.svg');
+	background-size: contain !important;
+	background-position: center !important;
+	background-repeat: no-repeat !important;
+	cursor: pointer;
+	position: absolute !important;
+	right: 0;
+}
+
+.react-tel-input .form-control.phone-input-error {
+	background: linear-gradient(#ff9900, #ff9900),
+		linear-gradient(#ff9900, #ff9900), linear-gradient(#ff9900, #ff9900) !important;
+	background-size: 1px em(7px), 100% 1px, 1px em(7px) !important;
+	background-position: bottom left, bottom center, bottom right !important;
+	background-repeat: no-repeat !important;
+}
+.react-tel-input .selected-flag .arrow {
+	width: em(24px) !important;
+	height: em(24px) !important;
+	background-image: url('/images/icon/cheveron.png') !important;
+	background-position: center !important;
+	background-repeat: no-repeat !important;
+	background-size: cover !important;
+	border: none !important;
+	margin: 0 !important;
+	top: auto !important;
+	bottom: em(7px) !important;
+	transition: all $speed ease-in-out;
+}
+
+.react-tel-input .selected-flag .up {
+	transform: rotate(180deg) !important;
+}
+
+.react-tel-input .form-control + div:before {
+	content: 'Phone input';
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	white-space: nowrap;
+	font-family: 'Montserrat', sans-serif !important;
+	font-style: normal;
+	font-weight: 400;
+	font-size: em(12px);
+	line-height: 140%;
+	color: rgba(255, 255, 255, 0.7);
+}
+
+.react-tel-input .selected-flag .flag {
+	top: auto !important;
+	margin-top: 0 !important;
+	bottom: em(13px) !important;
 }
