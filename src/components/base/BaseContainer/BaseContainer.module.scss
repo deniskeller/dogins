@@ -4,6 +4,10 @@
 	margin: 0 auto;
 	padding: 0 em(50px);
 
+	@include iflaptop {
+		padding: 0 em(60px);
+	}
+
 	@include iftablet {
 		padding: 0 em(20px);
 	}

@@ -110,6 +110,8 @@
 
 			.Columns {
 				display: grid;
+				grid-template-columns: 1fr 1fr;
+				gap: 0 em(65px);
 				@include iflaptop {
 					gap: 0 em(30px);
 				}

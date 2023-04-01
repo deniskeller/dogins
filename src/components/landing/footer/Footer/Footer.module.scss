@@ -4,7 +4,7 @@
 	background: $body;
 	padding: 0 em(50px);
 	@include iflaptop {
-		padding: 0 em(24px);
+		padding: 0 em(50px);
 		border-top: 1px solid rgba(255, 255, 255, 0.2);
 	}
 	@include iftablet {
@@ -106,7 +106,8 @@
 				@include ifmobile {
 					margin-bottom: 0;
 				}
-				svg {
+
+				.SocialItem {
 					width: em(23px);
 					height: em(24px);
 					margin-right: em(24px);
@@ -222,6 +223,7 @@
 
 				&_List {
 					li {
+						display: flex;
 						margin-bottom: em(14px);
 						@include iflaptop {
 							margin-bottom: em(10px);

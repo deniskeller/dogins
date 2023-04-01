@@ -71,9 +71,35 @@ const Footer = () => {
 
 							<div className={s.Footer_LogoSocial_Socials}>
 								<div className={s.Footer_LogoSocial_Socials_Items}>
-									<BaseIcon icon={ALL_ICONS.FACEBOOK} viewBox='0 0 23 24' />
-									<BaseIcon icon={ALL_ICONS.LINKEDIN} viewBox='0 0 23 24' />
-									<BaseIcon icon={ALL_ICONS.TWITTER} viewBox='0 0 23 24' />
+									<Link href='https://facebook.com/'>
+										<a
+											className={s.SocialItem}
+											target='_blank'
+											rel='noreferrer'
+										>
+											<BaseIcon icon={ALL_ICONS.FACEBOOK} viewBox='0 0 23 24' />
+										</a>
+									</Link>
+
+									<Link href='https://facebook.com/'>
+										<a
+											className={s.SocialItem}
+											target='_blank'
+											rel='noreferrer'
+										>
+											<BaseIcon icon={ALL_ICONS.LINKEDIN} viewBox='0 0 23 24' />
+										</a>
+									</Link>
+
+									<Link href='https://facebook.com/'>
+										<a
+											className={s.SocialItem}
+											target='_blank'
+											rel='noreferrer'
+										>
+											<BaseIcon icon={ALL_ICONS.TWITTER} viewBox='0 0 23 24' />
+										</a>
+									</Link>
 								</div>
 
 								<div className={s.Footer_LogoSocial_Socials_Copywriting}>
