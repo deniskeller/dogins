@@ -45,7 +45,7 @@ const BaseSelect: React.FC<Props> = ({
 		})[0].label;
 		setSelectedOption(item);
 		setIsOpen(false);
-		onChange(value);
+		onChange(item);
 	};
 
 	return (

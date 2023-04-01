@@ -1,5 +1,11 @@
 import BaseSelect from '@base/BaseSelect/BaseSelect';
-import { BaseButton, BaseContainer, BaseIcon, BaseInput } from '@base/index';
+import {
+	BaseButton,
+	BaseContainer,
+	BaseIcon,
+	BaseInput,
+	BaseTextarea,
+} from '@base/index';
 import { ALL_ICONS } from '@constants/icons';
 import { Header } from '@content/landing/index';
 import { countries } from '@services/index';
@@ -10,17 +16,26 @@ import s from './Contacts.module.scss';
 interface IValue {
 	name_surname: string;
 	email: string;
+	message: string;
+	country: string;
 }
 
 const Contacts: React.FC = () => {
 	const [value, setValue] = React.useState<IValue>({
 		name_surname: '',
 		email: '',
+		message: '',
+		country: '',
 	});
 
 	const setNewValue = (val: string | number, key: string) => {
 		setValue((prev) => ({ ...prev, [key]: val }));
 	};
+
+	// useEffect(() => {
+	// 	console.log('country: ', value.country);
+	// }, [value.country]);
+
 	return (
 		<>
 			<Header image='contacts-header-bg.jpeg' title='Contact us' />
@@ -125,6 +140,15 @@ const Contacts: React.FC = () => {
 									label='Country'
 									options={countries}
 									onChange={(val: string) => setNewValue(val, 'country')}
+									className={s.Input}
+								/>
+
+								<BaseTextarea
+									name='message'
+									label='How can we help?'
+									type='text'
+									value={value.message}
+									onChange={(val: string) => setNewValue(val, 'message')}
 									className={s.Input}
 								/>
 
