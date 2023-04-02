@@ -1,0 +1,127 @@
+.Feedback {
+	border-top: 1px solid rgba(255, 255, 255, 0.2);
+	border-left: 1px solid rgba(255, 255, 255, 0.05);
+	border-right: 1px solid rgba(255, 255, 255, 0.05);
+	display: grid;
+	grid-template-columns: em(544px) 1fr;
+	@include iflaptop {
+		grid-template-columns: em(369px) 1fr;
+	}
+	@include iftablet {
+		grid-template-columns: em(263px) 1fr;
+	}
+	@include ifmobile {
+		grid-template-columns: 1fr;
+	}
+
+	&_Logo {
+		display: flex;
+		flex-direction: column;
+		border-right: 1px solid rgba(255, 255, 255, 0.2);
+		padding: em(50px) em(30px) em(34px) em(40px);
+		@include iflaptop {
+			padding: em(30px) em(50px) em(34px) em(20px);
+		}
+		@include iftablet {
+			padding: em(30px) em(20px) em(34px) em(20px);
+		}
+		@include ifmobile {
+			flex-direction: row;
+			justify-content: space-between;
+			padding: em(20px) em(10px);
+			border-right: none;
+			border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+		}
+
+		&_Title {
+			margin-bottom: em(40px);
+			@include iflaptop {
+				margin-bottom: em(30px);
+			}
+			@include iftablet {
+				margin-bottom: em(30px);
+			}
+			@include ifmobile {
+				margin-bottom: 0;
+				max-width: em(176px);
+			}
+			span {
+				font-weight: 300;
+				font-size: em(40px);
+				line-height: 130%;
+				color: $white;
+				@include iflaptop {
+					font-size: em(30px);
+				}
+				@include iftablet {
+					font-size: em(24px);
+				}
+				@include ifmobile {
+					font-size: em(20px);
+				}
+			}
+		}
+
+		&_Image {
+			width: em(412px);
+			height: em(368px);
+			@include iflaptop {
+				width: em(271px);
+				height: em(242.18px);
+			}
+			@include iftablet {
+				width: em(214px);
+				height: em(191.24px);
+			}
+			@include ifmobile {
+				width: em(133px);
+				height: em(119px);
+			}
+		}
+	}
+
+	&_Form {
+		padding: em(50px) em(30px) em(74px) em(73px);
+		@include iflaptop {
+			padding: em(50px) em(30px) em(34px) em(40px);
+		}
+		@include iftablet {
+			padding: em(50px) em(30px) em(34px) em(40px);
+		}
+		@include ifmobile {
+			padding: em(50px) em(30px) em(34px) em(40px);
+		}
+
+		&_Title {
+			margin-bottom: em(30px);
+			p {
+				font-weight: 400;
+				font-size: em(18px);
+				line-height: 140%;
+				color: rgba(255, 255, 255, 0.7);
+			}
+		}
+
+		.Row,
+		.Column {
+			margin-bottom: em(20px);
+		}
+		.Column {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 0 em(19px);
+
+			@include ifmobile {
+				grid-template-columns: 1fr;
+				gap: em(12px) 0;
+			}
+		}
+	}
+}
+
+@include iflaptop {
+}
+@include iftablet {
+}
+@include ifmobile {
+}

@@ -26,6 +26,11 @@
 			list-style: none;
 			position: relative;
 			margin-right: em(30px);
+			&:hover {
+				span {
+					color: $white;
+				}
+			}
 			@include iflaptop {
 				margin-right: em(20px);
 			}
@@ -45,6 +50,7 @@
 				font-weight: 400;
 				line-height: 140%;
 				color: rgba(255, 255, 255, 0.4);
+
 				@include iflaptop {
 					font-size: em(16px);
 				}
@@ -74,6 +80,9 @@
 			.Section {
 				padding: em(50px) em(40px) em(100px);
 				border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+				&:last-child {
+					border-bottom: none;
+				}
 				@include iflaptop {
 					padding: em(40px) em(20px) em(120px);
 				}
