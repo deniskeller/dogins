@@ -1,0 +1,78 @@
+.VacancyItem {
+	border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+	&_Active {
+		border-bottom: none;
+	}
+
+	&_Header {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		padding: em(20px) 0;
+		position: relative;
+		cursor: pointer;
+		@include iflaptop {
+			padding: em(16px) 0;
+		}
+		@include iftablet {
+			padding: em(16px) 0;
+		}
+		@include ifmobile {
+			padding: em(12px) 0;
+		}
+
+		&_Title {
+			font-size: em(30px);
+			color: $white;
+			font-weight: 400;
+			line-height: 140%;
+			@include iflaptop {
+				font-size: em(26px);
+			}
+			@include iftablet {
+				font-size: em(22px);
+			}
+			@include ifmobile {
+				font-size: em(18px);
+			}
+		}
+
+		&_Icon {
+			width: em(37px);
+			height: em(37px);
+			transition: all $speed ease;
+			@include iflaptop {
+				width: em(31px);
+				height: em(31px);
+			}
+			@include iftablet {
+				width: em(31px);
+				height: em(31px);
+			}
+			@include ifmobile {
+				width: em(20px);
+				height: em(20px);
+			}
+		}
+		.Open {
+			transform: rotateX(180deg);
+		}
+	}
+
+	&_Content {
+		height: auto;
+		max-height: 9999px;
+		transition: max-height 0.3s cubic-bezier(1, 0, 1, 0);
+		overflow: hidden;
+		.Container {
+			margin-top: em(20px);
+		}
+	}
+
+	&_Content_Hidden {
+		max-height: 0;
+		transition: max-height 0.3s cubic-bezier(0, 1, 0, 1);
+	}
+}

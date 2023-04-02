@@ -1,6 +1,6 @@
 import { BaseContainer } from '@base/index';
 import { Header } from '@content/landing/index';
-import { About } from 'components/landing/pages/Careers';
+import { About, Vacancies } from 'components/landing/pages/Careers';
 import React from 'react';
 
 const Careers: React.FC = () => {
@@ -10,6 +10,7 @@ const Careers: React.FC = () => {
 			<div className='Wrapper'>
 				<BaseContainer>
 					<About />
+					<Vacancies />
 				</BaseContainer>
 			</div>
 		</>

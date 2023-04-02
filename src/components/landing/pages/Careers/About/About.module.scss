@@ -10,7 +10,7 @@
 		padding: em(60px) 0 em(86px);
 	}
 	@include ifmobile {
-		padding: em(40px) 0 em(60px);
+		padding: em(40px) em(27px) em(60px);
 	}
 
 	&_Header {
