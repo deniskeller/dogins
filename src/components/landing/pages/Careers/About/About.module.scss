@@ -1,0 +1,120 @@
+.About {
+	border-left: 1px solid rgba(255, 255, 255, 0.05);
+	border-right: 1px solid rgba(255, 255, 255, 0.05);
+	padding: em(150px) em(35px) em(150px) em(40px);
+
+	@include iflaptop {
+		padding: em(100px) 0 em(100px);
+	}
+	@include iftablet {
+		padding: em(60px) 0 em(86px);
+	}
+	@include ifmobile {
+		padding: em(40px) 0 em(60px);
+	}
+
+	&_Header {
+		max-width: em(1070px);
+		margin-bottom: em(40px);
+		@include iflaptop {
+			max-width: em(827px);
+			margin-bottom: em(30px);
+			margin-left: em(77px);
+		}
+		@include iftablet {
+			max-width: em(607px);
+			margin-bottom: em(48px);
+			margin-left: em(88px);
+		}
+		@include ifmobile {
+			margin-bottom: em(20px);
+			margin-left: 0;
+		}
+
+		p {
+			color: $white;
+			font-weight: 300;
+			font-size: em(40px);
+			line-height: 140%;
+			@include iflaptop {
+				font-size: em(30px);
+			}
+			@include iftablet {
+				font-size: em(26px);
+			}
+			@include ifmobile {
+				font-size: em(20px);
+			}
+		}
+	}
+
+	&_Body {
+		display: grid;
+		grid-template-columns: em(467px) em(495px);
+		gap: 0 em(79px);
+		justify-content: end;
+
+		@include iflaptop {
+			grid-template-columns: em(378px) em(350px);
+			gap: 0 em(40px);
+		}
+		@include iftablet {
+			grid-template-columns: em(288px) em(253px);
+			gap: 0 em(40px);
+			padding: 0 em(20px);
+		}
+		@include ifmobile {
+			grid-template-columns: 1fr;
+			gap: em(20px) 0;
+		}
+
+		&_Columns {
+			.Logo {
+				width: em(208px);
+				height: em(87px);
+				margin-bottom: em(16px);
+				@include iflaptop {
+					width: em(136px);
+					height: em(57px);
+					margin-bottom: em(12px);
+				}
+				@include iftablet {
+					width: em(120px);
+					height: em(50px);
+					margin-bottom: em(8px);
+				}
+				@include ifmobile {
+					width: em(170px);
+					height: em(71px);
+					margin-bottom: em(12px);
+				}
+			}
+			.Copywriting {
+				font-weight: 300;
+				line-height: 140%;
+				color: $orange;
+				font-size: em(12px);
+				@include ifdesktop {
+					font-size: em(14px);
+				}
+			}
+
+			p {
+				font-style: normal;
+				font-weight: 300;
+				font-size: em(18px);
+				line-height: 140%;
+				color: rgba(255, 255, 255, 0.7);
+				@include iflaptop {
+					font-size: em(16px);
+				}
+				@include iftablet {
+					font-size: em(14px);
+				}
+				@include ifmobile {
+					font-size: em(14px);
+				}
+			}
+		}
+	}
+}
