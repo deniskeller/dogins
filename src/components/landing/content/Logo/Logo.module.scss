@@ -6,4 +6,9 @@
 		width: inherit;
 		height: 100%;
 	}
+	&_Withe {
+		svg path {
+			fill: $black;
+		}
+	}
 }

@@ -55,25 +55,37 @@ const Links: Links[] = [
 		list: [
 			{ name: 'Privacy Policy', href: '/privacy-policy' },
 			{ name: 'Cookies Policy', href: '/cookies-policy' },
-			{ name: 'Terms of Use', href: '/termsof-use' },
+			{ name: 'Terms of Use', href: '/terms-of-use' },
 		],
 	},
 ];
 
-const Footer = () => {
+interface Props {
+	type?: string;
+}
+const Footer: React.FC<Props> = ({ type }) => {
 	return (
 		<>
-			<div className={s.Wrapper}>
-				<div className={s.Container}>
+			<div
+				className={s.Wrapper}
+				style={{ background: type == 'white' ? '#ffffff' : '#222222' }}
+			>
+				<div
+					className={`${s.Container} ${
+						type == 'white' ? s.Container_White : ''
+					}`}
+				>
 					<div className={s.Footer}>
 						<div className={s.Footer_LogoSocial}>
-							<Logo className={s.Footer_LogoSocial_Logo} />
+							<Logo className={s.Footer_LogoSocial_Logo} type={type} />
 
 							<div className={s.Footer_LogoSocial_Socials}>
 								<div className={s.Footer_LogoSocial_Socials_Items}>
 									<Link href='https://facebook.com/'>
 										<a
-											className={s.SocialItem}
+											className={`${s.SocialItem} ${
+												type == 'white' ? s.SocialItem_White : ''
+											}`}
 											target='_blank'
 											rel='noreferrer'
 										>
@@ -83,7 +95,9 @@ const Footer = () => {
 
 									<Link href='https://facebook.com/'>
 										<a
-											className={s.SocialItem}
+											className={`${s.SocialItem} ${
+												type == 'white' ? s.SocialItem_White : ''
+											}`}
 											target='_blank'
 											rel='noreferrer'
 										>
@@ -93,7 +107,9 @@ const Footer = () => {
 
 									<Link href='https://facebook.com/'>
 										<a
-											className={s.SocialItem}
+											className={`${s.SocialItem} ${
+												type == 'white' ? s.SocialItem_White : ''
+											}`}
 											target='_blank'
 											rel='noreferrer'
 										>
@@ -102,7 +118,13 @@ const Footer = () => {
 									</Link>
 								</div>
 
-								<div className={s.Footer_LogoSocial_Socials_Copywriting}>
+								<div
+									className={`${s.Footer_LogoSocial_Socials_Copywriting} ${
+										type == 'white'
+											? s.Footer_LogoSocial_Socials_Copywriting_White
+											: ''
+									}`}
+								>
 									<p>© 2023 Doqins & Partners Limited</p>
 								</div>
 							</div>
@@ -113,14 +135,23 @@ const Footer = () => {
 								{Links?.map((link, index) => {
 									return (
 										<li className={s.Link} key={index}>
-											<div className={s.Link_Title}>
+											<div
+												className={`${s.Link_Title} ${
+													type == 'white' ? s.Link_Title_White : ''
+												}`}
+											>
 												<span>{link.title}</span>
 											</div>
 
 											<ul className={s.Link_List}>
 												{link.list?.map((el, i) => {
 													return (
-														<li key={i} className={s.Link_List_Item}>
+														<li
+															key={i}
+															className={`${s.Link_List_Item} ${
+																type == 'white' ? s.Link_List_Item_White : ''
+															}`}
+														>
 															<Link href={el.href}>
 																<a>{el.name}</a>
 															</Link>
@@ -136,7 +167,9 @@ const Footer = () => {
 							<BaseIcon
 								icon={ALL_ICONS.PARTNERS}
 								viewBox='0 0 234 55'
-								className={s.Footer_NavbarPartners_Partners}
+								className={`${s.Footer_NavbarPartners_Partners} ${
+									type == 'white' ? s.Footer_NavbarPartners_Partners_White : ''
+								}`}
 							/>
 						</div>
 					</div>

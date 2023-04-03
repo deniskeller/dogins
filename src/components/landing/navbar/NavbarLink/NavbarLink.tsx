@@ -7,10 +7,17 @@ interface Props {
 	href: string;
 	title: string;
 	className?: string;
+	type?: string;
 	index?: number;
 }
 
-const NavbarLink: React.FC<Props> = ({ href, title, className, index }) => {
+const NavbarLink: React.FC<Props> = ({
+	href,
+	title,
+	className,
+	index,
+	type,
+}) => {
 	const router = useRouter();
 
 	return (
@@ -23,7 +30,9 @@ const NavbarLink: React.FC<Props> = ({ href, title, className, index }) => {
 			} ${styles.Link} ${className}`}
 		>
 			<Link href={href}>
-				<a>{title}</a>
+				<a style={{ color: type == 'white' ? '#121212' : '#ffffff' }}>
+					{title}
+				</a>
 			</Link>
 		</li>
 	);

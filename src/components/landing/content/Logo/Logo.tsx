@@ -6,11 +6,16 @@ import s from './Logo.module.scss';
 
 interface Props {
 	className?: string;
+	type?: string;
 }
 
-const Logo: React.FC<Props> = ({ className }) => {
+const Logo: React.FC<Props> = ({ className = '', type }) => {
 	return (
-		<div className={`${s.Logo} ${className}`}>
+		<div
+			className={`${s.Logo} ${className} ${
+				type == 'white' ? s.Logo_Withe : ''
+			}`}
+		>
 			<Link href='/'>
 				<a>
 					<BaseIcon icon={ALL_ICONS.LOGO_TEXT} viewBox='0 0 207 34' />

@@ -124,6 +124,21 @@
 					gap: em(16px) 0;
 				}
 			}
+
+			&_Submit {
+				height: em(451px);
+				padding-left: em(60px);
+
+				@include iflaptop {
+					height: em(249px);
+				}
+				@include iftablet {
+					padding: 0 em(20px);
+				}
+				@include ifmobile {
+					padding: 0 em(6px);
+				}
+			}
 		}
 	}
 }

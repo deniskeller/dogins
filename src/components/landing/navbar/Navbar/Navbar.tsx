@@ -9,6 +9,7 @@ import s from './Navbar.module.scss';
 
 interface Props {
 	fixed?: boolean;
+	type?: string;
 }
 
 interface Links {
@@ -54,7 +55,7 @@ const links: Links[] = [
 	},
 ];
 
-const Navbar: React.FC<Props> = ({ fixed }) => {
+const Navbar: React.FC<Props> = ({ fixed, type }) => {
 	const [visible, setVisible] = React.useState(false);
 	const thisDrawer = React.useRef<HTMLDivElement>(null);
 
@@ -96,14 +97,19 @@ const Navbar: React.FC<Props> = ({ fixed }) => {
 	}, [visible]);
 
 	return (
-		<div className={`${s.Container} ${fixed ? s.Fixed : ''}`}>
+		<div
+			className={`${s.Container} ${fixed ? s.Fixed : ''} ${
+				fixed && type == 'white' ? s.Fixed_White : ''
+			}`}
+		>
 			<div className={s.Navbar}>
-				<Logo className={s.Navbar_Logo} />
+				<Logo className={s.Navbar_Logo} type={type} />
 
 				<ul className={`${s.Navbar_List} ${s.Desktop}`}>
 					{links.map((link, index) => {
 						return (
 							<NavbarLink
+								type={type}
 								href={link.href}
 								title={link.title}
 								index={index}
@@ -115,12 +121,19 @@ const Navbar: React.FC<Props> = ({ fixed }) => {
 				</ul>
 
 				<Link href='/sign-up'>
-					<a className={`${s.Navbar_SignUp} ${s.Desktop}`}>Sign Up</a>
+					<a
+						className={`${s.Navbar_SignUp} ${s.Desktop}`}
+						style={{ color: type == 'white' ? '#121212' : '#ffffff' }}
+					>
+						Sign Up
+					</a>
 				</Link>
 
 				<BaseButton
 					title='Log in'
-					className={`${s.Navbar_Login} ${s.Desktop}`}
+					className={`${s.Navbar_Login} ${s.Desktop} ${
+						type == 'white' ? s.Navbar_Login_White : ''
+					}`}
 				/>
 			</div>
 
@@ -131,9 +144,21 @@ const Navbar: React.FC<Props> = ({ fixed }) => {
 					}`}
 					onClick={() => setVisible(!visible)}
 				>
-					<span></span>
-					<span></span>
-					<span></span>
+					<span
+						style={{
+							background: type == 'white' && !visible ? '#121212' : '#ffffff',
+						}}
+					></span>
+					<span
+						style={{
+							background: type == 'white' && !visible ? '#121212' : '#ffffff',
+						}}
+					></span>
+					<span
+						style={{
+							background: type == 'white' && !visible ? '#121212' : '#ffffff',
+						}}
+					></span>
 				</div>
 
 				<div

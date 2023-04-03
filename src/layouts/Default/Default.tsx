@@ -5,9 +5,10 @@ import styles from './Default.module.scss';
 
 interface Props {
 	children: JSX.Element;
+	type?: string;
 }
 
-const Default: React.FC<Props> = ({ children }) => {
+const Default: React.FC<Props> = ({ children, type }) => {
 	const [isVisible, setIsVisible] = useState(false);
 
 	const [scrollTop, setScrollTop] = useState(0);
@@ -31,12 +32,15 @@ const Default: React.FC<Props> = ({ children }) => {
 	}, [scrollTop]);
 
 	return (
-		<div className={styles.Wrapper}>
-			<Navbar fixed={isVisible} />
+		<div
+			className={styles.Wrapper}
+			style={{ background: type == 'white' ? '#ffffff' : '#222222' }}
+		>
+			<Navbar fixed={isVisible} type={type} />
 
 			<div className={styles.Content}>{children}</div>
 
-			<Footer />
+			<Footer type={type} />
 		</div>
 	);
 };

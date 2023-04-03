@@ -308,6 +308,19 @@
 	z-index: 1000;
 	background: $body;
 	box-shadow: 0px 1px 1px rgba(18, 18, 18, 0.3);
+	&_White {
+		background: $white;
+	}
+}
+
+.Navbar_Login_White {
+	border: 1px solid $black !important;
+	&:hover {
+		border-width: 2px !important;
+	}
+	div {
+		color: $black !important;
+	}
 }
 
 @keyframes top {
