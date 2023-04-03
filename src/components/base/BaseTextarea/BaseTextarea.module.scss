@@ -6,7 +6,7 @@
 
 .Textarea {
 	width: 100%;
-	height: em(50px);
+	height: 100%;
 	max-height: em(140px);
 	transition: 0.5s ease all;
 	-moz-transition: 0.5s ease all;
@@ -30,7 +30,7 @@
 		height: 100%;
 		resize: none;
 		line-height: 140%;
-		font-size: em(20px);
+		font-size: em(16px);
 		font-weight: 300;
 		color: $white;
 		font-family: 'Montserrat', sans-serif;
@@ -40,6 +40,9 @@
 		position: relative;
 		box-shadow: none;
 		@include placeholder-color(rgba(26, 26, 26, 0));
+		@include ifdesktop {
+			font-size: em(20px);
+		}
 
 		resize: none;
 		line-height: 100%;

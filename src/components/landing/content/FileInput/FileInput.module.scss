@@ -1,0 +1,158 @@
+.FileInput {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+
+	&_Clear {
+		display: flex;
+		justify-content: center;
+		height: em(50px);
+		padding: em(12px) em(27px);
+		cursor: pointer;
+		position: relative;
+		@include ifdesktop {
+			padding: em(12px) em(40px);
+		}
+		&:hover {
+			.FileInput_Clear_Border {
+				border: 1px dashed rgba(255, 255, 255, 0.2);
+				border-radius: 2px;
+			}
+			.FileInput_Clear_Content_Label {
+				color: $white;
+			}
+			.FileInput_Clear_Content_Icon {
+				path {
+					stroke: $white;
+				}
+			}
+		}
+
+		&.Error {
+			.FileInput_Clear_Border {
+				border: 1px dashed $red;
+			}
+		}
+
+		&_Border {
+			@extend %fullsize;
+			border: 1px dashed rgba(255, 255, 255, 0.3);
+			border-radius: 2px;
+		}
+
+		&.Active {
+			.FileInput_Clear_Border {
+				border: 1px dashed $red;
+			}
+		}
+
+		&_Content {
+			width: 100%;
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+			position: relative;
+
+			&_Icon {
+				@include ifdesktop {
+					width: em(24px);
+					height: em(24px);
+				}
+				width: em(20px);
+				height: em(20px);
+				margin-right: em(10px);
+				path {
+					stroke: rgba(255, 255, 255, 0.7);
+				}
+			}
+
+			&_Label {
+				@include ifdesktop {
+					font-size: em(18px);
+				}
+				font-size: em(16px);
+				font-weight: 300;
+				line-height: 100%;
+				color: rgba(255, 255, 255, 0.7);
+			}
+		}
+	}
+
+	&_Upload {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: em(12px) em(40px);
+		border: 1px dashed rgba(255, 255, 255, 0.2);
+		border-radius: 2px;
+		position: relative;
+
+		&_Icon {
+			@include ifdesktop {
+				width: em(24px);
+				height: em(24px);
+			}
+			width: em(20px);
+			height: em(20px);
+			margin-right: em(10px);
+			path {
+				stroke: $white;
+			}
+		}
+
+		&_Label {
+			@include ifdesktop {
+				font-size: em(18px);
+			}
+			font-size: em(16px);
+			font-weight: 300;
+			line-height: 100%;
+			color: $white;
+		}
+
+		&_Close {
+			position: absolute;
+			right: em(16px);
+			width: em(24px);
+			height: em(24px);
+			cursor: pointer;
+			@include iflaptop {
+			}
+			@include iftablet {
+			}
+			@include ifmobile {
+			}
+			&:hover {
+				path {
+					fill: $text;
+				}
+			}
+		}
+	}
+}
+
+.ErrorText {
+	margin-top: em(1px);
+	span {
+		display: flex;
+		font-weight: 300;
+		font-size: em(12px);
+		line-height: 167%;
+		color: $error;
+	}
+}
+
+.mb20 {
+	margin-bottom: em(16px);
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+@include iflaptop {
+}
+@include iftablet {
+}
+@include ifmobile {
+}

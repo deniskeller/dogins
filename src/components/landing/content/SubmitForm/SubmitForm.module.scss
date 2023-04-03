@@ -1,0 +1,32 @@
+.SubmitForm {
+	width: 100%;
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	border-width: 1px;
+	border-style: solid;
+
+	&_Icon {
+		width: em(76px);
+		height: em(51px);
+		margin-bottom: em(40px);
+	}
+
+	&_Title {
+		margin-bottom: em(8px);
+		span {
+			font-weight: 300;
+			font-size: em(40px);
+			line-height: 140%;
+		}
+	}
+	&_Subtitle {
+		span {
+			font-weight: 300;
+			font-size: em(24px);
+			line-height: 140%;
+		}
+	}
+}

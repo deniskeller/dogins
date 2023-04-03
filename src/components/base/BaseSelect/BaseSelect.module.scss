@@ -23,9 +23,11 @@
 	}
 
 	p {
-		$size: 20px;
+		@include ifdesktop {
+			font-size: em(20px);
+		}
+		font-size: em(16px);
 		line-height: 140%;
-		font-size: em($size);
 		font-weight: 300;
 		overflow: hidden;
 		white-space: nowrap;
@@ -85,7 +87,10 @@
 	}
 
 	.ListItemTitle {
-		font-size: em(20px);
+		@include ifdesktop {
+			font-size: em(20px);
+		}
+		font-size: em(16px);
 		font-weight: 300;
 		line-height: 140%;
 		font-family: 'Montserrat', sans-serif;

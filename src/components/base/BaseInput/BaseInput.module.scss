@@ -6,14 +6,21 @@
 }
 
 .Input {
-	$size: 20px;
+	@include ifdesktop {
+		$size: 20px;
+		font-size: em($size);
+		height: em(50px, $size);
+		padding: em(20px, $size) 0 em(3px, $size);
+	}
+	$size: 16px;
 	line-height: 140%;
-	font-size: em($size);
 	font-weight: 300;
 	color: $white;
 	font-family: 'Montserrat', sans-serif;
 	width: 100%;
+	font-size: em($size);
 	height: em(50px, $size);
+	padding: em(20px, $size) 0 em(3px, $size);
 	background: none;
 	outline: none;
 	border: none;
@@ -27,7 +34,6 @@
 	-webkit-transition: 0.5s ease all;
 	box-sizing: border-box;
 	@include placeholder-color(transparent);
-	padding: em(20px, $size) 0 em(3px, $size);
 
 	&:hover {
 		border-color: $white;
@@ -82,14 +88,14 @@
 }
 
 .Error {
-	border-bottom: 1px solid #ef4343 !important;
+	border-bottom: 1px solid $error !important;
 }
 
 .ErrorText {
 	font-size: em(12px);
 	font-family: 'Montserrat', sans-serif;
 	line-height: 100%;
-	color: #ef4343;
+	color: $error;
 	display: block;
 	margin-top: em(10px);
 	font-weight: 300;

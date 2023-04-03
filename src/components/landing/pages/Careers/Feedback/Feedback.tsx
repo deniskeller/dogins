@@ -1,7 +1,7 @@
 import BaseSelect from '@base/BaseSelect/BaseSelect';
 import { BaseButton, BaseInput, BaseTextarea } from '@base/index';
-import { PhoneInput } from '@content/landing/index';
-import React from 'react';
+import { FileInput, PhoneInput, SubmitForm } from '@content/landing/index';
+import React, { useState } from 'react';
 import s from './Feedback.module.scss';
 
 type Props = {};
@@ -20,6 +20,7 @@ interface IValue {
 	position: string;
 	phone: string;
 	linkedin: string;
+	files: File[];
 }
 
 const Feedback: React.FC<Props> = () => {
@@ -30,11 +31,14 @@ const Feedback: React.FC<Props> = () => {
 		position: '',
 		phone: '',
 		linkedin: '',
+		files: [],
 	});
 
-	const setNewValue = (val: string | number, key: string) => {
+	const setNewValue = (val: string | number | File[], key: string) => {
 		setValue((prev) => ({ ...prev, [key]: val }));
 	};
+
+	const [submit, setSubmit] = useState(false);
 
 	return (
 		<>
@@ -273,67 +277,82 @@ const Feedback: React.FC<Props> = () => {
 					</svg>
 				</div>
 
-				<div className={s.Feedback_Form}>
-					<div className={s.Feedback_Form_Title}>
-						<p>
-							If you are such person, please feel free to send the application
-							below:
-						</p>
-					</div>
-					<div className={s.Row}>
-						<BaseInput
-							name='name_surname'
-							label='Name Surname'
-							value={value.name_surname}
-							onChange={(val: string) => setNewValue(val, 'name_surname')}
+				{!submit ? (
+					<div className={s.Feedback_Form}>
+						<div className={s.Feedback_Form_Title}>
+							<p>
+								If you are such person, please feel free to send the application
+								below:
+							</p>
+						</div>
+
+						<div className={s.Row}>
+							<BaseInput
+								name='name_surname'
+								label='Name Surname'
+								value={value.name_surname}
+								onChange={(val: string) => setNewValue(val, 'name_surname')}
+							/>
+						</div>
+
+						<div className={s.Row}>
+							<BaseSelect
+								label='Position'
+								options={position}
+								onChange={(val: string) => setNewValue(val, 'position')}
+							/>
+						</div>
+
+						<div className={s.Column}>
+							<BaseInput
+								name='email'
+								label='Email'
+								value={value.email}
+								onChange={(val: string) => setNewValue(val, 'email')}
+							/>
+
+							<PhoneInput
+								value={value.phone}
+								onChange={(val: string) => setNewValue(val, 'phone')}
+							/>
+						</div>
+
+						<div className={s.Column}>
+							<BaseInput
+								name='linkedin'
+								label='Linkedin profile'
+								value={value.linkedin}
+								onChange={(val: string) => setNewValue(val, 'linkedin')}
+							/>
+
+							<FileInput
+								files={value.files}
+								onChange={(val: File[]) => setNewValue(val, 'files')}
+							/>
+						</div>
+
+						<div className={s.Row}>
+							<BaseTextarea
+								name='message'
+								label='Tell us about yourself'
+								type='text'
+								value={value.message}
+								onChange={(val: string) => setNewValue(val, 'message')}
+							/>
+						</div>
+
+						<BaseButton
+							title='Submit'
+							type='submit'
+							className={s.Button}
+							onClick={() => setSubmit(true)}
 						/>
 					</div>
-
-					<div className={s.Row}>
-						<BaseSelect
-							label='Position'
-							options={position}
-							onChange={(val: string) => setNewValue(val, 'position')}
-						/>
+				) : (
+					<div className={s.Feedback_Form_Submit}>
+						<SubmitForm />
 					</div>
-
-					<div className={s.Column}>
-						<BaseInput
-							name='email'
-							label='Email'
-							value={value.email}
-							onChange={(val: string) => setNewValue(val, 'email')}
-						/>
-
-						<PhoneInput
-							value={value.phone}
-							onChange={(val: string) => setNewValue(val, 'phone')}
-						/>
-					</div>
-
-					<div className={s.Column}>
-						<BaseInput
-							name='linkedin'
-							label='Linkedin profile'
-							value={value.linkedin}
-							onChange={(val: string) => setNewValue(val, 'linkedin')}
-						/>
-
-						<h3>тут будет инпут файл</h3>
-					</div>
-
-					<div className={s.Row}>
-						<BaseTextarea
-							name='message'
-							label='Tell us about yourself'
-							type='text'
-							value={value.message}
-							onChange={(val: string) => setNewValue(val, 'message')}
-						/>
-					</div>
-
-					<BaseButton title='Submit' type='submit' />
-				</div>
+				)}
 			</div>
 		</>
 	);

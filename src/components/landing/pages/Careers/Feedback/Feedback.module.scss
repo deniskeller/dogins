@@ -83,28 +83,52 @@
 	&_Form {
 		padding: em(50px) em(30px) em(74px) em(73px);
 		@include iflaptop {
-			padding: em(50px) em(30px) em(34px) em(40px);
+			padding: em(30px) em(20px) em(96px) em(20px);
 		}
 		@include iftablet {
-			padding: em(50px) em(30px) em(34px) em(40px);
+			padding: em(30px) em(14px) em(46px) em(20px);
 		}
 		@include ifmobile {
-			padding: em(50px) em(30px) em(34px) em(40px);
+			padding: em(24px) em(6px) em(40px);
 		}
 
 		&_Title {
 			margin-bottom: em(30px);
+			@include iftablet {
+				margin-bottom: em(20px);
+			}
+			@include ifmobile {
+				margin-bottom: em(20px);
+			}
 			p {
 				font-weight: 400;
 				font-size: em(18px);
 				line-height: 140%;
 				color: rgba(255, 255, 255, 0.7);
+				@include iflaptop {
+					font-size: em(16px);
+				}
+				@include iftablet {
+					font-size: em(14px);
+				}
+				@include ifmobile {
+					font-size: em(14px);
+				}
 			}
 		}
 
 		.Row,
 		.Column {
 			margin-bottom: em(20px);
+			@include iflaptop {
+				margin-bottom: em(14px);
+			}
+			@include iftablet {
+				margin-bottom: em(16px);
+			}
+			@include ifmobile {
+				margin-bottom: em(12px);
+			}
 		}
 		.Column {
 			display: grid;
@@ -116,12 +140,21 @@
 				gap: em(12px) 0;
 			}
 		}
-	}
-}
+		.Button {
+			margin-top: em(50px);
+			@include iflaptop {
+				margin-top: em(42px);
+			}
+			@include iftablet {
+				margin-top: em(40px);
+			}
+			@include ifmobile {
+				margin-top: em(44px);
+			}
+		}
 
-@include iflaptop {
-}
-@include iftablet {
-}
-@include ifmobile {
+		&_Submit {
+			padding: em(70px);
+		}
+	}
 }
