@@ -71,8 +71,83 @@
 		}
 
 		.Sidebar {
+			position: relative;
 			@include ifmobile {
 				display: none;
+			}
+
+			&_Content {
+				display: grid;
+				grid-template-columns: 1fr;
+				gap: em(16px) 0;
+				position: sticky;
+				top: em(120px);
+				&_Item {
+					cursor: pointer;
+					&:hover {
+						span {
+							color: $black;
+						}
+					}
+					span {
+						display: flex;
+						font-weight: 300;
+						font-size: em(16px);
+						line-height: 100%;
+						color: rgba(26, 26, 26, 0.4);
+						@include iflaptop {
+							font-size: em(14px);
+						}
+						@include iftablet {
+							font-size: em(14px);
+						}
+					}
+				}
+				.Active {
+					span {
+						color: $black;
+					}
+				}
+			}
+		}
+
+		.Content {
+			display: grid;
+			grid-template-columns: 1fr;
+			gap: em(30px) 0;
+
+			.Rul {
+				&_Title {
+					margin-bottom: em(20px);
+					span {
+						font-weight: 400;
+						font-size: em(24px);
+						line-height: 40%;
+						color: $orange;
+						@include iftablet {
+							font-size: em(20px);
+						}
+						@include ifmobile {
+							font-size: em(18px);
+						}
+					}
+				}
+				&_Description {
+					font-weight: 300;
+					font-size: em(18px);
+					line-height: 120%;
+					color: $black;
+					@include iftablet {
+						font-size: em(16px);
+					}
+					@include ifmobile {
+						font-size: em(14px);
+					}
+					a {
+						color: $orange;
+						text-decoration: underline;
+					}
+				}
 			}
 		}
 	}
