@@ -1,3 +1,86 @@
-.PrivacyPolicy {
-	padding: em(297px) em(157px) em(144px) em(50px);
+.BaseContainer {
+	max-width: em(1920px);
+	@include iflaptop {
+		padding: 0 em(20px);
+	}
+	@include iftablet {
+		padding: 0 em(20px);
+	}
+	@include ifmobile {
+	}
+}
+.Ruls {
+	padding: em(184px) em(99px) em(144px) 0;
+	@include iflaptop {
+		padding: em(136px) 0 em(100px) 0;
+	}
+	@include iftablet {
+		padding: em(112px) 0 em(100px) 0;
+	}
+	@include ifmobile {
+		padding: em(86px) 0 em(50px) 0;
+	}
+
+	.Ruls_Title {
+		margin-bottom: em(40px);
+		margin-left: em(328px);
+		@include iflaptop {
+			margin-bottom: em(30px);
+			margin-left: em(234px);
+		}
+		@include iftablet {
+			margin-bottom: em(21px);
+			margin-left: em(201px);
+		}
+		@include ifmobile {
+			margin-bottom: em(20px);
+			margin-left: 0;
+		}
+		h1 {
+			font-weight: 300;
+			font-size: em(60px);
+			line-height: 140%;
+			color: #111613;
+			@include iflaptop {
+				font-size: em(45px);
+			}
+			@include iftablet {
+				font-size: em(40px);
+			}
+			@include ifmobile {
+				font-size: em(30px);
+			}
+		}
+	}
+
+	&_Body {
+		display: grid;
+		grid-template-columns: em(276px) 1fr;
+		gap: 0 em(52px);
+		@include iflaptop {
+			grid-template-columns: em(200px) 1fr;
+			gap: 0 em(33px);
+		}
+		@include iftablet {
+			grid-template-columns: em(181px) 1fr;
+			gap: 0 em(20px);
+		}
+		@include ifmobile {
+			grid-template-columns: 1fr;
+			gap: 0;
+		}
+
+		.Sidebar {
+			@include ifmobile {
+				display: none;
+			}
+		}
+	}
+}
+
+@include iflaptop {
+}
+@include iftablet {
+}
+@include ifmobile {
 }
