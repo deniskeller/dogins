@@ -10,4 +10,5 @@ export { default as News } from "./News/News";
 export { default as NotFound } from "./NotFound/NotFound";
 export { default as PrivacyPolicy } from "./PrivacyPolicy/PrivacyPolicy";
 export { default as SelectedNews } from "./SelectedNews/SelectedNews";
+export { default as TermsOfUse } from "./TermsOfUse/TermsOfUse";
 
