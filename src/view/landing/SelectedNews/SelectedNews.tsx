@@ -146,6 +146,15 @@ const SelectedNews: React.FC = () => {
 								</p>
 							</div>
 						</div>
+
+						<div className={s.Source}>
+							<span>
+								Source:&nbsp;
+								<a href='/http/newsdoqins.com' target='_blank'>
+									http/newsdoqins.com
+								</a>
+							</span>
+						</div>
 					</div>
 				</BaseContainer>
 
