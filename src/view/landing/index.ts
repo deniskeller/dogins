@@ -1,5 +1,6 @@
 export { default as Careers } from "./Careers/Careers";
 export { default as ComingSoon } from "./ComingSoon/ComingSoon";
+export { default as Compliance } from "./Compliance/Compliance";
 export { default as Contacts } from "./Contacts/Contacts";
 export { default as CookiePolicy } from "./CookiePolicy/CookiePolicy";
 export { default as Eco } from "./Eco/Eco";
