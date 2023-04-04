@@ -22,7 +22,7 @@ const links: Links[] = [
 		title: 'About Us',
 	},
 	{
-		href: '/coming-soon',
+		href: '/compliance',
 		title: 'Compliance',
 	},
 	{

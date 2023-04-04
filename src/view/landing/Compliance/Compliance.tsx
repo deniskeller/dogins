@@ -1,7 +1,9 @@
+import { Header } from 'components/landing/pages/Compliance';
+
 const Compliance: React.FC = () => {
 	return (
 		<>
-			<h1>Compliance page</h1>
+			<Header />
 		</>
 	);
 };

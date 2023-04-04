@@ -1,0 +1,139 @@
+.Header {
+	display: grid;
+	grid-template-columns: 1fr em(613px);
+	gap: 0 em(286px);
+	padding-top: em(200px);
+	padding-bottom: em(100px);
+
+	@include iflaptop {
+		grid-template-columns: 1fr em(356px);
+		gap: 0 em(97px);
+		padding-top: em(123px);
+	}
+	@include iftablet {
+		grid-template-columns: 1fr em(270px);
+		gap: 0 em(100px);
+		padding-top: em(135px);
+		padding-bottom: em(80px);
+	}
+	@include ifmobile {
+		grid-template-columns: 1fr;
+		gap: em(42px) 0;
+		padding-top: em(86px);
+		padding-bottom: em(50px);
+	}
+
+	&_Content {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+
+		&_Title {
+			margin-bottom: em(33px);
+			@include iflaptop {
+				margin-bottom: em(30px);
+			}
+			@include iftablet {
+				margin-bottom: em(14px);
+			}
+			@include ifmobile {
+				margin-bottom: em(23px);
+			}
+		}
+
+		&_Description {
+			display: grid;
+			grid-template-columns: 1fr;
+			gap: em(30px) 0;
+			@include iflaptop {
+				gap: em(16px) 0;
+			}
+			@include iftablet {
+				gap: em(16px) 0;
+			}
+			@include ifmobile {
+				gap: em(16px) 0;
+			}
+			p {
+				color: $white;
+				font-weight: 300;
+				font-size: em(18px);
+				line-height: 140%;
+				span {
+					color: $orange;
+				}
+				@include iflaptop {
+					font-size: em(16px);
+				}
+				@include iftablet {
+					font-size: em(14px);
+				}
+				@include ifmobile {
+					font-size: em(14px);
+				}
+			}
+		}
+	}
+
+	&_Image {
+		position: relative;
+		width: em(613px);
+		height: em(613px);
+		border: 2px solid #b49635;
+		border-radius: em(120px) em(120px) 0px 0px;
+		@include iflaptop {
+			width: em(356px);
+			height: em(356px);
+			border-radius: em(80px) em(80px) 0px 0px;
+		}
+		@include iftablet {
+			width: em(270px);
+			height: em(270px);
+			border-radius: em(61px) em(61px) 0px 0px;
+		}
+		@include ifmobile {
+			width: em(270px);
+			height: em(270px);
+			border-radius: em(61px) em(61px) 0px 0px;
+			margin-left: em(50px);
+		}
+
+		.Image {
+			position: absolute;
+			right: em(50px);
+			bottom: em(30px);
+			width: em(613px);
+			height: em(613px);
+			border-radius: em(120px) em(120px) 0px 0px;
+			overflow: hidden;
+			@include iflaptop {
+				right: em(28px);
+				bottom: em(17px);
+				width: em(356px);
+				height: em(356px);
+				border-radius: em(80px) em(80px) 0px 0px;
+			}
+			@include iftablet {
+				right: em(21px);
+				bottom: em(13px);
+				width: em(270px);
+				height: em(270px);
+				border-radius: em(61px) em(61px) 0px 0px;
+			}
+			@include ifmobile {
+				right: em(21px);
+				bottom: em(13px);
+				width: em(270px);
+				height: em(270px);
+				border-radius: em(61px) em(61px) 0px 0px;
+			}
+		}
+	}
+}
+
+@include iflaptop {
+}
+@include iftablet {
+}
+@include ifmobile {
+}
