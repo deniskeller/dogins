@@ -1,4 +1,189 @@
 .Problems {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
 	padding-top: em(70px);
 	padding-bottom: em(64px);
+	@include iflaptop {
+		padding-top: em(70px);
+		padding-bottom: em(40px);
+	}
+	@include iftablet {
+		padding-top: em(50px);
+		padding-bottom: em(31px);
+	}
+	@include ifmobile {
+		padding-top: em(40px);
+		padding-bottom: em(78px);
+	}
+
+	&_Title {
+		margin-bottom: em(20px);
+		@include ifmobile {
+			margin-bottom: em(16px);
+		}
+		h2 {
+			color: $black;
+			font-weight: 400;
+			font-size: em(40px);
+			line-height: 140%;
+			@include iflaptop {
+				font-size: em(35px);
+			}
+			@include iftablet {
+				font-size: em(30px);
+			}
+			@include ifmobile {
+				font-size: em(20px);
+			}
+		}
+	}
+
+	&_Subtitle {
+		margin-bottom: em(41px);
+		@include iflaptop {
+			margin-bottom: em(68px);
+		}
+		@include iftablet {
+			margin-bottom: em(52px);
+		}
+		@include ifmobile {
+			margin-bottom: em(77px);
+		}
+		p {
+			font-weight: 300;
+			font-size: em(18px);
+			line-height: 140%;
+			color: $black;
+			@include iflaptop {
+				font-size: em(16px);
+			}
+			@include iftablet {
+				font-size: em(16px);
+			}
+			@include ifmobile {
+				font-size: em(14px);
+			}
+		}
+	}
+
+	&_NextWay {
+		position: relative;
+		margin-left: auto;
+		padding-right: em(60px);
+		@include iflaptop {
+			padding-right: em(30px);
+		}
+		@include iftablet {
+			padding-right: em(30px);
+		}
+		@include ifmobile {
+			display: none;
+		}
+		span {
+			font-weight: 400;
+			font-size: em(30px);
+			line-height: 140%;
+			text-transform: uppercase;
+			color: $orange;
+			@include iflaptop {
+				font-size: em(24px);
+			}
+			@include iftablet {
+				font-size: em(20px);
+			}
+		}
+		svg {
+			position: absolute;
+			z-index: 100;
+			top: em(12px);
+			right: 0;
+			width: em(283px);
+			height: em(326px);
+			@include iflaptop {
+				top: 0;
+				width: em(201.93px);
+				height: em(243px);
+			}
+			@include iftablet {
+				top: 0;
+				width: em(178.5px);
+				height: em(202px);
+			}
+		}
+	}
+
+	&_Content {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		margin-bottom: em(94px);
+		&_Column1 {
+			padding-top: em(45px);
+		}
+		&_Column1,
+		&_Column2 {
+			display: grid;
+			grid-template-columns: 1fr;
+			gap: em(24px) 0;
+			height: 100%;
+			.ProblemItem {
+				position: relative;
+				display: grid;
+				grid-template-columns: em(180px) 1fr;
+				padding: em(38px) em(47px) em(38px) em(24px);
+				max-width: em(595px);
+				height: em(257px);
+				gap: 0 em(32px);
+
+				&_Bg,
+				&_Bg2 {
+					position: absolute;
+					z-index: 0;
+					top: 0;
+					right: 0;
+					bottom: 0;
+					left: 0;
+				}
+				&_Bg2 {
+					right: 0;
+					left: auto;
+				}
+
+				&_Icon {
+					width: em(180px);
+					height: em(180px);
+					align-self: center;
+					position: relative;
+				}
+
+				&_Body {
+					align-self: center;
+					position: relative;
+					&_Title {
+						margin-bottom: em(20px);
+						span {
+							font-weight: 400;
+							font-size: em(22px);
+							line-height: 140%;
+							color: #242424;
+						}
+					}
+					&_Subtitle {
+						font-weight: 300;
+						font-size: em(18px);
+						line-height: 140%;
+						color: #222222;
+					}
+				}
+			}
+		}
+	}
+}
+
+@include iflaptop {
+}
+@include iftablet {
+}
+@include ifmobile {
 }
