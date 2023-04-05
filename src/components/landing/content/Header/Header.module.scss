@@ -9,6 +9,9 @@
 	bottom: 0;
 	z-index: -1;
 	height: 100vh;
+	image-rendering: pixelated;
+	image-rendering: -moz-crisp-edges; /* Firefox */
+	-ms-interpolation-mode: nearest-neighbor; /* IE */
 
 	@include iflaptop {
 		height: em(400px);
