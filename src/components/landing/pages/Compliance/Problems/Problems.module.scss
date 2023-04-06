@@ -1,3 +1,8 @@
+.BaseContainer {
+	@media only screen and (min-width: 769px) and (max-width: 1400px) {
+		padding: 0 em(40px);
+	}
+}
 .Problems {
 	width: 100%;
 	display: flex;
@@ -118,36 +123,190 @@
 		flex-direction: row;
 		justify-content: space-between;
 		margin-bottom: em(94px);
+		position: relative;
+
+		@media only screen and (min-width: 769px) and (max-width: 1400px) {
+			flex-direction: column;
+			justify-content: space-between;
+			margin-bottom: em(30px);
+		}
+
+		@include iftablet {
+			flex-direction: column;
+			justify-content: space-between;
+			margin-bottom: em(30px);
+		}
+		@include ifmobile {
+			flex-direction: column;
+			margin-bottom: 0;
+		}
+
+		&_Spiral {
+			position: absolute;
+			width: em(343px);
+			height: em(548px);
+			top: em(44px);
+			left: calc(50% - em(171px));
+			@media only screen and (min-width: 769px) and (max-width: 1400px) {
+				width: em(275px);
+				height: em(650px);
+				top: 0;
+				left: 0;
+			}
+			@include iftablet {
+				width: em(228px);
+				height: em(538px);
+				top: em(19px);
+				left: 0;
+			}
+			@include ifmobile {
+				width: em(236px);
+				height: em(677px);
+				top: em(-61px);
+				left: em(-8px);
+			}
+
+			&_IconDesktop {
+				width: inherit;
+				height: inherit;
+				display: none;
+				@media only screen and (min-width: 1401px) {
+					display: block;
+				}
+			}
+
+			&_IconTablet {
+				display: none;
+				width: inherit;
+				height: inherit;
+				@media only screen and (min-width: 601px) and (max-width: 1400px) {
+					display: block;
+				}
+			}
+
+			&_IconMobile {
+				display: none;
+				width: inherit;
+				height: inherit;
+				@include ifmobile {
+					display: block;
+				}
+			}
+
+			&_Gradient {
+				width: em(102px);
+				height: em(62px);
+				position: absolute;
+				z-index: 10;
+				top: em(-28px);
+				left: em(120px);
+				background: linear-gradient(
+					90deg,
+					#f0f0f0 5.05%,
+					rgba(240, 240, 240, 0) 100%
+				);
+				@media only screen and (min-width: 769px) and (max-width: 1400px) {
+					left: em(93px);
+				}
+				@include iftablet {
+					left: em(77px);
+				}
+				@include ifmobile {
+					top: em(-5px);
+					left: em(77px);
+				}
+			}
+		}
+
 		&_Column1 {
 			padding-top: em(45px);
+			@media only screen and (min-width: 769px) and (max-width: 1400px) {
+				padding-top: 0;
+				margin-bottom: em(16px);
+			}
+			@include iftablet {
+				padding-top: 0;
+				margin-bottom: em(12px);
+			}
+			@include ifmobile {
+				padding-top: 0;
+				margin-bottom: em(12px);
+			}
 		}
+		&_Column2 {
+			.ProblemItem {
+				@media only screen and (min-width: 1401px) {
+					padding: em(38px) em(35px) em(38px) em(36px) !important;
+				}
+			}
+		}
+
 		&_Column1,
 		&_Column2 {
 			display: grid;
 			grid-template-columns: 1fr;
 			gap: em(24px) 0;
 			height: 100%;
+			position: relative;
+			z-index: 200;
+			@media only screen and (min-width: 769px) and (max-width: 1400px) {
+				gap: em(16px) 0;
+			}
+			@include iftablet {
+				gap: em(12px) 0;
+			}
+			@include ifmobile {
+				gap: em(12px) 0;
+			}
+
 			.ProblemItem {
 				position: relative;
 				display: grid;
 				grid-template-columns: em(180px) 1fr;
 				padding: em(38px) em(47px) em(38px) em(24px);
+				width: 100%;
 				max-width: em(595px);
-				height: em(257px);
+				height: 100%;
+				min-height: em(277px);
 				gap: 0 em(32px);
+				border-radius: em(6px);
+				background: $white;
+				border: 1px solid rgba(26, 26, 26, 0.4);
+				box-shadow: 20px 18px 6px rgba(0, 0, 0, 0.05);
 
-				&_Bg,
-				&_Bg2 {
-					position: absolute;
-					z-index: 0;
-					top: 0;
-					right: 0;
-					bottom: 0;
-					left: 0;
+				@media only screen and (min-width: 769px) and (max-width: 1400px) {
+					grid-template-columns: em(100px) 1fr;
+					padding: em(30px) em(36px) em(30px) em(37px);
+					width: 100%;
+					max-width: em(598px);
+					height: 100%;
+					min-height: em(148px);
+					gap: 0 em(32px);
+					margin-left: em(347px);
 				}
-				&_Bg2 {
-					right: 0;
-					left: auto;
+
+				@include iftablet {
+					grid-template-columns: em(72px) 1fr;
+					padding: em(20px) em(22px) em(20px) em(22px);
+					width: 100%;
+					max-width: em(450px);
+					height: 100%;
+					min-height: em(115px);
+					gap: 0 em(20px);
+					margin-left: auto;
+				}
+				@include ifmobile {
+					grid-template-columns: 1fr;
+					padding: em(20px) em(14px) em(20px) em(18px);
+					width: 100%;
+					max-width: em(290px);
+					height: 100%;
+					min-height: em(137px);
+					gap: 0 em(20px);
+					margin-left: auto;
+					background: $white;
+					border: 1px solid rgba(26, 26, 26, 0.4);
+					box-shadow: 20px 18px 6px rgba(0, 0, 0, 0.05);
 				}
 
 				&_Icon {
@@ -155,6 +314,21 @@
 					height: em(180px);
 					align-self: center;
 					position: relative;
+					@media only screen and (min-width: 769px) and (max-width: 1400px) {
+						width: em(100px);
+						height: em(100px);
+					}
+					@include iftablet {
+						width: em(80px);
+						height: em(80px);
+					}
+					@include ifmobile {
+						position: absolute;
+						top: em(10px);
+						left: em(18px);
+						width: em(57px);
+						height: em(57px);
+					}
 				}
 
 				&_Body {
@@ -162,11 +336,31 @@
 					position: relative;
 					&_Title {
 						margin-bottom: em(20px);
+						@media only screen and (min-width: 769px) and (max-width: 1400px) {
+							margin-bottom: em(16px);
+						}
+						@include iftablet {
+							margin-bottom: em(10px);
+						}
+						@include ifmobile {
+							max-width: em(173px);
+							margin-bottom: em(18px);
+							margin-left: em(70px);
+						}
 						span {
 							font-weight: 400;
 							font-size: em(22px);
 							line-height: 140%;
 							color: #242424;
+							@media only screen and (min-width: 769px) and (max-width: 1400px) {
+								font-size: em(20px);
+							}
+							@include iftablet {
+								font-size: em(18px);
+							}
+							@include ifmobile {
+								font-size: em(16px);
+							}
 						}
 					}
 					&_Subtitle {
@@ -174,11 +368,23 @@
 						font-size: em(18px);
 						line-height: 140%;
 						color: #222222;
+						@media only screen and (min-width: 769px) and (max-width: 1400px) {
+							font-size: em(16px);
+						}
+						@include iftablet {
+							font-size: em(14px);
+						}
+						@include ifmobile {
+							font-size: em(12px);
+						}
 					}
 				}
 			}
 		}
 	}
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1400px) {
 }
 
 @include iflaptop {
