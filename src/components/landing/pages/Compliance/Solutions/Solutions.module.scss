@@ -542,6 +542,8 @@
 				gap: em(40px) 0;
 			}
 			.OptionsPlan {
+				display: flex;
+				flex-direction: column;
 				&_Header {
 					margin-bottom: em(30px);
 					@include iflaptop {
@@ -578,6 +580,7 @@
 					border-radius: em(6px);
 					display: flex;
 					flex-direction: column;
+					flex: 1 auto;
 					padding: em(40px) em(55px) em(40px) em(70px);
 					@include iflaptop {
 						padding: em(40px) em(30px) em(40px) em(45px);
@@ -655,6 +658,7 @@
 				}
 				&_Button {
 					margin: 0 auto;
+					margin-top: auto;
 				}
 			}
 		}
