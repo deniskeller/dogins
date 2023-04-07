@@ -1,11 +1,11 @@
-import { BaseContainer } from '@base/index';
+import { BaseButton, BaseContainer } from '@base/index';
 import s from './Solutions.module.scss';
 
 const Solutions: React.FC = () => {
 	return (
 		<>
 			<div className='Wrapper'>
-				<BaseContainer>
+				<BaseContainer className={s.BaseContainer}>
 					<div className={s.Solutions}>
 						<div className={s.Solutions_Platform}>
 							<div className={s.Solutions_Platform_Title}>
@@ -286,6 +286,158 @@ const Solutions: React.FC = () => {
 								<h2>
 									Our solution is suitable for both individuals and corporates
 								</h2>
+							</div>
+
+							<div className={s.Solutions_Options_Content}>
+								<div className={s.OptionsPlan}>
+									<div className={s.OptionsPlan_Header}>
+										<h2>Corporate</h2>
+									</div>
+
+									<div className={s.OptionsPlan_Body}>
+										<ul className={s.OptionsPlan_List}>
+											<li className={s.OptionsPlan_List_Step}>
+												<div className={s.OptionsPlan_List_Step_Number}>
+													<span>1</span>
+												</div>
+												<div className={s.OptionsPlan_List_Step_Label}>
+													<span>Data retrieval from government registrars</span>
+												</div>
+											</li>
+
+											<li className={s.OptionsPlan_List_Step}>
+												<div className={s.OptionsPlan_List_Step_Number}>
+													<span>2</span>
+												</div>
+												<div className={s.OptionsPlan_List_Step_Label}>
+													<span>AML, PEP, Sanctions and Watchlists</span>
+												</div>
+											</li>
+
+											<li className={s.OptionsPlan_List_Step}>
+												<div className={s.OptionsPlan_List_Step_Number}>
+													<span>3</span>
+												</div>
+												<div className={s.OptionsPlan_List_Step_Label}>
+													<span>Certificates from Government Registrars</span>
+												</div>
+											</li>
+
+											<li className={s.OptionsPlan_List_Step}>
+												<div className={s.OptionsPlan_List_Step_Number}>
+													<span>4</span>
+												</div>
+												<div className={s.OptionsPlan_List_Step_Label}>
+													<span>
+														Verification of Legal and Ownership Representation
+													</span>
+												</div>
+											</li>
+
+											<li className={s.OptionsPlan_List_Step}>
+												<div className={s.OptionsPlan_List_Step_Number}>
+													<span>5</span>
+												</div>
+												<div className={s.OptionsPlan_List_Step_Label}>
+													<span>
+														Verification of Copies: Apostille Legalization
+														Approval
+													</span>
+												</div>
+											</li>
+
+											<li className={s.OptionsPlan_List_Step}>
+												<div className={s.OptionsPlan_List_Step_Number}>
+													<span>6</span>
+												</div>
+												<div className={s.OptionsPlan_List_Step_Label}>
+													<span>Approval!</span>
+												</div>
+											</li>
+										</ul>
+
+										<BaseButton
+											type='orange'
+											title='Request proposal'
+											className={s.OptionsPlan_Button}
+										/>
+									</div>
+								</div>
+
+								<div className={s.OptionsPlan}>
+									<div className={s.OptionsPlan_Header}>
+										<h2>Individuals</h2>
+									</div>
+
+									<div className={s.OptionsPlan_Body}>
+										<ul className={s.OptionsPlan_List}>
+											<li className={s.OptionsPlan_List_Step}>
+												<div className={s.OptionsPlan_List_Step_Number}>
+													<span>1</span>
+												</div>
+												<div className={s.OptionsPlan_List_Step_Label}>
+													<span>Automated Remote Identification</span>
+												</div>
+											</li>
+
+											<li className={s.OptionsPlan_List_Step}>
+												<div className={s.OptionsPlan_List_Step_Number}>
+													<span>2</span>
+												</div>
+												<div className={s.OptionsPlan_List_Step_Label}>
+													<span>AML, PEP, Sanctions and Watchlists</span>
+												</div>
+											</li>
+
+											<li className={s.OptionsPlan_List_Step}>
+												<div className={s.OptionsPlan_List_Step_Number}>
+													<span>3</span>
+												</div>
+												<div className={s.OptionsPlan_List_Step_Label}>
+													<span>Certificates from Government Registrars</span>
+												</div>
+											</li>
+
+											<li className={s.OptionsPlan_List_Step}>
+												<div className={s.OptionsPlan_List_Step_Number}>
+													<span>4</span>
+												</div>
+												<div className={s.OptionsPlan_List_Step_Label}>
+													<span>
+														Verification of Legal and Ownership Representation
+													</span>
+												</div>
+											</li>
+
+											<li className={s.OptionsPlan_List_Step}>
+												<div className={s.OptionsPlan_List_Step_Number}>
+													<span>5</span>
+												</div>
+												<div className={s.OptionsPlan_List_Step_Label}>
+													<span>
+														Verification of Copies: Apostille Legalization
+														Approval
+													</span>
+												</div>
+											</li>
+
+											<li className={s.OptionsPlan_List_Step}>
+												<div className={s.OptionsPlan_List_Step_Number}>
+													<span>6</span>
+												</div>
+												<div className={s.OptionsPlan_List_Step_Label}>
+													<span>Approval!</span>
+												</div>
+											</li>
+										</ul>
+
+										<BaseButton
+											type='orange'
+											title='Request proposal'
+											className={s.OptionsPlan_Button}
+										/>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>

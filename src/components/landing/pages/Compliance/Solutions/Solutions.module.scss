@@ -1,3 +1,12 @@
+.BaseContainer {
+	@include iflaptop {
+		padding: 0 em(40px);
+	}
+	@include iftablet {
+	}
+	@include ifmobile {
+	}
+}
 .Solutions {
 	padding-top: em(105px);
 	padding-bottom: em(126px);
@@ -514,6 +523,138 @@
 				}
 				@include ifmobile {
 					font-size: em(20px);
+				}
+			}
+		}
+
+		&_Content {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 0 em(132px);
+			@include iflaptop {
+				gap: 0 em(38px);
+			}
+			@include iftablet {
+				gap: 0 em(17px);
+			}
+			@include ifmobile {
+				grid-template-columns: 1fr;
+				gap: em(40px) 0;
+			}
+			.OptionsPlan {
+				&_Header {
+					margin-bottom: em(30px);
+					@include iflaptop {
+						margin-bottom: em(38px);
+					}
+					@include iftablet {
+						margin-bottom: em(20px);
+					}
+					@include ifmobile {
+						margin-bottom: em(20px);
+					}
+					h2 {
+						color: $white;
+						font-weight: 400;
+						font-size: em(30px);
+						line-height: 140%;
+						text-transform: uppercase;
+						@include iflaptop {
+							font-size: em(24px);
+						}
+						@include iftablet {
+							font-size: em(20px);
+						}
+						@include ifmobile {
+							font-size: em(20px);
+						}
+					}
+				}
+
+				&_Body {
+					background: #f0f0f0;
+					border: 1px solid rgba(26, 26, 26, 0.4);
+					box-shadow: 20px 18px 6px rgba(0, 0, 0, 0.2);
+					border-radius: em(6px);
+					display: flex;
+					flex-direction: column;
+					padding: em(40px) em(55px) em(40px) em(70px);
+					@include iflaptop {
+						padding: em(40px) em(30px) em(40px) em(45px);
+					}
+					@include iftablet {
+						padding: em(30px) em(20px) em(30px) em(40px);
+					}
+					@include ifmobile {
+						padding: em(30px) em(10px) em(30px) em(30px);
+					}
+				}
+				&_List {
+					margin-bottom: em(32px);
+					border-left: 1px solid #b49635;
+					@include iflaptop {
+						margin-bottom: em(40px);
+					}
+					@include iftablet {
+						margin-bottom: em(40px);
+					}
+					@include ifmobile {
+						margin-bottom: em(40px);
+					}
+					&_Step {
+						position: relative;
+						display: flex;
+						flex-direction: row;
+						align-items: center;
+						padding-left: em(39px);
+						margin-bottom: em(62px);
+						&:last-child {
+							margin-bottom: 0;
+						}
+
+						@include iftablet {
+							padding-left: em(29px);
+							margin-bottom: em(46px);
+						}
+						@include ifmobile {
+							padding-left: em(29px);
+							margin-bottom: em(46px);
+						}
+
+						&_Number {
+							position: absolute;
+							top: em(-4px);
+							left: em(-16px);
+							width: em(30px);
+							height: em(30px);
+							background: #f0f0f0;
+							border: 1px solid #b49635;
+							border-radius: 100%;
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							span {
+								font-weight: 300;
+								font-size: em(16px);
+								line-height: 100%;
+								color: rgba(26, 26, 26, 0.7);
+							}
+						}
+						&_Label {
+							span {
+								font-weight: 400;
+								line-height: 140%;
+								color: #383838;
+								font-size: em(16px);
+								@include ifdesktop {
+									font-size: em(20px);
+								}
+							}
+						}
+					}
+				}
+				&_Button {
+					margin: 0 auto;
 				}
 			}
 		}
