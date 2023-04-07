@@ -246,7 +246,7 @@
 			display: grid;
 			grid-template-columns: 1fr;
 			gap: em(24px) 0;
-			height: 100%;
+			height: max-content;
 			position: relative;
 			z-index: 200;
 			@media only screen and (min-width: 769px) and (max-width: 1400px) {
@@ -264,10 +264,10 @@
 				display: grid;
 				grid-template-columns: em(180px) 1fr;
 				padding: em(38px) em(47px) em(38px) em(24px);
-				width: 100%;
+				width: auto;
 				max-width: em(595px);
-				height: 100%;
 				min-height: em(277px);
+				height: auto;
 				gap: 0 em(32px);
 				border-radius: em(6px);
 				background: $white;
@@ -277,9 +277,7 @@
 				@media only screen and (min-width: 769px) and (max-width: 1400px) {
 					grid-template-columns: em(100px) 1fr;
 					padding: em(30px) em(36px) em(30px) em(37px);
-					width: 100%;
 					max-width: em(598px);
-					height: 100%;
 					min-height: em(148px);
 					gap: 0 em(32px);
 					margin-left: em(347px);
@@ -288,9 +286,7 @@
 				@include iftablet {
 					grid-template-columns: em(72px) 1fr;
 					padding: em(20px) em(22px) em(20px) em(22px);
-					width: 100%;
 					max-width: em(450px);
-					height: 100%;
 					min-height: em(115px);
 					gap: 0 em(20px);
 					margin-left: auto;
@@ -298,9 +294,7 @@
 				@include ifmobile {
 					grid-template-columns: 1fr;
 					padding: em(20px) em(14px) em(20px) em(18px);
-					width: 100%;
 					max-width: em(290px);
-					height: 100%;
 					min-height: em(137px);
 					gap: 0 em(20px);
 					margin-left: auto;
