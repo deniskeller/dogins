@@ -2,6 +2,7 @@ import {
 	Header,
 	Problems,
 	Solutions,
+	Table,
 	Widget,
 } from 'components/landing/pages/Compliance';
 
@@ -12,6 +13,7 @@ const Compliance: React.FC = () => {
 			<Widget />
 			<Problems />
 			<Solutions />
+			<Table />
 		</>
 	);
 };
