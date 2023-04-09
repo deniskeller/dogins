@@ -97,11 +97,18 @@
 	background: #217c51;
 	height: em(44px);
 	padding: em(10px) em(24px);
+	@include ifmobile {
+		padding: em(8px) em(18px);
+		height: em(36px);
+	}
 	.Title {
 		font-weight: 500;
 		font-size: em(16px);
 		line-height: 150%;
 		color: $white;
+		@include ifmobile {
+			font-size: em(14px);
+		}
 	}
 	// &:hover {
 	// 	background: rgba(255, 255, 255, 0.7);

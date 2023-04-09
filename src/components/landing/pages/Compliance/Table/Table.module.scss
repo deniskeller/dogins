@@ -87,8 +87,8 @@
 		@include ifmobile {
 			grid-template-columns: 1fr repeat(3, 1fr);
 			gap: 0;
-			padding-left: em(20px);
-			padding-right: em(20px);
+			padding-left: em(10px);
+			padding-right: em(10px);
 		}
 
 		&_Header {
@@ -192,8 +192,8 @@
 						}
 					}
 					@include ifmobile {
-						min-height: em(190px);
-						padding: em(30px) em(16px);
+						min-height: em(150px);
+						padding: em(20px) em(16px);
 						border-top-left-radius: 0;
 						border-top-right-radius: 0;
 						border: none;
@@ -264,7 +264,7 @@
 							margin-bottom: em(19px);
 						}
 						@include ifmobile {
-							margin-bottom: em(19px);
+							margin-bottom: em(7px);
 						}
 						span {
 							font-weight: 400;
@@ -276,7 +276,7 @@
 								font-size: em(20px);
 							}
 							@include ifmobile {
-								font-size: em(20px);
+								font-size: em(18px);
 							}
 						}
 					}
@@ -331,7 +331,7 @@
 					bottom: 0;
 					left: 50%;
 					transform: translate(-50%, 0);
-					width: em(578px);
+					width: em(480px);
 					height: 1px;
 					background: rgba(26, 26, 26, 0.1);
 				}
@@ -437,6 +437,33 @@
 					border: none !important;
 					background: #f4f8f6 !important;
 					padding: em(5px) em(5px) em(14px);
+					&:nth-child(2) {
+						border-left: 1px solid rgba(33, 124, 81, 0.25) !important;
+						&::before {
+							content: '';
+							background: rgba(26, 26, 26, 0.1);
+							position: absolute;
+							right: 0;
+							bottom: em(13px);
+							width: 1px;
+							height: em(24px);
+						}
+					}
+					&:nth-child(3),
+					&:nth-child(4) {
+						&::before {
+							content: '';
+							background: rgba(26, 26, 26, 0.1);
+							position: absolute;
+							right: 0;
+							bottom: em(13px);
+							width: 1px;
+							height: em(24px);
+						}
+					}
+					&:nth-child(5) {
+						border-right: 1px solid rgba(33, 124, 81, 0.25) !important;
+					}
 				}
 				&:nth-child(3) {
 					border: 1px solid #217c51;
@@ -450,12 +477,8 @@
 					line-height: 100%;
 					color: $black;
 					text-align: center;
-					@include iflaptop {
-						// font-size: em(14px);
-					}
-					@include iftablet {
-					}
 					@include ifmobile {
+						font-size: em(16px);
 					}
 				}
 				.Border {
@@ -485,7 +508,7 @@
 					display: none;
 				}
 				@include ifmobile {
-					height: em(16px);
+					height: em(10px);
 					display: none;
 				}
 			}
@@ -512,7 +535,7 @@
 					}
 				}
 				@include ifmobile {
-					height: em(16px);
+					height: em(10px);
 					border: none;
 					&:nth-child(2) {
 						border-left: 1px solid rgba(33, 124, 81, 0.25);
@@ -556,7 +579,7 @@
 				@include ifmobile {
 					border-bottom-left-radius: 0;
 					border-bottom-right-radius: 0;
-					height: em(30px);
+					height: em(10px);
 					&:nth-child(2) {
 						border-bottom-left-radius: em(8px);
 					}
@@ -572,6 +595,7 @@
 						border-bottom: 1px solid rgba(33, 124, 81, 0.25);
 					}
 					@include ifmobile {
+						background: #f4f8f6;
 						box-shadow: none;
 						border-bottom: 1px solid rgba(33, 124, 81, 0.25);
 					}
@@ -594,7 +618,6 @@
 			padding: em(22px) em(16px);
 		}
 		@include ifmobile {
-			width: 100vw;
 			text-align: center;
 			justify-content: center;
 			padding: em(10px) em(16px);
