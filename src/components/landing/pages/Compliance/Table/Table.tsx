@@ -1,5 +1,5 @@
 import { BaseButton, BaseContainer } from '@base/index';
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import s from './Table.module.scss';
 
 type Props = {};
@@ -10,18 +10,30 @@ const Table: React.FC<Props> = () => {
 
 	const scrollFunction = () => {
 		const scrollTop = refTable.current?.scrollTop;
-		if (scrollTop && scrollTop == refTable.current?.scrollHeight - 990) {
+
+		if (
+			scrollTop &&
+			scrollTop ==
+				refTable.current?.scrollHeight - refTable.current?.clientHeight
+		) {
 			setVisible(false);
 		} else {
 			setVisible(true);
 		}
 	};
 
+	useEffect(() => {
+		console.log('refTable: ', refTable);
+	}, [refTable]);
+
 	return (
 		<>
 			<div className='Wrapper-l'>
 				<BaseContainer className={s.BaseContainer}>
 					<div className={s.Table}>
+						<div className={s.Table_Title}>
+							<h2>Subscription Plan (all prices are in EUR exluding VAT)</h2>
+						</div>
 						<div
 							className={s.Table_Content}
 							ref={refTable}
