@@ -303,6 +303,13 @@
 					box-shadow: 20px 18px 6px rgba(0, 0, 0, 0.05);
 				}
 
+				&_TriangleIconDesktop {
+					position: absolute;
+					right: em(-89px);
+					top: 50%;
+					transform: translate(-50%, -50%);
+				}
+
 				&_Icon {
 					width: em(180px);
 					height: em(180px);

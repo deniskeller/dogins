@@ -1,1 +1,71 @@
+.Widget {
+	&_Header {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		padding: em(50px) 0;
+		@include iflaptop {
+			padding: em(40px) 0;
+		}
+		@include iftablet {
+			padding: em(30px) 0;
+		}
+		@include ifmobile {
+			display: grid;
+			grid-template-columns: 1fr;
+			gap: em(30px) 0;
+			padding: em(40px) 0;
+		}
+		&_Container {
+			background: #2d2d2d;
+		}
+		.Step {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			&_Icon {
+				width: em(70px);
+				height: em(70px);
+				margin-bottom: em(20px);
+				@include iflaptop {
+					width: em(50px);
+					height: em(50px);
+				}
+				@include iftablet {
+					width: em(50px);
+					height: em(50px);
+					margin-bottom: em(16px);
+				}
+				@include ifmobile {
+					width: em(50px);
+					height: em(50px);
+					margin-bottom: em(10px);
+				}
+			}
+			&_Label {
+				font-weight: 400;
+				font-size: em(18px);
+				line-height: 140%;
+				letter-spacing: -0.05em;
+				color: $orange;
+				@include iflaptop {
+					font-size: em(16px);
+				}
+				@include iftablet {
+					font-size: em(14px);
+				}
+				@include ifmobile {
+					font-size: em(14px);
+				}
+			}
+		}
+	}
+}
 
+@include iflaptop {
+}
+@include iftablet {
+}
+@include ifmobile {
+}

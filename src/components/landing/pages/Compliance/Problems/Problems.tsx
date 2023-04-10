@@ -130,6 +130,69 @@ const Problems: React.FC<Props> = () => {
 
 							<div className={s.Problems_Content_Column1}>
 								<div className={s.ProblemItem}>
+									{/* <svg
+										width='60'
+										height='126'
+										viewBox='0 0 60 126'
+										fill='none'
+										xmlns='http://www.w3.org/2000/svg'
+										className={s.ProblemItem_TriangleIconDesktop}
+									>
+										<g clipPath='url(#clip0_9057_174157)'>
+											<g filter='url(#filter0_d_9057_174157)'>
+												<path
+													d='M1.82365 -52C1.82365 -55.3137 -0.862645 -58 -4.17635 -58H-589C-592.314 -58 -595 -55.3137 -595 -52V193C-595 196.314 -592.314 199 -589 199H-4.17635C-0.862643 199 1.82365 196.314 1.82365 193V105.488C1.82365 103.749 2.57824 102.095 3.89194 100.956L34.3242 74.5562C36.8827 72.3367 37.0982 68.4409 34.8001 65.9529L3.41605 31.9741C2.39222 30.8656 1.82365 29.412 1.82365 27.9031V-52Z'
+													fill='white'
+												/>
+												<path
+													d='M-4.17635 -57.5H-589C-592.038 -57.5 -594.5 -55.0376 -594.5 -52V193C-594.5 196.038 -592.038 198.5 -589 198.5H-4.17635C-1.13879 198.5 1.32365 196.038 1.32365 193V105.488C1.32365 103.604 2.14112 101.813 3.5643 100.578L33.9966 74.1785C36.3418 72.144 36.5394 68.5728 34.4328 66.2921L3.04876 32.3133C1.9396 31.1125 1.32365 29.5378 1.32365 27.9031V-52C1.32365 -55.0376 -1.13879 -57.5 -4.17635 -57.5Z'
+													stroke='#1A1A1A'
+													strokeOpacity='0.4'
+												/>
+											</g>
+										</g>
+										<defs>
+											<filter
+												id='filter0_d_9057_174157'
+												x='-595'
+												y='-58'
+												width='657.395'
+												height='281'
+												filterUnits='userSpaceOnUse'
+												colorInterpolationFilters='sRGB'
+											>
+												<feFlood floodOpacity='0' result='BackgroundImageFix' />
+												<feColorMatrix
+													in='SourceAlpha'
+													type='matrix'
+													values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0'
+													result='hardAlpha'
+												/>
+												<feOffset dx='20' dy='18' />
+												<feGaussianBlur stdDeviation='3' />
+												<feComposite in2='hardAlpha' operator='out' />
+												<feColorMatrix
+													type='matrix'
+													values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.05 0'
+												/>
+												<feBlend
+													mode='normal'
+													in2='BackgroundImageFix'
+													result='effect1_dropShadow_9057_174157'
+												/>
+												<feBlend
+													mode='normal'
+													in='SourceGraphic'
+													in2='effect1_dropShadow_9057_174157'
+													result='shape'
+												/>
+											</filter>
+											<clipPath id='clip0_9057_174157'>
+												<rect width='60' height='126' fill='white' />
+											</clipPath>
+										</defs>
+									</svg> */}
+
 									<svg
 										width='181'
 										height='181'
