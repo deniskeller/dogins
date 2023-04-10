@@ -1,8 +1,9 @@
 import React from 'react';
-import styles from './BaseInput.module.scss';
+import s from './BaseInput.module.scss';
 
 interface Props {
 	type?: string;
+	theme?: string;
 	name: string;
 	label?: string;
 	min?: number;
@@ -22,6 +23,7 @@ const BaseInput: React.FC<Props> = ({
 	value,
 	label,
 	type = 'text',
+	theme = 'light',
 	error,
 	name,
 	min,
@@ -35,11 +37,11 @@ const BaseInput: React.FC<Props> = ({
 	onKeyDown,
 }) => {
 	return (
-		<div className={`${styles.BaseInput} ${className}`}>
+		<div className={`${s.BaseInput} ${className}`}>
 			<input
 				value={value}
 				type={type}
-				className={`${styles.Input} ${error ? styles.Error : ''}`}
+				className={`${s.Input} ${error ? s.Error : ''} ${s['Input_' + theme]}`}
 				name={name}
 				min={min}
 				max={max}
@@ -54,12 +56,16 @@ const BaseInput: React.FC<Props> = ({
 			/>
 
 			{label ? (
-				<label className={`${styles.Label} ${value ? styles.NoEmpty : ''}`}>
+				<label
+					className={`${s.Label} ${value ? s.NoEmpty : ''} ${
+						s['Label_' + theme]
+					}`}
+				>
 					{label}
 				</label>
 			) : null}
 
-			{error ? <div className={styles.ErrorText}>{error}</div> : ''}
+			{error ? <div className={s.ErrorText}>{error}</div> : ''}
 		</div>
 	);
 };

@@ -61,6 +61,22 @@
 	&.Error + .Label {
 		color: $red;
 	}
+
+	&_dark {
+		color: $black;
+		border-bottom: 1px solid rgba(26, 26, 26, 0.2);
+		&:hover {
+			border-color: $black;
+		}
+
+		&:focus {
+			border-color: $black;
+			@include placeholder-color(rgba(26, 26, 26, 0.2));
+			& + .Label {
+				color: rgba(26, 26, 26, 0.7);
+			}
+		}
+	}
 }
 
 //disabled style
@@ -112,4 +128,7 @@
 	line-height: 100%;
 	color: rgba(255, 255, 255, 0.7);
 	transition: all 0.3s ease;
+	&_dark {
+		color: rgba(26, 26, 26, 0.7);
+	}
 }

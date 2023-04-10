@@ -5,6 +5,7 @@
 	z-index: 100;
 	margin-bottom: -1px;
 	padding-right: em(50px);
+	border-top: 1px solid rgba(26, 26, 26, 0.2);
 	@include iflaptop {
 		grid-template-columns: em(443px) 1fr;
 		padding-right: em(40px);
@@ -18,32 +19,37 @@
 		padding-right: 0;
 	}
 	&_Image {
-		background-image: url('/images/image/feedback-form-bg.jpeg');
+		background-image: url('/images/image/compliance-feedback-form-bg.jpeg');
 		background-size: cover;
 		background-repeat: no-repeat;
 		background-position: center;
 		@include iftablet {
-			height: em(242px);
-			background-position: top;
+			height: em(268px);
+			background-position: bottom;
 		}
 		@include ifmobile {
-			background-position: top;
-			height: em(125px);
+			background-position: bottom;
+			height: em(144px);
 		}
 	}
 	&_Body {
 		.Form {
-			max-width: em(800px);
+			min-height: em(451px);
+			max-width: em(758px);
 			padding: em(50px) 0 em(50px) em(67px);
 			@include iflaptop {
-				padding: 0 0 em(34px) em(24px);
+				max-width: 100%;
+				min-height: em(302px);
+				padding: em(44px) 0 em(42px) em(25px);
 			}
 			@include iftablet {
-				max-width: em(517px);
-				padding: em(40px) 0 em(60px) em(40px);
+				max-width: em(537px);
+				min-height: em(280px);
+				padding: em(30px) 0 em(50px) em(20px);
 			}
 			@include ifmobile {
-				padding: em(20px) em(10px) em(50px);
+				min-height: em(350px);
+				padding: em(20px) em(10px) em(20px);
 			}
 
 			&_Title {
@@ -75,12 +81,14 @@
 			}
 
 			&_Subtitle {
+				max-width: em(600px);
 				margin-bottom: em(50px);
 				@include iflaptop {
-					max-width: em(480px);
+					max-width: em(400px);
 					margin-bottom: em(12px);
 				}
 				@include iftablet {
+					max-width: em(400px);
 					margin-bottom: em(12px);
 				}
 				@include ifmobile {
@@ -125,20 +133,29 @@
 				div {
 					color: $green;
 				}
+				svg path {
+					stroke: $green;
+				}
 			}
 
 			&_Submit {
-				height: em(450px);
+				max-width: em(800px);
+				height: em(451px);
 				padding: em(20px) em(20px) em(20px) em(60px);
 				animation-name: FadeIn;
 				animation-duration: 2s;
 				transition-timing-function: linear;
+				@include iflaptop {
+					height: em(302px);
+					padding: em(20px);
+				}
 				@include iftablet {
-					height: em(364px);
-					padding: 0 em(20px);
+					height: em(280px);
+					padding: em(20px);
 				}
 				@include ifmobile {
-					padding: 0 em(6px);
+					height: em(350px);
+					padding: em(20px) em(10px);
 				}
 			}
 		}

@@ -36,15 +36,15 @@ const Feedback: React.FC<Props> = () => {
 
 							<div className={s.Form_Subtitle}>
 								<p>
-									If you are interested in any of them, please contact us by
-									email&nbsp;
-									<a href=''>info@doqins.com</a>&nbsp; or fill up the form and
-									we will reply to you within 24 hours.
+									If you are interested, please contact us by email &nbsp;
+									<a href=''>info@doqins.com</a>&nbsp; or fill in the form and
+									we will reply to you within 24 hours
 								</p>
 							</div>
 
 							<div className={s.Form_Inputs}>
 								<BaseInput
+									theme='dark'
 									name='name'
 									label='Name'
 									value={value.name}
@@ -53,6 +53,7 @@ const Feedback: React.FC<Props> = () => {
 								/>
 
 								<BaseInput
+									theme='dark'
 									name='email'
 									label='Email'
 									value={value.email}
@@ -73,7 +74,12 @@ const Feedback: React.FC<Props> = () => {
 							className={s.Form_Submit}
 							style={{ opacity: submit ? '1' : '0' }}
 						>
-							<SubmitForm />
+							<SubmitForm
+								borderColor='#026C51'
+								iconColor='#026C51'
+								titleColor='#121212'
+								subtitleColor='#121212'
+							/>
 						</div>
 					)}
 				</div>
