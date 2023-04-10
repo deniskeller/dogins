@@ -128,8 +128,11 @@
 			}
 
 			&_Submit {
-				height: em(451px);
-				padding-left: em(60px);
+				height: em(450px);
+				padding: em(20px) em(20px) em(20px) em(60px);
+				animation-name: FadeIn;
+				animation-duration: 2s;
+				transition-timing-function: linear;
 				@include iftablet {
 					height: em(364px);
 					padding: 0 em(20px);
@@ -139,5 +142,13 @@
 				}
 			}
 		}
+	}
+}
+@include keyframe(FadeIn) {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
 	}
 }

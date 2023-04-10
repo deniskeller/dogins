@@ -13,10 +13,19 @@
 		height: em(51px);
 		margin-bottom: em(40px);
 		@include iflaptop {
+			width: em(56px);
+			height: em(31px);
+			margin-bottom: em(20px);
 		}
 		@include iftablet {
+			width: em(56px);
+			height: em(31px);
+			margin-bottom: em(20px);
 		}
-		@include iftablet {
+		@include ifmobile {
+			width: em(56px);
+			height: em(31px);
+			margin-bottom: em(20px);
 		}
 	}
 
@@ -27,13 +36,13 @@
 			font-size: em(40px);
 			line-height: 140%;
 			@include iflaptop {
-				font-size: em(36px);
-			}
-			@include iftablet {
-				font-size: em(32px);
-			}
-			@include iftablet {
 				font-size: em(28px);
+			}
+			@include iftablet {
+				font-size: em(24px);
+			}
+			@include ifmobile {
+				font-size: em(24px);
 			}
 		}
 	}
@@ -43,12 +52,12 @@
 			font-size: em(24px);
 			line-height: 140%;
 			@include iflaptop {
-				font-size: em(22px);
-			}
-			@include iftablet {
 				font-size: em(18px);
 			}
 			@include iftablet {
+				font-size: em(16px);
+			}
+			@include ifmobile {
 				font-size: em(16px);
 			}
 		}
