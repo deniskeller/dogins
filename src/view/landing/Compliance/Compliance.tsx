@@ -1,4 +1,5 @@
 import {
+	Feedback,
 	Header,
 	Problems,
 	Solutions,
@@ -14,6 +15,7 @@ const Compliance: React.FC = () => {
 			<Problems />
 			<Solutions />
 			<Table />
+			<Feedback />
 		</>
 	);
 };

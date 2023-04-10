@@ -58,10 +58,10 @@
 					margin-bottom: em(16px);
 				}
 				h3 {
-					font-weight: 300;
+					font-weight: 400;
 					font-size: em(30px);
 					line-height: 140%;
-					color: $white;
+					color: $black;
 					@include iflaptop {
 						font-size: em(18px);
 					}
@@ -70,10 +70,6 @@
 					}
 					@include ifmobile {
 						font-size: em(16px);
-					}
-					a {
-						color: $orange;
-						text-decoration: underline;
 					}
 				}
 			}
@@ -91,15 +87,15 @@
 					margin-bottom: em(20px);
 				}
 				p {
-					font-weight: 300;
+					font-weight: 400;
 					font-size: em(12px);
 					line-height: 140%;
-					color: rgba(255, 255, 255, 0.7);
+					color: rgba(18, 18, 18, 0.6);
 					@include ifdesktop {
 						font-size: em(18px);
 					}
 					a {
-						color: $orange;
+						color: #026c51;
 					}
 				}
 			}
@@ -125,20 +121,21 @@
 				}
 			}
 
+			&_Button {
+				div {
+					color: $green;
+				}
+			}
+
 			&_Submit {
 				height: em(451px);
 				padding-left: em(60px);
-
-				@include iflaptop {
-					height: em(249px);
-				}
 				@include iftablet {
 					height: em(364px);
-					padding: em(20px);
+					padding: 0 em(20px);
 				}
 				@include ifmobile {
-					height: em(386px);
-					padding: em(20px) em(10px);
+					padding: 0 em(6px);
 				}
 			}
 		}

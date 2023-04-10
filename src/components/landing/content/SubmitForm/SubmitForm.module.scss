@@ -12,6 +12,12 @@
 		width: em(76px);
 		height: em(51px);
 		margin-bottom: em(40px);
+		@include iflaptop {
+		}
+		@include iftablet {
+		}
+		@include iftablet {
+		}
 	}
 
 	&_Title {
@@ -20,6 +26,15 @@
 			font-weight: 300;
 			font-size: em(40px);
 			line-height: 140%;
+			@include iflaptop {
+				font-size: em(36px);
+			}
+			@include iftablet {
+				font-size: em(32px);
+			}
+			@include iftablet {
+				font-size: em(28px);
+			}
 		}
 	}
 	&_Subtitle {
@@ -27,6 +42,15 @@
 			font-weight: 300;
 			font-size: em(24px);
 			line-height: 140%;
+			@include iflaptop {
+				font-size: em(22px);
+			}
+			@include iftablet {
+				font-size: em(18px);
+			}
+			@include iftablet {
+				font-size: em(16px);
+			}
 		}
 	}
 }
