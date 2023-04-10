@@ -7,10 +7,15 @@ import {
 	BaseTextarea,
 } from '@base/index';
 import { ALL_ICONS } from '@constants/icons';
-import { Header, MapContacts, PhoneInput } from '@content/landing/index';
+import {
+	Header,
+	MapContacts,
+	PhoneInput,
+	SubmitForm,
+} from '@content/landing/index';
 import { countries } from '@services/index';
 import Link from 'next/link';
-import React from 'react';
+import React, { useState } from 'react';
 import s from './Contacts.module.scss';
 
 interface IValue {
@@ -42,6 +47,8 @@ const Contacts: React.FC = () => {
 		lat: 40.762138342147594,
 		lng: -73.97841152698312,
 	};
+
+	const [submit, setSubmit] = useState(false);
 	return (
 		<>
 			<Header image='contacts-header-bg.jpeg' title='Contact us' />
@@ -118,67 +125,83 @@ const Contacts: React.FC = () => {
 									</Link>
 								</div>
 							</div>
+							{!submit ? (
+								<div
+									className={s.Form_WriteToUs}
+									style={{ opacity: !submit ? '1' : '0' }}
+								>
+									<div className={s.Title}>
+										<span>Write to us</span>
+									</div>
 
-							<div className={s.Form_WriteToUs}>
-								<div className={s.Title}>
-									<span>Write to us</span>
+									<div className={s.Description}>
+										<p>
+											Please feel free to contact us for any questions you might
+											have. If you are the existing customer and want to discuss
+											any issue, please contact your personal manager.
+										</p>
+									</div>
+
+									<BaseInput
+										name='name_surname'
+										label='Name Surname'
+										value={value.name_surname}
+										onChange={(val: string) => setNewValue(val, 'name_surname')}
+										className={s.Input}
+									/>
+
+									<BaseInput
+										name='email'
+										label='Email'
+										value={value.email}
+										onChange={(val: string) => setNewValue(val, 'email')}
+										className={s.Input}
+									/>
+
+									<PhoneInput
+										value={value.phone}
+										onChange={(val: string) => setNewValue(val, 'phone')}
+										className={s.Input}
+									/>
+
+									<BaseSelect
+										label='Country'
+										options={countries}
+										onChange={(val: string) => setNewValue(val, 'country')}
+										className={s.Input}
+									/>
+
+									<BaseTextarea
+										name='message'
+										label='How can we help?'
+										type='text'
+										value={value.message}
+										onChange={(val: string) => setNewValue(val, 'message')}
+										className={s.Input}
+									/>
+
+									<div className={s.Warning}>
+										<p>
+											* Please do not include confidential or sensitive
+											information in your message.
+										</p>
+									</div>
+
+									<BaseButton
+										title='Submit'
+										type='submit'
+										className={s.Button}
+										onClick={() => setSubmit(true)}
+									/>
 								</div>
-
-								<div className={s.Description}>
-									<p>
-										Please feel free to contact us for any questions you might
-										have. If you are the existing customer and want to discuss
-										any issue, please contact your personal manager.
-									</p>
+							) : (
+								<div
+									className={s.Submit}
+									style={{ opacity: submit ? '1' : '0' }}
+								>
+									<SubmitForm />
 								</div>
-
-								<BaseInput
-									name='name_surname'
-									label='Name Surname'
-									value={value.name_surname}
-									onChange={(val: string) => setNewValue(val, 'name_surname')}
-									className={s.Input}
-								/>
-
-								<BaseInput
-									name='email'
-									label='Email'
-									value={value.email}
-									onChange={(val: string) => setNewValue(val, 'email')}
-									className={s.Input}
-								/>
-
-								<PhoneInput
-									value={value.phone}
-									onChange={(val: string) => setNewValue(val, 'phone')}
-									className={s.Input}
-								/>
-
-								<BaseSelect
-									label='Country'
-									options={countries}
-									onChange={(val: string) => setNewValue(val, 'country')}
-									className={s.Input}
-								/>
-
-								<BaseTextarea
-									name='message'
-									label='How can we help?'
-									type='text'
-									value={value.message}
-									onChange={(val: string) => setNewValue(val, 'message')}
-									className={s.Input}
-								/>
-
-								<div className={s.Warning}>
-									<p>
-										* Please do not include confidential or sensitive
-										information in your message.
-									</p>
-								</div>
-
-								<BaseButton title='Submit' type='submit' className={s.Button} />
-							</div>
+							)}
 						</div>
 					</div>
 				</BaseContainer>

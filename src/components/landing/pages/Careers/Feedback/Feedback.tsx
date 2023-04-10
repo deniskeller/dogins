@@ -278,7 +278,10 @@ const Feedback: React.FC<Props> = () => {
 				</div>
 
 				{!submit ? (
-					<div className={s.Feedback_Form}>
+					<div
+						className={s.Feedback_Form}
+						style={{ opacity: !submit ? '1' : '0' }}
+					>
 						<div className={s.Feedback_Form_Title}>
 							<p>
 								If you are such person, please feel free to send the application
@@ -349,7 +352,10 @@ const Feedback: React.FC<Props> = () => {
 						/>
 					</div>
 				) : (
-					<div className={s.Feedback_Form_Submit}>
+					<div
+						className={s.Feedback_Form_Submit}
+						style={{ opacity: submit ? '1' : '0' }}
+					>
 						<SubmitForm />
 					</div>
 				)}

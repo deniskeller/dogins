@@ -81,6 +81,7 @@
 	}
 
 	&_Form {
+		min-height: em(472px);
 		padding: em(50px) em(30px) em(74px) em(73px);
 		@include iflaptop {
 			padding: em(30px) em(20px) em(96px) em(20px);
@@ -154,7 +155,31 @@
 		}
 
 		&_Submit {
+			animation-name: FadeIn;
+			animation-duration: 2s;
+			transition-timing-function: linear;
 			padding: em(70px);
+			height: em(604px);
+			@include iflaptop {
+				padding: em(30px) em(20px) em(96px) em(20px);
+				height: em(583px);
+			}
+			@include iftablet {
+				padding: em(30px) em(14px) em(46px) em(20px);
+				height: em(520px);
+			}
+			@include ifmobile {
+				padding: em(24px) em(6px) em(24px);
+				height: em(472px);
+			}
 		}
+	}
+}
+@include keyframe(FadeIn) {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
 	}
 }

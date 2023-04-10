@@ -82,8 +82,9 @@
 	&_Upload {
 		display: flex;
 		align-items: center;
-		justify-content: center;
-		padding: em(12px) em(40px);
+		justify-content: flex-start;
+		height: em(50px);
+		padding: em(12px) em(10px);
 		border: 1px dashed rgba(255, 255, 255, 0.2);
 		border-radius: 2px;
 		position: relative;
@@ -118,10 +119,13 @@
 			height: em(24px);
 			cursor: pointer;
 			@include iflaptop {
+				right: em(10px);
 			}
 			@include iftablet {
+				right: em(10px);
 			}
 			@include ifmobile {
+				right: em(10px);
 			}
 			&:hover {
 				path {

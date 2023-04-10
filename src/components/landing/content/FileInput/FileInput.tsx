@@ -46,10 +46,10 @@ const FileInput: React.FC<FileInputProps> = ({
 
 	//обрезание строки
 	const computedName = (file: string) => {
-		if (file.length > 10) {
+		if (file.length > 8) {
 			const fileName = file.split('.')[0];
 			const fileType = file.split('.')[1];
-			const newStr = fileName.substring(0, 10);
+			const newStr = fileName.substring(0, 8);
 			return newStr + '...' + '.' + fileType;
 		}
 		return file;
