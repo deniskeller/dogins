@@ -126,8 +126,9 @@
 			}
 
 			&_Submit {
+				max-width: em(830px);
 				height: em(455px);
-				padding: 0 em(20px) em(20px) em(60px);
+				padding: 0 0 em(20px) em(24px);
 				animation-name: FadeIn;
 				animation-duration: 2s;
 				transition-timing-function: linear;
