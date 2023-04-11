@@ -11,28 +11,40 @@
 	width: 100%;
 	height: em(50px);
 	position: relative;
-	border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-	border-radius: 0;
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	border-radius: em(8px);
 	transition: 0.5s ease all;
 	-moz-transition: 0.5s ease all;
 	-webkit-transition: 0.5s ease all;
 	background: transparent;
-	padding: em(20px) 0 em(3px);
+	padding: em(12px) em(20px);
+	@include iftablet {
+		height: em(44px);
+		padding: em(12px) em(16px);
+	}
+	@include ifmobile {
+		height: em(44px);
+		padding: em(12px) em(12px);
+	}
+
 	&:hover {
 		border-color: $white;
 	}
 
 	p {
-		@include ifdesktop {
-			font-size: em(20px);
-		}
-		font-size: em(16px);
-		line-height: 140%;
+		font-size: em(18px);
+		line-height: 100%;
 		font-weight: 300;
 		overflow: hidden;
 		white-space: nowrap;
 		text-overflow: ellipsis;
 		color: $white;
+		@include iftablet {
+			font-size: em(16px);
+		}
+		@include ifmobile {
+			font-size: em(14px);
+		}
 	}
 
 	.NotEmpty {
@@ -42,7 +54,7 @@
 }
 
 .SelectHeaderFocus {
-	border-bottom: 1px solid $white;
+	border: 1px solid $white;
 }
 
 .SelectList {
@@ -87,14 +99,17 @@
 	}
 
 	.ListItemTitle {
-		@include ifdesktop {
-			font-size: em(20px);
-		}
-		font-size: em(16px);
+		font-size: em(18px);
 		font-weight: 300;
 		line-height: 140%;
 		font-family: 'Montserrat', sans-serif;
 		color: $white;
+		@include iftablet {
+			font-size: em(16px);
+		}
+		@include ifmobile {
+			font-size: em(14px);
+		}
 	}
 
 	.IconCheck {
@@ -104,26 +119,37 @@
 }
 
 .Label {
+	$size: 18px;
+	font-size: em($size);
+	top: em(16px, $size);
+	left: em(20px, $size);
 	position: absolute;
 	pointer-events: none;
-	font-size: em(14px);
-	top: em(20px);
-	left: 0;
 	font-family: 'Montserrat', sans-serif;
 	font-weight: 300;
 	line-height: 100%;
 	color: rgba(255, 255, 255, 0.7);
 	transition: all 0.3s ease;
+	@include iftablet {
+		$size: 16px;
+		font-size: em($size);
+		top: em(15px, $size);
+		left: em(16px, $size);
+	}
+	@include ifmobile {
+		$size: 14px;
+		font-size: em($size);
+		top: em(16px, $size);
+		left: em(20px, $size);
+	}
 
 	&_Focus {
-		font-size: em(12px);
-		top: 0;
-		left: 0;
+		display: none;
 	}
 }
 
 .Error {
-	border-bottom: 1px solid #ef4343 !important;
+	border: 1px solid #ef4343 !important;
 }
 
 .ErrorText {
@@ -141,7 +167,7 @@
 	height: em(24px);
 	position: absolute;
 	bottom: emn(10px);
-	right: 0;
+	right: em(16px);
 	transition: transform 0.6s ease;
 }
 
@@ -160,4 +186,11 @@
 	.SelectHeader {
 		height: em(44px);
 	}
+}
+
+@include iflaptop {
+}
+@include iftablet {
+}
+@include ifmobile {
 }

@@ -1,10 +1,69 @@
-import { BaseContainer } from '@base/index';
-import React from 'react';
+import {
+	BaseButton,
+	BaseContainer,
+	BaseIcon,
+	BaseRadioButton,
+} from '@base/index';
+import { ALL_ICONS } from '@constants/icons';
+import { WidgetInput, WidgetSelect } from '@content/landing/index';
+import { countries } from '@services/index';
+import React, { useEffect } from 'react';
 import s from './Widget.module.scss';
+
+const companies_list = [
+	{
+		value: 1,
+		name: 'ЗАО "ДИАМОНД-BW"',
+		code: 1020502526153,
+	},
+	{
+		value: 2,
+		name: 'ООО "ДИАМОНД"',
+		code: 1180280030809,
+	},
+	{
+		value: 3,
+		name: 'ЗАО "ООО "ДИАМОНД"',
+		code: 1160571066919,
+	},
+];
+
+const documents_list = [
+	{
+		value: 'Company search report (electronic)',
+		label: 'Company search report (electronic)',
+	},
+	{
+		value: 'Historical search report',
+		label: 'Historical search report',
+	},
+];
 
 type Props = {};
 
+interface IValue {
+	name: string;
+	countries: string;
+	document: string;
+}
+
 const Widget: React.FC<Props> = () => {
+	const [value, setValue] = React.useState<IValue>({
+		name: '',
+		countries: '',
+		document: '',
+	});
+
+	const setNewValue = (val: string | number | File[], key: string) => {
+		setValue((prev) => ({ ...prev, [key]: val }));
+	};
+
+	const [radioValue, setRadioValue] = React.useState(1);
+
+	useEffect(() => {
+		console.log('value.countries: ', value.countries);
+	}, [value.countries]);
+
 	return (
 		<>
 			<div className='Wrapper'>
@@ -81,7 +140,181 @@ const Widget: React.FC<Props> = () => {
 						</BaseContainer>
 					</div>
 
-					<div className={s.Widget_Body}></div>
+					<BaseContainer className={s.BaseContainer}>
+						<div className={s.Widget_Body}>
+							<div className={s.Request}>
+								<div className={s.Request_Actions}>
+									<WidgetInput
+										label='Enter name'
+										name='name'
+										value={value.name}
+										onChange={(val: string) => setNewValue(val, 'name')}
+										className={s.Input}
+									/>
+
+									<WidgetSelect
+										label='Select country'
+										options={countries}
+										onChange={(val: string) => setNewValue(val, 'countries')}
+										className={s.Select}
+									/>
+
+									<BaseButton title='New request' className={s.Button} />
+								</div>
+
+								<div className={s.Request_Message}>
+									<p>
+										The name <span>test</span> was not found. It is possible,
+										that you entered non-existing name or online service is
+										experiencing technical troubles. You may send the Request
+										anyway and we will process it manually.
+									</p>
+								</div>
+							</div>
+
+							<div className={s.ListOfCompanies}>
+								{companies_list?.map((item) => {
+									return (
+										<div className={s.Company} key={item.value}>
+											<BaseRadioButton
+												value={item.value}
+												checked={radioValue === item.value}
+												onChange={() => setRadioValue(item.value)}
+												className={s.Company_Radiobutton}
+											/>
+
+											<div className={s.Company_Name}>
+												<span>{item.name}</span>
+											</div>
+
+											<div className={s.Company_Code}>
+												<span>{item.code}</span>
+											</div>
+										</div>
+									);
+								})}
+							</div>
+
+							<div className={s.Table}>
+								<div className={s.Body}>
+									<div className={s.Table_Header}>
+										<div className={s.Table_Header_Label}>
+											<span>Name</span>
+										</div>
+										<div className={s.Table_Header_Label}>
+											<span>Price</span>
+										</div>
+										<div className={s.Table_Header_Label}>
+											<span>Info</span>
+										</div>
+									</div>
+
+									<div className={s.Table_Body}>
+										<div className={s.Table_Body_Row}>
+											<div className={s.Column}>
+												{value.document ? (
+													<BaseIcon
+														icon={ALL_ICONS.CHECK}
+														viewBox='0 0 30 30'
+														className={s.IconCheck}
+													/>
+												) : (
+													<svg
+														width='24'
+														height='24'
+														viewBox='0 0 24 24'
+														fill='none'
+														xmlns='http://www.w3.org/2000/svg'
+														className={s.IconCheck}
+													>
+														<path
+															d='M12.0015 9V11M12.0015 15H12.0115M5.0733 19H18.9297C20.4693 19 21.4316 17.3333 20.6618 16L13.7336 4C12.9637 2.66667 11.0392 2.66667 10.2694 4L3.34125 16C2.57145 17.3333 3.5337 19 5.0733 19Z'
+															stroke='white'
+															strokeOpacity='0.7'
+															strokeLinecap='round'
+															strokeLinejoin='round'
+														/>
+													</svg>
+												)}
+
+												<WidgetSelect
+													label='Select Document'
+													options={documents_list}
+													onChange={(val: string) =>
+														setNewValue(val, 'document')
+													}
+													className={s.Select}
+												/>
+											</div>
+
+											<div className={s.Column}>
+												<div className={s.Price}>
+													<span>20.00</span>&nbsp;EUR
+												</div>
+											</div>
+
+											<div className={s.Column}>
+												<svg
+													width='24'
+													height='24'
+													viewBox='0 0 24 24'
+													fill='none'
+													xmlns='http://www.w3.org/2000/svg'
+												>
+													<path
+														d='M8.22766 9C8.77678 7.83481 10.2584 7 12.0001 7C14.2092 7 16.0001 8.34315 16.0001 10C16.0001 11.3994 14.7224 12.5751 12.9943 12.9066C12.4519 13.0106 12.0001 13.4477 12.0001 14M12 17H12.01M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z'
+														stroke='white'
+														strokeOpacity='0.7'
+														strokeWidth='1.5'
+														strokeLinecap='round'
+														strokeLinejoin='round'
+													/>
+												</svg>
+											</div>
+										</div>
+
+										<div className={s.Table_Body_Row}>
+											<div className={s.Column}>Processing fee</div>
+
+											<div className={s.Column}>
+												<div className={s.Price}>
+													<span>20.00</span>&nbsp;EUR
+												</div>
+											</div>
+
+											<div className={s.Column}>
+												<svg
+													width='24'
+													height='24'
+													viewBox='0 0 24 24'
+													fill='none'
+													xmlns='http://www.w3.org/2000/svg'
+												>
+													<path
+														d='M8.22766 9C8.77678 7.83481 10.2584 7 12.0001 7C14.2092 7 16.0001 8.34315 16.0001 10C16.0001 11.3994 14.7224 12.5751 12.9943 12.9066C12.4519 13.0106 12.0001 13.4477 12.0001 14M12 17H12.01M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z'
+														stroke='white'
+														strokeOpacity='0.7'
+														strokeWidth='1.5'
+														strokeLinecap='round'
+														strokeLinejoin='round'
+													/>
+												</svg>
+											</div>
+										</div>
+									</div>
+
+									<div className={s.Table_Footer}>
+										<div className={s.Table_Footer_Label}>Total</div>
+										<div className={s.Table_Footer_Label}>
+											<span className={s.Price}>45.00</span>&nbsp;EUR
+										</div>
+									</div>
+								</div>
+
+								<div className={s.Notes}></div>
+							</div>
+						</div>
+					</BaseContainer>
 				</div>
 			</div>
 		</>

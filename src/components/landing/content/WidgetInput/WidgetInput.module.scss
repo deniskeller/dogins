@@ -1,0 +1,130 @@
+.BaseInput {
+	font-size: inherit;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+}
+
+.Input {
+	$size: 18px;
+	font-size: em($size);
+	height: em(50px, $size);
+	padding: em(12px, $size) em(20px, $size);
+	line-height: 140%;
+	font-weight: 300;
+	color: $white;
+	font-family: 'Montserrat', sans-serif;
+	width: 100%;
+	background: none;
+	outline: none;
+	border: none;
+	border-radius: em(8px);
+	position: relative;
+	box-shadow: none;
+	background: transparent;
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	transition: 0.5s ease all;
+	-moz-transition: 0.5s ease all;
+	-webkit-transition: 0.5s ease all;
+	box-sizing: border-box;
+	@include placeholder-color(transparent);
+
+	@include iftablet {
+		$size: 16px;
+		font-size: em($size);
+		height: em(44px, $size);
+		padding: em(12px, $size) em(16px, $size);
+	}
+
+	@include ifmobile {
+		$size: 14px;
+		font-size: em($size);
+		height: em(44px, $size);
+		padding: em(12px, $size);
+	}
+
+	&:hover {
+		border-color: $white;
+	}
+
+	&:focus {
+		border-color: $white;
+		@include placeholder-color($white);
+		& + .Label {
+			display: none;
+		}
+	}
+
+	& + .NoEmpty {
+		display: none;
+	}
+
+	&.Error + .Label {
+		color: $red;
+	}
+}
+
+//disabled style
+.Input:disabled,
+.Input:disabled:hover,
+.Input:disabled:focus {
+	cursor: not-allowed;
+	pointer-events: none;
+	background: #f4f4f5;
+	border: 1px solid #e5e7eb !important;
+	color: rgba(26, 26, 26, 0.5);
+}
+
+.Icon {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	right: em(19px);
+	width: em(28px);
+	height: em(28px);
+}
+
+.IconPassword {
+	cursor: pointer;
+}
+
+.Error {
+	border: 1px solid $error !important;
+}
+
+.ErrorText {
+	font-size: em(12px);
+	font-family: 'Montserrat', sans-serif;
+	line-height: 100%;
+	color: $error;
+	display: block;
+	margin-top: em(10px);
+	font-weight: 300;
+}
+
+.Label {
+	$size: 18px;
+	font-size: em($size);
+	top: em(16px, $size);
+	left: em(20px, $size);
+	position: absolute;
+	pointer-events: none;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 300;
+	line-height: 100%;
+	color: rgba(255, 255, 255, 0.7);
+	transition: all 0.3s ease;
+
+	@include iftablet {
+		$size: 16px;
+		font-size: em($size);
+		top: em(15px, $size);
+		left: em(16px, $size);
+	}
+	@include ifmobile {
+		$size: 14px;
+		font-size: em($size);
+		top: em(15px, $size);
+		left: em(12px, $size);
+	}
+}
