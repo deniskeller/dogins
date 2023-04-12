@@ -469,7 +469,7 @@ const Widget: React.FC<Props> = () => {
 
 											<div className={s.Column}>
 												<div className={s.Price}>
-													<span>20.00</span>&nbsp;EUR/page
+													<span>19000.00</span>&nbsp;EUR/page
 												</div>
 											</div>
 
