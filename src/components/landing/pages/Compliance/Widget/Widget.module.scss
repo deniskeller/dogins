@@ -447,17 +447,27 @@
 							position: relative;
 							width: em(24px);
 							height: em(24px);
-							cursor: pointer;
 							margin-left: auto;
-							svg {
+							&_Icon {
 								width: inherit;
 								height: inherit;
-							}
-							&:hover {
-								svg path {
-									stroke: $orange;
+								cursor: pointer;
+								&:hover {
+									opacity: 0.6;
+									path {
+										stroke: $orange;
+									}
+								}
+								&_TooltipOpen {
+									path {
+										stroke: $orange;
+									}
+									&:hover {
+										opacity: 1;
+									}
 								}
 							}
+
 							@include ifmobile {
 								margin-left: auto;
 								margin-right: 0;

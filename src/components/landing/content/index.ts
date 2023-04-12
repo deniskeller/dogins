@@ -7,4 +7,5 @@ export { default as SubmitForm } from "./SubmitForm/SubmitForm";
 export { default as VacancyItem } from "./VacancyItem/VacancyItem";
 export { default as WidgetInput } from "./WidgetInput/WidgetInput";
 export { default as WidgetSelect } from "./WidgetSelect/WidgetSelect";
+export { default as WidgetTooltip } from "./WidgetTooltip/WidgetTooltip";
 

@@ -6,7 +6,11 @@ import {
 	BaseRadioButton,
 } from '@base/index';
 import { ALL_ICONS } from '@constants/icons';
-import { WidgetInput, WidgetSelect } from '@content/landing/index';
+import {
+	WidgetInput,
+	WidgetSelect,
+	WidgetTooltip,
+} from '@content/landing/index';
 import { countries } from '@services/index';
 import React, { useEffect, useState } from 'react';
 import s from './Widget.module.scss';
@@ -61,10 +65,17 @@ const Widget: React.FC<Props> = () => {
 
 	const [radioValue, setRadioValue] = useState(1);
 	const [isChecked, setIsChecked] = useState<boolean>(false);
+	const [isChecked2, setIsChecked2] = useState<boolean>(false);
+	const [isChecked3, setIsChecked3] = useState<boolean>(false);
 
 	useEffect(() => {
 		console.log('value.countries: ', value.countries);
 	}, [value.countries]);
+
+	const [tooltipVisible, setTooltipVisible] = React.useState<boolean>(false);
+	const [tooltipVisible2, setTooltipVisible2] = React.useState<boolean>(false);
+	const [tooltipVisible3, setTooltipVisible3] = React.useState<boolean>(false);
+	const [tooltipVisible4, setTooltipVisible4] = React.useState<boolean>(false);
 
 	return (
 		<>
@@ -265,6 +276,10 @@ const Widget: React.FC<Props> = () => {
 														viewBox='0 0 24 24'
 														fill='none'
 														xmlns='http://www.w3.org/2000/svg'
+														className={`${s.Tooltip_Icon} ${
+															tooltipVisible ? s.Tooltip_Icon_TooltipOpen : ''
+														}`}
+														onClick={() => setTooltipVisible(true)}
 													>
 														<path
 															d='M8.22766 9C8.77678 7.83481 10.2584 7 12.0001 7C14.2092 7 16.0001 8.34315 16.0001 10C16.0001 11.3994 14.7224 12.5751 12.9943 12.9066C12.4519 13.0106 12.0001 13.4477 12.0001 14M12 17H12.01M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z'
@@ -275,6 +290,25 @@ const Widget: React.FC<Props> = () => {
 															strokeLinejoin='round'
 														/>
 													</svg>
+
+													<WidgetTooltip
+														title='Company search report (electronic)'
+														tooltipVisible={tooltipVisible}
+														onClick={() => setTooltipVisible(false)}
+														markers={['GO', 'SU', 'e']}
+													>
+														<li>Language: English and Local (Dari/Pashto)</li>
+														<li>No hard copy of a document</li>
+														<li>
+															Contains general company information including
+															details about director and officers of the company
+														</li>
+														<li>
+															Please note that some companies haven’t got the
+															names of the director and officers in English
+														</li>
+														<li>Up to 3 working days</li>
+													</WidgetTooltip>
 												</div>
 											</div>
 										</div>
@@ -330,6 +364,10 @@ const Widget: React.FC<Props> = () => {
 														viewBox='0 0 24 24'
 														fill='none'
 														xmlns='http://www.w3.org/2000/svg'
+														className={`${s.Tooltip_Icon} ${
+															tooltipVisible2 ? s.Tooltip_Icon_TooltipOpen : ''
+														}`}
+														onClick={() => setTooltipVisible2(true)}
 													>
 														<path
 															d='M8.22766 9C8.77678 7.83481 10.2584 7 12.0001 7C14.2092 7 16.0001 8.34315 16.0001 10C16.0001 11.3994 14.7224 12.5751 12.9943 12.9066C12.4519 13.0106 12.0001 13.4477 12.0001 14M12 17H12.01M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z'
@@ -340,6 +378,20 @@ const Widget: React.FC<Props> = () => {
 															strokeLinejoin='round'
 														/>
 													</svg>
+
+													<WidgetTooltip
+														title='Apostil Fee'
+														tooltipVisible={tooltipVisible2}
+														onClick={() => setTooltipVisible2(false)}
+													>
+														<li>
+															Verification as a true copy and Apostille executed
+															in Israel
+														</li>
+														<li>
+															Processing estimated time: up to 5 working days
+														</li>
+													</WidgetTooltip>
 												</div>
 											</div>
 										</div>
@@ -349,8 +401,8 @@ const Widget: React.FC<Props> = () => {
 											<div className={s.Column}>
 												<BaseCheckbox
 													type='green'
-													checked={isChecked}
-													onChange={() => setIsChecked(!isChecked)}
+													checked={isChecked2}
+													onChange={() => setIsChecked2(!isChecked2)}
 													className={s.Form_Checkbox}
 												>
 													Translation
@@ -371,6 +423,10 @@ const Widget: React.FC<Props> = () => {
 														viewBox='0 0 24 24'
 														fill='none'
 														xmlns='http://www.w3.org/2000/svg'
+														className={`${s.Tooltip_Icon} ${
+															tooltipVisible3 ? s.Tooltip_Icon_TooltipOpen : ''
+														}`}
+														onClick={() => setTooltipVisible3(true)}
 													>
 														<path
 															d='M8.22766 9C8.77678 7.83481 10.2584 7 12.0001 7C14.2092 7 16.0001 8.34315 16.0001 10C16.0001 11.3994 14.7224 12.5751 12.9943 12.9066C12.4519 13.0106 12.0001 13.4477 12.0001 14M12 17H12.01M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z'
@@ -381,6 +437,19 @@ const Widget: React.FC<Props> = () => {
 															strokeLinejoin='round'
 														/>
 													</svg>
+
+													<WidgetTooltip
+														title='Translation'
+														tooltipVisible={tooltipVisible3}
+														onClick={() => setTooltipVisible3(false)}
+													>
+														<li>
+															This is the price for a translation into English
+															from: Russian, Latvian, Estonian, Lithuanian,
+															Ukrainian, German, Polish, Spanish, French
+															languages. Other combinations – on request
+														</li>
+													</WidgetTooltip>
 												</div>
 											</div>
 										</div>
@@ -390,8 +459,8 @@ const Widget: React.FC<Props> = () => {
 											<div className={s.Column}>
 												<BaseCheckbox
 													type='green'
-													checked={isChecked}
-													onChange={() => setIsChecked(!isChecked)}
+													checked={isChecked3}
+													onChange={() => setIsChecked3(!isChecked3)}
 													className={s.Form_Checkbox}
 												>
 													International Delivery
@@ -412,6 +481,10 @@ const Widget: React.FC<Props> = () => {
 														viewBox='0 0 24 24'
 														fill='none'
 														xmlns='http://www.w3.org/2000/svg'
+														className={`${s.Tooltip_Icon} ${
+															tooltipVisible4 ? s.Tooltip_Icon_TooltipOpen : ''
+														}`}
+														onClick={() => setTooltipVisible4(true)}
 													>
 														<path
 															d='M8.22766 9C8.77678 7.83481 10.2584 7 12.0001 7C14.2092 7 16.0001 8.34315 16.0001 10C16.0001 11.3994 14.7224 12.5751 12.9943 12.9066C12.4519 13.0106 12.0001 13.4477 12.0001 14M12 17H12.01M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z'
@@ -422,6 +495,25 @@ const Widget: React.FC<Props> = () => {
 															strokeLinejoin='round'
 														/>
 													</svg>
+
+													<WidgetTooltip
+														title='International Delivery'
+														tooltipVisible={tooltipVisible4}
+														onClick={() => setTooltipVisible4(false)}
+														markers={['GO', 'SU', 'e']}
+													>
+														<li>Language: English and Local (Dari/Pashto)</li>
+														<li>No hard copy of a document</li>
+														<li>
+															Contains general company information including
+															details about director and officers of the company
+														</li>
+														<li>
+															Please note that some companies haven’t got the
+															names of the director and officers in English
+														</li>
+														<li>Up to 3 working days</li>
+													</WidgetTooltip>
 												</div>
 											</div>
 										</div>
