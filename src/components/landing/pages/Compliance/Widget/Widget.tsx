@@ -12,6 +12,7 @@ import {
 	WidgetTooltip,
 } from '@content/landing/index';
 import { countries } from '@services/index';
+import { WidgetPopup } from 'components/landing/modals';
 import React, { useEffect, useState } from 'react';
 import s from './Widget.module.scss';
 
@@ -76,6 +77,8 @@ const Widget: React.FC<Props> = () => {
 	const [tooltipVisible2, setTooltipVisible2] = React.useState<boolean>(false);
 	const [tooltipVisible3, setTooltipVisible3] = React.useState<boolean>(false);
 	const [tooltipVisible4, setTooltipVisible4] = React.useState<boolean>(false);
+
+	const [popup, setPopup] = React.useState<boolean>(false);
 
 	return (
 		<>
@@ -172,7 +175,11 @@ const Widget: React.FC<Props> = () => {
 										className={s.Select}
 									/>
 
-									<BaseButton title='New request' className={s.Button} />
+									<BaseButton
+										title='New request'
+										className={s.Button}
+										onClick={() => setPopup(true)}
+									/>
 								</div>
 
 								<div className={s.Request_Message}>
@@ -579,6 +586,7 @@ const Widget: React.FC<Props> = () => {
 					</BaseContainer>
 				</div>
 			</div>
+			<WidgetPopup popup={popup} onClick={() => setPopup(false)} />
 		</>
 	);
 };
