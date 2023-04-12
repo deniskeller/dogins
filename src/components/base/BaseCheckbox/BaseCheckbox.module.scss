@@ -1,0 +1,152 @@
+.BaseCheckbox {
+	position: relative;
+	user-select: none;
+	display: inline-flex;
+	flex-direction: row;
+	align-items: center;
+	cursor: pointer;
+	font-size: 100%;
+	padding-left: em(44px);
+	@include ifmobile {
+		padding-left: em(28px);
+	}
+
+	&:hover {
+		.BaseCheckboxCheck {
+			background: #899ea9;
+		}
+		.BaseCheckboxCheck.isActive {
+			background: #0369a0;
+			border-color: #0369a0;
+		}
+	}
+
+	.BaseCheckboxLabel {
+		span {
+			font-size: em(16px);
+			font-weight: 300;
+			line-height: 140%;
+			color: $black;
+			@include ifmobile {
+				font-size: em(14px);
+			}
+		}
+	}
+
+	.BaseCheckboxInput {
+		position: absolute;
+		visibility: hidden;
+		font-size: 0;
+		width: 0;
+		height: 0;
+		padding: 0;
+		border: 0;
+		outline: 0;
+	}
+
+	.BaseCheckboxCheck {
+		box-sizing: border-box;
+		width: em(24px);
+		height: em(24px);
+		border-radius: em(4px);
+		background: transparent;
+		border: 1.5px solid rgba(255, 255, 255, 0.1);
+		overflow: hidden;
+		position: absolute;
+		// top: 0;
+		left: 0;
+		@include ifmobile {
+			width: em(18px);
+			height: em(18px);
+		}
+	}
+
+	.BaseCheckboxTick {
+		width: em(24px);
+		height: em(24px);
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		visibility: hidden;
+
+		@include ifmobile {
+			width: em(18px);
+			height: em(18px);
+		}
+	}
+
+	.isError {
+		border: 1.5px solid red;
+	}
+
+	.isActive {
+		background: $blue;
+		border: 1.5px solid $blue;
+		.BaseCheckboxTick {
+			visibility: visible;
+		}
+	}
+}
+
+.BaseCheckbox.isDisabled {
+	cursor: not-allowed;
+	&:hover {
+		.BaseCheckboxCheck {
+			border: none;
+		}
+		.BaseCheckboxCheck.isActive {
+			background: rgba(26, 26, 26, 0.1);
+			border: none;
+		}
+	}
+
+	.isActive {
+		background-color: rgba(26, 26, 26, 0.1);
+		border: none;
+		.BaseCheckboxTick {
+			path {
+				stroke: rgba(26, 26, 26, 0.1);
+			}
+		}
+	}
+	.BaseCheckboxCheck {
+		border: none;
+		background: rgba(26, 26, 26, 0.1);
+	}
+
+	.BaseCheckboxLabel {
+		span {
+			color: rgba(26, 26, 26, 0.1);
+		}
+	}
+}
+
+//type green
+.BaseCheckbox_green {
+	.BaseCheckboxCheck {
+		background: transparent;
+		border-color: rgba(255, 255, 255, 0.1);
+	}
+
+	.BaseCheckboxCheck.isActive {
+		background: #14422c;
+		border-color: #14422c;
+	}
+
+	&:hover {
+		.BaseCheckboxCheck {
+			background: rgba(20, 66, 44, 0.3);
+		}
+		.BaseCheckboxCheck.isActive {
+			background: #14422c;
+			border-color: #14422c;
+		}
+	}
+
+	.BaseCheckboxLabel {
+		span {
+			color: $white;
+		}
+	}
+}

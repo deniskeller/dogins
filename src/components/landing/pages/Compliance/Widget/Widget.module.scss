@@ -75,7 +75,16 @@
 	}
 
 	&_Body {
-		padding: em(65px) 0 em(142px);
+		padding: em(50px) 0 em(100px);
+		@include iflaptop {
+			padding: em(50px) 0 em(88px);
+		}
+		@include iftablet {
+			padding: em(40px) 0 em(76px);
+		}
+		@include ifmobile {
+			padding: em(30px) 0 em(60px);
+		}
 
 		.Request {
 			margin-bottom: em(50px);
@@ -154,6 +163,7 @@
 					padding: em(20px) em(30px);
 				}
 				@include ifmobile {
+					padding: em(20px) em(16px);
 				}
 				p {
 					max-width: em(1055px);
@@ -171,6 +181,7 @@
 						font-size: em(14px);
 					}
 					@include ifmobile {
+						font-size: em(14px);
 					}
 				}
 			}
@@ -216,8 +227,8 @@
 					}
 				}
 				&_Code {
-					margin-left: auto;
 					@include ifmobile {
+						margin-left: auto;
 						font-size: em(12px);
 					}
 				}
@@ -228,54 +239,175 @@
 			display: grid;
 			grid-template-columns: 1fr em(482px);
 			gap: 0 em(38px);
+			position: relative;
+			@media only screen and (max-width: 1560px) {
+				grid-template-columns: 1fr;
+				gap: em(60px) 0;
+			}
+			@include iftablet {
+				gap: em(40px) 0;
+			}
+			@include ifmobile {
+				gap: em(40px) 0;
+			}
 			&_Header {
 				display: grid;
 				grid-template-columns: 1fr em(350px) em(37px);
-				border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-				padding: 0 em(4px) em(16px) em(30px);
+				gap: 0 em(10px);
+				padding: 0 em(4px) em(16px) em(42px);
+				@media only screen and (max-width: 1560px) {
+					border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+				}
+				@include iflaptop {
+					grid-template-columns: 1fr em(294px) em(37px);
+				}
+				@include iftablet {
+					grid-template-columns: 1fr em(200px) em(37px);
+				}
+				@include ifmobile {
+					display: none;
+				}
 				&_Label {
 					span {
 						font-weight: 400;
 						font-size: em(18px);
 						line-height: 100%;
 						color: rgba(255, 255, 255, 0.7);
+						@include iflaptop {
+							font-size: em(16px);
+						}
+						@include iftablet {
+							font-size: em(16px);
+						}
 					}
 				}
 			}
 
 			&_Footer {
 				display: grid;
-				grid-template-columns: 1fr em(390px);
+				grid-template-columns: 1fr em(350px) em(37px);
+				gap: 0 em(10px);
 				border-top: 1px solid rgba(255, 255, 255, 0.2);
 				padding-top: em(16px);
+				@include iflaptop {
+					grid-template-columns: 1fr em(294px) em(37px);
+					gap: 0 em(10px);
+				}
+				@include iftablet {
+					grid-template-columns: 1fr em(200px) em(37px);
+				}
+				@include ifmobile {
+					grid-template-columns: 1fr auto;
+				}
 				&_Label {
-					&:first-child {
-						margin-left: auto;
-						margin-right: em(190px);
-					}
 					font-weight: 500;
 					font-size: em(18px);
 					line-height: 100%;
 					color: $white;
+					&:first-child {
+						margin-left: auto;
+						margin-right: em(160px);
+						@include iflaptop {
+							margin-right: em(50px);
+						}
+						@include iftablet {
+							margin-right: em(60px);
+						}
+						@include ifmobile {
+							margin-left: auto;
+							margin-right: em(58px);
+						}
+					}
 					.Price {
 						color: $orange;
+					}
+
+					@include ifmobile {
+						font-size: em(16px);
 					}
 				}
 			}
 
 			&_Body {
 				padding: em(50px) 0 em(30px);
+				@include iflaptop {
+					padding: em(36px) 0 em(28px);
+				}
+				@include iftablet {
+					padding: em(30px) 0 em(28px);
+				}
+				@include ifmobile {
+					padding: 0 0 em(28px);
+				}
 				&_Row {
 					display: grid;
 					grid-template-columns: 1fr em(350px) em(37px);
+					gap: 0 em(10px);
+					margin-bottom: em(16px);
 					&:first-child {
 						margin-bottom: em(40px);
+						@include ifmobile {
+							gap: 0;
+							.Column:first-child {
+								grid-column: span 3;
+								margin-bottom: em(18px);
+							}
+							.Column:nth-child(2) {
+								margin-left: em(185px);
+							}
+						}
+					}
+					&:last-child {
+						margin-bottom: 0;
+					}
+
+					@include iflaptop {
+						grid-template-columns: 1fr em(294px) em(37px);
+						gap: 0 em(10px);
+						margin-bottom: em(16px);
+					}
+					@include iftablet {
+						grid-template-columns: 1fr em(200px) em(37px);
+					}
+					@include ifmobile {
+						grid-template-columns: 1fr auto auto;
+						&:nth-child(2),
+						&:nth-child(3),
+						&:nth-child(4),
+						&:nth-child(5) {
+							grid-template-columns: 1fr em(120px) em(24px);
+							gap: 0 em(10px);
+						}
 					}
 
 					.Column {
 						display: flex;
 						flex-direction: row;
 						align-items: center;
+
+						.CheckboxTick {
+							width: em(24px);
+							height: em(24px);
+							margin-right: em(20px);
+							@include ifmobile {
+								width: em(18px);
+								height: em(18px);
+								margin-right: em(10px);
+							}
+							path {
+								stroke: $green;
+							}
+						}
+
+						.Name {
+							font-weight: 300;
+							font-size: em(16px);
+							line-height: 100%;
+							color: $white;
+							@include ifmobile {
+								font-size: em(14px);
+							}
+						}
 
 						.Price {
 							font-weight: 400;
@@ -285,6 +417,51 @@
 							span {
 								color: $orange;
 							}
+							@include ifmobile {
+								font-size: em(14px);
+							}
+						}
+
+						.Status {
+							width: max-content;
+							height: em(32px);
+							border: 1px solid $orange;
+							border-radius: 2px;
+							padding: em(6px) em(12px);
+							@include ifmobile {
+								padding: em(6px) em(10px);
+								height: em(29px);
+							}
+							span {
+								display: flex;
+								font-weight: 300;
+								font-size: em(14px);
+								color: $orange;
+								@include ifmobile {
+									font-size: em(12px);
+								}
+							}
+						}
+
+						.Tooltip {
+							position: relative;
+							width: em(24px);
+							height: em(24px);
+							cursor: pointer;
+							margin-left: auto;
+							svg {
+								width: inherit;
+								height: inherit;
+							}
+							&:hover {
+								svg path {
+									stroke: $orange;
+								}
+							}
+							@include ifmobile {
+								margin-left: auto;
+								margin-right: 0;
+							}
 						}
 					}
 
@@ -292,10 +469,81 @@
 						width: em(24px);
 						height: em(24px);
 						margin-right: em(20px);
+						@include ifmobile {
+							width: em(18px);
+							height: em(18px);
+							margin-right: em(10px);
+						}
 					}
 
 					.Select {
-						width: em(451px);
+						width: em(415px);
+						@include iflaptop {
+							width: em(350px);
+						}
+						@include iftablet {
+							width: em(326px);
+						}
+						@include ifmobile {
+							width: 100%;
+						}
+					}
+				}
+			}
+
+			.Border {
+				width: 100%;
+				height: 1px;
+				background: rgba(255, 255, 255, 0.2);
+				position: absolute;
+				left: 0;
+				top: em(35px);
+				@media only screen and (max-width: 1560px) {
+					display: none;
+				}
+			}
+
+			.Notes {
+				display: grid;
+				grid-template-columns: 1fr;
+				gap: em(16px) 0;
+				padding-top: em(80px);
+				@media only screen and (max-width: 1560px) {
+					padding-top: 0;
+				}
+				&_Item {
+					display: grid;
+					grid-template-columns: em(16px) 1fr;
+					gap: 0 em(16px);
+
+					&_Label {
+						font-weight: 600;
+						font-size: em(18px);
+						color: $orange;
+						@include iflaptop {
+							font-size: em(16px);
+						}
+						@include iftablet {
+							font-size: em(14px);
+						}
+						@include ifmobile {
+							font-size: em(14px);
+						}
+					}
+					&_Description {
+						font-weight: 300;
+						font-size: em(16px);
+						line-height: 140%;
+						color: $white;
+						@include iflaptop {
+							font-size: em(14px);
+						}
+						@include iftablet {
+							font-size: em(12px);
+						}
+						@include ifmobile {
+							font-size: em(12px);
+						}
 					}
 				}
 			}

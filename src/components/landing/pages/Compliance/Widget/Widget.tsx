@@ -1,5 +1,6 @@
 import {
 	BaseButton,
+	BaseCheckbox,
 	BaseContainer,
 	BaseIcon,
 	BaseRadioButton,
@@ -7,7 +8,7 @@ import {
 import { ALL_ICONS } from '@constants/icons';
 import { WidgetInput, WidgetSelect } from '@content/landing/index';
 import { countries } from '@services/index';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import s from './Widget.module.scss';
 
 const companies_list = [
@@ -58,7 +59,8 @@ const Widget: React.FC<Props> = () => {
 		setValue((prev) => ({ ...prev, [key]: val }));
 	};
 
-	const [radioValue, setRadioValue] = React.useState(1);
+	const [radioValue, setRadioValue] = useState(1);
+	const [isChecked, setIsChecked] = useState<boolean>(false);
 
 	useEffect(() => {
 		console.log('value.countries: ', value.countries);
@@ -196,6 +198,7 @@ const Widget: React.FC<Props> = () => {
 							</div>
 
 							<div className={s.Table}>
+								<div className={s.Border}></div>
 								<div className={s.Body}>
 									<div className={s.Table_Header}>
 										<div className={s.Table_Header_Label}>
@@ -210,6 +213,7 @@ const Widget: React.FC<Props> = () => {
 									</div>
 
 									<div className={s.Table_Body}>
+										{/* row 1 */}
 										<div className={s.Table_Body_Row}>
 											<div className={s.Column}>
 												{value.document ? (
@@ -254,27 +258,37 @@ const Widget: React.FC<Props> = () => {
 											</div>
 
 											<div className={s.Column}>
-												<svg
-													width='24'
-													height='24'
-													viewBox='0 0 24 24'
-													fill='none'
-													xmlns='http://www.w3.org/2000/svg'
-												>
-													<path
-														d='M8.22766 9C8.77678 7.83481 10.2584 7 12.0001 7C14.2092 7 16.0001 8.34315 16.0001 10C16.0001 11.3994 14.7224 12.5751 12.9943 12.9066C12.4519 13.0106 12.0001 13.4477 12.0001 14M12 17H12.01M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z'
-														stroke='white'
-														strokeOpacity='0.7'
-														strokeWidth='1.5'
-														strokeLinecap='round'
-														strokeLinejoin='round'
-													/>
-												</svg>
+												<div className={s.Tooltip}>
+													<svg
+														width='24'
+														height='24'
+														viewBox='0 0 24 24'
+														fill='none'
+														xmlns='http://www.w3.org/2000/svg'
+													>
+														<path
+															d='M8.22766 9C8.77678 7.83481 10.2584 7 12.0001 7C14.2092 7 16.0001 8.34315 16.0001 10C16.0001 11.3994 14.7224 12.5751 12.9943 12.9066C12.4519 13.0106 12.0001 13.4477 12.0001 14M12 17H12.01M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z'
+															stroke='white'
+															strokeOpacity='0.7'
+															strokeWidth='1.5'
+															strokeLinecap='round'
+															strokeLinejoin='round'
+														/>
+													</svg>
+												</div>
 											</div>
 										</div>
 
+										{/* row 2 */}
 										<div className={s.Table_Body_Row}>
-											<div className={s.Column}>Processing fee</div>
+											<div className={s.Column}>
+												<BaseIcon
+													icon={ALL_ICONS.CHECK}
+													viewBox='0 0 30 30'
+													className={s.CheckboxTick}
+												/>
+												<div className={s.Name}>Processing fee</div>
+											</div>
 
 											<div className={s.Column}>
 												<div className={s.Price}>
@@ -282,23 +296,133 @@ const Widget: React.FC<Props> = () => {
 												</div>
 											</div>
 
+											<div className={s.Column}></div>
+										</div>
+
+										{/* row 3 */}
+										<div className={s.Table_Body_Row}>
 											<div className={s.Column}>
-												<svg
-													width='24'
-													height='24'
-													viewBox='0 0 24 24'
-													fill='none'
-													xmlns='http://www.w3.org/2000/svg'
+												<BaseCheckbox
+													type='green'
+													checked={isChecked}
+													onChange={() => setIsChecked(!isChecked)}
+													className={s.Form_Checkbox}
 												>
-													<path
-														d='M8.22766 9C8.77678 7.83481 10.2584 7 12.0001 7C14.2092 7 16.0001 8.34315 16.0001 10C16.0001 11.3994 14.7224 12.5751 12.9943 12.9066C12.4519 13.0106 12.0001 13.4477 12.0001 14M12 17H12.01M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z'
-														stroke='white'
-														strokeOpacity='0.7'
-														strokeWidth='1.5'
-														strokeLinecap='round'
-														strokeLinejoin='round'
-													/>
-												</svg>
+													Apostille
+												</BaseCheckbox>
+											</div>
+
+											<div className={s.Column}>
+												{/* <div className={s.Price}>
+													<span>20.00</span>&nbsp;EUR
+												</div> */}
+
+												<div className={s.Status}>
+													<span>Not Available</span>
+												</div>
+											</div>
+
+											<div className={s.Column}>
+												<div className={s.Tooltip}>
+													<svg
+														width='24'
+														height='24'
+														viewBox='0 0 24 24'
+														fill='none'
+														xmlns='http://www.w3.org/2000/svg'
+													>
+														<path
+															d='M8.22766 9C8.77678 7.83481 10.2584 7 12.0001 7C14.2092 7 16.0001 8.34315 16.0001 10C16.0001 11.3994 14.7224 12.5751 12.9943 12.9066C12.4519 13.0106 12.0001 13.4477 12.0001 14M12 17H12.01M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z'
+															stroke='white'
+															strokeOpacity='0.7'
+															strokeWidth='1.5'
+															strokeLinecap='round'
+															strokeLinejoin='round'
+														/>
+													</svg>
+												</div>
+											</div>
+										</div>
+
+										{/* row 4 */}
+										<div className={s.Table_Body_Row}>
+											<div className={s.Column}>
+												<BaseCheckbox
+													type='green'
+													checked={isChecked}
+													onChange={() => setIsChecked(!isChecked)}
+													className={s.Form_Checkbox}
+												>
+													Translation
+												</BaseCheckbox>
+											</div>
+
+											<div className={s.Column}>
+												<div className={s.Price}>
+													<span>20.00</span>&nbsp;EUR/page
+												</div>
+											</div>
+
+											<div className={s.Column}>
+												<div className={s.Tooltip}>
+													<svg
+														width='24'
+														height='24'
+														viewBox='0 0 24 24'
+														fill='none'
+														xmlns='http://www.w3.org/2000/svg'
+													>
+														<path
+															d='M8.22766 9C8.77678 7.83481 10.2584 7 12.0001 7C14.2092 7 16.0001 8.34315 16.0001 10C16.0001 11.3994 14.7224 12.5751 12.9943 12.9066C12.4519 13.0106 12.0001 13.4477 12.0001 14M12 17H12.01M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z'
+															stroke='white'
+															strokeOpacity='0.7'
+															strokeWidth='1.5'
+															strokeLinecap='round'
+															strokeLinejoin='round'
+														/>
+													</svg>
+												</div>
+											</div>
+										</div>
+
+										{/* row 5 */}
+										<div className={s.Table_Body_Row}>
+											<div className={s.Column}>
+												<BaseCheckbox
+													type='green'
+													checked={isChecked}
+													onChange={() => setIsChecked(!isChecked)}
+													className={s.Form_Checkbox}
+												>
+													International Delivery
+												</BaseCheckbox>
+											</div>
+
+											<div className={s.Column}>
+												<div className={s.Price}>
+													<span>20.00</span>&nbsp;EUR/page
+												</div>
+											</div>
+
+											<div className={s.Column}>
+												<div className={s.Tooltip}>
+													<svg
+														width='24'
+														height='24'
+														viewBox='0 0 24 24'
+														fill='none'
+														xmlns='http://www.w3.org/2000/svg'
+													>
+														<path
+															d='M8.22766 9C8.77678 7.83481 10.2584 7 12.0001 7C14.2092 7 16.0001 8.34315 16.0001 10C16.0001 11.3994 14.7224 12.5751 12.9943 12.9066C12.4519 13.0106 12.0001 13.4477 12.0001 14M12 17H12.01M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z'
+															stroke='white'
+															strokeOpacity='0.7'
+															strokeWidth='1.5'
+															strokeLinecap='round'
+															strokeLinejoin='round'
+														/>
+													</svg>
+												</div>
 											</div>
 										</div>
 									</div>
@@ -306,12 +430,58 @@ const Widget: React.FC<Props> = () => {
 									<div className={s.Table_Footer}>
 										<div className={s.Table_Footer_Label}>Total</div>
 										<div className={s.Table_Footer_Label}>
-											<span className={s.Price}>45.00</span>&nbsp;EUR
+											<span className={s.Price}>190.00</span>&nbsp;EUR
 										</div>
 									</div>
 								</div>
 
-								<div className={s.Notes}></div>
+								<div className={s.Notes}>
+									<div className={s.Notes_Item}>
+										<div className={s.Notes_Item_Label}>G</div>
+										<p className={s.Notes_Item_Description}>
+											Contains general information about company - company name,
+											number and sometimes registered address.
+										</p>
+									</div>
+
+									<div className={s.Notes_Item}>
+										<div className={s.Notes_Item_Label}>O</div>
+										<p className={s.Notes_Item_Description}>
+											Contains information about Directors and other officers of
+											the company.
+										</p>
+									</div>
+
+									<div className={s.Notes_Item}>
+										<div className={s.Notes_Item_Label}>S</div>
+										<p className={s.Notes_Item_Description}>
+											Contains Shareholders Information.
+										</p>
+									</div>
+
+									<div className={s.Notes_Item}>
+										<div className={s.Notes_Item_Label}>U</div>
+										<p className={s.Notes_Item_Description}>
+											Contains information anout UBO.
+										</p>
+									</div>
+
+									<div className={s.Notes_Item}>
+										<div className={s.Notes_Item_Label}>E</div>
+										<p className={s.Notes_Item_Description}>
+											Electronic copy of document. Apostille may be not
+											available for this kind of documents.
+										</p>
+									</div>
+
+									<div className={s.Notes_Item}>
+										<div className={s.Notes_Item_Label}>H</div>
+										<p className={s.Notes_Item_Description}>
+											Hard copy of documents available. Delivery must be added
+											for this kind document.
+										</p>
+									</div>
+								</div>
 							</div>
 						</div>
 					</BaseContainer>
