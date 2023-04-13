@@ -1,6 +1,6 @@
 .Wrapper {
 	position: relative;
-	z-index: 99;
+	z-index: 199;
 	background: $body;
 	padding: 0 em(50px);
 	@include iflaptop {
@@ -22,15 +22,15 @@
 	max-width: em(1820px);
 	margin: 0 auto;
 	border-top: 1px solid rgba(255, 255, 255, 0.2);
-	&_White {
-		border-top: 1px solid rgba(26, 26, 26, 0.2);
-	}
-
 	@include iflaptop {
 		border-top: none;
 	}
 	@include iftablet {
 		border-top: none;
+	}
+
+	&_White {
+		border-top: 1px solid rgba(26, 26, 26, 0.2);
 	}
 }
 

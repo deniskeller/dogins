@@ -1,7 +1,7 @@
 import { BaseContainer } from '@base/index';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import React, { useEffect } from 'react';
+import React from 'react';
 import BreadCrumbs from '../BreadCrumbs/BreadCrumbs';
 import s from './PricingHeader.module.scss';
 
@@ -12,10 +12,6 @@ type Props = {
 
 const PricingHeader: React.FC<Props> = ({ image, title }) => {
 	const router = useRouter();
-
-	useEffect(() => {
-		console.log('router: ', router.pathname.split('/')[2]);
-	}, [router]);
 
 	return (
 		<>

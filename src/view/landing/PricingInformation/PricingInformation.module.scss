@@ -1,0 +1,52 @@
+.BaseContainer {
+	@include iflaptop {
+		padding: 0 em(80px);
+	}
+	@include iftablet {
+		padding: 0 em(40px);
+	}
+	@include ifmobile {
+		padding: 0 em(27px);
+	}
+}
+.PricingInformation {
+	padding: em(100px) 0 em(58px);
+	@include iflaptop {
+		padding: em(41px) 0 em(73px);
+	}
+	@include iftablet {
+		padding: em(57px) 0 em(68px);
+	}
+	@include ifmobile {
+		padding: em(57px) 0 em(74px);
+	}
+
+	&_Body {
+		display: grid;
+		grid-template-columns: em(541px) 1fr;
+		gap: 0 em(100px);
+		max-width: em(1468px);
+		margin-left: auto;
+		@include iflaptop {
+			grid-template-columns: 1fr;
+			gap: em(24px) 0;
+		}
+		@include iftablet {
+			grid-template-columns: 1fr;
+			gap: em(24px) 0;
+		}
+		@include ifmobile {
+			grid-template-columns: 1fr;
+			gap: em(24px) 0;
+		}
+		p {
+			font-weight: 300;
+			line-height: 140%;
+			color: $text;
+			font-size: em(18px);
+			@include ifmobile {
+				font-size: em(14px);
+			}
+		}
+	}
+}

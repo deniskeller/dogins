@@ -4,8 +4,38 @@
 	width: 100%;
 	min-height: 100vh;
 	height: 100%;
-	// overflow-y: auto;
+	overflow: hidden;
 	position: relative;
+
+	.PricingIcon {
+		position: absolute;
+		z-index: 100;
+		width: em(587px);
+		height: em(648px);
+		right: em(-20px);
+		bottom: em(173px);
+		path {
+			fill: rgba(81, 151, 219, 0.05);
+		}
+		@include iflaptop {
+			width: em(430.79px);
+			height: em(476px);
+			bottom: em(-15px);
+			right: em(-15px);
+		}
+		@include iftablet {
+			width: em(430.79px);
+			height: em(476px);
+			right: em(-50px);
+			bottom: em(192px);
+		}
+		@include ifmobile {
+			width: em(315.85px);
+			height: em(349px);
+			right: em(-54px);
+			bottom: em(535px);
+		}
+	}
 }
 
 .Content {

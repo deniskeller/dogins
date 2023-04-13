@@ -68,7 +68,7 @@ const Footer: React.FC<Props> = ({ type }) => {
 		<>
 			<div
 				className={s.Wrapper}
-				style={{ background: type == 'white' ? '#ffffff' : '#222222' }}
+				style={{ background: type == 'white' ? 'transparent' : '#222222' }}
 			>
 				<div
 					className={`${s.Container} ${

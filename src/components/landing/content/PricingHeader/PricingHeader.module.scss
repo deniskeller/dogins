@@ -1,5 +1,6 @@
 .Wrapper {
 	position: relative;
+	z-index: 101;
 	min-height: em(815px);
 
 	@include iflaptop {
