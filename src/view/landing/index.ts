@@ -9,6 +9,7 @@ export { default as Licensing } from "./Licensing/Licensing";
 export { default as Main } from "./Main/Main";
 export { default as News } from "./News/News";
 export { default as NotFound } from "./NotFound/NotFound";
+export { default as PricingInformation } from "./PricingInformation/PricingInformation";
 export { default as PrivacyPolicy } from "./PrivacyPolicy/PrivacyPolicy";
 export { default as SelectedNews } from "./SelectedNews/SelectedNews";
 export { default as TermsOfUse } from "./TermsOfUse/TermsOfUse";

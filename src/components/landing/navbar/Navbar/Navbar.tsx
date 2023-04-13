@@ -34,7 +34,7 @@ const links: Links[] = [
 		title: 'Investments',
 	},
 	{
-		href: '/coming-soon',
+		href: '/pricing-information',
 		title: 'Pricing',
 	},
 	{

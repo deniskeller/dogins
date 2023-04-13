@@ -1,0 +1,202 @@
+.Wrapper {
+	position: relative;
+	min-height: em(815px);
+
+	@include iflaptop {
+		min-height: em(939px);
+	}
+	@include iftablet {
+		min-height: em(1280px);
+	}
+	@include ifmobile {
+		min-height: em(1280px);
+	}
+
+	.Background {
+		@extend %fullsize;
+		background-position: bottom;
+		background-repeat: no-repeat;
+		background-size: cover;
+		image-rendering: pixelated;
+		image-rendering: -moz-crisp-edges; /* Firefox */
+		-ms-interpolation-mode: nearest-neighbor; /* IE */
+
+		@include iflaptop {
+			background-position: 12% 100%;
+			background-size: inherit;
+		}
+		@include iftablet {
+			transform: scale(-1, 1);
+			background-position: 12% 100%;
+		}
+		@include ifmobile {
+			transform: scale(-1, 1);
+			background-position: 19% 100%;
+		}
+	}
+
+	.BaseContainer {
+		@include iflaptop {
+			padding: 0 em(80px);
+		}
+		@include iftablet {
+			padding: 0 em(40px);
+		}
+		@include ifmobile {
+			padding: 0 em(16px);
+		}
+	}
+
+	.Gradient {
+		@extend %fullsize;
+		z-index: 0;
+		background: linear-gradient(
+			180deg,
+			rgba(47, 51, 75, 0.5) 0%,
+			rgba(47, 51, 75, 0) 100%
+		);
+	}
+}
+
+.Header {
+	position: relative;
+	padding: em(143px) 0 em(97px);
+	@include iftablet {
+		padding: em(103px) 0 em(170px);
+	}
+	@include ifmobile {
+		padding: em(103px) 0 em(170px);
+	}
+
+	&_BreadCrumbs {
+		margin-bottom: em(66px);
+		@include ifmobile {
+			margin-bottom: em(70px);
+		}
+	}
+
+	&_Body {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		gap: 0 em(20px);
+		@include iflaptop {
+			gap: em(53px) 0;
+		}
+		@include iftablet {
+			gap: em(60px) 0;
+		}
+		@include ifmobile {
+			gap: em(70px) 0;
+		}
+		.Title {
+			h1 {
+				font-weight: 300;
+				font-size: em(40px);
+				line-height: 130%;
+				color: $white;
+				text-transform: capitalize;
+				@include iftablet {
+					font-size: em(35px);
+				}
+				@include ifmobile {
+					font-size: em(26px);
+				}
+			}
+		}
+
+		.Navbar {
+			width: 100%;
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: em(26px) em(24px);
+			@include ifdesktop {
+				max-width: em(828px);
+				padding-top: em(26px);
+			}
+			@include iflaptop {
+				gap: em(61px) em(61px);
+			}
+			@include iftablet {
+				grid-template-columns: 1fr;
+				gap: em(33px) 0;
+				a:nth-child(2),
+				a:nth-child(4) {
+					order: 1;
+				}
+			}
+			@include ifmobile {
+				grid-template-columns: 1fr;
+				gap: em(33px) 0;
+				a:nth-child(2),
+				a:nth-child(4) {
+					order: 1;
+				}
+			}
+			&_Item {
+				position: relative;
+				background: rgba(255, 255, 255, 0.7);
+				box-shadow: 5px 5px 15px rgba(47, 51, 75, 0.5);
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				width: 100%;
+				min-height: em(215px);
+				padding: em(10px) em(32px);
+
+				@include iftablet {
+					min-height: em(178px);
+				}
+				@include ifmobile {
+					min-height: em(178px);
+				}
+
+				&_Border {
+					background: rgba(45, 45, 45, 0.5);
+					height: 1px;
+					width: em(117px);
+				}
+
+				&_Title {
+					text-align: center;
+					margin: em(14px) auto;
+					span {
+						font-weight: 400;
+						text-transform: uppercase;
+						color: $text;
+						font-size: em(30px);
+					}
+				}
+
+				&_Subtitle {
+					max-width: em(230px);
+					margin: 0 auto;
+					text-align: center;
+					@include ifmobile {
+						max-width: em(180px);
+					}
+					span {
+						font-weight: 300;
+						line-height: 140%;
+						color: $text;
+						font-size: em(14px);
+					}
+				}
+
+				&_Icon {
+					position: absolute;
+					width: em(30px);
+					height: em(30px);
+					right: em(10px);
+					bottom: em(10px);
+					&_Active {
+						width: em(40px);
+						height: em(40px);
+					}
+				}
+			}
+		}
+	}
+}

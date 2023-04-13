@@ -1,0 +1,100 @@
+.BreadCrumbs {
+	border-top: 1px solid rgba(255, 255, 255, 0.2);
+	display: flex;
+	flex-direction: row;
+	position: relative;
+	padding-top: em(15px);
+	@include ifmobile {
+		padding-top: em(12px);
+	}
+}
+
+.Link {
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	cursor: pointer;
+	margin-right: em(15px);
+	&:last-child {
+		margin-right: 0;
+	}
+	@include ifmobile {
+		margin-right: em(10px);
+	}
+	&:hover {
+		.Name {
+			text-decoration: underline;
+		}
+	}
+
+	.Circle {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: em(17px);
+		height: em(17px);
+		border: 0.5px solid rgba(255, 255, 255, 0.5);
+		border-radius: 100%;
+		margin-right: em(10px);
+		@include ifmobile {
+			width: em(10px);
+			height: em(10px);
+		}
+		&_Icon {
+			width: em(14px);
+			height: em(14px);
+			transform: rotate(180deg);
+			@include ifmobile {
+				width: em(8px);
+				height: em(8px);
+			}
+			path {
+				stroke: $white;
+				stroke-width: 3px;
+			}
+		}
+	}
+
+	.Name {
+		font-weight: 400;
+		font-size: em(13px);
+		line-height: 130%;
+		color: rgba(255, 255, 255, 0.5);
+		text-transform: capitalize;
+		@include ifmobile {
+			font-size: em(8px);
+		}
+	}
+
+	&_Active {
+		pointer-events: none;
+		.Circle {
+			width: em(20px);
+			height: em(20px);
+			border: 1px solid $white;
+			@include ifmobile {
+				width: em(12px);
+				height: em(12px);
+			}
+		}
+		.Name {
+			color: $white;
+			position: relative;
+			&::before {
+				position: absolute;
+				z-index: 100;
+				content: '';
+				display: block;
+				width: 100%;
+				height: 1px;
+				background: rgba(255, 255, 255, 0.5);
+				top: em(-21px);
+				left: 0;
+				@include ifmobile {
+					top: em(-27px);
+				}
+			}
+		}
+	}
+}
