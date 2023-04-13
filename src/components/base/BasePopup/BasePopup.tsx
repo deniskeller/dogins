@@ -23,20 +23,20 @@ const BasePopup: React.FC<Props> = ({
 
 	const hidePopup = useCallback(() => {
 		onClick(false);
-		// document.body.style.overflow = '';
-		// document.body.style.height = '';
-		// document.body.style.paddingRight = '0px';
+		document.body.style.overflow = '';
+		document.body.style.height = '';
+		document.body.style.paddingRight = '0px';
 	}, [onClick]);
 
-	// const documentWidth = document.documentElement.clientWidth;
-	// const windowsWidth = window.innerWidth;
-	// const scrollbarWidth = windowsWidth - documentWidth;
+	const documentWidth = document.documentElement.clientWidth;
+	const windowsWidth = window.innerWidth;
+	const scrollbarWidth = windowsWidth - documentWidth;
 
 	useEffect(() => {
 		if (popup) {
-			// document.body.style.overflow = 'hidden';
-			// document.body.style.height = '100%';
-			// document.body.style.paddingRight = scrollbarWidth + 'px';
+			document.body.style.overflow = 'hidden';
+			document.body.style.height = '100%';
+			document.body.style.paddingRight = scrollbarWidth + 'px';
 		}
 
 		function onKeyDown(event: any) {
@@ -48,7 +48,7 @@ const BasePopup: React.FC<Props> = ({
 		return () => {
 			document.removeEventListener('keydown', onKeyDown);
 		};
-	}, [hidePopup, popup]);
+	}, [hidePopup, popup, scrollbarWidth]);
 
 	const thisPopup = React.useRef<HTMLDivElement>(null);
 
