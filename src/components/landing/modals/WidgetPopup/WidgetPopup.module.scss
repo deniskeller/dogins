@@ -1,0 +1,147 @@
+.WidgetPopup {
+	padding: em(40px) 0 em(52px);
+	@include ifmobile {
+		padding: em(30px) 0 em(20px);
+	}
+	&_Header {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		margin-bottom: em(30px);
+		&_Title {
+			margin-bottom: em(20px);
+			@include ifmobile {
+				margin-bottom: em(16px);
+			}
+			h1 {
+				color: $white;
+				font-weight: 400;
+				font-size: em(40px);
+				line-height: 140%;
+				@include ifmobile {
+					font-size: em(24px);
+				}
+			}
+		}
+		&_Description {
+			max-width: em(636px);
+			@include ifmobile {
+				max-width: em(276px);
+			}
+			p {
+				color: rgba(255, 255, 255, 0.7);
+				font-weight: 300;
+				font-size: em(16px);
+				line-height: 140%;
+				text-align: center;
+				@include ifmobile {
+					font-size: em(14px);
+				}
+			}
+		}
+	}
+
+	&_Body {
+		margin-bottom: em(44px);
+		&_Table {
+			background: #363636;
+			display: grid;
+			grid-template-columns: 1fr;
+			gap: em(14px) 0;
+			padding: em(30px) em(83px);
+			margin-bottom: em(30px);
+			@include iflaptop {
+				padding: em(30px) em(46px);
+			}
+			@include iftablet {
+				padding: em(30px) em(46px);
+			}
+			@include ifmobile {
+				padding: em(20px) em(10px);
+			}
+
+			.Row {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+				padding-bottom: em(14px);
+
+				&_Label,
+				&_Value {
+					font-weight: 300;
+					font-size: em(16px);
+					color: $white;
+					span {
+						font-weight: 400;
+						color: $orange;
+					}
+					@include ifmobile {
+						font-size: em(14px);
+					}
+				}
+			}
+
+			.Total {
+				display: flex;
+				flex-direction: row;
+				justify-content: flex-end;
+				&_Label,
+				&_Value {
+					font-weight: 400;
+					font-size: em(18px);
+					color: $white;
+					span {
+						font-weight: 400;
+						color: $orange;
+					}
+					@include ifmobile {
+						font-size: em(16px);
+					}
+				}
+				&_Label {
+					margin-right: em(164px);
+				}
+			}
+		}
+
+		&_Form {
+			padding: 0 em(83px);
+			@include iflaptop {
+				padding: 0 em(46px);
+			}
+			@include iftablet {
+				padding: 0 em(46px);
+			}
+			@include ifmobile {
+				padding: 0 em(10px);
+			}
+			.Title {
+				margin-bottom: em(30px);
+				h3 {
+					font-weight: 400;
+					font-size: em(20px);
+					color: $white;
+				}
+			}
+
+			.Form {
+				display: grid;
+				grid-template-columns: 1fr;
+				gap: em(16px) 0;
+			}
+		}
+	}
+
+	&_Button {
+		margin: 0 auto;
+	}
+}
+
+@include iflaptop {
+}
+@include iftablet {
+}
+@include ifmobile {
+}

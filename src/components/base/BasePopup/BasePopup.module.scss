@@ -6,7 +6,7 @@
 	overflow-y: auto;
 	background: rgba(13, 16, 38, 0.3);
 	position: fixed;
-	z-index: 10000;
+	z-index: 1000000;
 	top: 0;
 	left: 0;
 	right: 0;
@@ -25,7 +25,6 @@
 	width: 100%;
 	height: max-content;
 	margin: 0 auto;
-	// padding: em(40px) 0 em(52px);
 	background: #2d2d2d;
 	box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.06),
 		0px 4px 6px -1px rgba(0, 0, 0, 0.08);
@@ -47,6 +46,15 @@
 
 .Popup_large {
 	max-width: em(834px);
+	@include iflaptop {
+		max-width: em(760px);
+	}
+	@include iftablet {
+		max-width: em(760px);
+	}
+	@include ifmobile {
+		max-width: em(360px);
+	}
 }
 
 .Popup_middle {
@@ -60,4 +68,11 @@
 .Visible {
 	display: grid;
 	justify-items: center;
+}
+
+@include iflaptop {
+}
+@include iftablet {
+}
+@include ifmobile {
 }
