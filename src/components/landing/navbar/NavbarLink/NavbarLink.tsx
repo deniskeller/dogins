@@ -9,6 +9,7 @@ interface Props {
 	className?: string;
 	type?: string;
 	index?: number;
+	pricing?: string;
 }
 
 const NavbarLink: React.FC<Props> = ({
@@ -17,6 +18,7 @@ const NavbarLink: React.FC<Props> = ({
 	className,
 	index,
 	type,
+	pricing,
 }) => {
 	const router = useRouter();
 
@@ -30,7 +32,18 @@ const NavbarLink: React.FC<Props> = ({
 			} ${styles.Link} ${className}`}
 		>
 			<Link href={href}>
-				<a style={{ color: type == 'white' ? '#121212' : '#ffffff' }}>
+				<a
+					style={{
+						color:
+							type == 'white' &&
+							router.pathname.split('/')[1] !== 'pricing-information'
+								? '#121212'
+								: router.pathname.split('/')[1] == 'pricing-information' &&
+								  pricing
+								? '#121212'
+								: '#ffffff',
+					}}
+				>
 					{title}
 				</a>
 			</Link>

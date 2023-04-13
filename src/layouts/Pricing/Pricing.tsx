@@ -38,17 +38,17 @@ const Pricing: React.FC<Props> = ({ children, type }) => {
 			className={s.Wrapper}
 			style={{ background: type == 'white' ? '#ffffff' : 'transparent' }}
 		>
-			<Navbar fixed={isVisible} />
+			<Navbar fixed={isVisible} type='white' pricing='pricing' />
 
 			<div className={s.Content}>{children}</div>
 
 			<BaseIcon
 				icon={ALL_ICONS.LOGO}
-				viewBox='0 0 313 353'
+				viewBox='0 0 280 316'
 				className={s.PricingIcon}
 			/>
 
-			<Footer type={type} />
+			<Footer type={type} pricing='pricing' />
 		</div>
 	);
 };

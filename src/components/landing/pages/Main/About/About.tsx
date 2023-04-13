@@ -13,14 +13,14 @@ const About: React.FC<Props> = () => {
 					<div className={s.About}>
 						<div className={s.About_Logo}>
 							<div className={s.Logo}>
-								<BaseIcon icon={ALL_ICONS.LOGO} viewBox='0 0 313 353' />
+								<BaseIcon icon={ALL_ICONS.LOGO} viewBox='0 0 280 316' />
 							</div>
 						</div>
 
 						<div className={s.About_Body}>
 							<div className={s.About_Body_About}>
 								<div className={s.Logo}>
-									<BaseIcon icon={ALL_ICONS.LOGO} viewBox='0 0 313 353' />
+									<BaseIcon icon={ALL_ICONS.LOGO} viewBox='0 0 280 316' />
 								</div>
 
 								<BaseTitle type='h1' className={s.Title}>

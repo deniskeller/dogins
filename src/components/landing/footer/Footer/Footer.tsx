@@ -62,8 +62,9 @@ const Links: Links[] = [
 
 interface Props {
 	type?: string;
+	pricing?: string;
 }
-const Footer: React.FC<Props> = ({ type }) => {
+const Footer: React.FC<Props> = ({ type, pricing }) => {
 	return (
 		<>
 			<div
@@ -77,7 +78,11 @@ const Footer: React.FC<Props> = ({ type }) => {
 				>
 					<div className={s.Footer}>
 						<div className={s.Footer_LogoSocial}>
-							<Logo className={s.Footer_LogoSocial_Logo} type={type} />
+							<Logo
+								className={s.Footer_LogoSocial_Logo}
+								type={type}
+								pricing={pricing}
+							/>
 
 							<div className={s.Footer_LogoSocial_Socials}>
 								<div className={s.Footer_LogoSocial_Socials_Items}>

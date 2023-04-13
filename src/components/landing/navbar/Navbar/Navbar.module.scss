@@ -227,7 +227,6 @@
 		&_Navbar {
 			position: fixed;
 			top: 0;
-			background: #282828;
 			padding: 0;
 			z-index: 1000;
 			width: 0;
@@ -292,6 +291,13 @@
 					top: em(43px);
 					right: 0;
 					left: auto;
+				}
+
+				&_Pricing {
+					opacity: 1;
+					path {
+						fill: rgba(81, 151, 219, 0.05);
+					}
 				}
 			}
 		}
