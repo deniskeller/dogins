@@ -15,5 +15,6 @@ export { default as PaymentSoftware } from "./PaymentSoftware/PaymentSoftware";
 export { default as PricingInformation } from "./PricingInformation/PricingInformation";
 export { default as PrivacyPolicy } from "./PrivacyPolicy/PrivacyPolicy";
 export { default as SelectedNews } from "./SelectedNews/SelectedNews";
+export { default as SupportServices } from "./SupportServices/SupportServices";
 export { default as TermsOfUse } from "./TermsOfUse/TermsOfUse";
 
