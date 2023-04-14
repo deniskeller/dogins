@@ -13,6 +13,17 @@
 	min-width: em(816px);
 	min-height: em(232px);
 	padding: em(105px) em(106px) em(60px) em(99px);
+	@include iftablet {
+		min-width: 100%;
+	}
+	@include ifmobile {
+		flex-direction: column;
+		align-items: center;
+		min-width: 100%;
+		min-height: em(190px);
+		border-radius: 0;
+		padding: em(33px) em(70px) em(37px);
+	}
 
 	&_Visible {
 		right: 0;
@@ -20,11 +31,17 @@
 
 	.Question {
 		margin-bottom: em(9px);
+		@include ifmobile {
+			text-align: center;
+		}
 		span {
 			font-weight: 300;
 			font-size: em(24px);
 			line-height: 120%;
 			color: $white;
+			@include ifmobile {
+				font-size: em(18px);
+			}
 		}
 	}
 
@@ -33,14 +50,24 @@
 		font-size: em(24px);
 		line-height: 120%;
 		color: $white;
+		@include ifmobile {
+			text-align: center;
+			font-size: em(18px);
+		}
 	}
 
 	.Button {
 		width: em(213px);
 		height: em(44px);
 		margin-left: em(58px);
+		@include ifmobile {
+			margin-left: 0;
+			margin-top: em(23px);
+		}
 		& > div {
 			font-size: em(16px);
 		}
 	}
+}
+@include ifmobile {
 }
