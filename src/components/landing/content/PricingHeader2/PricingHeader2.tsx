@@ -29,7 +29,7 @@ const PricingHeader2: React.FC<Props> = ({ image, title }) => {
 				<BaseContainer className={s.BaseContainer}>
 					<div className={s.Header}>
 						<BreadCrumbs
-							roorHref='/pricing-information/support-services'
+							roorHref=''
 							rootPathName=''
 							className={s.Header_BreadCrumbs}
 						/>
@@ -46,7 +46,7 @@ const PricingHeader2: React.FC<Props> = ({ image, title }) => {
 											className={s.Navbar_Item}
 											style={{
 												background:
-													router.pathname.split('/')[2] == 'financial-licensing'
+													router.pathname.split('/')[3] == 'website-development'
 														? '#FFFFFF'
 														: 'rgba(255, 255, 255, 0.7)',
 											}}
@@ -55,8 +55,8 @@ const PricingHeader2: React.FC<Props> = ({ image, title }) => {
 												className={s.Navbar_Item_Border}
 												style={{
 													display:
-														router.pathname.split('/')[2] ==
-														'financial-licensing'
+														router.pathname.split('/')[3] ==
+														'website-development'
 															? 'none'
 															: 'block',
 												}}
@@ -67,8 +67,8 @@ const PricingHeader2: React.FC<Props> = ({ image, title }) => {
 													website <br /> development
 												</span>
 											</div>
-											{router.pathname.split('/')[2] ==
-											'financial-licensing' ? (
+											{router.pathname.split('/')[3] ==
+											'website-development' ? (
 												<div className={s.Navbar_Item_Subtitle}>
 													<span>
 														Please select the serviceyou are interested in below
@@ -80,8 +80,8 @@ const PricingHeader2: React.FC<Props> = ({ image, title }) => {
 												className={s.Navbar_Item_Border}
 												style={{
 													display:
-														router.pathname.split('/')[2] ==
-														'financial-licensing'
+														router.pathname.split('/')[3] ==
+														'website-development'
 															? 'none'
 															: 'block',
 												}}
@@ -94,7 +94,7 @@ const PricingHeader2: React.FC<Props> = ({ image, title }) => {
 												fill='none'
 												xmlns='http://www.w3.org/2000/svg'
 												className={`${s.Navbar_Item_Icon} ${
-													router.pathname.split('/')[2] == 'financial-licensing'
+													router.pathname.split('/')[3] == 'website-development'
 														? s.Navbar_Item_Icon_Active
 														: ''
 												}`}
@@ -111,13 +111,13 @@ const PricingHeader2: React.FC<Props> = ({ image, title }) => {
 									</a>
 								</Link>
 
-								{/* <Link href='/pricing-information/compliance-software'>
+								<Link href='/coming-soon'>
 									<a>
 										<div
 											className={s.Navbar_Item}
 											style={{
 												background:
-													router.pathname.split('/')[2] == 'compliance-software'
+													router.pathname.split('/')[3] == 'coming-soon'
 														? '#FFFFFF'
 														: 'rgba(255, 255, 255, 0.7)',
 											}}
@@ -126,8 +126,7 @@ const PricingHeader2: React.FC<Props> = ({ image, title }) => {
 												className={s.Navbar_Item_Border}
 												style={{
 													display:
-														router.pathname.split('/')[2] ==
-														'compliance-software'
+														router.pathname.split('/')[3] == 'coming-soon'
 															? 'none'
 															: 'block',
 												}}
@@ -135,11 +134,10 @@ const PricingHeader2: React.FC<Props> = ({ image, title }) => {
 
 											<div className={s.Navbar_Item_Title}>
 												<span>
-													Compliance <br /> Software
+													company registration <br /> in United Kingdom
 												</span>
 											</div>
-											{router.pathname.split('/')[2] ==
-											'compliance-software' ? (
+											{router.pathname.split('/')[3] == 'coming-soon' ? (
 												<div className={s.Navbar_Item_Subtitle}>
 													<span>
 														Please select the service you are interested in
@@ -152,8 +150,7 @@ const PricingHeader2: React.FC<Props> = ({ image, title }) => {
 												className={s.Navbar_Item_Border}
 												style={{
 													display:
-														router.pathname.split('/')[2] ==
-														'compliance-software'
+														router.pathname.split('/')[3] == 'coming-soon'
 															? 'none'
 															: 'block',
 												}}
@@ -166,7 +163,7 @@ const PricingHeader2: React.FC<Props> = ({ image, title }) => {
 												fill='none'
 												xmlns='http://www.w3.org/2000/svg'
 												className={`${s.Navbar_Item_Icon} ${
-													router.pathname.split('/')[2] == 'compliance-software'
+													router.pathname.split('/')[3] == 'coming-soon'
 														? s.Navbar_Item_Icon_Active
 														: ''
 												}`}
@@ -183,13 +180,13 @@ const PricingHeader2: React.FC<Props> = ({ image, title }) => {
 									</a>
 								</Link>
 
-								<Link href='/pricing-information/payment-software'>
+								<Link href='/coming-soon'>
 									<a>
 										<div
 											className={s.Navbar_Item}
 											style={{
 												background:
-													router.pathname.split('/')[2] == 'payment-software'
+													router.pathname.split('/')[3] == 'coming-soon'
 														? '#FFFFFF'
 														: 'rgba(255, 255, 255, 0.7)',
 											}}
@@ -198,7 +195,7 @@ const PricingHeader2: React.FC<Props> = ({ image, title }) => {
 												className={s.Navbar_Item_Border}
 												style={{
 													display:
-														router.pathname.split('/')[2] == 'payment-software'
+														router.pathname.split('/')[3] == 'coming-soon'
 															? 'none'
 															: 'block',
 												}}
@@ -206,11 +203,10 @@ const PricingHeader2: React.FC<Props> = ({ image, title }) => {
 
 											<div className={s.Navbar_Item_Title}>
 												<span>
-													Payment <br />
-													Software
+													physical office <br /> in united kingdom
 												</span>
 											</div>
-											{router.pathname.split('/')[2] == 'payment-software' ? (
+											{router.pathname.split('/')[3] == 'coming-soon' ? (
 												<div className={s.Navbar_Item_Subtitle}>
 													<span>
 														Please select the service you are interested in
@@ -223,7 +219,7 @@ const PricingHeader2: React.FC<Props> = ({ image, title }) => {
 												className={s.Navbar_Item_Border}
 												style={{
 													display:
-														router.pathname.split('/')[2] == 'payment-software'
+														router.pathname.split('/')[3] == 'coming-soon'
 															? 'none'
 															: 'block',
 												}}
@@ -236,7 +232,7 @@ const PricingHeader2: React.FC<Props> = ({ image, title }) => {
 												fill='none'
 												xmlns='http://www.w3.org/2000/svg'
 												className={`${s.Navbar_Item_Icon} ${
-													router.pathname.split('/')[2] == 'payment-software'
+													router.pathname.split('/')[3] == 'coming-soon'
 														? s.Navbar_Item_Icon_Active
 														: ''
 												}`}
@@ -253,13 +249,13 @@ const PricingHeader2: React.FC<Props> = ({ image, title }) => {
 									</a>
 								</Link>
 
-								<Link href='/pricing-information/support-services'>
+								<Link href='/coming-soon'>
 									<a>
 										<div
 											className={s.Navbar_Item}
 											style={{
 												background:
-													router.pathname.split('/')[2] == 'support-services'
+													router.pathname.split('/')[3] == 'coming-soon'
 														? '#FFFFFF'
 														: 'rgba(255, 255, 255, 0.7)',
 											}}
@@ -268,7 +264,7 @@ const PricingHeader2: React.FC<Props> = ({ image, title }) => {
 												className={s.Navbar_Item_Border}
 												style={{
 													display:
-														router.pathname.split('/')[2] == 'support-services'
+														router.pathname.split('/')[3] == 'coming-soon'
 															? 'none'
 															: 'block',
 												}}
@@ -276,11 +272,11 @@ const PricingHeader2: React.FC<Props> = ({ image, title }) => {
 
 											<div className={s.Navbar_Item_Title}>
 												<span>
-													Support <br />
-													Services
+													bank account <br />
+													opening
 												</span>
 											</div>
-											{router.pathname.split('/')[2] == 'support-services' ? (
+											{router.pathname.split('/')[3] == 'coming-soon' ? (
 												<div className={s.Navbar_Item_Subtitle}>
 													<span>
 														Please select the service you are interested in
@@ -293,7 +289,7 @@ const PricingHeader2: React.FC<Props> = ({ image, title }) => {
 												className={s.Navbar_Item_Border}
 												style={{
 													display:
-														router.pathname.split('/')[2] == 'support-services'
+														router.pathname.split('/')[3] == 'coming-soon'
 															? 'none'
 															: 'block',
 												}}
@@ -306,7 +302,7 @@ const PricingHeader2: React.FC<Props> = ({ image, title }) => {
 												fill='none'
 												xmlns='http://www.w3.org/2000/svg'
 												className={`${s.Navbar_Item_Icon} ${
-													router.pathname.split('/')[2] == 'support-services'
+													router.pathname.split('/')[3] == 'coming-soon'
 														? s.Navbar_Item_Icon_Active
 														: ''
 												}`}
@@ -321,7 +317,144 @@ const PricingHeader2: React.FC<Props> = ({ image, title }) => {
 											</svg>
 										</div>
 									</a>
-								</Link> */}
+								</Link>
+
+								<Link href='/coming-soon'>
+									<a>
+										<div
+											className={s.Navbar_Item}
+											style={{
+												background:
+													router.pathname.split('/')[3] == 'coming-soon'
+														? '#FFFFFF'
+														: 'rgba(255, 255, 255, 0.7)',
+											}}
+										>
+											<div
+												className={s.Navbar_Item_Border}
+												style={{
+													display:
+														router.pathname.split('/')[3] == 'coming-soon'
+															? 'none'
+															: 'block',
+												}}
+											></div>
+
+											<div className={s.Navbar_Item_Title}>
+												<span>
+													additional <br />
+													financial services
+												</span>
+											</div>
+											{router.pathname.split('/')[3] == 'coming-soon' ? (
+												<div className={s.Navbar_Item_Subtitle}>
+													<span>
+														Please select the service you are interested in
+														below
+													</span>
+												</div>
+											) : null}
+
+											<div
+												className={s.Navbar_Item_Border}
+												style={{
+													display:
+														router.pathname.split('/')[3] == 'coming-soon'
+															? 'none'
+															: 'block',
+												}}
+											></div>
+
+											<svg
+												width='23'
+												height='23'
+												viewBox='0 0 23 23'
+												fill='none'
+												xmlns='http://www.w3.org/2000/svg'
+												className={`${s.Navbar_Item_Icon} ${
+													router.pathname.split('/')[3] == 'coming-soon'
+														? s.Navbar_Item_Icon_Active
+														: ''
+												}`}
+											>
+												<path
+													d='M21.8207 0.609165L21.8207 21.8224M21.8207 21.8224L0.607525 21.8224M21.8207 21.8224L0.606601 0.608243'
+													stroke='#2D2D2D'
+													strokeOpacity='0.5'
+													strokeLinecap='round'
+													strokeLinejoin='round'
+												/>
+											</svg>
+										</div>
+									</a>
+								</Link>
+
+								<Link href='/coming-soon'>
+									<a>
+										<div
+											className={s.Navbar_Item}
+											style={{
+												background:
+													router.pathname.split('/')[3] == 'coming-soon'
+														? '#FFFFFF'
+														: 'rgba(255, 255, 255, 0.7)',
+											}}
+										>
+											<div
+												className={s.Navbar_Item_Border}
+												style={{
+													display:
+														router.pathname.split('/')[3] == 'coming-soon'
+															? 'none'
+															: 'block',
+												}}
+											></div>
+
+											<div className={s.Navbar_Item_Title}>
+												<span>other</span>
+											</div>
+											{router.pathname.split('/')[3] == 'coming-soon' ? (
+												<div className={s.Navbar_Item_Subtitle}>
+													<span>
+														Please select the service you are interested in
+														below
+													</span>
+												</div>
+											) : null}
+
+											<div
+												className={s.Navbar_Item_Border}
+												style={{
+													display:
+														router.pathname.split('/')[3] == 'coming-soon'
+															? 'none'
+															: 'block',
+												}}
+											></div>
+
+											<svg
+												width='23'
+												height='23'
+												viewBox='0 0 23 23'
+												fill='none'
+												xmlns='http://www.w3.org/2000/svg'
+												className={`${s.Navbar_Item_Icon} ${
+													router.pathname.split('/')[3] == 'coming-soon'
+														? s.Navbar_Item_Icon_Active
+														: ''
+												}`}
+											>
+												<path
+													d='M21.8207 0.609165L21.8207 21.8224M21.8207 21.8224L0.607525 21.8224M21.8207 21.8224L0.606601 0.608243'
+													stroke='#2D2D2D'
+													strokeOpacity='0.5'
+													strokeLinecap='round'
+													strokeLinejoin='round'
+												/>
+											</svg>
+										</div>
+									</a>
+								</Link>
 							</div>
 						</div>
 					</div>

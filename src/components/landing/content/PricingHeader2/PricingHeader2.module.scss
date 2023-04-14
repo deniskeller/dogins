@@ -4,7 +4,7 @@
 	min-height: em(815px);
 
 	@include iflaptop {
-		min-height: em(939px);
+		min-height: em(893px);
 	}
 	@include iftablet {
 		min-height: em(1280px);
@@ -18,16 +18,18 @@
 		background-position: top;
 		background-repeat: no-repeat;
 		background-size: cover;
-		image-rendering: pixelated;
-		image-rendering: -moz-crisp-edges; /* Firefox */
-		-ms-interpolation-mode: nearest-neighbor; /* IE */
+		@include ifdesktop {
+			image-rendering: pixelated;
+			image-rendering: -moz-crisp-edges; /* Firefox */
+			-ms-interpolation-mode: nearest-neighbor; /* IE */
+		}
 
 		@include iflaptop {
-			background-position: left;
+			background-position: 6% 100%;
 		}
 		@include iftablet {
-			background-size: auto;
-			background-position: 100% 100%;
+			background-size: cover;
+			background-position: 25% 100%;
 		}
 		@include ifmobile {
 		}
@@ -60,7 +62,7 @@
 	position: relative;
 	padding: em(143px) 0 em(97px);
 	@include iftablet {
-		padding: em(103px) 0 em(170px);
+		padding: em(103px) 0 em(115px);
 	}
 	@include ifmobile {
 		padding: em(103px) 0 em(170px);
@@ -68,6 +70,9 @@
 
 	&_BreadCrumbs {
 		margin-bottom: em(66px);
+		@include iflaptop {
+			margin-bottom: em(59px);
+		}
 		@include ifmobile {
 			margin-bottom: em(70px);
 		}
@@ -80,7 +85,7 @@
 		flex-wrap: wrap;
 		gap: 0 em(20px);
 		@include iflaptop {
-			gap: em(53px) 0;
+			gap: em(51px) 0;
 		}
 		@include iftablet {
 			gap: em(60px) 0;
@@ -114,23 +119,16 @@
 				padding-top: em(26px);
 			}
 			@include iflaptop {
-				gap: em(61px) em(61px);
+				grid-template-columns: 1fr 1fr 1fr;
+				gap: em(26px) em(24px);
 			}
 			@include iftablet {
 				grid-template-columns: 1fr;
 				gap: em(33px) 0;
-				a:nth-child(2),
-				a:nth-child(4) {
-					order: 1;
-				}
 			}
 			@include ifmobile {
 				grid-template-columns: 1fr;
 				gap: em(33px) 0;
-				a:nth-child(2),
-				a:nth-child(4) {
-					order: 1;
-				}
 			}
 			&_Item {
 				position: relative;
@@ -164,7 +162,11 @@
 						font-weight: 400;
 						text-transform: uppercase;
 						color: $text;
-						font-size: em(30px);
+						line-height: 140%;
+						font-size: em(18px);
+						@include iftablet {
+							font-size: em(30px);
+						}
 					}
 				}
 
@@ -185,13 +187,13 @@
 
 				&_Icon {
 					position: absolute;
-					width: em(30px);
-					height: em(30px);
 					right: em(10px);
 					bottom: em(10px);
+					width: em(22px);
+					height: em(22px);
 					&_Active {
-						width: em(40px);
-						height: em(40px);
+						width: em(30px);
+						height: em(30px);
 					}
 				}
 			}

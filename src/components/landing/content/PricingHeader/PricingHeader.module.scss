@@ -18,9 +18,11 @@
 		background-position: bottom;
 		background-repeat: no-repeat;
 		background-size: cover;
-		image-rendering: pixelated;
-		image-rendering: -moz-crisp-edges; /* Firefox */
-		-ms-interpolation-mode: nearest-neighbor; /* IE */
+		@include ifdesktop {
+			image-rendering: pixelated;
+			image-rendering: -moz-crisp-edges; /* Firefox */
+			-ms-interpolation-mode: nearest-neighbor; /* IE */
+		}
 
 		@include iflaptop {
 			background-position: 12% 100%;
@@ -188,13 +190,13 @@
 
 				&_Icon {
 					position: absolute;
-					width: em(30px);
-					height: em(30px);
 					right: em(10px);
 					bottom: em(10px);
+					width: em(22px);
+					height: em(22px);
 					&_Active {
-						width: em(40px);
-						height: em(40px);
+						width: em(30px);
+						height: em(30px);
 					}
 				}
 			}
