@@ -1,0 +1,114 @@
+.BaseContainer {
+	@include iflaptop {
+		padding: 0 em(88px);
+	}
+	@include iftablet {
+		padding: 0 em(40px);
+	}
+	@include ifmobile {
+		padding: 0 em(16px);
+	}
+}
+
+.ComplianceSoftware {
+	position: relative;
+	padding: em(100px) 0 em(93px);
+	@include iflaptop {
+		padding: em(189px) 0 em(70px);
+	}
+	@include iftablet {
+		padding: em(189px) 0 em(70px);
+	}
+	@include ifmobile {
+		padding: em(189px) 0 em(70px);
+	}
+
+	.PoweredBy {
+		position: absolute;
+		top: em(30px);
+		right: em(-90px);
+		@media only screen and (min-width: 1024px) and (max-width: 1870px) {
+			right: em(0px);
+		}
+		@include iflaptop {
+			right: em(-51px);
+		}
+		@include iftablet {
+			right: em(-11px);
+		}
+		@include ifmobile {
+			right: em(10px);
+		}
+		&_Label {
+			display: flex;
+			justify-content: flex-end;
+			margin-bottom: em(7px);
+			span {
+				font-weight: 300;
+				font-size: em(24px);
+				line-height: 130%;
+				color: $text;
+			}
+		}
+		&_Icon {
+			width: em(211px);
+			height: auto;
+		}
+	}
+
+	&_List {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: em(16px) 0;
+		border-top: 1px solid rgba(26, 26, 26, 0.1);
+		max-width: em(915px);
+		margin-bottom: em(118px);
+		padding: em(32px) em(27px) 0;
+		@include ifmobile {
+			padding: em(32px) em(10px) 0;
+		}
+
+		.SoftwareItem {
+			display: grid;
+			grid-template-columns: 1fr auto;
+			gap: 0 em(20px);
+			&_Label {
+				display: flex;
+				flex-direction: row;
+				align-items: flex-start;
+				&_Checkbox {
+					display: block;
+					position: relative;
+					top: em(-2px);
+					@include ifmobile {
+						top: auto;
+					}
+				}
+
+				&_Title {
+					font-weight: 300;
+					font-size: em(16px);
+					color: $text;
+					@include ifmobile {
+						font-size: em(14px);
+					}
+				}
+			}
+			&_Value {
+				font-weight: 500;
+				font-size: em(16px);
+				color: $text;
+				@include ifmobile {
+					font-size: em(14px);
+				}
+			}
+		}
+	}
+}
+
+@include iflaptop {
+}
+@include iftablet {
+}
+@include ifmobile {
+}

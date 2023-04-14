@@ -1,16 +1,10 @@
-import { PricingHeader } from '@content/landing/index';
 import { Pricing } from '@layouts/index';
+import { ComplianceSoftware } from '@view/landing';
 
 const ComplianceSoftwarePage = () => {
 	return (
 		<Pricing type='white'>
-			<>
-				<PricingHeader
-					image='pricing-header-bg.jpeg'
-					title='Compliance	Software'
-				/>
-				<h1>Compliance Software page</h1>
-			</>
+			<ComplianceSoftware />
 		</Pricing>
 	);
 };

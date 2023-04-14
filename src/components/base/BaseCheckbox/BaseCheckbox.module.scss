@@ -48,9 +48,9 @@
 		box-sizing: border-box;
 		width: em(24px);
 		height: em(24px);
-		border-radius: em(4px);
+		border-radius: 4px;
 		background: transparent;
-		border: 1.5px solid rgba(26, 26, 26, 0.2);
+		border: 2px solid rgba(26, 26, 26, 0.2);
 		overflow: hidden;
 		position: absolute;
 		// top: 0;
@@ -58,6 +58,7 @@
 		@include ifmobile {
 			width: em(18px);
 			height: em(18px);
+			border-radius: 2px;
 		}
 	}
 
@@ -77,12 +78,12 @@
 	}
 
 	.isError {
-		border: 1.5px solid red;
+		border: 2px solid red;
 	}
 
 	.isActive {
 		background: $blue;
-		border: 1.5px solid $blue;
+		border: 2px solid $blue;
 		.BaseCheckboxTick {
 			visibility: visible;
 		}

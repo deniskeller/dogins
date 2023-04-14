@@ -13,7 +13,7 @@ const FinancialLicensing: React.FC = () => {
 		<>
 			<PricingHeader
 				image='pricing-header-bg.jpeg'
-				title='Financial Licensing'
+				title='Financial licensing'
 			/>
 
 			<div className={s.Wrapper}>

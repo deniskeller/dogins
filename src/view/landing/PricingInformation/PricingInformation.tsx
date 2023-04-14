@@ -1,17 +1,14 @@
 import { BaseContainer } from '@base/index';
 import { PricingHeader } from '@content/landing/index';
-import { useRouter } from 'next/router';
 import React from 'react';
 import s from './PricingInformation.module.scss';
 
 const PricingInformation: React.FC = () => {
-	const router = useRouter();
-
 	return (
 		<>
 			<PricingHeader
 				image='pricing-header-bg.jpeg'
-				title='Pricing Information'
+				title='Pricing information'
 			/>
 
 			<div className={s.Wrapper}>
