@@ -1,0 +1,15 @@
+.CreateOrderPopup {
+	position: absolute;
+	z-index: 100000;
+	transition: right 0.5s cubic-bezier(0.82, 0.085, 0.395, 0.895);
+	top: 0;
+	right: -100%;
+	background: $blue;
+	box-shadow: 10px 10px 38px rgba(64, 114, 163, 0.5);
+	width: em(657px);
+	height: em(1000px);
+
+	&_Visible {
+		right: 0;
+	}
+}

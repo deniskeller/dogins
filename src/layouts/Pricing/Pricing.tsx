@@ -1,7 +1,7 @@
 import { BaseIcon } from '@base/index';
 import { ALL_ICONS } from '@constants/icons';
 import { Footer } from 'components/landing/footer';
-import { QuickOrderPopup } from 'components/landing/modals';
+import { CreateOrderPopup, QuickOrderPopup } from 'components/landing/modals';
 import { Navbar } from 'components/landing/navbar';
 import React, { useEffect, useState } from 'react';
 import s from './Pricing.module.scss';
@@ -16,7 +16,10 @@ const Pricing: React.FC<Props> = ({ children, type }) => {
 
 	const [scrollTop, setScrollTop] = useState(0);
 
-	const [popup, setPopup] = useState(false);
+	//ВРЕМЕННАЯ ЛОГИКА МОДАЛОК
+	const [quickOrderPopup, setQuickOrderPopup] = useState(false);
+	const [addOrderPopup, setAddOrderPopup] = useState(false);
+	const [count, setCount] = useState(0);
 
 	useEffect(() => {
 		const handleScroll = () => {
@@ -38,9 +41,19 @@ const Pricing: React.FC<Props> = ({ children, type }) => {
 
 	useEffect(() => {
 		setTimeout(() => {
-			setPopup(true);
-		}, 2000);
-	}, []);
+			setQuickOrderPopup(true);
+			setCount(+1);
+		}, 1000);
+	}, [quickOrderPopup]);
+
+	useEffect(() => {
+		if (count === 1 && !quickOrderPopup) {
+			setAddOrderPopup(true);
+			setTimeout(() => {
+				setQuickOrderPopup(false);
+			}, 1000);
+		}
+	}, [count, quickOrderPopup]);
 
 	return (
 		<div
@@ -59,7 +72,9 @@ const Pricing: React.FC<Props> = ({ children, type }) => {
 
 			<Footer type={type} pricing='pricing' />
 
-			<QuickOrderPopup popup={popup} onClick={setPopup} />
+			<QuickOrderPopup popup={quickOrderPopup} onClick={setQuickOrderPopup} />
+
+			<CreateOrderPopup popup={addOrderPopup} />
 		</div>
 	);
 };
