@@ -13,11 +13,11 @@
 
 	&:hover {
 		.BaseCheckboxCheck {
-			background: #899ea9;
+			background: #b9ddfe;
 		}
 		.BaseCheckboxCheck.isActive {
-			background: #0369a0;
-			border-color: #0369a0;
+			background: #5197db;
+			border-color: #5197db;
 		}
 	}
 
@@ -50,7 +50,7 @@
 		height: em(24px);
 		border-radius: em(4px);
 		background: transparent;
-		border: 1.5px solid rgba(255, 255, 255, 0.1);
+		border: 1.5px solid rgba(26, 26, 26, 0.2);
 		overflow: hidden;
 		position: absolute;
 		// top: 0;

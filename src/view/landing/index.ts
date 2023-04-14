@@ -4,6 +4,7 @@ export { default as Compliance } from "./Compliance/Compliance";
 export { default as Contacts } from "./Contacts/Contacts";
 export { default as CookiePolicy } from "./CookiePolicy/CookiePolicy";
 export { default as Eco } from "./Eco/Eco";
+export { default as FinancialLicensing } from "./FinancialLicensing/FinancialLicensing";
 export { default as Investments } from "./Investments/Investments";
 export { default as Licensing } from "./Licensing/Licensing";
 export { default as Main } from "./Main/Main";

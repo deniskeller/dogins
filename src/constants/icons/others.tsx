@@ -7,6 +7,7 @@ export enum OthersIcons {
 	TWITTER = 'TWITTER',
 	CHEVERON = 'CHEVERON',
 	ARROW = 'ARROW',
+	ARROW_DIAGONALLY = 'ARROW_DIAGONALLY',
 }
 
 export const othersIcons = {
@@ -321,6 +322,18 @@ export const othersIcons = {
 			<path
 				d='M32.5833 1.0026L43.375 11.7943M43.375 11.7943L32.5833 22.5859M43.375 11.7943L1 11.7943'
 				stroke='#B49635'
+				strokeLinecap='round'
+				strokeLinejoin='round'
+			/>
+		</>
+	),
+
+	[OthersIcons.ARROW_DIAGONALLY]: (
+		<>
+			<path
+				d='M21.8207 0.609165L21.8207 21.8224M21.8207 21.8224L0.607525 21.8224M21.8207 21.8224L0.606601 0.608243'
+				stroke='#2D2D2D'
+				strokeOpacity='0.5'
 				strokeLinecap='round'
 				strokeLinejoin='round'
 			/>

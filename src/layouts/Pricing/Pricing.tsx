@@ -36,7 +36,7 @@ const Pricing: React.FC<Props> = ({ children, type }) => {
 	return (
 		<div
 			className={s.Wrapper}
-			style={{ background: type == 'white' ? '#ffffff' : 'transparent' }}
+			style={{ background: type == 'white' ? '#F0F0F0' : 'transparent' }}
 		>
 			<Navbar fixed={isVisible} type='white' pricing='pricing' />
 

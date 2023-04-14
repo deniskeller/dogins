@@ -139,7 +139,16 @@ const Footer: React.FC<Props> = ({ type, pricing }) => {
 							<ul className={s.Footer_NavbarPartners_Navbar}>
 								{Links?.map((link, index) => {
 									return (
-										<li className={s.Link} key={index}>
+										<li
+											className={s.Link}
+											key={index}
+											style={{
+												borderColor:
+													type == 'white'
+														? 'rgba(26, 26, 26, 0.2)'
+														: 'rgba(255, 255, 255, 0.2)',
+											}}
+										>
 											<div
 												className={`${s.Link_Title} ${
 													type == 'white' ? s.Link_Title_White : ''

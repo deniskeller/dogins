@@ -1,0 +1,162 @@
+.BaseContainer {
+	@include iflaptop {
+		padding: 0 em(80px);
+	}
+	@include iftablet {
+		padding: 0 em(112px);
+	}
+}
+.FinancialLicensing {
+	padding: em(100px) 0 em(87px);
+	@include iflaptop {
+		padding: em(100px) 0 em(70px);
+	}
+	@include iftablet {
+		padding: em(100px) 0 em(70px);
+	}
+	@include ifmobile {
+		padding: em(100px) 0 em(70px);
+	}
+
+	&_Body {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		gap: 0 em(24px);
+		margin-bottom: em(165px);
+		@include iflaptop {
+			grid-template-columns: 1fr;
+			gap: em(87px) 0;
+			margin-bottom: em(130px);
+		}
+		@include iftablet {
+			grid-template-columns: 1fr;
+			gap: em(80px) 0;
+			margin-bottom: em(130px);
+		}
+		@include ifmobile {
+			grid-template-columns: 1fr;
+			gap: em(60px) 0;
+			margin-bottom: em(77px);
+		}
+	}
+
+	&_Item {
+		display: flex;
+		flex-direction: column;
+
+		&_Header {
+			border-bottom: 1px solid rgba(26, 26, 26, 0.1);
+			padding-bottom: em(40px);
+			margin-bottom: em(32px);
+			text-align: center;
+			h1 {
+				font-weight: 400;
+				font-size: em(30px);
+				text-transform: uppercase;
+				color: $blue;
+				@include ifmobile {
+					font-size: em(24px);
+				}
+			}
+		}
+
+		&_Total {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: space-between;
+			padding: 0 em(27px);
+			margin-bottom: em(32px);
+			@include ifmobile {
+				padding: 0 em(10px);
+			}
+			&_Label {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				.Title {
+					font-weight: 300;
+					font-size: em(24px);
+					color: $text;
+					@include ifmobile {
+						font-weight: 400;
+						font-size: em(18px);
+					}
+				}
+			}
+
+			&_Value {
+				font-weight: 400;
+				font-size: em(24px);
+				color: $blue;
+				@include ifmobile {
+					font-size: em(18px);
+				}
+			}
+		}
+		.Additional {
+			margin-top: em(70px);
+			@include ifmobile {
+				margin-top: em(44px);
+			}
+		}
+
+		&_ListComponents {
+			display: grid;
+			grid-template-columns: 1fr;
+			gap: em(20px) 0;
+			padding: 0 em(27px);
+			@include ifmobile {
+				padding: 0 em(10px);
+			}
+			.Component {
+				display: grid;
+				grid-template-columns: 1fr auto;
+				gap: 0 em(20px);
+				&_Label {
+					display: flex;
+					flex-direction: row;
+					align-items: flex-start;
+					&_Icon {
+						width: em(16px);
+						height: em(16px);
+						margin-right: em(20px);
+						@include ifmobile {
+							width: em(12px);
+							height: em(12px);
+							margin-right: em(10px);
+						}
+						&_Active {
+							path {
+								stroke: $blue;
+								stroke-opacity: 1;
+							}
+						}
+					}
+					&_Name {
+						max-width: em(320px);
+						@include ifmobile {
+							max-width: em(185px);
+						}
+						p {
+							font-weight: 300;
+							font-size: em(16px);
+							color: $text;
+							@include ifmobile {
+								font-size: em(14px);
+							}
+						}
+					}
+				}
+				&_Value {
+					font-weight: 500;
+					font-size: em(16px);
+					color: $text;
+					@include ifmobile {
+						font-size: em(14px);
+					}
+				}
+			}
+		}
+	}
+}
