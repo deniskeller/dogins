@@ -1,6 +1,7 @@
 import { BaseIcon } from '@base/index';
 import { ALL_ICONS } from '@constants/icons';
 import { Footer } from 'components/landing/footer';
+import { QuickOrderPopup } from 'components/landing/modals';
 import { Navbar } from 'components/landing/navbar';
 import React, { useEffect, useState } from 'react';
 import s from './Pricing.module.scss';
@@ -14,6 +15,8 @@ const Pricing: React.FC<Props> = ({ children, type }) => {
 	const [isVisible, setIsVisible] = useState(false);
 
 	const [scrollTop, setScrollTop] = useState(0);
+
+	const [popup, setPopup] = useState(false);
 
 	useEffect(() => {
 		const handleScroll = () => {
@@ -33,6 +36,12 @@ const Pricing: React.FC<Props> = ({ children, type }) => {
 		};
 	}, [scrollTop]);
 
+	useEffect(() => {
+		setTimeout(() => {
+			setPopup(true);
+		}, 2000);
+	}, []);
+
 	return (
 		<div
 			className={s.Wrapper}
@@ -49,6 +58,8 @@ const Pricing: React.FC<Props> = ({ children, type }) => {
 			/>
 
 			<Footer type={type} pricing='pricing' />
+
+			<QuickOrderPopup popup={popup} onClick={setPopup} />
 		</div>
 	);
 };

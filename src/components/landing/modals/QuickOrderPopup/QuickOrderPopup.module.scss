@@ -1,0 +1,46 @@
+.QuickOrderPopup {
+	position: fixed;
+	z-index: 100000;
+	transition: right 0.5s cubic-bezier(0.82, 0.085, 0.395, 0.895);
+	right: -100%;
+	bottom: 0;
+	filter: drop-shadow(0px -12px 50px rgba(81, 151, 219, 0.35));
+	background: $blue;
+	display: flex;
+	flex-direction: row;
+	align-items: flex-end;
+	border-radius: em(180px) 0px 0px 0px;
+	min-width: em(816px);
+	min-height: em(232px);
+	padding: em(105px) em(106px) em(60px) em(99px);
+
+	&_Visible {
+		right: 0;
+	}
+
+	.Question {
+		margin-bottom: em(9px);
+		span {
+			font-weight: 300;
+			font-size: em(24px);
+			line-height: 120%;
+			color: $white;
+		}
+	}
+
+	.Aqtion {
+		font-weight: 400;
+		font-size: em(24px);
+		line-height: 120%;
+		color: $white;
+	}
+
+	.Button {
+		width: em(213px);
+		height: em(44px);
+		margin-left: em(58px);
+		& > div {
+			font-size: em(16px);
+		}
+	}
+}
