@@ -3,19 +3,33 @@
 		padding: 0 em(80px);
 	}
 	@include iftablet {
-		padding: 0 em(112px);
+		padding: 0 em(40px);
 	}
 }
-.WebsiteDevelopment {
-	padding: em(100px) 0 em(87px);
-	@include iflaptop {
-		padding: em(100px) 0 em(70px);
+
+.BaseContainer2 {
+	padding: 0 em(50px);
+	@include iftablet {
+		padding: 0 em(20px);
 	}
 	@include iftablet {
-		padding: em(100px) 0 em(70px);
+		padding: 0 em(10px);
+	}
+}
+
+.WebsiteDevelopment {
+	padding: em(100px) 0 em(87px);
+	@media only screen and (min-width: 1024px) and (max-width: 1870px) {
+		padding: em(189px) 0 em(87px);
+	}
+	@include iflaptop {
+		padding: em(189px) 0 em(70px);
+	}
+	@include iftablet {
+		padding: em(189px) 0 em(70px);
 	}
 	@include ifmobile {
-		padding: em(100px) 0 em(70px);
+		padding: em(189px) 0 em(70px);
 	}
 
 	&_Body {
@@ -23,6 +37,7 @@
 		grid-template-columns: 1fr 1fr;
 		gap: 0 em(24px);
 		margin-bottom: em(165px);
+		position: relative;
 		@include iflaptop {
 			grid-template-columns: 1fr;
 			gap: em(87px) 0;
@@ -38,6 +53,43 @@
 			gap: em(60px) 0;
 			margin-bottom: em(77px);
 		}
+
+		.PoweredBy {
+			position: absolute;
+			top: em(-70px);
+			right: em(-94px);
+			@media only screen and (min-width: 1024px) and (max-width: 1870px) {
+				top: em(-159px);
+				right: em(-10px);
+			}
+			@include iflaptop {
+				top: em(-159px);
+				right: em(-50px);
+			}
+			@include iftablet {
+				top: em(-159px);
+				right: em(-10px);
+			}
+			@include ifmobile {
+				top: em(-159px);
+				right: em(20px);
+			}
+			&_Label {
+				display: flex;
+				justify-content: flex-end;
+				margin-bottom: em(7px);
+				span {
+					font-weight: 300;
+					font-size: em(24px);
+					line-height: 130%;
+					color: $text;
+				}
+			}
+			&_Icon {
+				width: em(211px);
+				height: auto;
+			}
+		}
 	}
 
 	&_Item {
@@ -45,13 +97,24 @@
 		flex-direction: column;
 
 		&_Header {
-			border-bottom: 1px solid rgba(26, 26, 26, 0.1);
-			padding-bottom: em(40px);
-			margin-bottom: em(32px);
 			text-align: center;
+			border-bottom: 1px solid rgba(26, 26, 26, 0.1);
+			margin-bottom: em(32px);
+			padding: 0 em(57px) em(40px);
+
+			@include iflaptop {
+				padding: 0 em(57px) em(40px);
+			}
+			@include iftablet {
+				padding: 0 em(23px) em(40px);
+			}
+			@include ifmobile {
+				padding: 0 em(10px) em(40px);
+			}
 			h1 {
 				font-weight: 400;
 				font-size: em(30px);
+				line-height: 120%;
 				text-transform: uppercase;
 				color: $blue;
 				@include ifmobile {
@@ -128,9 +191,9 @@
 						}
 					}
 					&_Name {
-						max-width: em(320px);
+						max-width: em(500px);
 						@include ifmobile {
-							max-width: em(185px);
+							max-width: em(200px);
 						}
 						p {
 							font-weight: 300;

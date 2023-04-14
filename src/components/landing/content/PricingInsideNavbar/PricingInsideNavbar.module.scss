@@ -13,6 +13,8 @@
 		flex-direction: row;
 		align-items: center;
 		cursor: pointer;
+		position: relative;
+		z-index: 1000;
 		@include ifmobile {
 			width: 100%;
 			justify-content: center;
@@ -24,6 +26,7 @@
 			}
 		}
 		&:last-child {
+			text-align: right;
 			.NavbarItem_Icon {
 				transform: rotate(-90deg);
 				margin-left: em(5px);
