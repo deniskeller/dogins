@@ -29,7 +29,7 @@ const PricingHeader2: React.FC<Props> = ({ image, title }) => {
 				<BaseContainer className={s.BaseContainer}>
 					<div className={s.Header}>
 						<BreadCrumbs
-							roorHref=''
+							roorHref='/pricing-information/support-services'
 							rootPathName=''
 							className={s.Header_BreadCrumbs}
 						/>

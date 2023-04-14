@@ -39,7 +39,7 @@ const BreadCrumbs: React.FC<Props> = ({
 			const pathArray = linkPath.map((path, i) => {
 				return {
 					breadcrumb: path,
-					href: '/' + linkPath.slice(0, i + 1).join(''),
+					href: '/' + linkPath.slice(0, i + 1).join('/'),
 				};
 			});
 			setBreadcrumbs(pathArray);

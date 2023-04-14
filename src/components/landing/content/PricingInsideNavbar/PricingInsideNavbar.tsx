@@ -20,7 +20,7 @@ const PricingInsideNavbar: React.FC<Props> = ({
 	return (
 		<>
 			<div className={`${s.PricingInsideNavbar} ${className}`}>
-				<Link href={`/${prev_link}`}>
+				<Link href={`${prev_link}`}>
 					<a className={s.NavbarItem}>
 						<svg
 							width='37'
@@ -41,7 +41,7 @@ const PricingInsideNavbar: React.FC<Props> = ({
 					</a>
 				</Link>
 
-				<Link href={`/${next_link}`}>
+				<Link href={`${next_link}`}>
 					<a className={s.NavbarItem}>
 						<div className={s.NavbarItem_Label}>{label_next_link}</div>
 						<svg
