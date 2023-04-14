@@ -1,13 +1,10 @@
 import { BaseCheckbox, BaseContainer, BaseIcon } from '@base/index';
 import { ALL_ICONS } from '@constants/icons';
 import { PricingHeader, PricingInsideNavbar } from '@content/landing/index';
-import { useRouter } from 'next/router';
 import React, { useState } from 'react';
 import s from './FinancialLicensing.module.scss';
 
 const FinancialLicensing: React.FC = () => {
-	const router = useRouter();
-
 	const [selected, setSelected] = useState(false);
 	const [selected2, setSelected2] = useState(false);
 	const [selected3, setSelected3] = useState(false);
@@ -336,7 +333,12 @@ const FinancialLicensing: React.FC = () => {
 							</div>
 						</div>
 
-						<PricingInsideNavbar />
+						<PricingInsideNavbar
+							label_prev_link='Support services'
+							label_next_link='Compliance software'
+							prev_link='/pricing-information/support-services'
+							next_link='/pricing-information/compliance-software'
+						/>
 					</div>
 				</BaseContainer>
 			</div>
