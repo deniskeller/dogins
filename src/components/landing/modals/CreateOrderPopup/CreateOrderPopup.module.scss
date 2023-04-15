@@ -11,6 +11,7 @@
 	// height: 100%;
 	padding: em(89px) em(63px) em(83px);
 	@include ifmobile {
+		position: fixed;
 		width: 100vw;
 		min-height: auto;
 		height: 100vh;
@@ -243,6 +244,96 @@
 		}
 		& > div {
 			font-size: em(16px) !important;
+		}
+	}
+
+	.Submit {
+		.Title {
+			margin-bottom: em(40px);
+			span {
+				font-weight: 500;
+				font-size: em(16px);
+				line-height: 140%;
+				text-transform: uppercase;
+				color: $white;
+			}
+		}
+
+		.Border {
+			width: em(70px);
+			height: 1px;
+			background: rgba(255, 255, 255, 0.3);
+			margin-bottom: em(40px);
+		}
+
+		.Subtitle {
+			margin-bottom: em(40px);
+			@include ifmobile {
+				margin-bottom: em(18px);
+			}
+			span {
+				font-weight: 400;
+				font-size: em(16px);
+				line-height: 140%;
+				color: $white;
+			}
+		}
+		.Button {
+			width: 100%;
+			height: em(44px);
+			@include ifmobile {
+			}
+			& > div {
+				font-size: em(16px) !important;
+			}
+		}
+	}
+
+	.ClearOrders {
+		.Title {
+			margin-bottom: em(40px);
+			span {
+				font-weight: 500;
+				font-size: em(16px);
+				line-height: 140%;
+				text-transform: uppercase;
+				color: $white;
+			}
+		}
+
+		.Border {
+			width: em(70px);
+			height: 1px;
+			background: rgba(255, 255, 255, 0.3);
+			margin-bottom: em(40px);
+		}
+
+		.Subtitle {
+			margin-bottom: em(40px);
+			@include ifmobile {
+				margin-bottom: em(18px);
+			}
+			span {
+				font-weight: 400;
+				font-size: em(16px);
+				line-height: 140%;
+				color: $white;
+			}
+		}
+
+		.Icon {
+			width: em(180px);
+			height: em(180px);
+			margin-bottom: em(40px);
+		}
+		.Button {
+			width: em(226px);
+			height: em(44px);
+			@include ifmobile {
+			}
+			& > div {
+				font-size: em(16px) !important;
+			}
 		}
 	}
 }
