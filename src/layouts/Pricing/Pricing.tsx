@@ -74,7 +74,7 @@ const Pricing: React.FC<Props> = ({ children, type }) => {
 
 			<QuickOrderPopup popup={quickOrderPopup} onClick={setQuickOrderPopup} />
 
-			<CreateOrderPopup popup={addOrderPopup} />
+			<CreateOrderPopup popup={addOrderPopup} onClick={setAddOrderPopup} />
 		</div>
 	);
 };

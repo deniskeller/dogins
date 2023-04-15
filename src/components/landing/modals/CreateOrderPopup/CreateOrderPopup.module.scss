@@ -7,9 +7,245 @@
 	background: $blue;
 	box-shadow: 10px 10px 38px rgba(64, 114, 163, 0.5);
 	width: em(657px);
-	height: em(1000px);
+	min-height: em(1000px);
+	// height: 100%;
+	padding: em(89px) em(63px) em(83px);
+	@include ifmobile {
+		width: 100vw;
+		min-height: auto;
+		height: 100vh;
+		overflow-y: auto;
+		padding: em(70px) em(16px);
+	}
+
+	&_Close {
+		position: absolute;
+		top: em(30px);
+		right: em(30px);
+		width: em(30px);
+		height: em(30px);
+		cursor: pointer;
+		transition: all $speed ease-in-out;
+		@include ifmobile {
+			right: em(18px);
+		}
+		&:hover {
+			transform: rotate(180deg);
+		}
+	}
 
 	&_Visible {
 		right: 0;
 	}
+
+	&_Header {
+		margin-bottom: em(40px);
+		@include ifmobile {
+		}
+
+		.Accordion {
+			&_Header {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				cursor: pointer;
+				@include ifmobile {
+				}
+				&_Title {
+					span {
+						font-weight: 500;
+						font-size: em(16px);
+						line-height: 140%;
+						text-transform: uppercase;
+						color: rgba(255, 255, 255, 0.8);
+						@include ifmobile {
+						}
+					}
+				}
+
+				&_Orders {
+					display: flex;
+					flex-direction: row;
+					li {
+						font-weight: 600;
+						font-size: em(16px);
+						line-height: 140%;
+						text-transform: uppercase;
+						color: $white;
+						text-decoration: underline;
+						@include ifmobile {
+						}
+						&:last-child {
+							span {
+								display: none;
+							}
+						}
+					}
+				}
+
+				&_IconCheveron {
+					width: em(16px);
+					height: em(16px);
+					transform: rotate(-90deg);
+					margin-left: em(4px);
+					transition: all $speed ease-in-out;
+					@include ifmobile {
+					}
+					&_Open {
+						transform: rotate(90deg);
+					}
+				}
+			}
+
+			&_Body {
+				overflow: hidden;
+				overflow-y: auto;
+				max-height: 0;
+				transition: all 0.3s ease-in-out;
+				&::-webkit-scrollbar {
+					width: em(6px);
+				}
+				&::-webkit-scrollbar-thumb {
+					background: rgba(255, 255, 255, 0.1);
+					border-radius: em(100px);
+				}
+
+				&_Open {
+					margin-top: em(40px);
+					max-height: em(286px);
+				}
+
+				&_Gradient {
+					position: sticky;
+					top: 0;
+					right: 0;
+					bottom: 0;
+					left: 0;
+					z-index: 100;
+					&::before {
+						content: '';
+						display: block;
+						width: 100%;
+						height: em(30px);
+						position: absolute;
+						bottom: 0;
+						background: linear-gradient(
+							0deg,
+							$blue,
+							rgba(213, 141, 141, 0) 100%
+						);
+					}
+				}
+
+				.Order {
+					padding: 0 em(40px) 0 0;
+					margin-bottom: em(40px);
+					@include ifmobile {
+						padding: 0;
+					}
+					&:last-child {
+						margin-bottom: 0;
+					}
+					&_Header {
+						display: flex;
+						flex-direction: row;
+						align-items: center;
+						justify-content: space-between;
+						margin-bottom: em(32px);
+
+						&_Label,
+						&_Value {
+							font-weight: 600;
+							font-size: em(16px);
+							line-height: 120%;
+							color: $white;
+						}
+						&_Value {
+							margin-left: auto;
+						}
+
+						&_DeleteOrder {
+							width: em(24px);
+							height: em(24px);
+							margin-left: em(10px);
+							cursor: pointer;
+						}
+					}
+
+					&_Body {
+						display: grid;
+						grid-template-columns: 1fr;
+						gap: em(8px) 0;
+						padding-left: em(20px);
+
+						.SoftwareItem {
+							display: flex;
+							flex-direction: row;
+							justify-content: space-between;
+							gap: 0 em(20px);
+							&_Label {
+								max-width: em(300px);
+								@include ifmobile {
+									max-width: em(150px);
+								}
+								span {
+									font-weight: 300;
+									font-size: em(14px);
+									line-height: 120%;
+									color: $white;
+								}
+							}
+							&_Price {
+								font-weight: 500;
+								font-size: em(14px);
+								line-height: 120%;
+								color: $white;
+								white-space: nowrap;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.Border {
+		width: em(70px);
+		height: 1px;
+		background: rgba(255, 255, 255, 0.3);
+		margin-bottom: em(40px);
+		@include ifmobile {
+		}
+	}
+	&_Subtitle {
+		margin-bottom: em(40px);
+		span {
+			font-weight: 400;
+			font-size: em(16px);
+			line-height: 140%;
+			color: $white;
+		}
+	}
+
+	&_Form {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: em(16px) 0;
+		margin-bottom: em(40px);
+		@include ifmobile {
+		}
+	}
+
+	&_Button {
+		width: em(161px);
+		height: em(44px);
+		@include ifmobile {
+		}
+		& > div {
+			font-size: em(16px) !important;
+		}
+	}
+}
+
+@include ifmobile {
 }

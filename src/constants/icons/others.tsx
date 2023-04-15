@@ -8,6 +8,7 @@ export enum OthersIcons {
 	CHEVERON = 'CHEVERON',
 	ARROW = 'ARROW',
 	ARROW_DIAGONALLY = 'ARROW_DIAGONALLY',
+	DELETE = 'DELETE',
 }
 
 export const othersIcons = {
@@ -334,6 +335,17 @@ export const othersIcons = {
 				d='M21.8207 0.609165L21.8207 21.8224M21.8207 21.8224L0.607525 21.8224M21.8207 21.8224L0.606601 0.608243'
 				stroke='#2D2D2D'
 				strokeOpacity='0.5'
+				strokeLinecap='round'
+				strokeLinejoin='round'
+			/>
+		</>
+	),
+
+	[OthersIcons.DELETE]: (
+		<>
+			<path
+				d='M19 7L18.1327 19.1425C18.0579 20.1891 17.187 21 16.1378 21H7.86224C6.81296 21 5.94208 20.1891 5.86732 19.1425L5 7M10 11V17M14 11V17M15 7V4C15 3.44772 14.5523 3 14 3H10C9.44772 3 9 3.44772 9 4V7M4 7H20'
+				stroke='#D80027'
 				strokeLinecap='round'
 				strokeLinejoin='round'
 			/>
