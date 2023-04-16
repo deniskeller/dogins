@@ -39,6 +39,19 @@
 			position: -webkit-sticky !important;
 			position: sticky !important;
 			top: em(100px);
+			svg {
+				width: inherit;
+				height: inherit;
+			}
+
+			@include iflaptop {
+				width: em(100px);
+				height: em(108px);
+			}
+			@include iftablet {
+				width: em(78px);
+				height: em(84px);
+			}
 		}
 	}
 

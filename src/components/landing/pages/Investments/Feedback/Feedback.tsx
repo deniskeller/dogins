@@ -1,7 +1,7 @@
 import { BaseButton, BaseInput } from '@base/index';
+import { SubmitForm } from '@content/landing/index';
 import React, { useState } from 'react';
 import s from './Feedback.module.scss';
-import { SubmitForm } from '@content/landing/index';
 
 type Props = {};
 

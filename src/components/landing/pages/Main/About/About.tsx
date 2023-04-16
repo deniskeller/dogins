@@ -1,19 +1,55 @@
 import { BaseContainer, BaseIcon, BaseText, BaseTitle } from '@base/index';
 import { ALL_ICONS } from '@constants/icons';
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { AnimationOnScroll } from 'react-animation-on-scroll';
 import s from './About.module.scss';
 
 type Props = {};
 
 const About: React.FC<Props> = () => {
+	const refLogo = useRef<HTMLDivElement | null>(null);
+	const refLogoWrapper = useRef<HTMLDivElement | null>(null);
+
+	const [width, setWidth] = useState('');
+	const [height, setHeight] = useState('');
+
+	useEffect(() => {
+		console.log('refLogo: ', refLogo?.current?.offsetTop);
+		console.log('refLogoWrapper: ', refLogoWrapper);
+
+		let clientHeightLogo = refLogo?.current?.clientHeight;
+		console.log('clientHeightLogo: ', clientHeightLogo);
+		let clientWidthLogo = refLogo.current?.clientWidth;
+
+		let clientHeightWrapper = refLogoWrapper.current?.clientHeight;
+		console.log('clientHeightWrapper: ', clientHeightWrapper);
+
+		var pageH = Number(clientHeightWrapper) + Number(clientHeightLogo);
+
+		console.log('pageH: ', pageH);
+
+		const handleScroll = () => {
+			console.log('refLogo22: ', refLogo?.current?.offsetTop);
+			// setWidth(refLogo?.current?.offsetTop + clientWidthLogo / 1000);
+			// setHeight(refLogo?.current?.offsetTop + clientHeightLogo / 1000);
+		};
+
+		window.addEventListener('scroll', handleScroll);
+
+		return () => {};
+	}, []);
+
 	return (
 		<>
 			<div className='Wrapper'>
 				<BaseContainer>
 					<div className={s.About}>
-						<div className={s.About_Logo}>
-							<div className={s.Logo}>
+						<div className={s.About_Logo} ref={refLogoWrapper}>
+							<div
+								className={s.Logo}
+								ref={refLogo}
+								style={{ width: width, height: height }}
+							>
 								<BaseIcon icon={ALL_ICONS.LOGO} viewBox='0 0 280 316' />
 							</div>
 						</div>
