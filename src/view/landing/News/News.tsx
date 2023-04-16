@@ -13,7 +13,9 @@ const News: React.FC = () => {
 	return (
 		<div className={s.Wrapper}>
 			<BaseContainer>
-				<BaseTitle className={s.Title}>News Room</BaseTitle>
+				<div className='animate__animated animate__fadeInLeft'>
+					<BaseTitle className={s.Title}>News Room</BaseTitle>
+				</div>
 			</BaseContainer>
 
 			<BaseContainer className={s.BaseContainer}>

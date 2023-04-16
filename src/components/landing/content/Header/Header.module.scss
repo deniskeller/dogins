@@ -43,6 +43,9 @@
 	}
 
 	.Container {
+		@include iflaptop {
+			padding: 0 em(50px);
+		}
 		@include iftablet {
 			padding: 0 em(50px);
 		}

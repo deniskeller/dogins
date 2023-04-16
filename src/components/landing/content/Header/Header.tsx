@@ -22,8 +22,12 @@ const Header: React.FC<Props> = ({ image, title }) => {
 			<div className={s.Wrapper}>
 				<BaseContainer className={s.Container}>
 					<div className={s.Header}>
-						<div className={s.Header_Title}>
-							<BaseTitle type='h1'>{title || 'Что-то пошло не так!'}</BaseTitle>
+						<div className='animate__animated animate__fadeInLeft'>
+							<div className={s.Header_Title}>
+								<BaseTitle type='h1'>
+									{title || 'Что-то пошло не так!'}
+								</BaseTitle>
+							</div>
 						</div>
 					</div>
 				</BaseContainer>

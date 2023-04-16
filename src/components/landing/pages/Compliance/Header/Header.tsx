@@ -12,9 +12,11 @@ const Header: React.FC<Props> = () => {
 				<BaseContainer>
 					<div className={s.Header}>
 						<div className={s.Header_Content}>
-							<BaseTitle className={s.Header_Content_Title}>
-								Compliance
-							</BaseTitle>
+							<div className='animate__animated animate__fadeInLeft'>
+								<BaseTitle className={s.Header_Content_Title}>
+									Compliance
+								</BaseTitle>
+							</div>
 
 							<div className={s.Header_Content_Description}>
 								<p>
@@ -27,7 +29,7 @@ const Header: React.FC<Props> = () => {
 									can be utilized for KYC/KYB purposes.
 								</p>
 								<p>
-									Validate Corporate/Personal Identity Online:{' '}
+									Validate Corporate/Personal Identity Online:&nbsp;
 									<span>Fast, Accurate, Responsible.</span>
 								</p>
 							</div>
