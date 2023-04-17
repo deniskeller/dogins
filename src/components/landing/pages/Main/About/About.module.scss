@@ -34,7 +34,7 @@
 
 		.Logo {
 			width: em(127px);
-			max-width: 100%;
+			max-width: em(293px);
 			height: em(139px);
 			opacity: 0.05;
 			position: -webkit-sticky !important;
@@ -42,16 +42,24 @@
 			top: em(100px);
 			svg {
 				width: inherit;
-				max-width: 100%;
+				max-width: em(293px);
 				height: inherit;
+				@include iflaptop {
+					max-width: em(147px);
+				}
+				@include iftablet {
+					max-width: em(118px);
+				}
 			}
 
 			@include iflaptop {
 				width: em(100px);
+				max-width: em(147px);
 				height: em(108px);
 			}
 			@include iftablet {
 				width: em(78px);
+				max-width: em(118px);
 				height: em(84px);
 			}
 		}
