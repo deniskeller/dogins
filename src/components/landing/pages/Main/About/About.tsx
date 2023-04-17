@@ -15,22 +15,29 @@ const About: React.FC<Props> = () => {
 	const [height, setHeight] = useState('');
 
 	useEffect(() => {
-		console.log('refLogo: ', refLogo?.current?.offsetTop);
-		console.log('refLogoWrapper: ', refLogoWrapper);
+		// console.log('refLogo: ', refLogo?.current?.offsetTop);
+		// console.log('refLogoWrapper: ', refLogoWrapper);
 
+		//высота блока
 		let clientHeightLogo = refLogo?.current?.clientHeight;
-		console.log('clientHeightLogo: ', clientHeightLogo);
+		//ширина блока
 		let clientWidthLogo = refLogo.current?.clientWidth;
 
+		//ширина родителя
+		let clientWidthWrapper = refLogoWrapper.current?.clientWidth;
+		//высота родителя
 		let clientHeightWrapper = refLogoWrapper.current?.clientHeight;
-		console.log('clientHeightWrapper: ', clientHeightWrapper);
 
 		var pageH = Number(clientHeightWrapper) + Number(clientHeightLogo);
+		var pageW = Number(clientWidthWrapper) + Number(clientWidthLogo);
 
-		console.log('pageH: ', pageH);
+		var blockX = refLogo?.current?.offsetTop + clientHeightLogo;
+
+		var new_neight = Math.round(((pageH - blockX) * pageW) / pageH);
 
 		const handleScroll = () => {
-			console.log('refLogo22: ', refLogo?.current?.offsetTop);
+			console.log('new_neight: ', new_neight);
+			// console.log('refLogo22: ', refLogo?.current?.offsetTop);
 			setWidth((refLogo?.current?.offsetTop + clientWidthLogo) / 2);
 			setHeight((refLogo?.current?.offsetTop + clientHeightLogo) / 2);
 		};
@@ -49,7 +56,7 @@ const About: React.FC<Props> = () => {
 							<div
 								className={s.Logo}
 								ref={refLogo}
-								style={{ width: width, height: height }}
+								style={{ width: width, maxWidth: '100%', height: height }}
 							>
 								<BaseIcon icon={ALL_ICONS.LOGO} viewBox='0 0 280 316' />
 							</div>

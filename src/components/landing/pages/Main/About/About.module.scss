@@ -34,6 +34,7 @@
 
 		.Logo {
 			width: em(127px);
+			max-width: 100%;
 			height: em(139px);
 			opacity: 0.05;
 			position: -webkit-sticky !important;
@@ -41,6 +42,7 @@
 			top: em(100px);
 			svg {
 				width: inherit;
+				max-width: 100%;
 				height: inherit;
 			}
 
