@@ -1,3 +1,4 @@
+//@ts-nocheck
 import { BaseContainer, BaseIcon, BaseText, BaseTitle } from '@base/index';
 import { ALL_ICONS } from '@constants/icons';
 import React, { useEffect, useRef, useState } from 'react';
@@ -7,8 +8,8 @@ import s from './About.module.scss';
 type Props = {};
 
 const About: React.FC<Props> = () => {
-	const refLogo = useRef<HTMLDivElement | null>(null);
-	const refLogoWrapper = useRef<HTMLDivElement | null>(null);
+	const refLogo = useRef<HTMLDivElement | null>();
+	const refLogoWrapper = useRef<HTMLDivElement | null>();
 
 	const [width, setWidth] = useState('');
 	const [height, setHeight] = useState('');
@@ -30,8 +31,8 @@ const About: React.FC<Props> = () => {
 
 		const handleScroll = () => {
 			console.log('refLogo22: ', refLogo?.current?.offsetTop);
-			// setWidth(refLogo?.current?.offsetTop + clientWidthLogo / 1000);
-			// setHeight(refLogo?.current?.offsetTop + clientHeightLogo / 1000);
+			setWidth((refLogo?.current?.offsetTop + clientWidthLogo) / 2);
+			setHeight((refLogo?.current?.offsetTop + clientHeightLogo) / 2);
 		};
 
 		window.addEventListener('scroll', handleScroll);
