@@ -56,7 +56,7 @@ const About: React.FC<Props> = () => {
 							<div
 								className={s.Logo}
 								ref={refLogo}
-								style={{ width: width, maxWidth: '100%', height: height }}
+								style={{ width: width, maxWidth: '100%', height: 'auto' }}
 							>
 								<BaseIcon icon={ALL_ICONS.LOGO} viewBox='0 0 280 316' />
 							</div>
