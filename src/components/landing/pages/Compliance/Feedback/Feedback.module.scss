@@ -6,6 +6,7 @@
 	margin-bottom: -1px;
 	padding-right: em(50px);
 	border-top: 1px solid rgba(26, 26, 26, 0.2);
+	background: #222222;
 	@include iflaptop {
 		grid-template-columns: em(443px) 1fr;
 		padding-right: em(40px);
@@ -67,7 +68,7 @@
 					font-weight: 400;
 					font-size: em(30px);
 					line-height: 140%;
-					color: $black;
+					color: $white;
 					@include iflaptop {
 						font-size: em(18px);
 					}
@@ -95,15 +96,15 @@
 					margin-bottom: em(20px);
 				}
 				p {
-					font-weight: 400;
+					font-weight: 300;
 					font-size: em(12px);
 					line-height: 140%;
-					color: rgba(18, 18, 18, 0.6);
+					color: rgba(255, 255, 255, 0.7);
 					@include ifdesktop {
 						font-size: em(18px);
 					}
 					a {
-						color: #026c51;
+						color: $orange;
 					}
 				}
 			}
@@ -131,10 +132,10 @@
 
 			&_Button {
 				div {
-					color: $green;
+					color: $orange;
 				}
 				svg path {
-					stroke: $green;
+					stroke: $orange;
 				}
 			}
 

@@ -11,10 +11,10 @@ const Compliance: React.FC = () => {
 	return (
 		<>
 			<Header />
-			<Widget />
+			{/* <Widget /> */}
 			<Problems />
 			<Solutions />
-			<Table />
+			{/* <Table /> */}
 			<Feedback />
 		</>
 	);

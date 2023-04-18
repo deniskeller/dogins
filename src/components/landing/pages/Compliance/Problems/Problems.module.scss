@@ -218,29 +218,6 @@
 			}
 		}
 
-		&_Column1 {
-			padding-top: em(45px);
-			@media only screen and (min-width: 769px) and (max-width: 1400px) {
-				padding-top: 0;
-				margin-bottom: em(16px);
-			}
-			@include iftablet {
-				padding-top: 0;
-				margin-bottom: em(12px);
-			}
-			@include ifmobile {
-				padding-top: 0;
-				margin-bottom: em(12px);
-			}
-		}
-		&_Column2 {
-			.ProblemItem {
-				@media only screen and (min-width: 1401px) {
-					padding: em(38px) em(35px) em(38px) em(36px) !important;
-				}
-			}
-		}
-
 		&_Column1,
 		&_Column2 {
 			display: grid;
@@ -272,7 +249,85 @@
 				border-radius: em(6px);
 				background: $white;
 				border: 1px solid rgba(26, 26, 26, 0.4);
-				box-shadow: 20px 18px 6px rgba(0, 0, 0, 0.05);
+				filter: drop-shadow(20px 18px 6px rgba(0, 0, 0, 0.09));
+
+				&_Triangle {
+					position: absolute;
+					background: rgba(26, 26, 26, 0.4);
+					right: em(-25px);
+					top: calc(50% - em(30px));
+					clip-path: polygon(0% 0%, 100% 100%, 0% 100%);
+					transform: rotate(-135deg);
+					border-radius: 0 0 0 em(6px);
+					width: em(50px);
+					height: em(50px);
+					overflow: hidden;
+					@media only screen and (min-width: 769px) and (max-width: 1400px) {
+						left: em(-20px);
+						transform: rotate(45deg);
+						top: calc(50% - em(15px));
+						display: block;
+						width: em(40px);
+						height: em(40px);
+					}
+					@include iflaptop {
+						left: em(-20px);
+						transform: rotate(45deg);
+						top: calc(50% - em(15px));
+						display: block;
+						width: em(40px);
+						height: em(40px);
+					}
+					@include iftablet {
+						left: em(-15px);
+						transform: rotate(45deg);
+						top: calc(50% - em(15px));
+						display: block;
+						width: em(30px);
+						height: em(30px);
+						border-radius: 0 0 0 em(4px);
+					}
+					@include ifmobile {
+						left: em(-15px);
+						transform: rotate(45deg);
+						top: calc(50% - em(15px));
+						display: block;
+						width: em(30px);
+						height: em(30px);
+						border-radius: 0 0 0 em(4px);
+					}
+
+					&::before {
+						content: '';
+						position: absolute;
+						display: block;
+						background: $white;
+						border-radius: 0 0 0 em(5px);
+						top: 1px;
+						left: 1px;
+						width: em(48px);
+						height: em(48px);
+						clip-path: polygon(0% 0%, 100% 100%, 0% 100%);
+						@media only screen and (min-width: 769px) and (max-width: 1400px) {
+							width: em(38px);
+							height: em(38px);
+						}
+						@include iflaptop {
+							width: em(38px);
+							height: em(38px);
+						}
+						@include iftablet {
+							width: em(28px);
+							height: em(28px);
+							border-radius: 0 0 0 em(3px);
+						}
+						@include ifmobile {
+							width: em(28px);
+							height: em(28px);
+							border-radius: 0 0 0 em(3px);
+						}
+					}
+				}
 
 				@media only screen and (min-width: 769px) and (max-width: 1400px) {
 					grid-template-columns: em(100px) 1fr;
@@ -301,13 +356,6 @@
 					background: $white;
 					border: 1px solid rgba(26, 26, 26, 0.4);
 					box-shadow: 20px 18px 6px rgba(0, 0, 0, 0.05);
-				}
-
-				&_TriangleIconDesktop {
-					position: absolute;
-					right: em(-89px);
-					top: 50%;
-					transform: translate(-50%, -50%);
 				}
 
 				&_Icon {
@@ -379,6 +427,46 @@
 							font-size: em(12px);
 						}
 					}
+				}
+			}
+		}
+
+		&_Column1 {
+			padding-top: em(45px);
+			@media only screen and (min-width: 769px) and (max-width: 1400px) {
+				padding-top: 0;
+				margin-bottom: em(16px);
+			}
+			@include iftablet {
+				padding-top: 0;
+				margin-bottom: em(12px);
+			}
+			@include ifmobile {
+				padding-top: 0;
+				margin-bottom: em(12px);
+			}
+		}
+
+		&_Column2 {
+			.ProblemItem {
+				&_Triangle {
+					left: em(-25px);
+					transform: rotate(45deg);
+					@media only screen and (min-width: 769px) and (max-width: 1400px) {
+						left: em(-20px);
+					}
+					@include iflaptop {
+						left: em(-20px);
+					}
+					@include iftablet {
+						left: em(-15px);
+					}
+					@include ifmobile {
+						left: em(-15px);
+					}
+				}
+				@media only screen and (min-width: 1401px) {
+					padding: em(38px) em(35px) em(38px) em(36px) !important;
 				}
 			}
 		}

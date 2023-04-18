@@ -44,7 +44,6 @@ const Feedback: React.FC<Props> = () => {
 
 							<div className={s.Form_Inputs}>
 								<BaseInput
-									theme='dark'
 									name='name'
 									label='Name'
 									value={value.name}
@@ -53,7 +52,6 @@ const Feedback: React.FC<Props> = () => {
 								/>
 
 								<BaseInput
-									theme='dark'
 									name='email'
 									label='Email'
 									value={value.email}
