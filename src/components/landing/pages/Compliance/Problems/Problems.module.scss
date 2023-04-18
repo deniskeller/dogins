@@ -271,7 +271,7 @@
 						height: em(40px);
 					}
 					@include iflaptop {
-						left: em(-20px);
+						left: em(-19px);
 						transform: rotate(45deg);
 						top: calc(50% - em(15px));
 						display: block;
@@ -279,7 +279,7 @@
 						height: em(40px);
 					}
 					@include iftablet {
-						left: em(-10px);
+						left: em(-14px);
 						transform: rotate(45deg);
 						top: calc(50% - em(15px));
 						display: block;
@@ -454,13 +454,13 @@
 					left: em(-24px);
 					transform: rotate(45deg);
 					@media only screen and (min-width: 769px) and (max-width: 1400px) {
-						left: em(-20px);
+						left: em(-19px);
 					}
 					@include iflaptop {
-						left: em(-20px);
+						left: em(-19px);
 					}
 					@include iftablet {
-						left: em(-10px);
+						left: em(-14px);
 					}
 					@include ifmobile {
 						left: em(-15px);
