@@ -31,13 +31,11 @@ const About: React.FC<Props> = () => {
 
 			// var blockH = refLogo.current?.clientHeight;
 			var blockH = refLogo?.current?.clientHeight;
-			console.log('blockH: ', blockH);
 			var pageH = refLogoWrapper.current?.clientHeight + blockH;
 			var blockX = refLogo?.current?.offsetTop + blockH;
 			var width = Math.round(((pageH - blockX) * deltaW) / pageH);
 
 			if (blockX >= 0 && blockX <= pageH) {
-				console.log(blockX);
 				setWidth(minW + width);
 			}
 		};
