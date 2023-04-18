@@ -265,7 +265,7 @@
 					@media only screen and (min-width: 769px) and (max-width: 1400px) {
 						left: em(-20px);
 						transform: rotate(45deg);
-						top: calc(50% - em(15px));
+						top: calc(50% - em(20px));
 						display: block;
 						width: em(40px);
 						height: em(40px);
@@ -273,7 +273,7 @@
 					@include iflaptop {
 						left: em(-19px);
 						transform: rotate(45deg);
-						top: calc(50% - em(15px));
+						top: calc(50% - em(20px));
 						display: block;
 						width: em(40px);
 						height: em(40px);
