@@ -279,7 +279,7 @@
 						height: em(40px);
 					}
 					@include iftablet {
-						left: em(-15px);
+						left: em(-14px);
 						transform: rotate(45deg);
 						top: calc(50% - em(15px));
 						display: block;
@@ -459,7 +459,7 @@
 						left: em(-20px);
 					}
 					@include iftablet {
-						left: em(-15px);
+						left: em(-14px);
 					}
 					@include ifmobile {
 						left: em(-15px);
