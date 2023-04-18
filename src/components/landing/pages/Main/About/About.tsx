@@ -15,34 +15,31 @@ const About: React.FC<Props> = () => {
 	const [height, setHeight] = useState('');
 
 	useEffect(() => {
-		//высота блока
-		let clientHeightLogo = refLogo?.current?.clientHeight;
-		//ширина блока
-		let clientWidthLogo = refLogo.current?.clientWidth;
-
-		//ширина родителя
-		let clientWidthWrapper = refLogoWrapper.current?.clientWidth;
-		//высота родителя
-		let clientHeightWrapper = refLogoWrapper.current?.clientHeight;
-
-		var pageH = Number(clientHeightWrapper) + Number(clientHeightLogo);
-		var pageW = Number(clientWidthWrapper) + Number(clientWidthLogo);
-
-		// console.log('refLogo: ', refLogo?.current?.offsetTop);
-		// console.log('refLogoWrapper: ', refLogoWrapper);
-
-		//на
-		// let wscroll_1 = '';
-		//текущее положение скрола
-		let wscroll_X = refLogo?.current?.offsetTop;
-		//высота родителя
-		let H = clientHeightWrapper;
-
-		// let H2 = wscroll_X - wscroll_1;
-
 		const handleScroll = () => {
-			setWidth((refLogo?.current?.offsetTop + clientWidthLogo) / 2);
-			setHeight((refLogo?.current?.offsetTop + clientHeightLogo) / 2);
+			//максимальная ширина блока
+			var maxW = +window
+				.getComputedStyle(refLogo.current)
+				.getPropertyValue('min-width')
+				.split('px')[0];
+			//минимальная ширина блока
+			var minW = +window
+				.getComputedStyle(refLogo.current)
+				.getPropertyValue('max-width')
+				.split('px')[0];
+			//разница мин и макс ширины блока
+			var deltaW = maxW - minW;
+
+			// var blockH = refLogo.current?.clientHeight;
+			var blockH = refLogo?.current?.clientHeight;
+			console.log('blockH: ', blockH);
+			var pageH = refLogoWrapper.current?.clientHeight + blockH;
+			var blockX = refLogo?.current?.offsetTop + blockH;
+			var width = Math.round(((pageH - blockX) * deltaW) / pageH);
+
+			if (blockX >= 0 && blockX <= pageH) {
+				console.log(blockX);
+				setWidth(minW + width);
+			}
 		};
 
 		window.addEventListener('scroll', handleScroll);
@@ -60,8 +57,7 @@ const About: React.FC<Props> = () => {
 								className={s.Logo}
 								ref={refLogo}
 								style={{
-									width: width,
-									height: height,
+									width: `${width}px`,
 								}}
 							>
 								<BaseIcon icon={ALL_ICONS.LOGO} viewBox='0 0 280 316' />
