@@ -1,5 +1,5 @@
 .CreateOrderPopup {
-	position: absolute;
+	position: fixed;
 	z-index: 100000;
 	transition: right 0.5s cubic-bezier(0.82, 0.085, 0.395, 0.895);
 	top: 0;
@@ -7,9 +7,10 @@
 	background: $blue;
 	box-shadow: 10px 10px 38px rgba(64, 114, 163, 0.5);
 	width: em(657px);
-	min-height: em(1000px);
-	// height: 100%;
+	min-height: 100%;
+	height: 100vh;
 	padding: em(89px) em(63px) em(83px);
+	overflow-y: auto;
 	@include ifmobile {
 		position: fixed;
 		width: 100vw;
