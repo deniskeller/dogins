@@ -255,7 +255,7 @@
 					position: absolute;
 					z-index: 1000;
 					border: 1px solid rgba(26, 26, 26, 0.4);
-					right: em(-24px);
+					right: em(-25px);
 					top: calc(50% - em(30px));
 					clip-path: polygon(0% 0%, 100% 100%, 0% 100%);
 					transform: rotate(-135deg);
@@ -451,7 +451,7 @@
 		&_Column2 {
 			.ProblemItem {
 				&_Triangle {
-					left: em(-24px);
+					left: em(-25px);
 					transform: rotate(45deg);
 					@media only screen and (min-width: 769px) and (max-width: 1400px) {
 						left: em(-19px);

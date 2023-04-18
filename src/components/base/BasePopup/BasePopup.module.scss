@@ -17,6 +17,8 @@
 	width: 100%;
 	height: 100%;
 	display: flex;
+	align-items: center;
+	justify-content: center;
 	padding: em(30px) em(8px);
 }
 
@@ -29,9 +31,11 @@
 	box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.06),
 		0px 4px 6px -1px rgba(0, 0, 0, 0.08);
 	border-radius: em(10px);
+	overflow: hidden;
 
 	&_Close {
 		position: absolute;
+		z-index: 1000;
 		top: em(30px);
 		right: em(30px);
 		width: em(35px);
@@ -41,19 +45,33 @@
 		&:hover {
 			transform: rotate(90deg);
 		}
+		@include iflaptop {
+			top: em(20px);
+			right: em(20px);
+		}
+		@include iftablet {
+			top: em(20px);
+			right: em(20px);
+		}
+		@include ifmobile {
+			width: em(24px);
+			height: em(24px);
+			top: em(16px);
+			right: em(16px);
+		}
 	}
 }
 
 .Popup_large {
 	max-width: em(834px);
 	@include iflaptop {
-		max-width: em(760px);
+		max-width: em(600px);
 	}
 	@include iftablet {
-		max-width: em(760px);
+		max-width: em(600px);
 	}
 	@include ifmobile {
-		max-width: em(360px);
+		max-width: em(340px);
 	}
 }
 

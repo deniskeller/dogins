@@ -1,0 +1,202 @@
+.LicensingRequestPopup {
+	padding: em(40px) em(83px);
+	@include iflaptop {
+		padding: em(40px) em(40px);
+	}
+	@include iftablet {
+		padding: em(40px) em(40px);
+	}
+	@include ifmobile {
+		padding: em(40px) em(16px);
+	}
+
+	.Logo {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: em(375px);
+		height: em(411px);
+		opacity: 0.05;
+
+		&_Submit {
+			@include ifdesktop {
+				width: em(316px);
+				height: em(346px);
+			}
+		}
+		@include iflaptop {
+			width: em(254px);
+			height: em(278px);
+		}
+		@include iftablet {
+			width: em(254px);
+			height: em(278px);
+		}
+		@include ifmobile {
+			width: em(181px);
+			height: em(198px);
+		}
+	}
+
+	.Title {
+		text-align: center;
+		h1 {
+			font-weight: 400;
+			font-size: em(40px);
+			line-height: 140%;
+			color: $white;
+			@include iflaptop {
+				font-size: em(30px);
+			}
+			@include iftablet {
+				font-size: em(30px);
+			}
+			@include ifmobile {
+				font-size: em(26px);
+			}
+		}
+	}
+
+	&_Form {
+		margin-top: em(20px);
+		@include iflaptop {
+			margin-top: em(16px);
+		}
+		@include iftablet {
+			margin-top: em(16px);
+		}
+		@include ifmobile {
+			margin-top: em(10px);
+		}
+
+		&_Subtitle {
+			text-align: center;
+			margin-bottom: em(60px);
+			@include iflaptop {
+				margin-bottom: em(40px);
+			}
+			@include iftablet {
+				margin-bottom: em(40px);
+			}
+			@include ifmobile {
+				max-width: em(228px);
+				margin: 0 auto;
+				margin-bottom: em(30px);
+			}
+			span {
+				color: $white;
+				font-weight: 300;
+				font-size: em(16px);
+				line-height: 140%;
+				color: rgba(255, 255, 255, 0.7);
+				@include ifmobile {
+					font-size: em(14px);
+				}
+			}
+		}
+
+		&_Title {
+			margin-bottom: em(30px);
+			@include iflaptop {
+				margin-bottom: em(20px);
+			}
+			@include iftablet {
+				margin-bottom: em(20px);
+			}
+			@include ifmobile {
+				margin-bottom: em(16px);
+			}
+			span {
+				font-weight: 400;
+				font-size: em(20px);
+				color: $white;
+				@include ifmobile {
+					font-size: em(16px);
+				}
+			}
+		}
+
+		&_Input {
+			margin-bottom: em(16px);
+		}
+
+		&_Button {
+			margin: 0 auto;
+			margin-top: em(74px);
+			width: em(186px);
+			height: em(58px);
+			@include iflaptop {
+				margin-top: em(50px);
+			}
+			@include iftablet {
+				margin-top: em(50px);
+			}
+			@include ifmobile {
+				margin-top: em(40px);
+				width: em(109px);
+				height: em(44px);
+			}
+		}
+	}
+
+	&_Submit {
+		display: flex;
+		flex-direction: column;
+		margin-top: em(40px);
+		&_Icon {
+			width: em(76px);
+			height: em(51px);
+			margin: 0 auto;
+			margin-bottom: em(40px);
+			@include iflaptop {
+				margin-bottom: em(30px);
+			}
+			@include iftablet {
+				margin-bottom: em(30px);
+			}
+			@include ifmobile {
+				width: em(64px);
+				height: em(43px);
+				margin-bottom: em(30px);
+			}
+		}
+
+		&_Title {
+			text-align: center;
+			margin-bottom: em(8px);
+			span {
+				font-weight: 300;
+				font-size: em(30px);
+				line-height: 140%;
+				color: $white;
+				@include iflaptop {
+					font-size: em(26px);
+				}
+				@include iftablet {
+					font-size: em(26px);
+				}
+				@include ifmobile {
+					font-size: em(20px);
+				}
+			}
+		}
+		&_Subtitle {
+			text-align: center;
+			span {
+				font-weight: 300;
+				color: $white;
+				font-size: em(18px);
+				line-height: 140%;
+				@include iflaptop {
+					font-size: em(16px);
+				}
+				@include iftablet {
+					font-size: em(16px);
+				}
+				@include ifmobile {
+					font-size: em(14px);
+				}
+			}
+		}
+	}
+}

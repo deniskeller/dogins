@@ -1,10 +1,14 @@
 import { BaseButton, BaseContainer } from '@base/index';
-import React from 'react';
+import { LicensingRequestPopup } from 'components/landing/modals';
+import React, { useState } from 'react';
 import s from './Information.module.scss';
 
 type Props = {};
 
 const Information: React.FC<Props> = () => {
+	//ВРЕМЕННАЯ ЛОГИКА МОДАЛОК
+	const [licensingRequestPopup, setLicensingRequestPopup] = useState(false);
+
 	return (
 		<>
 			<div className={s.Information}>
@@ -81,6 +85,7 @@ const Information: React.FC<Props> = () => {
 								title='Request'
 								type='submit'
 								className={s.InformationCard_Button}
+								onClick={() => setLicensingRequestPopup(true)}
 							/>
 						</div>
 
@@ -153,6 +158,7 @@ const Information: React.FC<Props> = () => {
 								title='Request'
 								type='submit'
 								className={s.InformationCard_Button}
+								onClick={() => setLicensingRequestPopup(true)}
 							/>
 						</div>
 
@@ -218,11 +224,17 @@ const Information: React.FC<Props> = () => {
 								title='Request'
 								type='submit'
 								className={s.InformationCard_Button}
+								onClick={() => setLicensingRequestPopup(true)}
 							/>
 						</div>
 					</div>
 				</BaseContainer>
 			</div>
+
+			<LicensingRequestPopup
+				popup={licensingRequestPopup}
+				onClick={setLicensingRequestPopup}
+			/>
 		</>
 	);
 };
