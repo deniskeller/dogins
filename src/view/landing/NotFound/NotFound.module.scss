@@ -3,6 +3,9 @@
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
+	image-rendering: pixelated;
+	image-rendering: -moz-crisp-edges; /* Firefox */
+	-ms-interpolation-mode: nearest-neighbor; /* IE */
 }
 .BaseContainer {
 	@include iflaptop {

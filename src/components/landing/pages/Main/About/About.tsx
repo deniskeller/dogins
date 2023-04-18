@@ -15,9 +15,6 @@ const About: React.FC<Props> = () => {
 	const [height, setHeight] = useState('');
 
 	useEffect(() => {
-		// console.log('refLogo: ', refLogo?.current?.offsetTop);
-		// console.log('refLogoWrapper: ', refLogoWrapper);
-
 		//высота блока
 		let clientHeightLogo = refLogo?.current?.clientHeight;
 		//ширина блока
@@ -31,13 +28,19 @@ const About: React.FC<Props> = () => {
 		var pageH = Number(clientHeightWrapper) + Number(clientHeightLogo);
 		var pageW = Number(clientWidthWrapper) + Number(clientWidthLogo);
 
-		var blockX = refLogo?.current?.offsetTop + clientHeightLogo;
+		// console.log('refLogo: ', refLogo?.current?.offsetTop);
+		// console.log('refLogoWrapper: ', refLogoWrapper);
 
-		var new_neight = Math.round(((pageH - blockX) * pageW) / pageH);
+		//на
+		// let wscroll_1 = '';
+		//текущее положение скрола
+		let wscroll_X = refLogo?.current?.offsetTop;
+		//высота родителя
+		let H = clientHeightWrapper;
+
+		// let H2 = wscroll_X - wscroll_1;
 
 		const handleScroll = () => {
-			console.log('new_neight: ', new_neight);
-			// console.log('refLogo22: ', refLogo?.current?.offsetTop);
 			setWidth((refLogo?.current?.offsetTop + clientWidthLogo) / 2);
 			setHeight((refLogo?.current?.offsetTop + clientHeightLogo) / 2);
 		};
@@ -56,7 +59,10 @@ const About: React.FC<Props> = () => {
 							<div
 								className={s.Logo}
 								ref={refLogo}
-								style={{ width: width, maxWidth: '100%', height: 'auto' }}
+								style={{
+									width: width,
+									height: height,
+								}}
 							>
 								<BaseIcon icon={ALL_ICONS.LOGO} viewBox='0 0 280 316' />
 							</div>

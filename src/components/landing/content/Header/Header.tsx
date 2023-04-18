@@ -1,4 +1,5 @@
 import { BaseContainer, BaseTitle } from '@base/index';
+import { useRouter } from 'next/router';
 import React from 'react';
 import s from './Header.module.scss';
 
@@ -8,10 +9,13 @@ type Props = {
 };
 
 const Header: React.FC<Props> = ({ image, title }) => {
+	const router = useRouter();
+	console.log('router.pathname ', router.pathname);
+
 	return (
 		<>
 			<div
-				className={s.HeaderBg}
+				className={`${s.HeaderBg} ${router.pathname === '/' ? s.FullSize : ''}`}
 				style={{
 					backgroundImage: `url(/images/image/${
 						image || 'main-header-bg.jpeg'
@@ -19,7 +23,9 @@ const Header: React.FC<Props> = ({ image, title }) => {
 				}}
 			></div>
 
-			<div className={s.Wrapper}>
+			<div
+				className={`${s.Wrapper} ${router.pathname === '/' ? s.FullSize : ''}`}
+			>
 				<BaseContainer className={s.Container}>
 					<div className={s.Header}>
 						<div className='animate__animated animate__fadeInLeft'>

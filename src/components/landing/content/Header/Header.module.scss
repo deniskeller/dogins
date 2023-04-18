@@ -1,6 +1,6 @@
 .HeaderBg {
 	position: fixed;
-	background-position: center;
+	background-position: 100% 66%;
 	background-repeat: no-repeat;
 	background-size: cover;
 	top: 0;
@@ -8,11 +8,10 @@
 	right: 0;
 	bottom: 0;
 	z-index: -1;
-	height: 100vh;
+	height: em(670px);
 	image-rendering: pixelated;
 	image-rendering: -moz-crisp-edges; /* Firefox */
 	-ms-interpolation-mode: nearest-neighbor; /* IE */
-
 	@include iflaptop {
 		height: em(400px);
 	}
@@ -26,7 +25,7 @@
 }
 
 .Wrapper {
-	height: 100vh;
+	height: em(670px);
 	position: relative;
 	display: flex;
 	flex-direction: column;
@@ -49,6 +48,12 @@
 		@include iftablet {
 			padding: 0 em(50px);
 		}
+	}
+}
+
+.FullSize {
+	@include ifdesktop {
+		height: 100vh;
 	}
 }
 

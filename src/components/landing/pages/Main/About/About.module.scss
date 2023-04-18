@@ -33,34 +33,29 @@
 		}
 
 		.Logo {
-			width: em(127px);
-			max-width: em(293px);
-			height: em(139px);
 			opacity: 0.05;
 			position: -webkit-sticky !important;
 			position: sticky !important;
 			top: em(100px);
-			svg {
-				width: inherit;
-				max-width: em(293px);
-				height: inherit;
-				@include iflaptop {
-					max-width: em(147px);
-				}
-				@include iftablet {
-					max-width: em(118px);
-				}
-			}
+			width: em(127px);
+			height: em(139px);
+			max-width: em(293px);
+			max-height: em(321px);
 
 			@include iflaptop {
 				width: em(100px);
-				max-width: em(147px);
 				height: em(108px);
+				max-width: em(147px);
 			}
 			@include iftablet {
 				width: em(78px);
-				max-width: em(118px);
 				height: em(84px);
+				max-width: em(118px);
+			}
+
+			svg {
+				width: 100%;
+				height: 100%;
 			}
 		}
 	}
