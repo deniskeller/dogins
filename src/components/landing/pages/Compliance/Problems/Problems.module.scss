@@ -300,6 +300,7 @@
 					&::before {
 						content: '';
 						position: absolute;
+						z-index: 1000;
 						display: block;
 						background: $white;
 						border-radius: 0 0 0 em(5px);
