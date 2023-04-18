@@ -253,7 +253,8 @@
 
 				&_Triangle {
 					position: absolute;
-					background: rgba(26, 26, 26, 0.4);
+					z-index: 100000;
+					border: 1px solid rgba(26, 26, 26, 0.4);
 					right: em(-25px);
 					top: calc(50% - em(30px));
 					clip-path: polygon(0% 0%, 100% 100%, 0% 100%);
@@ -261,7 +262,6 @@
 					border-radius: 0 0 0 em(6px);
 					width: em(50px);
 					height: em(50px);
-					overflow: hidden;
 					@media only screen and (min-width: 769px) and (max-width: 1400px) {
 						left: em(-20px);
 						transform: rotate(45deg);
@@ -303,8 +303,8 @@
 						display: block;
 						background: $white;
 						border-radius: 0 0 0 em(5px);
-						top: 1px;
-						left: 1px;
+						left: 50%;
+						transform: translate(-50%, 0px);
 						width: em(48px);
 						height: em(48px);
 						clip-path: polygon(0% 0%, 100% 100%, 0% 100%);
