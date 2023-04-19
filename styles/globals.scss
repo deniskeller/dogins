@@ -29,6 +29,10 @@
 //стили для бегущей строки
 .marquee {
 	@include ifdesktop {
+		margin-right: em(75px);
+	}
+	margin-right: em(45px);
+	@include ifdesktop {
 		column-gap: em(75px) !important;
 	}
 	column-gap: em(45px) !important;
