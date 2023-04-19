@@ -34,7 +34,7 @@ const Default: React.FC<Props> = ({ children, type }) => {
 	return (
 		<div
 			className={styles.Wrapper}
-			style={{ background: type == 'white' ? '#ffffff' : 'transparent' }}
+			style={{ background: type == 'white' ? '#F4F3F3' : 'transparent' }}
 		>
 			<Navbar fixed={isVisible} type={type} />
 

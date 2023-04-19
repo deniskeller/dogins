@@ -37,7 +37,7 @@
 			margin-left: 0;
 		}
 		h1 {
-			font-weight: 300;
+			font-weight: 400;
 			font-size: em(60px);
 			line-height: 140%;
 			color: #111613;
@@ -55,8 +55,8 @@
 
 	&_Body {
 		display: grid;
-		grid-template-columns: em(276px) 1fr;
-		gap: 0 em(52px);
+		grid-template-columns: em(280px) 1fr;
+		gap: 0 em(40px);
 		@include iflaptop {
 			grid-template-columns: em(200px) 1fr;
 			gap: 0 em(33px);
@@ -91,7 +91,7 @@
 					}
 					span {
 						display: flex;
-						font-weight: 300;
+						font-weight: 400;
 						font-size: em(16px);
 						line-height: 100%;
 						color: rgba(26, 26, 26, 0.4);
@@ -120,7 +120,7 @@
 				&_Title {
 					margin-bottom: em(20px);
 					span {
-						font-weight: 400;
+						font-weight: 500;
 						font-size: em(24px);
 						line-height: 120%;
 						color: $orange;
@@ -133,7 +133,7 @@
 					}
 				}
 				&_Description {
-					font-weight: 300;
+					font-weight: 400;
 					font-size: em(18px);
 					line-height: 120%;
 					color: $black;
