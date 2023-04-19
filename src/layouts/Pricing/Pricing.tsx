@@ -42,17 +42,31 @@ const Pricing: React.FC<Props> = ({ children, type }) => {
 	useEffect(() => {
 		setTimeout(() => {
 			setQuickOrderPopup(true);
+
 			setCount(+1);
 		}, 1000);
 	}, [quickOrderPopup]);
 
 	useEffect(() => {
+		const documentWidth = document.documentElement.clientWidth;
+		const windowsWidth = window.innerWidth;
+		const scrollbarWidth = windowsWidth - documentWidth;
+
 		if (count === 1 && !quickOrderPopup) {
 			setAddOrderPopup(true);
+			document.body.style.overflow = 'hidden';
+			document.body.style.height = '100%';
+			document.body.style.paddingRight = scrollbarWidth + 'px';
 			setTimeout(() => {
 				setQuickOrderPopup(false);
 			}, 1000);
 		}
+
+		return () => {
+			document.body.style.overflow = '';
+			document.body.style.height = '';
+			document.body.style.paddingRight = '0px';
+		};
 	}, [count, quickOrderPopup]);
 
 	return (
