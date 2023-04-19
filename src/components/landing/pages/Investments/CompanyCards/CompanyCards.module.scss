@@ -1,3 +1,9 @@
+.BaseContainer {
+	@include iflaptop {
+		padding: 0 em(80px);
+	}
+}
+
 .CompanyCards {
 	display: grid;
 	grid-template-columns: 1fr 1fr;

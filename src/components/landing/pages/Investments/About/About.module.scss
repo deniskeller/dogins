@@ -1,3 +1,8 @@
+.BaseContainer {
+	@include iflaptop {
+		padding: 0 em(80px);
+	}
+}
 .About {
 	padding: em(150px) 0 em(126px);
 
@@ -47,7 +52,7 @@
 
 	&_Body {
 		display: grid;
-		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-columns: 1fr em(467px) em(497px);
 		gap: 0 em(73px);
 		margin-left: 0;
 
@@ -56,11 +61,11 @@
 		}
 
 		@include iflaptop {
-			grid-template-columns: 1fr 1fr 1fr;
+			grid-template-columns: 1fr em(300px) em(300px);
 			gap: 0 em(30px);
 		}
 		@include iftablet {
-			grid-template-columns: em(194px) 1fr 1fr;
+			grid-template-columns: em(194px) em(252px) em(240px);
 			gap: 0 em(20px);
 		}
 		@include ifmobile {

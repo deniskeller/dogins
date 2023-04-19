@@ -7,7 +7,7 @@ type Props = {};
 const About: React.FC<Props> = () => {
 	return (
 		<>
-			<BaseContainer>
+			<BaseContainer className={s.BaseContainer}>
 				<div className={s.About}>
 					<div className={s.About_Header}>
 						<p>

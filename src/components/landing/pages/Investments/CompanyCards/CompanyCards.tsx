@@ -7,7 +7,7 @@ type Props = {};
 const CompanyCards: React.FC<Props> = () => {
 	return (
 		<>
-			<BaseContainer>
+			<BaseContainer className={s.BaseContainer}>
 				<div className={s.CompanyCards}>
 					<div className={s.CompanyCard}>
 						<div className={s.CompanyCard_Column}>
