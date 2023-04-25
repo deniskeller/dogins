@@ -17,12 +17,12 @@ const About: React.FC<Props> = () => {
 	useEffect(() => {
 		const handleScroll = () => {
 			//максимальная ширина блока
-			var maxW = +window
+			var maxW = +!window
 				.getComputedStyle(refLogo.current)
 				.getPropertyValue('min-width')
 				.split('px')[0];
 			//минимальная ширина блока
-			var minW = +window
+			var minW = +!window
 				.getComputedStyle(refLogo.current)
 				.getPropertyValue('max-width')
 				.split('px')[0];

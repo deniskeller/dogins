@@ -24,16 +24,15 @@
 		display: flex;
 		font-size: em(20px);
 		font-weight: 500;
+		line-height: 100%;
 		color: $white;
 		font-family: 'Montserrat', sans-serif;
 
 		@include iftablet {
 			font-size: em(16px);
-			line-height: 150%;
 		}
 		@include ifmobile {
 			font-size: em(16px);
-			line-height: 150%;
 		}
 	}
 }

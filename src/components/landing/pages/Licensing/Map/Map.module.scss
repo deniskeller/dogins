@@ -1,8 +1,70 @@
+.Wrapper {
+	position: relative;
+	background: #2d2d2d;
+	overflow: hidden;
+	&_Gradient {
+		position: absolute;
+		z-index: 10;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: em(145px);
+		background: linear-gradient(
+			180deg,
+			#2d2d2d 51.98%,
+			rgba(45, 45, 45, 0) 99.56%
+		);
+		@include iflaptop {
+			height: em(106px);
+		}
+		@include iftablet {
+			height: em(79px);
+		}
+		@include ifmobile {
+			height: em(58px);
+		}
+	}
+}
+
+.BaseContainer {
+	padding: 0 em(20px);
+	@include ifdesktop {
+		max-width: em(1530px);
+	}
+	@include iflaptop {
+		padding: 0;
+	}
+	@include iftablet {
+		padding: 0;
+	}
+	@include ifmobile {
+		padding: 0;
+	}
+}
 .Map {
-	padding-bottom: em(114px);
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	padding: em(40px) 0 em(114px);
+	min-height: em(983px);
+	@include iflaptop {
+		min-height: em(784px);
+		padding: em(30px) 0 em(149px);
+	}
+	@include iftablet {
+		min-height: em(606px);
+		padding: em(20px) 0 em(94px);
+	}
+	@include ifmobile {
+		min-height: em(372px);
+		padding: em(20px) 0 em(40px);
+	}
+
 	&_Title {
 		text-align: center;
 		margin-bottom: em(5px);
+		position: relative;
+		z-index: 11;
 		@include ifdesktop {
 			margin-bottom: em(10px);
 		}
@@ -25,6 +87,8 @@
 
 	&_Subtitle {
 		text-align: center;
+		position: relative;
+		z-index: 11;
 		p {
 			font-weight: 300;
 			font-size: em(18px);
@@ -42,17 +106,74 @@
 		}
 	}
 
-	&_Map {
-		height: em(869px);
-		background: grey;
+	&_Logo {
+		opacity: 0.05;
+		position: absolute;
+		width: em(127px);
+		height: em(139px);
+		left: 0;
+		bottom: em(176px);
 		@include iflaptop {
-			height: em(635px);
+			width: em(109px);
+			height: em(119px);
+			left: em(80px);
+			bottom: em(105px);
 		}
 		@include iftablet {
-			height: em(512px);
+			width: em(77px);
+			height: em(84px);
+			left: em(49px);
+			bottom: em(80px);
 		}
 		@include ifmobile {
-			height: em(249px);
+			width: em(45px);
+			height: em(49px);
+			left: em(10px);
+			bottom: em(132px);
+		}
+	}
+
+	&_Buttons {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		gap: em(10px) em(10px);
+		padding: 0 em(10px);
+		margin-top: auto;
+		&_Item {
+			height: em(36px);
+			padding: em(8px) em(15px);
+			& > div {
+				font-size: em(14px) !important;
+			}
+		}
+	}
+
+	&_Map {
+		position: absolute;
+		z-index: 0;
+		max-width: em(1530px);
+		top: em(-119px);
+		right: 50%;
+		transform: translate(50%, 00%);
+		width: 100%;
+		height: em(988px);
+		@include iflaptop {
+			top: em(-75px);
+			height: em(710px);
+		}
+		@include iftablet {
+			top: em(-70px);
+			height: em(582px);
+		}
+		@include ifmobile {
+			top: em(12px);
+			height: em(265px);
+		}
+
+		svg {
+			width: inherit;
+			height: inherit;
 		}
 	}
 }
