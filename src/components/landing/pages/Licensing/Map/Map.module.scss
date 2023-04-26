@@ -179,6 +179,29 @@
 			width: inherit;
 			height: inherit;
 		}
+
+		.Tooltip {
+			cursor: pointer;
+		}
+
+		.Continent {
+			cursor: pointer;
+			&:hover {
+				animation: gradient 2s linear infinite;
+			}
+		}
+	}
+}
+
+@keyframes gradient {
+	0% {
+		stroke: #b49635;
+	}
+	50% {
+		stroke: #413100;
+	}
+	100% {
+		stroke: #b49635;
 	}
 }
 

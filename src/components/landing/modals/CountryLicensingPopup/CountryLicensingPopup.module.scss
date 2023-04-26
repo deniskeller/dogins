@@ -1,0 +1,14 @@
+.CountryPopup {
+	padding: em(40px) 0 em(52px);
+
+	&_Button {
+		margin: 0 auto;
+	}
+}
+
+@include iflaptop {
+}
+@include iftablet {
+}
+@include ifmobile {
+}
