@@ -1,8 +1,282 @@
 .CountryPopup {
-	padding: em(40px) 0 em(52px);
+	position: relative;
+	background-color: rgba(0, 0, 0, 0.6);
+	box-shadow: 0px 2.5px 4px rgba(18, 18, 18, 0.7);
+	border-radius: em(10px);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	padding: em(40px);
+	@include ifdesktop {
+		image-rendering: pixelated;
+		image-rendering: -moz-crisp-edges; /* Firefox */
+		-ms-interpolation-mode: nearest-neighbor; /* IE */
+	}
+	@include iflaptop {
+		padding: em(30px) em(40px);
+	}
+	@include iftablet {
+		padding: em(30px);
+	}
+	@include ifmobile {
+		padding: em(20px) em(10px);
+		background-position: 25% 0%;
+	}
+
+	&::before {
+		content: '';
+		display: block;
+		@extend %fullsize;
+		background-color: rgba(0, 0, 0, 0.6);
+		z-index: 0;
+		pointer-events: none;
+	}
+
+	&_Header {
+		position: relative;
+		max-width: em(700px);
+		margin-bottom: em(30px);
+		@include iflaptop {
+			max-width: em(600px);
+		}
+		@include iftablet {
+			max-width: em(550px);
+		}
+		@include ifmobile {
+			max-width: em(250px);
+			margin-bottom: em(20px);
+		}
+		h1 {
+			font-weight: 400;
+			font-size: em(40px);
+			line-height: 140%;
+			color: $white;
+			@include iflaptop {
+				font-size: em(38px);
+			}
+			@include iftablet {
+				font-size: em(28px);
+			}
+			@include ifmobile {
+				font-size: em(20px);
+			}
+		}
+	}
+
+	&_Parameters {
+		position: relative;
+		display: grid;
+		grid-template-columns: auto 1fr;
+		gap: 0 em(100px);
+		margin-bottom: em(20px);
+		@include ifdesktop {
+			margin-bottom: em(40px);
+		}
+		@include ifmobile {
+			gap: 0 em(50px);
+		}
+
+		.TotalTerm,
+		.TotalCost {
+			&_Label {
+				margin-bottom: em(18px);
+				span {
+					color: $white;
+					font-weight: 300;
+					font-size: em(18px);
+					line-height: 100%;
+					@include iflaptop {
+						font-size: em(16px);
+					}
+					@include iftablet {
+						font-size: em(14px);
+					}
+					@include ifmobile {
+						font-size: em(12px);
+					}
+				}
+			}
+			&_Value {
+				font-weight: 400;
+				font-size: em(36px);
+				line-height: 100%;
+				color: $white;
+				@include iflaptop {
+					font-size: em(30px);
+				}
+				@include iftablet {
+					font-size: em(22px);
+				}
+				@include ifmobile {
+					font-size: em(18px);
+				}
+			}
+		}
+	}
+
+	&_Body {
+		position: relative;
+		display: grid;
+		grid-template-columns: em(440px) 1fr;
+		gap: 0 em(40px);
+		margin-bottom: em(30px);
+		@include iflaptop {
+			grid-template-columns: em(329px) 1fr;
+			margin-bottom: em(20px);
+		}
+		@include iftablet {
+			grid-template-columns: em(302px) 1fr;
+			gap: 0 em(30px);
+			margin-bottom: em(20px);
+		}
+		@include ifmobile {
+			grid-template-columns: 1fr;
+			gap: em(16px) 0;
+			margin-bottom: em(20px);
+		}
+		.Roadmap {
+			&_Title {
+				@include ifdesktop {
+					margin-bottom: em(20px);
+				}
+				margin-bottom: em(10px);
+				span {
+					color: $white;
+					font-weight: 400;
+					font-size: em(18px);
+					line-height: 140%;
+					@include iflaptop {
+						font-size: em(16px);
+					}
+					@include iftablet {
+						font-size: em(16px);
+					}
+					@include ifmobile {
+						font-size: em(14px);
+					}
+				}
+			}
+			&_List {
+				list-style: none;
+				li {
+					position: relative;
+
+					padding-left: em(18px);
+					margin-bottom: em(8px);
+					&:last-child {
+						margin-bottom: 0;
+					}
+					span {
+						display: flex;
+						color: $white;
+						font-weight: 300;
+						line-height: 140%;
+						font-size: em(16px);
+						@include iflaptop {
+							font-size: em(14px);
+						}
+						@include iftablet {
+							font-size: em(14px);
+						}
+						@include ifmobile {
+							font-size: em(12px);
+						}
+					}
+					@include iflaptop {
+						padding-left: em(18px);
+						margin-bottom: em(6px);
+					}
+					@include iftablet {
+						padding-left: em(18px);
+						margin-bottom: em(6px);
+					}
+					@include ifmobile {
+						padding-left: em(10px);
+						margin-bottom: em(6px);
+					}
+
+					&::before {
+						content: '';
+						display: block;
+						position: absolute;
+						left: 0;
+						top: calc(50% - em(4px));
+						width: em(8px);
+						height: em(8px);
+						border-radius: 100%;
+						background: $orange;
+						@include ifmobile {
+							width: em(6px);
+							height: em(6px);
+							top: calc(50% - em(3px));
+						}
+					}
+				}
+			}
+		}
+	}
+
+	&_Warning {
+		position: relative;
+		margin-bottom: em(37px);
+		@include ifdesktop {
+			margin-bottom: em(61px);
+		}
+		p {
+			color: $white;
+			font-weight: 300;
+			font-size: em(16px);
+			line-height: 140%;
+			@include iflaptop {
+				font-size: em(16px);
+			}
+			@include iftablet {
+				font-size: em(14px);
+			}
+			@include ifmobile {
+				font-size: em(12px);
+			}
+		}
+	}
+
+	&_Learmore {
+		display: flex;
+		position: relative;
+		width: max-content;
+		margin: 0 auto;
+		margin-bottom: em(19px);
+		&:hover {
+			text-decoration: underline;
+		}
+		@include ifdesktop {
+			margin-bottom: em(25px);
+		}
+		span {
+			display: flex;
+			font-weight: 500;
+			line-height: 140%;
+			color: $white;
+			font-size: em(18px);
+			@include ifdesktop {
+				font-size: em(20px);
+			}
+		}
+	}
 
 	&_Button {
+		position: relative;
 		margin: 0 auto;
+		width: em(186px);
+		height: em(44px);
+		& > div {
+			font-size: em(18px) !important;
+		}
+		@include ifdesktop {
+			height: em(58px);
+			& > div {
+				font-size: em(20px) !important;
+			}
+		}
 	}
 }
 

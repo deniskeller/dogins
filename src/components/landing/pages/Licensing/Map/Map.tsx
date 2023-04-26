@@ -8,11 +8,11 @@ type Props = {};
 
 const Map: React.FC<Props> = () => {
 	const [popup, setPopup] = useState(false);
-	const [country, setCountry] = useState('');
+	const [country, setCountry] = useState<null | number>(null);
 
-	const popupHandler = (country: string) => {
+	const popupHandler = (country_id: number) => {
 		setPopup(true);
-		setCountry(country);
+		setCountry(country_id);
 	};
 
 	return (
@@ -975,7 +975,11 @@ const Map: React.FC<Props> = () => {
 									stroke='#B49635'
 								/>
 								{/* ТУЛПИТ США */}
-								<g filter='url(#filter0_d_9252_199291)' className={s.Tooltip}>
+								<g
+									filter='url(#filter0_d_9252_199291)'
+									className={s.Tooltip}
+									onClick={() => popupHandler(6)}
+								>
 									<rect
 										x='354.5'
 										y='490.5'
@@ -1006,7 +1010,11 @@ const Map: React.FC<Props> = () => {
 									/>
 								</g>
 								{/* ТУЛТИП СИНГАПУРА */}
-								<g filter='url(#filter1_d_9252_199291)' className={s.Tooltip}>
+								<g
+									filter='url(#filter1_d_9252_199291)'
+									className={s.Tooltip}
+									onClick={() => popupHandler(5)}
+								>
 									<rect
 										x='-0.5'
 										y='0.5'
@@ -1039,7 +1047,11 @@ const Map: React.FC<Props> = () => {
 									/>
 								</g>
 								{/* ТУЛТИП КОНКОГНА */}
-								<g filter='url(#filter2_d_9252_199291)' className={s.Tooltip}>
+								<g
+									filter='url(#filter2_d_9252_199291)'
+									className={s.Tooltip}
+									onClick={() => popupHandler(3)}
+								>
 									<rect
 										x='1157.5'
 										y='557.5'
@@ -1095,7 +1107,7 @@ const Map: React.FC<Props> = () => {
 								<g
 									filter='url(#filter3_d_9252_199291)'
 									className={s.Tooltip}
-									onClick={() => popupHandler('United Kingdom')}
+									onClick={() => popupHandler(2)}
 								>
 									<rect
 										x='643.5'
@@ -1127,7 +1139,11 @@ const Map: React.FC<Props> = () => {
 									/>
 								</g>
 								{/* ТУЛТИП ИРЛАНДИИ */}
-								<g filter='url(#filter4_d_9252_199291)' className={s.Tooltip}>
+								<g
+									filter='url(#filter4_d_9252_199291)'
+									className={s.Tooltip}
+									onClick={() => popupHandler(4)}
+								>
 									<rect
 										x='-0.5'
 										y='0.5'
@@ -1160,7 +1176,11 @@ const Map: React.FC<Props> = () => {
 									/>
 								</g>
 								{/* ТУЛТИП ГЕРМАНИИ */}
-								<g filter='url(#filter5_d_9252_199291)' className={s.Tooltip}>
+								<g
+									filter='url(#filter5_d_9252_199291)'
+									className={s.Tooltip}
+									onClick={() => popupHandler(1)}
+								>
 									<rect
 										x='-0.5'
 										y='0.5'
@@ -1500,9 +1520,10 @@ const Map: React.FC<Props> = () => {
 			</BaseContainer>
 
 			<CountryLicensingPopup
-				country={country}
+				country_id={country}
 				popup={popup}
 				onClick={setPopup}
+				className={s.CountryLicensingPopup}
 			/>
 		</div>
 	);

@@ -192,7 +192,26 @@
 		}
 	}
 }
-
+.CountryLicensingPopup {
+	div > div {
+		max-width: em(922px);
+	}
+	@include iflaptop {
+		div > div {
+			max-width: em(744px);
+		}
+	}
+	@include iftablet {
+		div > div {
+			max-width: em(717px);
+		}
+	}
+	@include ifmobile {
+		div > div {
+			max-width: em(340px);
+		}
+	}
+}
 @keyframes gradient {
 	0% {
 		stroke: #b49635;

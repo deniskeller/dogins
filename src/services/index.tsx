@@ -307,3 +307,157 @@ export const countries = [
 	{ value: 'ZM', label: 'Zambia' },
 	{ value: 'ZW', label: 'Zimbabwe' },
 ];
+
+export const countries_licensing_info = [
+	{
+		id: 1,
+		image: 'germany-popup-bg',
+		title: 'Germany',
+		total_term: '12 months',
+		total_cost: '$ 155,500.00',
+		roadmap: [
+			'Initial due diligence and KYC',
+			'Conclusion of the NDA',
+			'To sign the Engagement Letter',
+			'Payment of retainer',
+			'Draft of the documents and procedures',
+			'Payment of retainer',
+			'Review of the documentation and approval by the customer',
+			'Submission to the BaFin',
+			'Communication with the BaFin',
+			'License approval',
+		],
+		available_licenses: [
+			'Small Electronic Money Institution',
+			'Authorised Electronic Money Institution',
+			'Small Payment Institution',
+			'Authorised Payment Institution',
+		],
+		warning:
+			'Please note that the timing for the license approval depends only on the customer and BaFin. The firm does not take any responsibility on itself for that.',
+	},
+
+	{
+		id: 2,
+		image: 'united-kingdom-popup-bg',
+		title: 'UK',
+		total_term: '12 months',
+		total_cost: '$ 85,500.00',
+		roadmap: [
+			'Initial due diligence and KYC',
+			'Conclusion of the NDA',
+			'To sign the Engagement Letter',
+			'Payment of retainer',
+			'Draft of the documents and procedures',
+			'Review of the documentation and approval by the customer',
+			'Submission to the FCA',
+			'Communication with the FCA',
+			'License approval',
+		],
+		available_licenses: [
+			'Small Electronic Money Institution',
+			'Authorised Electronic Money Institution',
+			'Small Payment Institution',
+			'Authorised Payment Institution',
+			'Cryptolicense Allowance',
+			'Consumer Loan License',
+			'Brokerage License',
+		],
+		warning:
+			'Please note that the timing for the license approval depends only on the customer and FCA. The firm does not take any responsibility on itself for that.',
+	},
+
+	{
+		id: 3,
+		image: 'hong-kong-popup-bg',
+		title: 'Hong Kong',
+		total_term: '12 months',
+		total_cost: '$ 85,500.00',
+		roadmap: [
+			'Initial due diligence and KYC',
+			'Conclusion of the NDA',
+			'To sign the Engagement Letter',
+			'Payment of retainer',
+			'Draft of the documents and procedures',
+			'Payment of retainer',
+			'Review of the documentation and approval by the customer',
+			'Submission to the HKMA',
+			'Communication with the HKMA',
+			'License approval',
+		],
+		available_licenses: ['Money Service Business', 'Crypto Currency License'],
+		warning:
+			'Please note that the timing for the license approval depends only on the customer and HKMA. The firm does not take any responsibility on itself for that.',
+	},
+
+	{
+		id: 4,
+		image: 'ireland-popup-bg',
+		title: 'Ireland',
+		total_term: '12 months',
+		total_cost: '$ 85,500.00',
+		roadmap: [
+			'Initial due diligence and KYC',
+			'Conclusion of the NDA',
+			'To sign the Engagement Letter',
+			'Payment of retainer',
+			'Draft of the documents and procedures',
+			'Review of the documentation and approval by the customer',
+			'Submission to the Central Bank of Ireland ',
+			'Communication with the Central Bank of Ireland ',
+			'License approval',
+		],
+		available_licenses: [
+			'Small Electronic Money Institution',
+			'Authorised Electronic Money Institution',
+			'Small Payment Institution',
+			'Authorised Payment Institution',
+		],
+		warning:
+			'Please note that the timing for the license approval depends only on the customer and the Central Bank of Ireland. The firm does not take any responsibility on itself for that.',
+	},
+
+	{
+		id: 5,
+		image: 'singapure-popup-bg',
+		title: 'Singapure',
+		total_term: '12 months',
+		total_cost: '$ 85,500.00',
+		roadmap: [
+			'Initial due diligence and KYC',
+			'Conclusion of the NDA',
+			'To sign the Engagement Letter',
+			'Payment of retainer',
+			'Draft of the documents and procedures',
+			'Review of the documentation and approval by the customer',
+			'Submission to the MAS',
+			'Communication with the MAS',
+			'License approval',
+		],
+		available_licenses: ['Money Service Business'],
+		warning:
+			'Please note that the timing for the license approval depends only on the customer and HKMA. The firm does not take any responsibility on itself for that.',
+	},
+
+	{
+		id: 6,
+		image: 'usa-popup-bg',
+		title: 'USA',
+		total_term: '3-12 months',
+		total_cost: '$ 175,500.00',
+		roadmap: [
+			'Initial due diligence and KYC',
+			'Conclusion of the NDA',
+			'To sign the Engagement Letter',
+			'Payment of retainer',
+			'Draft of the documents and procedures',
+			'Review of the documentation and approval by the customer',
+			'Submission to the government authority',
+			'Communication with the government authority',
+			'License approval',
+		],
+		available_licenses: ['Money Transmitters License'],
+		warning:
+			'Please note that the timing for the license approval depends only on the customer and government authority. The firm does not take any responsibility on itself for that.',
+	},
+];
