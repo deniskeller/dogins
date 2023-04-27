@@ -7,6 +7,9 @@ import {
 import { useState } from 'react';
 import s from './Countries.module.scss';
 
+var Scroll = require('react-scroll');
+var scroller = Scroll.scroller;
+
 interface IValue {
 	name: string;
 	email: string;
@@ -54,6 +57,14 @@ const Germany: React.FC = () => {
 									title='Request offer'
 									type='green'
 									className={s.Button}
+									onClick={() =>
+										scroller.scrollTo(`form`, {
+											duration: 0,
+											delay: 0,
+											smooth: true,
+											offset: -100,
+										})
+									}
 								/>
 							</div>
 
@@ -275,7 +286,7 @@ const Germany: React.FC = () => {
 								</div>
 							</div>
 
-							<div className={s.Country_Content_Form}>
+							<div className={s.Country_Content_Form} id='form'>
 								{!submit ? (
 									<div
 										className={s.Form}
