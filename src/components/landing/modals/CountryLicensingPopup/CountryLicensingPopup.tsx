@@ -14,6 +14,7 @@ interface Props {
 interface ICountrieItem {
 	id: number;
 	image: string;
+	href: string;
 	title: string;
 	total_term: string;
 	total_cost: string;
@@ -45,7 +46,9 @@ const CountryLicensingPopup: React.FC<Props> = ({
 			<div
 				className={s.CountryPopup}
 				style={{
-					backgroundImage: `url(/images/image/${countryItem?.image}.jpeg)`,
+					backgroundImage: `url(/images/image/${
+						'germany-bg' || countryItem?.image
+					}.jpeg)`,
 				}}
 			>
 				<div className={s.CountryPopup_Header}>
@@ -104,7 +107,7 @@ const CountryLicensingPopup: React.FC<Props> = ({
 					<p>{countryItem?.warning}</p>
 				</div>
 
-				<Link href='/'>
+				<Link href={'/licensing/' + `${countryItem?.href}`}>
 					<a href='' className={s.CountryPopup_Learmore}>
 						<span>Learn more</span>
 					</a>

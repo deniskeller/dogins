@@ -1,6 +1,7 @@
 export { default as BreadCrumbs } from "./BreadCrumbs/BreadCrumbs";
 export { default as FileInput } from "./FileInput/FileInput";
 export { default as Header } from "./Header/Header";
+export { default as HeaderCountry } from "./HeaderCountry/HeaderCountry";
 export { default as Logo } from "./Logo/Logo";
 export { default as MapContacts } from "./MapContacts/MapContacts";
 export { default as PhoneInput } from "./PhoneInput/PhoneInput";

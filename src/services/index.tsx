@@ -311,6 +311,7 @@ export const countries = [
 export const countries_licensing_info = [
 	{
 		id: 1,
+		href: 'germany',
 		image: 'germany-bg',
 		title: 'Germany',
 		total_term: '12 months',
@@ -339,6 +340,7 @@ export const countries_licensing_info = [
 
 	{
 		id: 2,
+		href: 'united-kingdom',
 		image: 'united-kingdom-bg',
 		title: 'UK',
 		total_term: '12 months',
@@ -369,6 +371,7 @@ export const countries_licensing_info = [
 
 	{
 		id: 3,
+		href: 'hong-kong',
 		image: 'hong-kong-bg',
 		title: 'Hong Kong',
 		total_term: '12 months',
@@ -392,6 +395,7 @@ export const countries_licensing_info = [
 
 	{
 		id: 4,
+		href: 'ireland',
 		image: 'ireland-bg',
 		title: 'Ireland',
 		total_term: '12 months',
@@ -419,6 +423,7 @@ export const countries_licensing_info = [
 
 	{
 		id: 5,
+		href: 'singapure',
 		image: 'singapure-bg',
 		title: 'Singapure',
 		total_term: '12 months',
@@ -441,6 +446,7 @@ export const countries_licensing_info = [
 
 	{
 		id: 6,
+		href: 'usa',
 		image: 'usa-bg',
 		title: 'USA',
 		total_term: '3-12 months',

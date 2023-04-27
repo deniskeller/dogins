@@ -1,0 +1,98 @@
+.HeaderBg {
+	position: fixed;
+	background-color: $body;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 0;
+	height: em(670px);
+	image-rendering: pixelated;
+	image-rendering: -moz-crisp-edges; /* Firefox */
+	-ms-interpolation-mode: nearest-neighbor; /* IE */
+	&::before {
+		content: '';
+		display: block;
+		position: absolute;
+		@extend %fullsize;
+		z-index: 1;
+		background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+		pointer-events: none;
+	}
+
+	@include iflaptop {
+		height: em(400px);
+	}
+	@include iftablet {
+		height: em(300px);
+	}
+	@include ifmobile {
+		height: em(240px);
+	}
+}
+
+.Wrapper {
+	height: em(670px);
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+
+	@include iflaptop {
+		height: em(400px);
+	}
+	@include iftablet {
+		height: em(300px);
+	}
+	@include ifmobile {
+		height: em(240px);
+	}
+
+	.BaseContainer {
+		@include iflaptop {
+			padding: 0 em(60px);
+		}
+		@include iftablet {
+			padding: 0 em(50px);
+		}
+		@include ifmobile {
+			padding: 0 em(30px);
+		}
+	}
+}
+
+.Header {
+	&_Title {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		cursor: pointer;
+		margin-bottom: em(72px);
+		&_BtnBack {
+			width: em(30px);
+			height: em(30px);
+			transform: rotate(90deg);
+			margin-right: em(6px);
+			@include ifmobile {
+				width: em(20px);
+				height: em(20px);
+			}
+			path {
+				stroke-width: em(3px);
+			}
+		}
+
+		@include iflaptop {
+			margin-bottom: em(30px);
+		}
+		@include iftablet {
+			margin-bottom: em(20px);
+		}
+		@include ifmobile {
+			margin-bottom: em(16px);
+		}
+	}
+}
