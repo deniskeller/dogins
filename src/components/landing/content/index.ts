@@ -1,4 +1,5 @@
 export { default as BreadCrumbs } from "./BreadCrumbs/BreadCrumbs";
+export { default as CountryScrollLogo } from "./CountryScrollLogo/CountryScrollLogo";
 export { default as FileInput } from "./FileInput/FileInput";
 export { default as Header } from "./Header/Header";
 export { default as HeaderCountry } from "./HeaderCountry/HeaderCountry";

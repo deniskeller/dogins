@@ -1,0 +1,50 @@
+.Wrapper {
+	height: 100%;
+	padding: em(150px) em(50px) em(115px);
+	position: relative;
+	@include iflaptop {
+		padding: em(100px) em(30px);
+	}
+	@include iftablet {
+		padding: em(60px) em(20px) em(80px);
+	}
+	@include ifmobile {
+		display: none;
+	}
+
+	.Logo {
+		opacity: 0.1;
+		position: -webkit-sticky;
+		position: sticky;
+		top: em(200px);
+		min-width: 153px;
+		max-width: 533px;
+
+		@include iflaptop {
+			min-width: 80px;
+			max-width: 273px;
+		}
+		@include iftablet {
+			min-width: 83px;
+			max-width: 153px;
+		}
+
+		path {
+			fill: #000000;
+		}
+
+		svg {
+			width: inherit;
+			height: inherit;
+		}
+	}
+}
+
+@include ifdesktop {
+}
+@include iflaptop {
+}
+@include iftablet {
+}
+@include ifmobile {
+}

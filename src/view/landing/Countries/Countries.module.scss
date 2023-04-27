@@ -1,3 +1,734 @@
+.BaseContainer {
+	@include ifmobile {
+		padding: 0;
+	}
+}
 .Country {
 	position: relative;
+	display: grid;
+	grid-template-columns: 1fr em(540px);
+	border-right: 1px solid rgba(26, 26, 26, 0.1);
+	border-left: 1px solid rgba(26, 26, 26, 0.1);
+	@include iflaptop {
+		grid-template-columns: 1fr em(302px);
+	}
+	@include iftablet {
+		grid-template-columns: 1fr em(193px);
+	}
+	@include ifmobile {
+		grid-template-columns: 1fr;
+		border-right: none;
+		border-left: none;
+	}
+
+	&_Content {
+		border-right: 1px solid rgba(26, 26, 26, 0.1);
+		&_Header {
+			border-bottom: 1px solid rgba(26, 26, 26, 0.1);
+			padding: em(150px) em(30px) em(50px);
+			@include iflaptop {
+				padding: em(100px) em(30px) em(50px);
+			}
+			@include iftablet {
+				padding: em(60px) em(230px) em(30px) em(30px);
+			}
+			@include ifmobile {
+				padding: em(40px) em(155px) em(20px) em(10px);
+			}
+			h1 {
+				color: $black;
+				font-weight: 300;
+				font-size: em(40px);
+				line-height: 140%;
+				@include iflaptop {
+					font-size: em(38px);
+				}
+				@include iftablet {
+					font-size: em(28px);
+				}
+				@include ifmobile {
+					font-size: em(20px);
+				}
+			}
+		}
+
+		&_RequestOffer {
+			border-bottom: 1px solid rgba(26, 26, 26, 0.1);
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+			flex-wrap: wrap;
+			gap: em(30px) em(20px);
+			padding: em(40px) em(70px);
+			@include iflaptop {
+				padding: em(40px) em(30px);
+			}
+			@include iftablet {
+				padding: em(30px) em(20px);
+			}
+			@include ifmobile {
+				padding: em(20px) em(10px);
+			}
+
+			.Total {
+				&_Label {
+					margin-bottom: em(18px);
+					span {
+						font-weight: 400;
+						font-size: em(18px);
+						line-height: 120%;
+						color: rgba(26, 26, 26, 0.7);
+						@include iflaptop {
+							font-size: em(16px);
+						}
+						@include iftablet {
+							font-size: em(14px);
+						}
+						@include ifmobile {
+							font-size: em(14px);
+						}
+					}
+				}
+				&_Value {
+					font-weight: 600;
+					font-size: em(32px);
+					line-height: 100%;
+					color: #2d2d2d;
+					@include iflaptop {
+						font-size: em(26px);
+					}
+					@include iftablet {
+						font-size: em(20px);
+					}
+					@include ifmobile {
+						font-size: em(18px);
+					}
+				}
+			}
+
+			.Button {
+				background: linear-gradient(
+						0deg,
+						rgba(191, 191, 191, 0.2),
+						rgba(191, 191, 191, 0.2)
+					),
+					#14422c;
+				border: 1px solid #14422c;
+				border-radius: em(4px);
+				width: em(188px);
+				height: em(58px);
+				@include iflaptop {
+					width: em(166px);
+					height: em(44px);
+				}
+				@include iftablet {
+					width: em(166px);
+					height: em(44px);
+				}
+				@include ifmobile {
+					width: em(166px);
+					height: em(44px);
+				}
+
+				& > div {
+					font-size: em(20px);
+					@include iflaptop {
+						font-size: em(18px);
+					}
+					@include iftablet {
+						font-size: em(18px);
+					}
+					@include ifmobile {
+						font-size: em(18px);
+					}
+				}
+			}
+		}
+
+		&_Licenses {
+			border-bottom: 1px solid rgba(26, 26, 26, 0.2);
+			padding: em(64px) em(30px) em(50px);
+			@include iflaptop {
+				padding: em(38px) em(30px) em(50px);
+			}
+			@include iftablet {
+				padding: em(30px) em(20px) em(30px);
+			}
+			@include ifmobile {
+				padding: em(20px) em(10px) em(30px);
+			}
+			.Title {
+				margin-bottom: em(50px);
+				@include iflaptop {
+					margin-bottom: em(30px);
+				}
+				@include iftablet {
+					margin-bottom: em(30px);
+				}
+				@include ifmobile {
+					margin-bottom: em(30px);
+				}
+				h2 {
+					font-weight: 300;
+					font-size: em(30px);
+					line-height: 140%;
+					color: $black;
+					@include iflaptop {
+						font-size: em(20px);
+					}
+					@include iftablet {
+						font-size: em(20px);
+					}
+					@include ifmobile {
+						font-size: em(18px);
+					}
+				}
+			}
+
+			.StepByStepGuide {
+				margin-bottom: em(50px);
+				@include iflaptop {
+					margin-bottom: em(30px);
+				}
+				@include iftablet {
+					margin-bottom: em(30px);
+				}
+				@include ifmobile {
+					margin-bottom: em(30px);
+				}
+				&_Title {
+					margin-bottom: em(20px);
+					h2 {
+						color: $black;
+						font-weight: 500;
+						font-size: em(22px);
+						line-height: 140%;
+						text-transform: uppercase;
+						@include iflaptop {
+							font-size: em(18px);
+						}
+						@include iftablet {
+							font-size: em(16px);
+						}
+						@include ifmobile {
+							font-size: em(16px);
+						}
+					}
+				}
+
+				&_List {
+					display: grid;
+					grid-template-columns: 1fr;
+					gap: em(20px) 0;
+					margin-bottom: em(40px);
+					padding-left: em(20px);
+					@include iflaptop {
+						margin-bottom: em(30px);
+						padding-left: em(17px);
+					}
+					@include iftablet {
+						margin-bottom: em(30px);
+						padding-left: em(17px);
+					}
+					@include ifmobile {
+						margin-bottom: em(30px);
+						padding-left: em(14px);
+					}
+					li {
+						color: $black;
+						font-weight: 300;
+						font-size: em(18px);
+						line-height: 140%;
+						&:last-child {
+							margin-bottom: 0;
+						}
+						@include iflaptop {
+							font-size: em(16px);
+						}
+						@include iftablet {
+							font-size: em(14px);
+						}
+						@include ifmobile {
+							font-size: em(14px);
+						}
+					}
+				}
+
+				&_Aside {
+					p {
+						font-weight: 300;
+						font-size: em(18px);
+						line-height: 160%;
+						color: $black;
+						@include iflaptop {
+							font-size: em(16px);
+						}
+						@include iftablet {
+							font-size: em(14px);
+						}
+						@include ifmobile {
+							font-size: em(14px);
+						}
+					}
+				}
+			}
+
+			.LicensingCosts {
+				margin-bottom: em(50px);
+				@include iflaptop {
+					margin-bottom: em(30px);
+				}
+				@include iftablet {
+					margin-bottom: em(34px);
+				}
+				@include ifmobile {
+					margin-bottom: em(34px);
+				}
+
+				&_Title {
+					margin-bottom: em(20px);
+					h2 {
+						color: $black;
+						font-weight: 500;
+						font-size: em(22px);
+						line-height: 140%;
+						text-transform: uppercase;
+						@include iflaptop {
+							font-size: em(18px);
+						}
+						@include iftablet {
+							font-size: em(18px);
+						}
+						@include ifmobile {
+							font-size: em(18px);
+						}
+					}
+				}
+
+				&_Table {
+					.THead {
+						background: $green;
+						display: flex;
+						flex-direction: row;
+						align-items: center;
+						justify-content: space-between;
+						flex-wrap: wrap;
+						border-top-left-radius: em(4px);
+						border-top-right-radius: em(4px);
+						padding: em(30px) em(20px);
+						gap: em(30px) em(20px);
+						@include iflaptop {
+							padding: em(20px);
+						}
+						@include iftablet {
+							padding: em(20px);
+						}
+						@include ifmobile {
+							padding: em(20px) em(10px);
+						}
+
+						&_Label,
+						&_Value {
+							color: $white;
+						}
+						&_Label {
+							font-weight: 400;
+							font-size: em(20px);
+							line-height: 140%;
+							text-transform: uppercase;
+							@include iflaptop {
+								font-size: em(18px);
+							}
+							@include iftablet {
+								font-size: em(18px);
+							}
+							@include ifmobile {
+								font-size: em(14px);
+							}
+						}
+						&_Value {
+							font-weight: 500;
+							font-size: em(32px);
+							line-height: 140%;
+							@include iflaptop {
+								font-size: em(26px);
+							}
+							@include iftablet {
+								font-size: em(24px);
+							}
+							@include ifmobile {
+								font-size: em(20px);
+							}
+						}
+					}
+
+					.TBody {
+						display: grid;
+						background: #e6e6e6;
+						border-bottom-left-radius: em(4px);
+						border-bottom-right-radius: em(4px);
+						grid-template-columns: 1fr 1fr 1fr;
+						min-height: em(196px);
+						@include iflaptop {
+							min-height: em(161px);
+						}
+						@include iftablet {
+							grid-template-columns: 1fr;
+						}
+						@include ifmobile {
+							grid-template-columns: 1fr;
+						}
+
+						.Column {
+							display: flex;
+							flex-direction: column;
+							padding: em(30px) em(20px);
+							&:nth-child(2) {
+								border-right: 1px solid rgba(26, 26, 26, 0.1);
+								border-left: 1px solid rgba(26, 26, 26, 0.1);
+							}
+							@include iflaptop {
+								padding: em(20px) em(16px);
+							}
+							@include iftablet {
+								flex-direction: row;
+								justify-content: space-between;
+								align-items: center;
+								padding: em(20px);
+								&:nth-child(2) {
+									border-right: none;
+									border-left: none;
+									border-top: 1px solid rgba(26, 26, 26, 0.1);
+									border-bottom: 1px solid rgba(26, 26, 26, 0.1);
+								}
+							}
+							@include ifmobile {
+								flex-direction: row;
+								justify-content: space-between;
+								align-items: center;
+								padding: em(20px) em(10px);
+								&:nth-child(2) {
+									border-right: none;
+									border-left: none;
+									border-top: 1px solid rgba(26, 26, 26, 0.1);
+									border-bottom: 1px solid rgba(26, 26, 26, 0.1);
+								}
+							}
+							&_Label {
+								@include iftablet {
+									margin-right: em(100px);
+								}
+								@include ifmobile {
+									margin-right: em(27px);
+								}
+								span {
+									color: $black;
+									font-weight: 400;
+									font-size: em(16px);
+									line-height: 140%;
+									@include iflaptop {
+										font-size: em(14px);
+									}
+									@include iftablet {
+										font-size: em(14px);
+									}
+									@include ifmobile {
+										font-size: em(12px);
+									}
+								}
+							}
+							&_Value {
+								margin-top: auto;
+								font-weight: 600;
+								font-size: em(30px);
+								line-height: 140%;
+								color: $black;
+								white-space: nowrap;
+								@include iflaptop {
+									font-size: em(22px);
+								}
+								@include iftablet {
+									font-size: em(20px);
+								}
+								@include ifmobile {
+									font-size: em(16px);
+								}
+							}
+						}
+					}
+				}
+			}
+
+			.OtherTasks {
+				margin-bottom: em(40px);
+				@include iflaptop {
+					margin-bottom: em(30px);
+				}
+				@include iftablet {
+					margin-bottom: em(30px);
+				}
+				@include ifmobile {
+					margin-bottom: em(30px);
+				}
+
+				&_Title {
+					margin-bottom: em(20px);
+					h2 {
+						color: $black;
+						font-weight: 500;
+						font-size: em(22px);
+						line-height: 140%;
+						text-transform: uppercase;
+						@include iflaptop {
+							font-size: em(18px);
+						}
+						@include iftablet {
+							font-size: em(16px);
+						}
+						@include ifmobile {
+							font-size: em(16px);
+						}
+					}
+				}
+
+				&_List {
+					li {
+						position: relative;
+						padding-left: em(18px);
+						margin-bottom: em(16px);
+						@include iflaptop {
+							margin-bottom: em(10px);
+						}
+						@include iftablet {
+							margin-bottom: em(10px);
+						}
+						@include ifmobile {
+							margin-bottom: em(10px);
+						}
+						&:last-child {
+							margin-bottom: 0;
+						}
+
+						&:before {
+							content: '';
+							display: block;
+							position: absolute;
+							background: $green;
+							left: 0;
+							border-radius: 100%;
+							top: calc(50% - em(4px));
+							width: em(8px);
+							height: em(8px);
+						}
+
+						span {
+							display: flex;
+							color: $black;
+							font-weight: 300;
+							font-size: em(18px);
+							line-height: 140%;
+							@include iflaptop {
+								font-size: em(16px);
+							}
+							@include iftablet {
+								font-size: em(14px);
+							}
+							@include ifmobile {
+								font-size: em(12px);
+							}
+						}
+					}
+				}
+			}
+
+			.Documents {
+				&_Title {
+					margin-bottom: em(20px);
+					h2 {
+						color: $black;
+						font-weight: 500;
+						font-size: em(22px);
+						line-height: 140%;
+						text-transform: uppercase;
+						@include iflaptop {
+							font-size: em(18px);
+						}
+						@include iftablet {
+							font-size: em(16px);
+						}
+						@include ifmobile {
+							font-size: em(16px);
+						}
+					}
+				}
+
+				&_List {
+					display: grid;
+					grid-template-columns: 1fr;
+					gap: em(16px) 0;
+					padding-left: em(20px);
+					@include iflaptop {
+						gap: em(10px) 0;
+						padding-left: em(17px);
+					}
+					@include iftablet {
+						gap: em(10px) 0;
+						padding-left: em(17px);
+					}
+					@include ifmobile {
+						gap: em(10px) 0;
+						padding-left: em(15px);
+					}
+
+					li {
+						color: $black;
+						font-weight: 300;
+						font-size: em(18px);
+						line-height: 140%;
+						&:last-child {
+							margin-bottom: 0;
+						}
+
+						@include iflaptop {
+							font-size: em(16px);
+						}
+						@include iftablet {
+							font-size: em(14px);
+						}
+						@include ifmobile {
+							font-size: em(12px);
+						}
+					}
+				}
+			}
+		}
+
+		&_Form {
+			.Form {
+				padding: em(50px) em(30px) em(100px);
+				@include iftablet {
+					padding: em(30px) em(20px) em(80px);
+				}
+				@include ifmobile {
+					padding: em(30px) em(10px) em(50px);
+				}
+
+				&_Title {
+					margin-bottom: em(19px);
+					@include ifmobile {
+						margin-bottom: em(16px);
+					}
+					h3 {
+						font-weight: 400;
+						font-size: em(40px);
+						line-height: 140%;
+						color: $black;
+						@include iflaptop {
+							font-size: em(38px);
+						}
+						@include iftablet {
+							font-size: em(28px);
+						}
+						@include ifmobile {
+							font-size: em(20px);
+						}
+					}
+				}
+
+				&_Subtitle {
+					max-width: em(600px);
+					margin-bottom: em(50px);
+					@include iflaptop {
+						margin-bottom: em(30px);
+					}
+					@include iftablet {
+						max-width: em(460px);
+						margin-bottom: em(30px);
+					}
+					@include ifmobile {
+						margin-bottom: em(20px);
+					}
+					p {
+						font-weight: 300;
+						font-size: em(18px);
+						line-height: 140%;
+						color: rgba(18, 18, 18, 0.6);
+						a {
+							color: $green;
+						}
+
+						@include iflaptop {
+							font-size: em(16px);
+						}
+						@include iftablet {
+							font-size: em(14px);
+						}
+						@include ifmobile {
+							font-size: em(12px);
+						}
+					}
+				}
+
+				&_Inputs {
+					display: grid;
+					grid-template-columns: 1fr 1fr;
+					gap: 0 em(40px);
+					margin-bottom: em(60px);
+					@include iflaptop {
+						gap: 0 em(20px);
+						margin-bottom: em(50px);
+					}
+					@include iftablet {
+						gap: 0 em(20px);
+						margin-bottom: em(50px);
+					}
+					@include ifmobile {
+						grid-template-columns: 1fr;
+						gap: em(10px) 0;
+						margin-bottom: em(40px);
+					}
+				}
+
+				&_Button {
+					div {
+						color: $green;
+					}
+					svg path {
+						stroke: $green;
+					}
+				}
+
+				&_Submit {
+					display: flex;
+					width: 100%;
+					min-height: em(466px);
+					padding: em(50px) em(30px) em(100px);
+					animation-name: FadeIn;
+					animation-duration: 2s;
+					transition-timing-function: linear;
+					@include iflaptop {
+						min-height: em(425px);
+					}
+					@include iftablet {
+						min-height: em(363px);
+						padding: em(30px) em(20px) em(80px);
+					}
+					@include ifmobile {
+						min-height: em(370px);
+						padding: em(30px) em(10px) em(50px);
+					}
+				}
+			}
+		}
+	}
+}
+
+@include keyframe(FadeIn) {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }

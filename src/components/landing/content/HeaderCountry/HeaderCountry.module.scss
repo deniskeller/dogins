@@ -71,6 +71,11 @@
 		align-items: center;
 		cursor: pointer;
 		margin-bottom: em(72px);
+		h1 {
+			@include ifmobile {
+				font-size: em(26px);
+			}
+		}
 		&_BtnBack {
 			width: em(30px);
 			height: em(30px);
