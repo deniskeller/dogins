@@ -1,6 +1,7 @@
 import { BaseButton, BasePopup } from '@base/index';
 import { countries_licensing_info } from '@services/index';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import s from './CountryLicensingPopup.module.scss';
 
@@ -29,17 +30,24 @@ const CountryLicensingPopup: React.FC<Props> = ({
 	country_id,
 	onClick,
 }) => {
+	const router = useRouter();
 	const [countryItem, setCountryItem] = useState({} as ICountrieItem);
 
 	useEffect(() => {
+		//выводим инфу о стране
 		const new_item = countries_licensing_info.filter((item) => {
 			if (item.id == country_id) {
 				return item;
 			}
 		});
-		console.log('new_item: ', new_item);
 		setCountryItem(new_item[0]);
 	}, [country_id]);
+
+	//переходим на страницу и скрролим до формы
+	const requestHandler = (href: string) => {
+		localStorage.setItem('item', JSON.stringify('scroll'));
+		router.push('/licensing/' + href);
+	};
 
 	return (
 		<BasePopup className={className} popup={popup} onClick={onClick}>
@@ -113,7 +121,11 @@ const CountryLicensingPopup: React.FC<Props> = ({
 					</a>
 				</Link>
 
-				<BaseButton title='Request' className={s.CountryPopup_Button} />
+				<BaseButton
+					title='Request'
+					className={s.CountryPopup_Button}
+					onClick={() => requestHandler(countryItem?.href)}
+				/>
 			</div>
 		</BasePopup>
 	);

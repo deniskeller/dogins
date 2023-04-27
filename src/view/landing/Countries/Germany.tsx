@@ -4,7 +4,7 @@ import {
 	HeaderCountry,
 	SubmitForm,
 } from '@content/landing/index';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import s from './Countries.module.scss';
 
 var Scroll = require('react-scroll');
@@ -26,6 +26,30 @@ const Germany: React.FC = () => {
 	};
 
 	const [submit, setSubmit] = useState(false);
+
+	useEffect(() => {
+		//скролим страницу до формы если на предыдущей нажали Request
+
+		const value = localStorage.getItem('item');
+
+		if (typeof value === 'string') {
+			const parse = JSON.parse(value);
+
+			if (parse == 'scroll') {
+				scroller.scrollTo(`form`, {
+					duration: 0,
+					delay: 0,
+					smooth: true,
+					offset: -100,
+				});
+			}
+		}
+
+		return () => {
+			localStorage.clear();
+		};
+	}, []);
+
 	return (
 		<>
 			<HeaderCountry image='germany-bg.jpeg' title='Germany' />
