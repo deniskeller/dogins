@@ -29,7 +29,6 @@ const Germany: React.FC = () => {
 
 	useEffect(() => {
 		//скролим страницу до формы если на предыдущей нажали Request
-
 		const value = localStorage.getItem('item');
 
 		if (typeof value === 'string') {
