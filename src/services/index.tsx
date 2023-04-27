@@ -311,7 +311,7 @@ export const countries = [
 export const countries_licensing_info = [
 	{
 		id: 1,
-		image: 'germany-popup-bg',
+		image: 'germany-bg',
 		title: 'Germany',
 		total_term: '12 months',
 		total_cost: '$ 155,500.00',
@@ -339,7 +339,7 @@ export const countries_licensing_info = [
 
 	{
 		id: 2,
-		image: 'united-kingdom-popup-bg',
+		image: 'united-kingdom-bg',
 		title: 'UK',
 		total_term: '12 months',
 		total_cost: '$ 85,500.00',
@@ -369,7 +369,7 @@ export const countries_licensing_info = [
 
 	{
 		id: 3,
-		image: 'hong-kong-popup-bg',
+		image: 'hong-kong-bg',
 		title: 'Hong Kong',
 		total_term: '12 months',
 		total_cost: '$ 85,500.00',
@@ -392,7 +392,7 @@ export const countries_licensing_info = [
 
 	{
 		id: 4,
-		image: 'ireland-popup-bg',
+		image: 'ireland-bg',
 		title: 'Ireland',
 		total_term: '12 months',
 		total_cost: '$ 85,500.00',
@@ -419,7 +419,7 @@ export const countries_licensing_info = [
 
 	{
 		id: 5,
-		image: 'singapure-popup-bg',
+		image: 'singapure-bg',
 		title: 'Singapure',
 		total_term: '12 months',
 		total_cost: '$ 85,500.00',
@@ -441,7 +441,7 @@ export const countries_licensing_info = [
 
 	{
 		id: 6,
-		image: 'usa-popup-bg',
+		image: 'usa-bg',
 		title: 'USA',
 		total_term: '3-12 months',
 		total_cost: '$ 175,500.00',
