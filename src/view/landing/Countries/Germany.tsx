@@ -7,7 +7,7 @@ const Germany: React.FC = () => {
 		<>
 			<HeaderCountry image='germany-bg.jpeg' title='Germany' />
 
-			<div className='Wrapper'>
+			<div className='Wrapper-l'>
 				<BaseContainer>
 					<div className={s.Country}>
 						<div className={s.Country_Title}>

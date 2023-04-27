@@ -37,9 +37,11 @@ a[href^="https://www.google.com/maps"]
 }
 
 .Wrapper {
+	position: relative;
 	background: $body;
 }
 .Wrapper-l {
+	position: relative;
 	background: #f0f0f0;
 }
 
