@@ -20,7 +20,6 @@
 	}
 	@include ifmobile {
 		padding: em(20px) em(10px);
-		background-position: 25% 0%;
 	}
 
 	&::before {
