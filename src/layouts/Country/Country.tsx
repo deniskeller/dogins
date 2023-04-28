@@ -32,15 +32,12 @@ const Country: React.FC<Props> = ({ children, type }) => {
 	}, [scrollTop]);
 
 	return (
-		<div
-			className={s.Wrapper}
-			style={{ background: type == 'white' ? '#F0F0F0' : 'transparent' }}
-		>
+		<div className={s.Wrapper}>
 			<Navbar fixed={isVisible} />
 
 			<div className={s.Content}>{children}</div>
 
-			<Footer type={type} pricing='pricing' />
+			<Footer type={type} className={s.Footer} />
 		</div>
 	);
 };

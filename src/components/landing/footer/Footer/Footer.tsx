@@ -11,6 +11,7 @@ interface list {
 
 interface Links {
 	title: string;
+
 	list: list[];
 }
 
@@ -63,14 +64,15 @@ const Links: Links[] = [
 interface Props {
 	type?: string;
 	pricing?: string;
+	className?: string;
 }
-const Footer: React.FC<Props> = ({ type, pricing }) => {
+const Footer: React.FC<Props> = ({ type, pricing, className = '' }) => {
 	return (
 		<>
 			<div
-				className={s.Wrapper}
+				className={`${s.Wrapper} ${className}`}
 				style={{
-					background: type == 'white' ? '#F0F0F0' : '#222222',
+					background: type == 'white' ? 'transparent' : '#222222',
 					borderColor:
 						type == 'white'
 							? 'rgba(26, 26, 26, 0.2)'

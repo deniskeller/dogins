@@ -4,14 +4,16 @@
 	width: 100%;
 	min-height: 100vh;
 	height: 100%;
-	// overflow: hidden;
 	position: relative;
 }
 
 .Content {
 	display: flex;
 	flex: 1 0 auto;
-	// overflow: auto;
 	flex-direction: column;
 	position: relative;
+}
+
+.Footer {
+	background: #f0f0f0 !important;
 }

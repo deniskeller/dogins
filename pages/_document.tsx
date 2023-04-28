@@ -19,9 +19,7 @@ export default function Document() {
 					href='https://use.typekit.net/fzy6ewm.css'
 				></link>
 			</Head>
-			<title>
-				Dogisn and Partners FAMILY OFFICE THE FINANCIAL EXPERTS SINCE 2005
-			</title>
+			<title>Welcome to Doquins & Partners family office</title>
 			<body>
 				<Main />
 				<NextScript />
