@@ -182,6 +182,9 @@
 
 		.Tooltip {
 			cursor: pointer;
+			@include ifmobile {
+				display: none;
+			}
 		}
 
 		.Continent {
