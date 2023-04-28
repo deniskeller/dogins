@@ -525,6 +525,7 @@
 						}
 						@include ifmobile {
 							margin-bottom: em(10px);
+							padding-left: em(16px);
 						}
 						&:last-child {
 							margin-bottom: 0;
@@ -537,9 +538,19 @@
 							background: $green;
 							left: 0;
 							border-radius: 100%;
-							top: calc(50% - em(4px));
 							width: em(8px);
 							height: em(8px);
+							top: em(8px);
+
+							@include iflaptop {
+								top: em(7px);
+							}
+							@include iftablet {
+								top: em(5px);
+							}
+							@include ifmobile {
+								top: em(4px);
+							}
 						}
 
 						span {
@@ -557,6 +568,25 @@
 							@include ifmobile {
 								font-size: em(12px);
 							}
+						}
+					}
+				}
+
+				&_Aside {
+					margin-top: em(30px);
+					p {
+						font-weight: 300;
+						font-size: em(18px);
+						line-height: 160%;
+						color: $black;
+						@include iflaptop {
+							font-size: em(16px);
+						}
+						@include iftablet {
+							font-size: em(14px);
+						}
+						@include ifmobile {
+							font-size: em(12px);
 						}
 					}
 				}
