@@ -6,9 +6,14 @@ import s from './HeaderCountry.module.scss';
 type Props = {
 	image?: string;
 	title: string;
+	background_position?: string;
 };
 
-const HeaderCountry: React.FC<Props> = ({ image, title }) => {
+const HeaderCountry: React.FC<Props> = ({
+	image,
+	title,
+	background_position = 'center',
+}) => {
 	const router = useRouter();
 	return (
 		<>
@@ -18,6 +23,7 @@ const HeaderCountry: React.FC<Props> = ({ image, title }) => {
 					backgroundImage: `url(/images/image/${
 						image || 'main-header-bg.jpeg'
 					})`,
+					backgroundPosition: background_position,
 				}}
 			></div>
 

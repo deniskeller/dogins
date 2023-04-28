@@ -1,7 +1,6 @@
 .HeaderBg {
 	position: fixed;
 	background-color: $body;
-	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
 	top: 0;
@@ -13,6 +12,7 @@
 	image-rendering: pixelated;
 	image-rendering: -moz-crisp-edges; /* Firefox */
 	-ms-interpolation-mode: nearest-neighbor; /* IE */
+
 	&::before {
 		content: '';
 		display: block;
@@ -31,6 +31,8 @@
 	}
 	@include ifmobile {
 		height: em(240px);
+		// transform: scale(1.8);
+		background-position: -150% 60% !important;
 	}
 }
 

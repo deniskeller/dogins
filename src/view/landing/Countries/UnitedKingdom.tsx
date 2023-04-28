@@ -1,4 +1,5 @@
 import { BaseButton, BaseContainer, BaseIcon, BaseInput } from '@base/index';
+import { ALL_ICONS } from '@constants/icons';
 import {
 	CountryScrollLogo,
 	HeaderCountry,
@@ -6,7 +7,6 @@ import {
 } from '@content/landing/index';
 import { useEffect, useState } from 'react';
 import s from './Countries.module.scss';
-import { ALL_ICONS } from '@constants/icons';
 
 var Scroll = require('react-scroll');
 var scroller = Scroll.scroller;
@@ -16,7 +16,7 @@ interface IValue {
 	email: string;
 }
 
-const Germany: React.FC = () => {
+const UnitedKingdom: React.FC = () => {
 	const [value, setValue] = useState<IValue>({
 		name: '',
 		email: '',
@@ -53,9 +53,9 @@ const Germany: React.FC = () => {
 	return (
 		<>
 			<HeaderCountry
-				image='germany-bg.jpeg'
-				title='Germany'
-				background_position='100% 73%'
+				image='united-kingdom-bg.jpeg'
+				title='United Kingdom'
+				background_position='100% 61.5%'
 			/>
 
 			<div className='Wrapper-l'>
@@ -78,7 +78,7 @@ const Germany: React.FC = () => {
 									<div className={s.Total_Label}>
 										<span>Total cost</span>
 									</div>
-									<div className={s.Total_Value}>$ 155,500.00</div>
+									<div className={s.Total_Value}>$ 85,500.00</div>
 								</div>
 
 								<BaseButton
@@ -106,7 +106,7 @@ const Germany: React.FC = () => {
 								<div className={s.Title}>
 									<h2>
 										We offer the following range of licenses for you in order to
-										receive approval from BaFin.
+										receive the approval from Financial Conduct Authority.
 									</h2>
 								</div>
 
@@ -132,13 +132,13 @@ const Germany: React.FC = () => {
 										</li>
 										<li>
 											Official coordination of the documents <br />
-											Answers to the official enquiries of the BaFin and
-											provision of revised documents, if needed.
+											Answers to the official enquiries of the FCA and provision
+											of revised documents, if needed.
 										</li>
 										<li>
-											The decision of the BaFin <br />
-											The decision of the BaFin regarding the issuance of
-											payment institution licence.
+											The decision of the FCA: <br />
+											The decision of the FCA regarding the issuance of payment
+											institution licence.
 										</li>
 									</ol>
 
@@ -155,7 +155,7 @@ const Germany: React.FC = () => {
 											additional 2-6 months (the formal term for consideration
 											is 3 months which may then be prolonged for an additional
 											3 month period); the latter term mostly depends on the
-											internal processes of the BaFin and the workload of
+											internal processes of the FCA and the workload of
 											responsible specialists.
 										</p>
 									</div>
@@ -169,7 +169,7 @@ const Germany: React.FC = () => {
 									<div className={s.LicensingCosts_Table}>
 										<div className={s.THead}>
 											<div className={s.THead_Label}>Full licensing costs</div>
-											<div className={s.THead_Value}>$ 155,500.00</div>
+											<div className={s.THead_Value}>$ 85,500.00</div>
 										</div>
 
 										<div className={s.TBody}>
@@ -177,7 +177,7 @@ const Germany: React.FC = () => {
 												<div className={s.Column_Label}>
 													<span>Payment of retainer</span>
 												</div>
-												<div className={s.Column_Value}>$ 75,000.00</div>
+												<div className={s.Column_Value}>$ 35,000.00</div>
 											</div>
 
 											<div className={s.Column}>
@@ -186,7 +186,7 @@ const Germany: React.FC = () => {
 														Intermediate payment after the documents review
 													</span>
 												</div>
-												<div className={s.Column_Value}>$ 40,500.00</div>
+												<div className={s.Column_Value}>$ 25,000.00</div>
 											</div>
 
 											<div className={s.Column}>
@@ -195,7 +195,7 @@ const Germany: React.FC = () => {
 														Payment before the submission of the documents
 													</span>
 												</div>
-												<div className={s.Column_Value}>$ 40,000.00</div>
+												<div className={s.Column_Value}>$ 25,000.00</div>
 											</div>
 										</div>
 									</div>
@@ -388,4 +388,4 @@ const Germany: React.FC = () => {
 	);
 };
 
-export default Germany;
+export default UnitedKingdom;

@@ -147,6 +147,7 @@
 		}
 
 		&_Licenses {
+			position: relative;
 			border-bottom: 1px solid rgba(26, 26, 26, 0.2);
 			padding: em(64px) em(30px) em(50px);
 			@include iflaptop {
@@ -158,6 +159,25 @@
 			@include ifmobile {
 				padding: em(20px) em(10px) em(30px);
 			}
+
+			.Logo {
+				opacity: 0.1;
+				position: absolute;
+				z-index: 0;
+				top: em(20px);
+				left: em(8px);
+				width: em(79px);
+				height: em(89px);
+				display: none;
+				@include ifmobile {
+					display: block;
+				}
+
+				path {
+					fill: #000000;
+				}
+			}
+
 			.Title {
 				margin-bottom: em(50px);
 				@include iflaptop {

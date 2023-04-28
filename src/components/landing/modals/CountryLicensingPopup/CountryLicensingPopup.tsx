@@ -55,7 +55,7 @@ const CountryLicensingPopup: React.FC<Props> = ({
 				className={s.CountryPopup}
 				style={{
 					backgroundImage: `url(/images/image/${
-						'germany-bg' || countryItem?.image
+						countryItem?.image || 'germany-bg'
 					}.jpeg)`,
 				}}
 			>

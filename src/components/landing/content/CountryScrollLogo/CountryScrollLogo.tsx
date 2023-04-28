@@ -15,26 +15,28 @@ const CountryScrollLogo: React.FC<Props> = () => {
 
 	useEffect(() => {
 		const handleScroll = () => {
-			//максимальная ширина блока
-			var maxW = +window
-				.getComputedStyle(refLogo.current)
-				.getPropertyValue('min-width')
-				.split('px')[0];
-			//минимальная ширина блока
-			var minW = +window
-				.getComputedStyle(refLogo.current)
-				.getPropertyValue('max-width')
-				.split('px')[0];
-			//разница мин и макс ширины блока
-			var deltaW = maxW - minW;
+			if (refLogo.current !== null) {
+				//максимальная ширина блока
+				var maxW = +window
+					.getComputedStyle(refLogo.current)
+					.getPropertyValue('min-width')
+					.split('px')[0];
+				//минимальная ширина блока
+				var minW = +window
+					.getComputedStyle(refLogo.current)
+					.getPropertyValue('max-width')
+					.split('px')[0];
+				//разница мин и макс ширины блока
+				var deltaW = maxW - minW;
 
-			var blockH = refLogo?.current?.clientHeight;
-			var pageH = refLogoWrapper.current?.clientHeight + blockH;
-			var blockX = refLogo?.current?.offsetTop + blockH;
-			var width = Math.round(((pageH - blockX) * deltaW) / pageH);
+				var blockH = refLogo?.current?.clientHeight;
+				var pageH = refLogoWrapper.current?.clientHeight + blockH;
+				var blockX = refLogo?.current?.offsetTop + blockH;
+				var width = Math.round(((pageH - blockX) * deltaW) / pageH);
 
-			if (blockX >= 0 && blockX <= pageH) {
-				setWidth(minW + width);
+				if (blockX >= 0 && blockX <= pageH) {
+					setWidth(minW + width);
+				}
 			}
 		};
 
