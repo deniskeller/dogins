@@ -65,7 +65,13 @@ const BaseInput: React.FC<Props> = ({
 				</label>
 			) : null}
 
-			{error ? <div className={s.ErrorText}>{error}</div> : ''}
+			{error ? (
+				<div className={s.ErrorText}>
+					<span>{error}</span>
+				</div>
+			) : (
+				''
+			)}
 		</div>
 	);
 };

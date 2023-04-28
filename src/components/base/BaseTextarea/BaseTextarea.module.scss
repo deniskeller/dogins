@@ -96,16 +96,21 @@
 
 .Error {
 	border-bottom: 1px solid #ef4343 !important;
+	& + .Label {
+		color: $red !important;
+	}
 }
 
 .ErrorText {
-	font-size: em(12px);
-	font-family: 'Montserrat', sans-serif;
-	line-height: 100%;
-	color: #ef4343;
-	display: block;
-	margin-top: em(10px);
-	font-weight: 300;
+	margin-top: em(8px);
+	span {
+		display: flex;
+		font-size: em(12px);
+		font-family: 'Montserrat', sans-serif;
+		line-height: 100%;
+		color: #ef4343;
+		font-weight: 300;
+	}
 }
 
 .Label {

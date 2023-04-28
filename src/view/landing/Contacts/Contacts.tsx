@@ -169,6 +169,7 @@ const Contacts: React.FC = () => {
 										options={countries}
 										onChange={(val: string) => setNewValue(val, 'country')}
 										className={s.Input}
+										error='Some text error'
 									/>
 
 									<BaseTextarea

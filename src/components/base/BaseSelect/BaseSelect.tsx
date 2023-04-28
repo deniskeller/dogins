@@ -89,7 +89,13 @@ const BaseSelect: React.FC<Props> = ({
 				</label>
 			) : null}
 
-			{error ? <div className={styles.ErrorText}>{error}</div> : ''}
+			{error ? (
+				<div className={styles.ErrorText}>
+					<span>{error}</span>
+				</div>
+			) : (
+				''
+			)}
 
 			{isOpen && (
 				<ul className={styles.SelectList}>

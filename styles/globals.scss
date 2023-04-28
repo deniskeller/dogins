@@ -247,11 +247,7 @@ input[type='search']::-webkit-search-results-decoration {
 }
 
 .react-tel-input .form-control.phone-input-error {
-	background: linear-gradient(#ff9900, #ff9900),
-		linear-gradient(#ff9900, #ff9900), linear-gradient(#ff9900, #ff9900) !important;
-	background-size: 1px em(7px), 100% 1px, 1px em(7px) !important;
-	background-position: bottom left, bottom center, bottom right !important;
-	background-repeat: no-repeat !important;
+	border-color: $red !important;
 }
 .react-tel-input .selected-flag .arrow {
 	width: em(24px) !important;
@@ -284,6 +280,9 @@ input[type='search']::-webkit-search-results-decoration {
 	font-size: em(12px);
 	line-height: 140%;
 	color: rgba(255, 255, 255, 0.7);
+}
+.react-tel-input .phone-input-error + div:before {
+	color: $red;
 }
 
 .react-tel-input .selected-flag .flag {

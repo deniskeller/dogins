@@ -74,7 +74,11 @@ const BaseTextarea: React.FC<Props> = ({
 				</label>
 			) : null}
 
-			{error ? <div className={s.ErrorText}>{error}</div> : null}
+			{error ? (
+				<div className={s.ErrorText}>
+					<span>{error}</span>
+				</div>
+			) : null}
 		</div>
 	);
 };
