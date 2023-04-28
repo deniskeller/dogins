@@ -423,9 +423,9 @@ export const countries_licensing_info = [
 
 	{
 		id: 5,
-		href: 'singapure',
-		image: 'singapure-bg',
-		title: 'Singapure',
+		href: 'singapore',
+		image: 'singapore-bg',
+		title: 'Singapore',
 		total_term: '12 months',
 		total_cost: '$ 85,500.00',
 		roadmap: [
