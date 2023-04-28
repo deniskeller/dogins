@@ -31,8 +31,8 @@
 	}
 	@include ifmobile {
 		height: em(240px);
-		// transform: scale(1.8);
-		background-position: -150% 60% !important;
+		transform: scale(1.6);
+		background-position: center !important;
 	}
 }
 
