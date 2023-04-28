@@ -1489,31 +1489,37 @@ const Map: React.FC<Props> = () => {
 							title='USA'
 							type='orange'
 							className={s.Map_Buttons_Item}
+							onClick={() => popupHandler(6)}
 						/>
 						<BaseButton
 							title='United Kingdom'
 							type='orange'
 							className={s.Map_Buttons_Item}
+							onClick={() => popupHandler(2)}
 						/>
 						<BaseButton
 							title='Singapore'
 							type='orange'
 							className={s.Map_Buttons_Item}
+							onClick={() => popupHandler(5)}
 						/>
 						<BaseButton
 							title='Germany'
 							type='orange'
 							className={s.Map_Buttons_Item}
+							onClick={() => popupHandler(1)}
 						/>
 						<BaseButton
 							title='Hong Kong'
 							type='orange'
 							className={s.Map_Buttons_Item}
+							onClick={() => popupHandler(3)}
 						/>
 						<BaseButton
 							title='Ireland'
 							type='orange'
 							className={s.Map_Buttons_Item}
+							onClick={() => popupHandler(4)}
 						/>
 					</div>
 				</div>
