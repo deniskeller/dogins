@@ -14,7 +14,7 @@ const Compliance: React.FC = () => {
 			{/* <Widget /> */}
 			<Problems />
 			<Solutions />
-			{/* <Table /> */}
+			<Table />
 			<Feedback />
 		</>
 	);
