@@ -182,12 +182,33 @@
 
 		.Tooltip {
 			cursor: pointer;
+
+			&:hover {
+				.rect1,
+				.path {
+					fill: rgba(70, 62, 38, 0.5);
+				}
+				.Title {
+					fill: $white;
+				}
+			}
+			&:active {
+				.rect1,
+				.path {
+					fill: #463e26;
+				}
+				.Title {
+					fill: $white;
+				}
+			}
+
 			@include ifmobile {
 				display: none;
 			}
 		}
 
 		.Continent {
+			position: relative;
 			cursor: pointer;
 			&:hover {
 				animation: gradient 2s linear infinite;

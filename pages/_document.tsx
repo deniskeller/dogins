@@ -19,7 +19,7 @@ export default function Document() {
 					href='https://use.typekit.net/fzy6ewm.css'
 				></link>
 			</Head>
-			<title>Welcome to Doquins & Partners family office</title>
+			<title>Welcome to Doqins & Partners family office</title>
 			<body>
 				<Main />
 				<NextScript />
